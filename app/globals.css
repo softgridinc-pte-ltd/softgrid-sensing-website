@@ -47,3 +47,82 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-cyan-500;
   }
 }
+
+/* Hero visual effect animations */
+@keyframes hero-float {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  92% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  100% {
+    transform: translateY(-160px);
+    opacity: 0;
+  }
+}
+
+@keyframes hero-line-pulse {
+  0%, 100% {
+    opacity: 0.03;
+  }
+  50% {
+    opacity: 0.12;
+  }
+}
+
+@keyframes hero-glow-breathe {
+  0%, 100% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.22;
+  }
+}
+
+@keyframes hero-node-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(0, 180, 216, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(0, 180, 216, 0.5));
+  }
+}
+
+.hero-particle {
+  animation: hero-float var(--duration) var(--delay) linear infinite;
+}
+
+.hero-connection {
+  animation: hero-line-pulse var(--pulse-duration, 4s) var(--pulse-delay, 0s) ease-in-out infinite;
+}
+
+.hero-glow {
+  animation: hero-glow-breathe 6s ease-in-out infinite;
+}
+
+.hero-node {
+  animation: hero-node-pulse 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-particle,
+  .hero-connection,
+  .hero-glow,
+  .hero-node {
+    animation: none !important;
+  }
+
+  .hero-particle {
+    opacity: var(--particle-opacity, 0.3) !important;
+    transform: none !important;
+  }
+
+  .hero-connection {
+    opacity: 0.06 !important;
+  }
+}
