@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/Button'
-import { NetworkMesh } from '@/components/sections/hero/NetworkMesh'
 import { PlatformFlow } from '@/components/sections/hero/PlatformFlow'
 
 export function HeroSection(): React.ReactElement {
@@ -8,10 +7,7 @@ export function HeroSection(): React.ReactElement {
       {/* Layer 0: Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      {/* Layer 1: Animated network mesh particles + connections */}
-      <NetworkMesh />
-
-      {/* Layer 2: Platform architecture flow visualization */}
+      {/* Layer 1: Platform architecture flow visualization */}
       <PlatformFlow />
 
       {/* Layer 3: Gradient overlays */}

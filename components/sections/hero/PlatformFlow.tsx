@@ -10,7 +10,7 @@ const NODES: readonly FlowNode[] = [
   { cx: 280, cy: 700, label: 'Hardware' },
   { cx: 540, cy: 660, label: 'Edge' },
   { cx: 900, cy: 660, label: 'Cloud' },
-  { cx: 1160, cy: 700, label: 'Apps' },
+  { cx: 1160, cy: 700, label: 'Platform' },
 ] as const
 
 const PATHS = [
@@ -177,7 +177,7 @@ export function PlatformFlow(): React.ReactElement {
                 </g>
               )}
               {i === 3 && (
-                /* Apps — grid of 4 squares */
+                /* Platform — grid of 4 squares */
                 <g opacity="0.6">
                   <rect x={node.cx - 9} y={node.cy - 9} width="7" height="7" rx="1.5" fill="#00b4d8" opacity="0.25" stroke="#00b4d8" strokeWidth="0.8" />
                   <rect x={node.cx + 2} y={node.cy - 9} width="7" height="7" rx="1.5" fill="#00b4d8" opacity="0.25" stroke="#00b4d8" strokeWidth="0.8" />
