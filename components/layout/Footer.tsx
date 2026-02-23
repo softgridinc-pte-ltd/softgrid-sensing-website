@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface FooterColumn {
   title: string
@@ -40,9 +41,12 @@ export function Footer(): React.ReactElement {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-heading font-bold text-sm">SG</span>
-              </div>
+              <Image
+                src="/logo.svg"
+                alt="Softgrid Sensing"
+                width={36}
+                height={36}
+              />
               <span className="text-white font-heading font-semibold text-lg">
                 SOFTGRID<span className="text-cyan-500"> SENSING</span>
               </span>

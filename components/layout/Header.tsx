@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
@@ -51,9 +52,13 @@ export function Header(): React.ReactElement {
       <nav className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
-            <span className="text-white font-heading font-bold text-sm">SG</span>
-          </div>
+          <Image
+            src="/logo.svg"
+            alt="Softgrid Sensing"
+            width={36}
+            height={36}
+            className="transition-transform duration-200 group-hover:scale-105"
+          />
           <span className="text-white font-heading font-semibold text-lg hidden sm:block">
             SOFTGRID<span className="text-cyan-500"> SENSING</span>
           </span>
@@ -104,7 +109,7 @@ export function Header(): React.ReactElement {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block">
-          <Button href="/contact" variant="primary" className="text-sm px-4 py-2">
+          <Button href="/contact" variant="primary" className="text-sm px-3 py-1.5">
             Contact Us
           </Button>
         </div>
