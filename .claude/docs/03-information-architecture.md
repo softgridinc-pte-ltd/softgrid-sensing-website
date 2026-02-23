@@ -45,17 +45,17 @@
 
 ## Page Purposes
 
-| Page | Purpose | Priority |
-|------|---------|----------|
-| Home | First impression, value proposition, trust building | P0 |
-| Platform | Explain FOS architecture for those who want depth | P1 |
-| Solutions (parent) | Entry point to domain-specific solutions | P1 |
-| Solutions (children) | Detailed solution for each vertical | P1 |
-| Products (parent) | Overview of product portfolio | P1 |
-| Products (children) | Detailed product pages | P2 |
-| Case Studies | Proof of success | P1 |
-| About | Company credibility, R&D, ecosystem | P1 |
-| Contact | Lead generation | P0 |
+| Page                 | Purpose                                             | Priority |
+| -------------------- | --------------------------------------------------- | -------- |
+| Home                 | First impression, value proposition, trust building | P0       |
+| Platform             | Explain FOS architecture for those who want depth   | P1       |
+| Solutions (parent)   | Entry point to domain-specific solutions            | P1       |
+| Solutions (children) | Detailed solution for each vertical                 | P1       |
+| Products (parent)    | Overview of product portfolio                       | P1       |
+| Products (children)  | Detailed product pages                              | P2       |
+| Case Studies         | Proof of success                                    | P1       |
+| About                | Company credibility, R&D, ecosystem                 | P1       |
+| Contact              | Lead generation                                     | P0       |
 
 ## Home Page Structure
 
@@ -83,17 +83,17 @@
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                      KEY NUMBERS                                        │
-│   10,000+ assets   |   85%+ accuracy   |   8 years   |   BCA certified │
+│   10,000+ assets   |   85%+ accuracy   |   8 years   |   BCA certified  │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                     SOLUTIONS PREVIEW                                   │
-│   [Lift Monitoring]  [Facility Mgmt]  [Digital Twin]  [Remote Sensing] │
+│   [Lift Monitoring]  [Facility Mgmt]  [Digital Twin]  [Remote Sensing]  │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                     TRUSTED BY                                          │
-│       [HDB] [BCA] [Chevalier] [Midea] [NParks] [A*STAR] [NRF]         │
+│       [HDB] [BCA] [Chevalier] [Midea] [NParks] [A*STAR] [NRF]           │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
@@ -116,20 +116,20 @@
 │                                                                         │
 │                    ARCHITECTURE DIAGRAM                                 │
 │                                                                         │
-│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐        │
-│   │ Hardware │ → │   Edge   │ → │  Cloud   │ → │   Apps   │        │
-│   │ Sensors  │    │Processing│    │Analytics │    │Dashboard │        │
-│   └──────────┘    └──────────┘    └──────────┘    └──────────┘        │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐          │
+│   │ Hardware │ →  │   Edge   │ →  │  Cloud   │ →  │ Platform │          │
+│   │ Sensors  │    │Processing│    │Analytics │    │Dashboard │          │
+│   └──────────┘    └──────────┘    └──────────┘    └──────────┘          │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                     CORE CAPABILITIES                                   │
-│   [Data Integration]  [AI Analytics]  [Workflow]  [Digital Twin]       │
+│   [Data Integration]  [AI Analytics]  [Workflow]  [Digital Twin]        │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                    TECHNICAL HIGHLIGHTS                                 │
-│         Edge processing  |  Multi-brand agnostic  |  Real-time FEA    │
+│         Edge processing  |  Multi-brand agnostic  |  Real-time FEA      │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │

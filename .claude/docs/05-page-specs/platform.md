@@ -1,9 +1,11 @@
 # Platform Page Specification
 
 ## URL
+
 `/platform`
 
 ## Purpose
+
 Deep dive into the Facility Operating System (FOS) architecture for technical evaluators, serious customers, and investors who want to understand HOW the platform works.
 
 ## Page Sections
@@ -15,11 +17,13 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 **Layout**: Centered content, less tall than home hero (70vh or auto)
 
 **Content**:
+
 - **Tagline**: `The Foundation`
 - **Headline**: `AI-Driven Facility Operating System`
 - **Subheadline**: `A unified platform that connects physical assets to digital intelligence—from edge sensors to cloud analytics to actionable insights.`
 
 **Visual**:
+
 - Abstract tech background or subtle animation
 - No heavy imagery needed
 
@@ -30,6 +34,7 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 **Layout**: Large diagram centered, with annotations
 
 **Content**:
+
 - **Section Title**: `End-to-End Architecture`
 - **Subtitle**: `Four integrated layers working together.`
 
@@ -37,7 +42,7 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│  HARDWARE   │ →  │    EDGE     │ →  │   CLOUD     │ →  │    APPS     │
+│  HARDWARE   │ →  │    EDGE     │ →  │   CLOUD     │ →  │   Platform  │
 │   LAYER     │    │   LAYER     │    │   LAYER     │    │   LAYER     │
 ├─────────────┤    ├─────────────┤    ├─────────────┤    ├─────────────┤
 │ LMD Series  │    │ Local AI    │    │ FOS Engine  │    │ Dashboard   │
@@ -50,21 +55,25 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 **Below diagram, explain each layer**:
 
 **Hardware Layer**
+
 - Non-intrusive sensors (install without voiding warranties)
 - Multi-brand compatible (works with any lift/equipment brand)
 - Vibration, acceleration, temperature sensing
 
 **Edge Layer**
+
 - Local data processing reduces bandwidth
 - Resilient logic: continues operating during internet outages
 - Secure 4G/LTE tunnel (HDB LSS standard)
 
 **Cloud Layer**
+
 - Containerized, horizontally scalable
 - AI/ML models for anomaly detection and fault prediction
 - Real-time data streaming and historical analytics
 
 **Application Layer**
+
 - Web dashboard for operations managers
 - Mobile app for technicians
 - API for third-party integration
@@ -100,18 +109,19 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 **Layout**: Horizontal scroll or 3-column layout
 
 **Content**:
+
 - **Section Title**: `Built for Enterprise`
 
 **Highlights**:
 
-| Feature | Detail |
-|---------|--------|
-| **Edge Resilience** | Devices continue operating schedules even during internet blackouts |
-| **Secure Connectivity** | 4G/LTE tunnel architecture, proven at HDB scale |
-| **Scalable Cloud** | Containerized deployment, horizontal scaling |
-| **Real-time Control** | MQTT QoS Level 2 for guaranteed message delivery |
-| **Interoperability** | Cloud-to-cloud integration with government systems |
-| **Multi-tenant** | Single platform serves multiple customers securely |
+| Feature                 | Detail                                                              |
+| ----------------------- | ------------------------------------------------------------------- |
+| **Edge Resilience**     | Devices continue operating schedules even during internet blackouts |
+| **Secure Connectivity** | 4G/LTE tunnel architecture, proven at HDB scale                     |
+| **Scalable Cloud**      | Containerized deployment, horizontal scaling                        |
+| **Real-time Control**   | MQTT QoS Level 2 for guaranteed message delivery                    |
+| **Interoperability**    | Cloud-to-cloud integration with government systems                  |
+| **Multi-tenant**        | Single platform serves multiple customers securely                  |
 
 ---
 
@@ -120,16 +130,18 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 **Layout**: Text + logos
 
 **Content**:
+
 - **Section Title**: `Technology You Can Trust`
 - **Body**: `Our platform is backed by rigorous R&D, developed in collaboration with Singapore's leading research institutions.`
 
 **Key Points**:
+
 - In-house R&D team
-- A*STAR / SIMTech collaboration
+- A\*STAR / SIMTech collaboration
 - NRF Cities of Tomorrow grant (S$2.1M)
 - BCA Sandbox certified
 
-**Partner Logos**: A*STAR, SIMTech, NRF
+**Partner Logos**: A\*STAR, SIMTech, NRF
 
 ---
 
@@ -138,6 +150,7 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 **Layout**: Statement block
 
 **Content**:
+
 - **Headline**: `Production-Ready at National Scale`
 - **Body**: `This isn't a proof-of-concept. Our platform monitors 10,000+ lifts across Singapore—HDB public housing and private buildings. It's battle-tested infrastructure you can rely on.`
 
@@ -150,6 +163,7 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 **Layout**: Banner
 
 **Content**:
+
 - **Headline**: `See the Platform in Action`
 - **CTA**: `Request a Demo` → /contact
 
@@ -158,13 +172,16 @@ Deep dive into the Facility Operating System (FOS) architecture for technical ev
 ## Technical Notes
 
 ### SEO
+
 - **Title**: `Platform | Softgrid Sensing`
 - **Meta Description**: `Explore Softgrid's AI-driven Facility Operating System—edge computing, cloud analytics, predictive maintenance, and digital twin capabilities in one unified platform.`
 
 ### Images Needed
+
 - Architecture diagram (can be SVG or designed component)
 - Optional: Screenshots of dashboard/mobile app
 
 ### Interactions
+
 - Architecture diagram could have hover states showing details for each layer
 - Consider animated data flow between layers (subtle)
