@@ -44,7 +44,7 @@ export function Footer(): React.ReactElement {
                 <span className="text-white font-heading font-bold text-sm">SG</span>
               </div>
               <span className="text-white font-heading font-semibold text-lg">
-                Softgrid<span className="text-cyan-500">Sensing</span>
+                SOFTGRID<span className="text-cyan-500"> SENSING</span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">

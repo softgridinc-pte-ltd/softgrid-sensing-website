@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/Button'
 import { PlatformFlow } from '@/components/sections/hero/PlatformFlow'
+import { NetworkMesh } from '@/components/sections/hero/NetworkMesh'
 
 export function HeroSection(): React.ReactElement {
   return (
@@ -7,22 +8,41 @@ export function HeroSection(): React.ReactElement {
       {/* Layer 0: Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      {/* Layer 1: Platform architecture flow visualization */}
+      {/* Layer 1: Ambient network mesh — atmospheric depth */}
+      <NetworkMesh />
+
+      {/* Layer 2: Platform architecture flow visualization */}
       <PlatformFlow />
 
-      {/* Layer 3: Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-navy-900" />
-
-      {/* Layer 4: Enhanced radial cyan glow — top-center light source */}
+      {/* Layer 3: Top-edge light source — thin cyan horizon line */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] rounded-full blur-[150px] hero-glow"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.15) 0%, rgba(0,180,216,0.05) 40%, transparent 70%)' }}
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent 10%, rgba(0,180,216,0.25) 50%, transparent 90%)' }}
+      />
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[2px] blur-[4px]"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(0,180,216,0.4), transparent)' }}
       />
 
-      {/* Layer 5: Focused glow behind headline area */}
+      {/* Layer 5: Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-navy-900" />
+
+      {/* Layer 6: Primary radial glow — top-center light source */}
       <div
-        className="absolute top-[18%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[100px]"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.12) 0%, transparent 70%)' }}
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[1400px] h-[900px] rounded-full blur-[180px] hero-glow"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.18) 0%, rgba(0,180,216,0.06) 40%, transparent 70%)' }}
+      />
+
+      {/* Layer 7: Focused glow behind headline area */}
+      <div
+        className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full blur-[100px]"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.14) 0%, transparent 70%)' }}
+      />
+
+      {/* Layer 8: Soft wide ambient glow — adds depth to mid-section */}
+      <div
+        className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[1000px] h-[200px] rounded-full blur-[120px] opacity-60"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.08) 0%, transparent 70%)' }}
       />
 
       {/* Layer 10: Content */}

@@ -55,7 +55,7 @@ export function Header(): React.ReactElement {
             <span className="text-white font-heading font-bold text-sm">SG</span>
           </div>
           <span className="text-white font-heading font-semibold text-lg hidden sm:block">
-            Softgrid<span className="text-cyan-500">Sensing</span>
+            SOFTGRID<span className="text-cyan-500"> SENSING</span>
           </span>
         </Link>
 

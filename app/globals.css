@@ -51,10 +51,10 @@
 /* Hero visual effect animations */
 @keyframes hero-glow-breathe {
   0%, 100% {
-    opacity: 0.12;
+    opacity: 0.15;
   }
   50% {
-    opacity: 0.22;
+    opacity: 0.3;
   }
 }
 
