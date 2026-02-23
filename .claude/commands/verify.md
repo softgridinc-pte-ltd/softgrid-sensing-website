@@ -7,7 +7,7 @@ Automatically verify the application works without runtime errors.
 ### Step 1: Static Checks
 
 ```bash
-pnpm lint
+npm run lint
 npx tsc --noEmit
 ```
 
@@ -16,7 +16,7 @@ Fix any errors before proceeding.
 ### Step 2: Build Check
 
 ```bash
-pnpm build
+npm run build
 ```
 
 Fix any build errors before proceeding.
@@ -27,7 +27,7 @@ First, check if dev server is running. If not, start it in background:
 
 ```bash
 # Start dev server in background (if not already running)
-pnpm dev &
+npm run dev &
 sleep 5
 ```
 
@@ -55,7 +55,7 @@ If runtime errors are found:
 ## Quick One-Liner
 
 ```bash
-pnpm lint && npx tsc --noEmit && pnpm build && npx tsx scripts/check-runtime-errors.ts
+npm run lint && npx tsc --noEmit && npm run build && npx tsx scripts/check-runtime-errors.ts
 ```
 
 ## First-Time Setup
@@ -63,6 +63,6 @@ pnpm lint && npx tsc --noEmit && pnpm build && npx tsx scripts/check-runtime-err
 If playwright is not installed:
 
 ```bash
-pnpm add -D playwright tsx
+npm install -D playwright tsx
 npx playwright install chromium
 ```
