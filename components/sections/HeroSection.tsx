@@ -8,11 +8,11 @@ export function HeroSection(): React.ReactElement {
       {/* Layer 0: Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      {/* Layer 1: Ambient network mesh — atmospheric depth */}
-      <NetworkMesh />
-
-      {/* Layer 2: Platform architecture flow visualization */}
-      <PlatformFlow />
+      {/* Layer 1–2: Visualizations — desktop only */}
+      <div className="hidden md:block">
+        <NetworkMesh />
+        <PlatformFlow />
+      </div>
 
       {/* Layer 3: Top-edge light source — thin cyan horizon line */}
       <div
@@ -46,7 +46,7 @@ export function HeroSection(): React.ReactElement {
       />
 
       {/* Layer 10: Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center pt-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center -mt-12">
         {/* Tagline */}
         <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5 mb-8">
           <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse-slow" />
@@ -57,14 +57,13 @@ export function HeroSection(): React.ReactElement {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 max-w-5xl mx-auto">
-          The Platform That Runs Your{' '}
+          The Platform That Transforms Your{' '}
           <span className="text-gradient">Facility Operations</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          From lift monitoring to building management&mdash;one intelligent platform
-          for predictive maintenance, real-time control, and operational excellence.
+          One intelligent platform for predictive maintenance, real-time control, and operational excellence.
         </p>
 
         {/* CTAs */}
@@ -77,11 +76,12 @@ export function HeroSection(): React.ReactElement {
           </Button>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="mt-20 md:mt-28 flex flex-col items-center gap-2 text-slate-400">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-slate-400 to-transparent" />
-        </div>
+      </div>
+
+      {/* Scroll indicator — fixed to bottom of hero */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-cyan-400">
+        <span className="text-xs uppercase tracking-widest">Scroll</span>
+        <div className="w-px h-8 bg-gradient-to-b from-cyan-400 to-transparent" />
       </div>
     </section>
   )
