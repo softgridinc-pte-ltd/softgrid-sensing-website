@@ -12,7 +12,7 @@ interface Partner {
 const partners: Partner[] = [
   { name: 'HDB', logo: '/images/logos/HDB.png' },
   { name: 'BCA', logo: '/images/logos/bca.png', scale: 'scale-[1.5]' },
-  { name: 'MND', logo: '/images/logos/MND.png', scale: 'scale-[2.0]' },
+  { name: 'MND', logo: '/images/logos/MND.png', scale: 'scale-[3.0]' },
   { name: 'Chevalier', logo: '/images/logos/chevalier.jpeg' },
   { name: 'NParks', logo: '/images/logos/NPARKS.png', scale: 'scale-[1.2]' },
   { name: 'Midea', logo: '/images/logos/midea.png', scale: 'scale-[1.8]' },
