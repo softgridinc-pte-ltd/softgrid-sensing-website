@@ -15,7 +15,6 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Platform', href: '/platform' },
   {
     label: 'Solutions',
     href: '/solutions',
@@ -85,9 +84,9 @@ export function Header(): React.ReactElement {
 
   return (
     <header className="bg-navy-900/80 backdrop-blur-md border-b border-navy-800/50 fixed w-full z-50">
-      <nav className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between relative">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
           <Image
             src="/logo.svg"
             alt="Softgrid Sensing"
@@ -100,8 +99,8 @@ export function Header(): React.ReactElement {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1">
+        {/* Desktop Navigation — absolutely centered */}
+        <div className="hidden lg:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {navigation.map((item) => (
             <div
               key={item.label}
@@ -144,7 +143,7 @@ export function Header(): React.ReactElement {
         </div>
 
         {/* Desktop Search */}
-        <div ref={searchContainerRef} className="hidden lg:flex items-center">
+        <div ref={searchContainerRef} className="hidden lg:flex items-center flex-shrink-0">
           <div
             className={`flex items-center rounded-lg overflow-hidden transition-all duration-350 ease-out ${
               searchOpen

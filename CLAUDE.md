@@ -39,7 +39,7 @@ A customized `frontend-design` skill at `.claude/skills/frontend-design/SKILL.md
 ## Build Order
 
 1. Shared components (Header, Footer, Button, Card)
-2. Home → Contact → About → Platform → Solutions → Products → Case Studies
+2. Home → Contact → About → Solutions → Products → Case Studies
 
 ## Key Context
 

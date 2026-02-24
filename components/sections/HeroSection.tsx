@@ -71,8 +71,8 @@ export function HeroSection(): React.ReactElement {
           <Button href="/contact" variant="primary" className="min-w-[160px]">
             Contact Us
           </Button>
-          <Button href="/platform" variant="secondary" className="min-w-[160px]">
-            See Platform
+          <Button href="#platform" variant="secondary" className="min-w-[160px]">
+            Learn More
           </Button>
         </div>
 

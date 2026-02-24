@@ -38,8 +38,6 @@ softgrid-website/
 ├── app/
 │   ├── layout.tsx          # Root layout with Header/Footer
 │   ├── page.tsx            # Home page
-│   ├── platform/
-│   │   └── page.tsx
 │   ├── solutions/
 │   │   ├── page.tsx
 │   │   ├── lift-monitoring/
@@ -71,7 +69,7 @@ softgrid-website/
 ## Navigation Structure
 
 ```
-Home | Platform | Solutions | Products | Case Studies | About | Contact
+Home | Solutions | Products | Case Studies | About | Contact
 ```
 
 ## Key Documents

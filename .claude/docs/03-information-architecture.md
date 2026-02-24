@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│  Logo    Home   Platform   Solutions ▼   Products ▼   Case Studies   About   Contact  │
+│  Logo    Home   Solutions ▼   Products ▼   Case Studies   About   Contact  │
 └─────────────────────────────────────────────────────────────────────────┘
                                   │              │
                                   │              ├── Hardware
@@ -20,7 +20,6 @@
 
 ```
 /                                   # Home
-├── /platform                       # Platform (FOS Architecture)
 ├── /solutions                      # Solutions overview
 │   ├── /solutions/lift-monitoring  # Vertical Transport
 │   ├── /solutions/facility-management  # Smart FM
@@ -48,7 +47,6 @@
 | Page                 | Purpose                                             | Priority |
 | -------------------- | --------------------------------------------------- | -------- |
 | Home                 | First impression, value proposition, trust building | P0       |
-| Platform             | Explain FOS architecture for those who want depth   | P1       |
 | Solutions (parent)   | Entry point to domain-specific solutions            | P1       |
 | Solutions (children) | Detailed solution for each vertical                 | P1       |
 | Products (parent)    | Overview of product portfolio                       | P1       |
@@ -103,40 +101,6 @@
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                              FOOTER                                     │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-## Platform Page Structure
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                         HERO                                            │
-│            "The AI-Driven Facility Operating System"                    │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│                    ARCHITECTURE DIAGRAM                                 │
-│                                                                         │
-│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐          │
-│   │ Hardware │ →  │   Edge   │ →  │  Cloud   │ →  │ Platform │          │
-│   │ Sensors  │    │Processing│    │Analytics │    │Dashboard │          │
-│   └──────────┘    └──────────┘    └──────────┘    └──────────┘          │
-│                                                                         │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│                     CORE CAPABILITIES                                   │
-│   [Data Integration]  [AI Analytics]  [Workflow]  [Digital Twin]        │
-│                                                                         │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│                    TECHNICAL HIGHLIGHTS                                 │
-│         Edge processing  |  Multi-brand agnostic  |  Real-time FEA      │
-│                                                                         │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│                    READY TO DEPLOY                                      │
-│            "Not proof-of-concept. Production-ready."                    │
-│                        [See Solutions]                                  │
-│                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -294,7 +258,7 @@ Each solution page follows this template:
 │   ─────────          ────────          ───────          ───────         │
 │   Lift Monitoring    Hardware          About            Address         │
 │   Facility Mgmt      Software          Case Studies     Email           │
-│   Digital Twin       Platform          Contact          Phone           │
+│   Digital Twin                         Contact          Phone           │
 │                                                                         │
 │   ─────────────────────────────────────────────────────────────────     │
 │                                                                         │
@@ -315,7 +279,6 @@ On mobile, the navigation collapses into a hamburger menu:
 When opened:
 ┌─────────────────────────────────────┐
 │  Home                               │
-│  Platform                           │
 │  Solutions                      ▼   │
 │    └─ Lift Monitoring               │
 │    └─ Facility Management           │

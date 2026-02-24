@@ -72,7 +72,7 @@ export function PlatformSection(): React.ReactElement {
   const { ref, isInView } = useInView({ threshold: 0.1 })
 
   return (
-    <section className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
+    <section id="platform" className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
       {/* Subtle background grid */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
 
@@ -190,8 +190,8 @@ export function PlatformSection(): React.ReactElement {
 
         {/* CTA */}
         <div className="text-center">
-          <Button href="/platform" variant="ghost">
-            Explore the Platform &rarr;
+          <Button href="/solutions" variant="ghost">
+            Explore Solutions &rarr;
           </Button>
         </div>
       </div>

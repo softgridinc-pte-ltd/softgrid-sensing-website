@@ -20,7 +20,6 @@ const footerColumns: FooterColumn[] = [
     links: [
       { label: 'Hardware', href: '/products/hardware' },
       { label: 'Software', href: '/products/software' },
-      { label: 'Platform', href: '/platform' },
     ],
   },
   {
