@@ -81,14 +81,14 @@ export function PlatformSection(): React.ReactElement {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             One Platform, End-to-End
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-cyan-400 max-w-2xl mx-auto">
             From hardware sensors to cloud analytics to mobile apps&mdash;fully integrated.
           </p>
         </div>
 
         {/* Platform Architecture */}
         <div className="mb-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-6 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-6 text-center">
             Platform Architecture
           </p>
           {/* Desktop: flex row with arrows between cards */}
@@ -164,7 +164,7 @@ export function PlatformSection(): React.ReactElement {
 
         {/* Core Capabilities */}
         <div className="mb-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-6 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-6 text-center">
             Core Capabilities
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">

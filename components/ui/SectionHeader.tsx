@@ -18,7 +18,7 @@ export function SectionHeader({
       </h2>
       {subtitle && (
         <p
-          className={`text-lg text-slate-400 ${
+          className={`text-lg text-cyan-400 ${
             centered ? 'max-w-2xl mx-auto' : ''
           }`}
         >
