@@ -84,9 +84,26 @@
   animation: hero-node-pulse 4s ease-in-out infinite;
 }
 
+/* Shift section arrow animation */
+@keyframes shift-arrow-flow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+}
+
+.shift-arrow {
+  animation: shift-arrow-flow 2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-glow,
-  .hero-node {
+  .hero-node,
+  .shift-arrow {
     animation: none !important;
   }
 }

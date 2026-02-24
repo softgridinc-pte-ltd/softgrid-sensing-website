@@ -79,8 +79,19 @@ export function ShiftSection(): React.ReactElement {
   const { ref, isInView } = useInView({ threshold: 0.15 })
 
   return (
-    <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+    <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
+      {/* Background: subtle left-to-right gradient overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-gradient(to right, rgba(10,15,30,0.4) 0%, transparent 40%, rgba(0,180,216,0.03) 100%)' }}
+      />
+      {/* Background: faint cyan glow on the right side */}
+      <div
+        className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0,180,216,0.06) 0%, transparent 70%)' }}
+      />
+
+      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-14 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
             The Shift
@@ -120,21 +131,21 @@ export function ShiftSection(): React.ReactElement {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 {/* Traditional */}
-                <div className="flex items-center gap-4 bg-navy-900/80 rounded-lg px-5 py-5 border border-red-900/20">
+                <div className="flex items-center gap-4 bg-navy-900/80 rounded-lg px-5 py-5 border border-red-900/20 shadow-[inset_0_1px_3px_rgba(0,0,0,0.3)] transition-all duration-300 hover:brightness-110 hover:border-red-900/30">
                   <div className="text-slate-400 shrink-0">{row.traditional.icon}</div>
                   <span className="text-slate-400 text-base">{row.traditional.text}</span>
                 </div>
 
                 {/* Arrow */}
                 <div className="hidden md:flex items-center justify-center w-10">
-                  <div className="relative flex items-center justify-center">
-                    <div className="absolute w-8 h-8 rounded-full bg-cyan-500/20 blur-[10px]" />
-                    <ArrowRight className="w-6 h-6 text-cyan-400 relative" strokeWidth={2.5} />
+                  <div className="relative flex items-center justify-center shift-arrow" style={{ animationDelay: `${i * 200}ms` }}>
+                    <div className="absolute w-8 h-8 rounded-full bg-cyan-500/25 blur-[10px]" />
+                    <ArrowRight className="w-6 h-6 text-cyan-400 relative drop-shadow-[0_0_4px_rgba(0,180,216,0.4)]" strokeWidth={2.5} />
                   </div>
                 </div>
 
                 {/* Modern */}
-                <div className="flex items-center gap-4 bg-cyan-500/10 rounded-lg px-5 py-5 border-l-2 border-cyan-500/50 shadow-[0_0_15px_rgba(0,180,216,0.06)]">
+                <div className="flex items-center gap-4 bg-cyan-500/10 rounded-lg px-5 py-5 border-l-2 border-cyan-500/50 shadow-[0_4px_20px_rgba(0,180,216,0.08)] -translate-y-px transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(0,180,216,0.12)]">
                   <div className="text-cyan-400 shrink-0">{row.modern.icon}</div>
                   <span className="text-slate-100 text-base">{row.modern.text}</span>
                 </div>
