@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Search } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 interface NavItem {
@@ -40,7 +40,43 @@ const navigation: NavItem[] = [
 export function Header(): React.ReactElement {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const searchInputRef = useRef<HTMLInputElement>(null)
+  const searchContainerRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus()
+    }
+  }, [searchOpen])
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent): void => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setSearchOpen(false)
+        setSearchQuery('')
+      }
+    }
+    if (searchOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [searchOpen])
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent): void => {
+      if (e.key === 'Escape') {
+        setSearchOpen(false)
+        setSearchQuery('')
+      }
+    }
+    if (searchOpen) {
+      document.addEventListener('keydown', handleEsc)
+    }
+    return () => document.removeEventListener('keydown', handleEsc)
+  }, [searchOpen])
 
   const isActive = (href: string): boolean => {
     if (href === '/') return pathname === '/'
@@ -107,11 +143,57 @@ export function Header(): React.ReactElement {
           ))}
         </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden lg:block">
-          <Button href="/contact" variant="primary" className="text-sm px-3 py-1.5">
-            Contact Us
-          </Button>
+        {/* Desktop Search */}
+        <div ref={searchContainerRef} className="hidden lg:flex items-center">
+          <div
+            className={`flex items-center rounded-lg overflow-hidden transition-all duration-350 ease-out ${
+              searchOpen
+                ? 'w-72 bg-navy-800 border border-cyan-500/30 shadow-[0_0_12px_rgba(0,180,216,0.1)] px-2 py-0.5'
+                : 'w-9 bg-transparent border border-transparent px-0 py-0'
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                if (searchOpen) {
+                  setSearchOpen(false)
+                  setSearchQuery('')
+                } else {
+                  setSearchOpen(true)
+                }
+              }}
+              className={`flex-shrink-0 p-2 rounded-md transition-all duration-300 ${
+                searchOpen
+                  ? 'text-slate-400 hover:text-white'
+                  : 'text-slate-100 hover:text-cyan-400 hover:scale-105'
+              }`}
+              aria-label={searchOpen ? 'Close search' : 'Search'}
+            >
+              <div className="relative w-5 h-5">
+                <Search
+                  className={`w-5 h-5 absolute inset-0 transition-all duration-300 ${
+                    searchOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'
+                  }`}
+                />
+                <X
+                  className={`w-5 h-5 absolute inset-0 transition-all duration-300 ${
+                    searchOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'
+                  }`}
+                />
+              </div>
+            </button>
+            <input
+              ref={searchInputRef}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search..."
+              tabIndex={searchOpen ? 0 : -1}
+              className={`bg-transparent text-sm text-white placeholder-slate-500 outline-none transition-all duration-350 ease-out ${
+                searchOpen ? 'w-full opacity-100 ml-1' : 'w-0 opacity-0 ml-0'
+              }`}
+            />
+          </div>
         </div>
 
         {/* Mobile Hamburger */}
@@ -160,10 +242,15 @@ export function Header(): React.ReactElement {
                 )}
               </div>
             ))}
-            <div className="pt-3">
-              <Button href="/contact" variant="primary" className="w-full text-center text-sm">
-                Contact Us
-              </Button>
+            <div className="pt-3 px-3">
+              <div className="flex items-center gap-2 bg-navy-800 border border-navy-700 rounded-lg px-3 py-2.5">
+                <Search className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="bg-transparent text-sm text-white placeholder-slate-500 outline-none w-full"
+                />
+              </div>
             </div>
           </div>
         </div>
