@@ -100,10 +100,25 @@
   animation: shift-arrow-flow 2s ease-in-out infinite;
 }
 
+/* Timeline dot pulse */
+@keyframes timeline-dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(0, 180, 216, 0);
+  }
+}
+
+.timeline-dot {
+  animation: timeline-dot-pulse 3s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-glow,
   .hero-node,
-  .shift-arrow {
+  .shift-arrow,
+  .timeline-dot {
     animation: none !important;
   }
 }

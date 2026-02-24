@@ -3,7 +3,7 @@ import { ShiftSection } from '@/components/sections/ShiftSection'
 import { PlatformSection } from '@/components/sections/PlatformSection'
 import { StatsSection } from '@/components/sections/StatsSection'
 import { SolutionsSection } from '@/components/sections/SolutionsSection'
-import { TrustedBySection } from '@/components/sections/TrustedBySection'
+import { EcosystemSection } from '@/components/sections/about/EcosystemSection'
 import { CTASection } from '@/components/sections/CTASection'
 
 export default function HomePage(): React.ReactElement {
@@ -14,7 +14,7 @@ export default function HomePage(): React.ReactElement {
       <PlatformSection />
       <StatsSection />
       <SolutionsSection />
-      <TrustedBySection />
+      <EcosystemSection variant="dark" />
       <CTASection />
     </>
   )
