@@ -5,17 +5,15 @@ import { useEffect, useRef, useState } from 'react'
 interface StatBlockProps {
   value: string
   label: string
-  isNumeric?: boolean
 }
 
 export function StatBlock({
   value,
   label,
-  isNumeric = true,
 }: StatBlockProps): React.ReactElement {
   const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [displayValue, setDisplayValue] = useState(isNumeric ? '0' : value)
+  const [displayValue, setDisplayValue] = useState('0')
 
   useEffect(() => {
     const element = ref.current
@@ -36,7 +34,7 @@ export function StatBlock({
   }, [])
 
   useEffect(() => {
-    if (!isVisible || !isNumeric) return
+    if (!isVisible) return
 
     const numericPart = value.replace(/[^0-9]/g, '')
     const target = parseInt(numericPart, 10)
@@ -64,14 +62,17 @@ export function StatBlock({
     }, duration / steps)
 
     return () => clearInterval(timer)
-  }, [isVisible, isNumeric, value])
+  }, [isVisible, value])
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-cyan-500 mb-2 font-heading">
-        {isNumeric ? displayValue : value}
+      <div className="relative inline-block">
+        <div className="absolute inset-0 blur-[20px] bg-cyan-500/10 rounded-full" />
+        <div className="relative text-5xl md:text-6xl font-bold text-cyan-400 mb-3 font-heading">
+          {displayValue}
+        </div>
       </div>
-      <div className="text-slate-400 text-sm uppercase tracking-wider">
+      <div className="text-slate-400 text-sm uppercase tracking-[0.15em] font-medium">
         {label}
       </div>
     </div>

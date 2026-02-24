@@ -9,8 +9,8 @@ import {
   BrainCircuit,
   Workflow,
   Box,
+  ChevronRight,
 } from 'lucide-react'
-import { FeatureCard } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { useInView } from '@/hooks/useInView'
 
@@ -86,23 +86,62 @@ export function PlatformSection(): React.ReactElement {
           </p>
         </div>
 
-        {/* Architecture Diagram */}
-        <div
-          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 transition-all duration-700 ${
-            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          {architectureLayers.map((layer, i) => (
-            <div key={layer.title} className="relative">
-              <div className="bg-navy-800 border border-navy-700 rounded-xl p-6 text-center hover:border-cyan-500/30 transition-colors duration-300">
-                <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+        {/* Platform Architecture */}
+        <div className="mb-16">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-6 text-center">
+            Platform Architecture
+          </p>
+          {/* Desktop: flex row with arrows between cards */}
+          <div
+            className={`hidden lg:flex items-center justify-center gap-3 transition-all duration-700 ${
+              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            {architectureLayers.map((layer, i) => (
+              <div key={layer.title} className="contents">
+                <div className="bg-navy-800 border border-navy-700 rounded-xl px-5 py-5 text-center hover:border-cyan-500/30 transition-colors duration-300 flex-1">
+                  <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    {layer.icon}
+                  </div>
+                  <h3 className="text-white font-semibold text-base mb-1">{layer.title}</h3>
+                  <p className="text-cyan-400 text-xs font-medium uppercase tracking-wider mb-2">
+                    {layer.subtitle}
+                  </p>
+                  <div className="space-y-0.5">
+                    {layer.items.map((item) => (
+                      <p key={item} className="text-slate-400 text-sm">
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Arrow between cards */}
+                {i < architectureLayers.length - 1 && (
+                  <div className="shrink-0 flex items-center justify-center">
+                    <ChevronRight className="w-5 h-5 text-cyan-500" strokeWidth={2.5} />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile/tablet: grid without arrows */}
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden transition-all duration-700 ${
+              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            {architectureLayers.map((layer) => (
+              <div key={layer.title} className="bg-navy-800 border border-navy-700 rounded-xl px-5 py-5 text-center hover:border-cyan-500/30 transition-colors duration-300">
+                <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-3">
                   {layer.icon}
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-1">{layer.title}</h3>
-                <p className="text-cyan-400 text-xs font-medium uppercase tracking-wider mb-3">
+                <h3 className="text-white font-semibold text-base mb-1">{layer.title}</h3>
+                <p className="text-cyan-400 text-xs font-medium uppercase tracking-wider mb-2">
                   {layer.subtitle}
                 </p>
-                <div className="space-y-1">
+                <div className="space-y-0.5">
                   {layer.items.map((item) => (
                     <p key={item} className="text-slate-400 text-sm">
                       {item}
@@ -110,48 +149,43 @@ export function PlatformSection(): React.ReactElement {
                   ))}
                 </div>
               </div>
-
-              {/* Connecting arrow (hidden on last item and mobile) */}
-              {i < architectureLayers.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-2 -translate-y-1/2 z-20">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    className="text-cyan-500/60"
-                  >
-                    <path
-                      d="M4 8h8m0 0l-3-3m3 3l-3 3"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                    />
-                  </svg>
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Capability Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {capabilities.map((cap, i) => (
-            <div
-              key={cap.title}
-              className={`transition-all duration-500 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${300 + i * 100}ms` }}
-            >
-              <FeatureCard
-                icon={cap.icon}
-                title={cap.title}
-                description={cap.description}
-              />
-            </div>
-          ))}
+        {/* Visual connector between rows */}
+        <div className="flex justify-center mb-16">
+          <div className="flex flex-col items-center gap-1">
+            <div className="w-px h-6 bg-gradient-to-b from-navy-700 to-cyan-500/30" />
+            <div className="w-1.5 h-1.5 rounded-full bg-cyan-500/40" />
+            <div className="w-px h-6 bg-gradient-to-b from-cyan-500/30 to-navy-700" />
+          </div>
+        </div>
+
+        {/* Core Capabilities */}
+        <div className="mb-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-6 text-center">
+            Core Capabilities
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+            {capabilities.map((cap, i) => (
+              <div
+                key={cap.title}
+                className={`transition-all duration-500 ${
+                  isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`}
+                style={{ transitionDelay: `${300 + i * 100}ms` }}
+              >
+                <div className="bg-navy-800 border border-navy-700 rounded-xl p-8 h-full hover:border-cyan-500/50 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">
+                    {cap.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{cap.title}</h3>
+                  <p className="text-slate-100 leading-relaxed">{cap.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* CTA */}

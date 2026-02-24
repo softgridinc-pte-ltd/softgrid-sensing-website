@@ -57,11 +57,11 @@ export function SolutionsSection(): React.ReactElement {
           subtitle="Deep expertise across vertical transport, facilities, and infrastructure."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {solutions.map((solution, i) => (
             <div
               key={solution.title}
-              className={`transition-all duration-500 ${
+              className={`h-full transition-all duration-500 ${
                 isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -73,10 +73,10 @@ export function SolutionsSection(): React.ReactElement {
                 <h3 className="text-lg font-semibold text-white mb-3">
                   {solution.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                <p className="text-slate-400 text-sm leading-relaxed flex-1">
                   {solution.description}
                 </p>
-                <Button href={solution.href} variant="ghost" className="text-sm self-start">
+                <Button href={solution.href} variant="ghost" className="text-sm self-start mt-5">
                   Learn More &rarr;
                 </Button>
               </Card>
