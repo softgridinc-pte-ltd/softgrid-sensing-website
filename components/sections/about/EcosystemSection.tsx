@@ -18,8 +18,8 @@ const categories: PartnerCategory[] = [
   {
     label: 'Government & Agencies',
     partners: [
-      { name: 'HDB', logo: '/images/logos/HDB.png' },
-      { name: 'BCA', logo: '/images/logos/bca.png', scale: 'scale-[1.5]' },
+      { name: 'HDB', logo: '/images/logos/HDB.png', scale: 'scale-[1.1]'  },
+      { name: 'BCA', logo: '/images/logos/bca.png', scale: 'scale-[1.3]' },
       { name: 'MND', logo: '/images/logos/MND.png', scale: 'scale-[3.0]' },
       { name: 'JTC', logo: '/images/logos/JTC.png', scale: 'scale-[2.0]' },
       { name: 'NParks', logo: '/images/logos/NPARKS.png', scale: 'scale-[1.2]' },
