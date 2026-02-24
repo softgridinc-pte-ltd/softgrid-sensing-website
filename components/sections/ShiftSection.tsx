@@ -6,6 +6,7 @@ import {
   Users,
   Boxes,
   AlertTriangle,
+  ArrowRight,
   Zap,
   Gauge,
   Cpu,
@@ -84,7 +85,7 @@ export function ShiftSection(): React.ReactElement {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             The Shift
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-cyan-400 max-w-2xl mx-auto">
             Facility operations are changing. Are you ready?
           </p>
         </div>
@@ -98,9 +99,9 @@ export function ShiftSection(): React.ReactElement {
                 Traditional Approach
               </span>
             </div>
-            <div className="w-px" />
+            <div className="w-8" />
             <div className="text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-cyan-400">
+              <span className="text-sm font-bold uppercase tracking-wider text-cyan-200">
                 The Softgrid Way
               </span>
             </div>
@@ -119,34 +120,23 @@ export function ShiftSection(): React.ReactElement {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 {/* Traditional */}
-                <div className="flex items-center gap-3 bg-navy-900/50 rounded-lg p-4 border border-navy-700/50">
+                <div className="flex items-center gap-3 bg-navy-900/80 rounded-lg p-4 border border-red-900/20">
                   <div className="text-slate-400 shrink-0">{row.traditional.icon}</div>
                   <span className="text-slate-400 text-sm">{row.traditional.text}</span>
                 </div>
 
                 {/* Arrow */}
-                <div className="hidden md:flex items-center justify-center">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-cyan-500"
-                  >
-                    <path
-                      d="M5 12h14m0 0l-4-4m4 4l-4 4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                <div className="hidden md:flex items-center justify-center w-8">
+                  <div className="relative flex items-center justify-center">
+                    <div className="absolute w-6 h-6 rounded-full bg-cyan-500/20 blur-[8px]" />
+                    <ArrowRight className="w-5 h-5 text-cyan-400 relative" strokeWidth={2.5} />
+                  </div>
                 </div>
 
                 {/* Modern */}
-                <div className="flex items-center gap-3 bg-cyan-500/5 rounded-lg p-4 border border-cyan-500/20">
-                  <div className="text-cyan-500 shrink-0">{row.modern.icon}</div>
-                  <span className="text-white text-sm">{row.modern.text}</span>
+                <div className="flex items-center gap-3 bg-cyan-500/10 rounded-lg p-4 border-l-2 border-cyan-500/50 shadow-[0_0_15px_rgba(0,180,216,0.06)]">
+                  <div className="text-cyan-400 shrink-0">{row.modern.icon}</div>
+                  <span className="text-slate-100 text-sm">{row.modern.text}</span>
                 </div>
               </div>
             ))}
