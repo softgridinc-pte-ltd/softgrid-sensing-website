@@ -1,9 +1,11 @@
 # About Page Specification
 
 ## URL
+
 `/about`
 
 ## Purpose
+
 Build trust and credibility. Show that Softgrid is a real company with history, expertise, and strong partnerships.
 
 ## Key Messages
@@ -20,6 +22,7 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 ### Section 1: Hero
 
 **Content**:
+
 - **Tagline**: `About Us`
 - **Headline**: `Bridging Physical Assets with Digital Intelligence`
 - **Subheadline**: `Since 2017, we've been building the technology that transforms how Singapore manages its facilities and infrastructure.`
@@ -31,22 +34,24 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 **Layout**: Timeline or narrative flow
 
 **Content**:
+
 - **Section Title**: `Our Journey`
 
 **Timeline**:
 
-| Year | Milestone |
-|------|-----------|
+| Year | Milestone                                                 |
+| ---- | --------------------------------------------------------- |
 | 2017 | Founded in Singapore, started with lift remote monitoring |
-| 2019 | Awarded NRF Cities of Tomorrow grant (S$2.1M) |
-| 2020 | Deployed LTMS for HDB, began national scale rollout |
-| 2021 | BCA Sandbox certification for RM&D |
-| 2022 | Expanded to facility management (IRIS) and digital twin |
-| 2023 | 10,000+ lifts milestone |
-| 2024 | Platform approach: FOS (Facility Operating System) |
-| 2025 | International expansion (Japan POC, China project) |
+| 2019 | Awarded NRF Cities of Tomorrow grant (S$2.1M)             |
+| 2020 | Deployed LTMS for HDB, began national scale rollout       |
+| 2021 | BCA Sandbox certification for RM&D                        |
+| 2022 | Expanded to facility management (IRIS) and digital twin   |
+| 2023 | 10,000+ lifts milestone                                   |
+| 2024 | Platform approach: FOS (Facility Operating System)        |
+| 2025 | International expansion (Japan POC, China project)        |
 
 **Narrative Version** (alternative):
+
 > We started in 2017 with a simple mission: make lift monitoring smarter. What began as remote monitoring for HDB lifts has evolved into a full-stack Facility Operating System—combining IoT hardware, edge computing, AI analytics, and digital twin visualization.
 >
 > Today, our technology monitors over 10,000 lifts across Singapore, serving both public housing and private sector clients. But lifts are just the beginning. Our platform extends to building management, environmental monitoring, and high-value infrastructure assets.
@@ -58,8 +63,9 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 **Layout**: Three columns with supporting content
 
 **Content**:
+
 - **Section Title**: `R&D at Our Core`
-- **Subtitle**: `We're a technology company, not a systems integrator.`
+- **Subtitle**: `We're a technology innovator, not a systems integrator.`
 
 **Three Pillars**:
 
@@ -70,7 +76,7 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 2. **Research Partnerships**
    - Icon: Handshake/collaboration icon
    - Description: `We collaborate with A*STAR and SIMTech on AI development, bringing research-grade technology to production systems.`
-   - Logos: A*STAR, SIMTech
+   - Logos: A\*STAR, SIMTech
 
 3. **Government Backing**
    - Icon: Award/certificate icon
@@ -91,12 +97,14 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 **Layout**: Logo grid with categories
 
 **Content**:
+
 - **Section Title**: `Part of the Ecosystem`
 - **Subtitle**: `We work with Singapore's leading organizations across government, industry, and research.`
 
 **Categories**:
 
 **Government & Agencies**:
+
 - HDB
 - BCA
 - NRF
@@ -104,13 +112,15 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 - Town Councils
 
 **Commercial & Industry**:
+
 - Chevalier (Lift servicing)
 - Midea (Smart Building)
 - Mandai Wildlife Group
 - CPG FM
 
 **Research & Development**:
-- A*STAR
+
+- A\*STAR
 - SIMTech
 
 **Note**: Display logos in muted/grayscale, organized by category
@@ -122,6 +132,7 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 **Layout**: 4 cards in a row
 
 **Content**:
+
 - **Section Title**: `Why Choose Softgrid?`
 
 **Cards**:
@@ -149,16 +160,17 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 **Layout**: Map or location cards
 
 **Content**:
+
 - **Section Title**: `Growing Beyond Singapore`
 
 **Locations**:
 
-| Location | Status |
-|----------|--------|
-| Singapore (HQ) | Core operations, innovation testbed |
-| Japan | POC with Kyushu Railway Company |
-| China (Guangzhou) | Smart estate management project |
-| Middle East & Europe | Future markets exploration |
+| Location             | Status                              |
+| -------------------- | ----------------------------------- |
+| Singapore (HQ)       | Core operations, innovation testbed |
+| Japan                | POC with Kyushu Railway Company     |
+| China (Guangzhou)    | Smart estate management project     |
+| Middle East & Europe | Future markets exploration          |
 
 **Note**: This section can be brief or omitted if not a priority for the website
 
@@ -169,6 +181,7 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 **Layout**: Simple text block
 
 **Content**:
+
 - **Legal Name**: Softgrid Sensing Pte. Ltd.
 - **Subsidiary of**: Softgrid
 - **Address**: 10 Woodlands Ave 8, #02-01, HDB CBR, Singapore 738973
@@ -179,6 +192,7 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 ### Section 8: CTA
 
 **Content**:
+
 - **Headline**: `Ready to Work with Us?`
 - **Subheadline**: `Let's discuss how we can help transform your operations.`
 - **CTA**: `Contact Us` → /contact
@@ -188,11 +202,13 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 ## Optional Sections (Phase 2)
 
 ### Team Section
+
 If Softgrid wants to highlight leadership:
 
 **Layout**: Photo grid with names/titles
 
 **Possible Roles**:
+
 - CEO
 - CTO
 - Sales Director (Richard)
@@ -201,7 +217,9 @@ If Softgrid wants to highlight leadership:
 **Note**: Only include if photos and bios are available and approved
 
 ### Careers Section
+
 If hiring:
+
 - Brief description of culture
 - Link to careers page or job listings
 
@@ -210,12 +228,14 @@ If hiring:
 ## Content Notes
 
 **Information Needed**:
+
 1. Confirm timeline accuracy (especially 2019-2024 milestones)
 2. Logo permissions from partners
 3. Any updates to global expansion status
 4. Decision on whether to include team photos
 
 **Tone**:
+
 - Confident but not arrogant
 - Factual with specific numbers
 - Forward-looking but grounded in achievements
@@ -224,8 +244,8 @@ If hiring:
 
 ## SEO Notes
 
-| Field | Content |
-|-------|---------|
-| Title | About Us \| Softgrid Sensing |
-| Meta Description | Learn about Softgrid Sensing—Singapore's AI-driven facility platform company. 8 years of experience, 10,000+ assets monitored, backed by NRF and A*STAR. |
-| H1 | Bridging Physical Assets with Digital Intelligence |
+| Field            | Content                                                                                                                                                   |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title            | About Us \| Softgrid Sensing                                                                                                                              |
+| Meta Description | Learn about Softgrid Sensing—Singapore's AI-driven facility platform company. 8 years of experience, 10,000+ assets monitored, backed by NRF and A\*STAR. |
+| H1               | Bridging Physical Assets with Digital Intelligence                                                                                                        |
