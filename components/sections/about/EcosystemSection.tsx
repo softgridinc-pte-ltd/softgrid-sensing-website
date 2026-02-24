@@ -33,7 +33,7 @@ const categories: PartnerCategory[] = [
       { name: 'Midea', logo: '/images/logos/midea.png', scale: 'scale-[1.8]' },
       { name: 'Mandai Wildlife Group', logo: '/images/logos/Mandai.jpeg', scale: 'scale-[1.2]' },
       { name: 'EM Services', logo: '/images/logos/EMSERVICES.png', scale: 'scale-[1.8]' },
-      { name: 'CPG FM', logo: '/images/logos/CPGFM.png' },
+      { name: 'CPG FM', logo: '/images/logos/CPGFM.png', scale: 'scale-[1.2]' },
       { name: 'Tridium', logo: '/images/logos/tridium.png' },
     ],
   },
@@ -41,7 +41,7 @@ const categories: PartnerCategory[] = [
     label: 'Research & Development',
     partners: [
       { name: 'A*STAR', logo: '/images/logos/ASTAR.png' },
-      { name: 'TCOMS', logo: '/images/logos/TCOMS.jpeg' },
+      { name: 'TCOMS', logo: '/images/logos/TCOMS.jpeg', scale: 'scale-[1.5]' },
     ],
   },
 ]
@@ -75,18 +75,18 @@ export function EcosystemSection({ variant = 'darker' }: EcosystemSectionProps):
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-5 text-center">
                 {category.label}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4">
+              <div className="flex flex-wrap items-center justify-center gap-5 md:gap-6">
                 {category.partners.map((partner) => (
                   <div
                     key={partner.name}
-                    className="bg-white rounded-lg px-5 py-4 flex items-center justify-center hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 w-36 h-20"
+                    className="bg-white border border-gray-200/10 rounded-lg px-6 py-5 flex items-center justify-center shadow-md shadow-black/10 hover:shadow-xl hover:shadow-cyan-500/10 hover:scale-105 transition-all duration-300 w-40 h-24 md:w-44 md:h-26"
                   >
                     <Image
                       src={partner.logo}
                       alt={partner.name}
-                      width={120}
-                      height={60}
-                      className={`object-contain max-h-10 w-auto ${partner.scale ?? ''}`}
+                      width={140}
+                      height={70}
+                      className={`object-contain max-h-12 md:max-h-14 w-auto ${partner.scale ?? ''}`}
                     />
                   </div>
                 ))}
