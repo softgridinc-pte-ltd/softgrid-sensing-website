@@ -30,9 +30,18 @@
 @layer utilities {
   .grid-pattern {
     background-image:
-      linear-gradient(to right, rgba(27, 38, 59, 0.6) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(27, 38, 59, 0.6) 1px, transparent 1px);
+      linear-gradient(to right, rgba(100, 130, 170, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(100, 130, 170, 0.12) 1px, transparent 1px);
     background-size: 4rem 4rem;
+  }
+
+  .grid-pattern-masked {
+    background-image:
+      linear-gradient(to right, rgba(100, 130, 170, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(100, 130, 170, 0.12) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,1) 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,1) 100%);
   }
 
   .glow-cyan {

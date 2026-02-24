@@ -74,7 +74,7 @@ export function PlatformSection(): React.ReactElement {
   return (
     <section className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
       {/* Subtle background grid */}
-      <div className="absolute inset-0 grid-pattern opacity-10" />
+      <div className="absolute inset-0 grid-pattern opacity-50" />
 
       <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16">

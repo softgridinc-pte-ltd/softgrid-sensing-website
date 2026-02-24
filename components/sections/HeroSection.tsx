@@ -6,7 +6,7 @@ export function HeroSection(): React.ReactElement {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Layer 0: Grid pattern background */}
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute inset-0 grid-pattern-masked opacity-100" />
 
       {/* Layer 1–2: Visualizations — desktop only */}
       <div className="hidden md:block">
