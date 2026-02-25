@@ -3,6 +3,7 @@
 ## Overview
 
 The Case Studies section consists of:
+
 - `/case-studies` - Parent page (list all case studies)
 - `/case-studies/hdb` - HDB case study
 - `/case-studies/chevalier` - Chevalier case study (if details available)
@@ -13,9 +14,11 @@ The Case Studies section consists of:
 # Case Studies Parent Page
 
 ## URL
+
 `/case-studies`
 
 ## Purpose
+
 Provide social proof through real customer stories. Show that Softgrid delivers results at scale.
 
 ## Sections
@@ -23,6 +26,7 @@ Provide social proof through real customer stories. Show that Softgrid delivers 
 ### Section 1: Hero
 
 **Content**:
+
 - **Tagline**: `Proven Results`
 - **Headline**: `Case Studies`
 - **Subheadline**: `See how organizations across Singapore are transforming their operations with Softgrid.`
@@ -32,6 +36,7 @@ Provide social proof through real customer stories. Show that Softgrid delivers 
 **Layout**: Large card with image
 
 **Content** (HDB):
+
 - Image: HDB building with lift icon
 - Client: Housing & Development Board (HDB)
 - Headline: `10,000+ Lifts Monitored Across Singapore`
@@ -68,6 +73,7 @@ Provide social proof through real customer stories. Show that Softgrid delivers 
 **Layout**: Icon grid
 
 **Industries**:
+
 - Public Housing
 - Commercial Buildings
 - Lift Companies
@@ -78,6 +84,7 @@ Provide social proof through real customer stories. Show that Softgrid delivers 
 ### Section 5: CTA
 
 **Content**:
+
 - **Headline**: `Want Results Like These?`
 - **CTA**: `Contact Us` → /contact
 
@@ -94,6 +101,7 @@ All case study pages follow this structure:
 **Layout**: Full-width with background image/color
 
 **Content**:
+
 - Client logo (if permission granted)
 - **Client Name**
 - **Headline**: One-sentence summary of outcome
@@ -104,6 +112,7 @@ All case study pages follow this structure:
 **Layout**: Two columns - text and key facts
 
 **Left Column - Story**:
+
 - Who is the client (2-3 sentences)
 - What was the challenge
 - What was the scope
@@ -120,6 +129,7 @@ All case study pages follow this structure:
 ### Section 3: The Challenge
 
 **Content**:
+
 - **Section Title**: `The Challenge`
 - 2-3 paragraphs describing the problems the client faced
 - Use specific details where possible
@@ -127,6 +137,7 @@ All case study pages follow this structure:
 ### Section 4: The Solution
 
 **Content**:
+
 - **Section Title**: `The Solution`
 - What Softgrid implemented
 - Which products were used
@@ -136,6 +147,7 @@ All case study pages follow this structure:
 ### Section 5: The Results
 
 **Content**:
+
 - **Section Title**: `The Results`
 - Specific, measurable outcomes
 - Use stat blocks for key numbers
@@ -152,12 +164,14 @@ All case study pages follow this structure:
 **Layout**: Large quote block
 
 **Content**:
+
 > "[Quote from client about their experience]"
 > — Name, Title, Company
 
 ### Section 7: Related
 
 **Content**:
+
 - Related solution page
 - Related products
 - Other case studies
@@ -165,6 +179,7 @@ All case study pages follow this structure:
 ### Section 8: CTA
 
 **Content**:
+
 - **Headline**: `Ready to Achieve Similar Results?`
 - **CTA**: `Contact Us` → /contact
 
@@ -173,9 +188,11 @@ All case study pages follow this structure:
 # HDB Case Study
 
 ## URL
+
 `/case-studies/hdb`
 
 ## Hero
+
 - **Client**: Housing & Development Board (HDB)
 - **Headline**: `Transforming Lift Monitoring at National Scale`
 - **Key Stat**: `10,000+ Lifts Monitored`
@@ -205,34 +222,39 @@ HDB manages public housing for over 80% of Singapore's resident population. With
 ## The Solution
 
 **Hardware Deployment**:
+
 - LMD Series devices installed across 10,000+ lifts
 - Non-intrusive installation without voiding warranties
 - Edge processing for local data handling
 
 **Software Platform**:
+
 - LTMS (Lift Telemonitoring System) as central monitoring backend
 - Real-time status monitoring
 - Alert management and escalation
 - Historical analytics
 
 **Integration**:
+
 - Cloud-to-cloud integration with HDB systems
 - Secure 4G/LTE connectivity (HDB LSS standard)
 
 **R&D Partnership**:
+
 - Supported by NRF Cities of Tomorrow grant (S$2.1M)
-- Collaboration with A*STAR SIMTech for AI development
+- Collaboration with A\*STAR SIMTech for AI development
 
 ## The Results
 
-| Metric | Result |
-|--------|--------|
-| Lifts Monitored | 10,000+ |
-| Blocks Covered | 4,000+ |
-| System Type | Legacy → Modern IoT |
-| Certification | BCA RM&D compliant |
+| Metric          | Result              |
+| --------------- | ------------------- |
+| Lifts Monitored | 10,000+             |
+| Blocks Covered  | 4,000+              |
+| System Type     | Legacy → Modern IoT |
+| Certification   | BCA RM&D compliant  |
 
 **Qualitative Results**:
+
 - Reinvented HDB's legacy monitoring system
 - Enabled predictive maintenance approach
 - Ensured service reliability for public housing
@@ -249,9 +271,11 @@ HDB manages public housing for over 80% of Singapore's resident population. With
 # Chevalier Case Study (Template)
 
 ## URL
+
 `/case-studies/chevalier`
 
 ## Hero
+
 - **Client**: Chevalier
 - **Headline**: `BCA-Certified Lift Monitoring for Private Sector`
 - **Key Stat**: `[TBD based on available data]`
@@ -292,19 +316,21 @@ Chevalier is a leading lift servicing company in Singapore. They partnered with 
 ## Content Notes
 
 **Data Needed from Softgrid**:
+
 1. Specific numbers for Chevalier case (lifts, buildings, results)
 2. Client testimonials/quotes
 3. Permission to use client logos
 4. Any additional case studies (CPG FM, Mandai, etc.)
 
 **Placeholder Approach**:
+
 - Use HDB case study as primary (well-documented)
 - Keep Chevalier as secondary with available info
 - Add case studies as content becomes available
 
 ## SEO Notes
 
-| Page | Title | Meta Description |
-|------|-------|------------------|
-| /case-studies | Case Studies \| Softgrid Sensing | See how Softgrid helps organizations transform facility operations. Real results from HDB, lift companies, and more. |
-| /case-studies/hdb | HDB Case Study \| Softgrid | How Softgrid deployed lift monitoring across 10,000+ HDB lifts in Singapore. National-scale IoT transformation. |
+| Page              | Title                            | Meta Description                                                                                                     |
+| ----------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| /case-studies     | Case Studies \| Softgrid Sensing | See how Softgrid helps organizations transform facility operations. Real results from HDB, lift companies, and more. |
+| /case-studies/hdb | HDB Case Study \| Softgrid       | How Softgrid deployed lift monitoring across 10,000+ HDB lifts in Singapore. National-scale IoT transformation.      |

@@ -1,9 +1,11 @@
 # Contact Page Specification
 
 ## URL
+
 `/contact`
 
 ## Purpose
+
 Convert interest into leads. Make it easy for potential customers to reach out.
 
 ---
@@ -15,6 +17,7 @@ Convert interest into leads. Make it easy for potential customers to reach out.
 **Layout**: Shorter hero than other pages
 
 **Content**:
+
 - **Headline**: `Get in Touch`
 - **Subheadline**: `Whether you're exploring solutions or ready to deploy—we'd love to hear from you.`
 
@@ -33,16 +36,17 @@ Convert interest into leads. Make it easy for potential customers to reach out.
 
 **Fields**:
 
-| Field | Type | Required | Placeholder |
-|-------|------|----------|-------------|
-| Name | Text | Yes | Your name |
-| Email | Email | Yes | Work email |
-| Company | Text | Yes | Company name |
-| Phone | Tel | No | Phone number (optional) |
-| Interest | Select | Yes | [Dropdown options below] |
-| Message | Textarea | Yes | How can we help? |
+| Field    | Type     | Required | Placeholder              |
+| -------- | -------- | -------- | ------------------------ |
+| Name     | Text     | Yes      | Your name                |
+| Email    | Email    | Yes      | Work email               |
+| Company  | Text     | Yes      | Company name             |
+| Phone    | Tel      | No       | Phone number (optional)  |
+| Interest | Select   | Yes      | [Dropdown options below] |
+| Message  | Textarea | Yes      | How can we help?         |
 
 **Interest Dropdown Options**:
+
 - Lift Monitoring & Compliance
 - Smart Facility Management
 - Digital Twin & Visualization
@@ -53,13 +57,15 @@ Convert interest into leads. Make it easy for potential customers to reach out.
 **Submit Button**: `Send Message`
 
 **Form Behavior**:
+
 - Client-side validation
 - Show loading state on submit
 - Success message: "Thank you! We'll be in touch within 1-2 business days."
 - Error handling for failed submissions
 
-**Technical Note**: 
+**Technical Note**:
 Form submissions can be handled via:
+
 - Formspree (simple, free tier available)
 - Netlify Forms (if hosted on Netlify)
 - Custom API endpoint (if backend exists)
@@ -71,16 +77,18 @@ Form submissions can be handled via:
 
 **Section: Contact Details**
 
-| Label | Value |
-|-------|-------|
-| Email | info@softgridsensing.com (or appropriate email) |
-| Phone | [Phone number if public] |
+| Label   | Value                                                 |
+| ------- | ----------------------------------------------------- |
+| Email   | info@softgridsensing.com (or appropriate email)       |
+| Phone   | [Phone number if public]                              |
 | Address | 10 Woodlands Ave 8, #02-01, HDB CBR, Singapore 738973 |
 
 **Section: Office Hours**
+
 - Monday - Friday: 9:00 AM - 6:00 PM (SGT)
 
 **Section: Quick Links**
+
 - [Book a Demo] - Could link to Calendly or similar (if available)
 - [LinkedIn] - Company LinkedIn page
 
@@ -91,6 +99,7 @@ Form submissions can be handled via:
 **Layout**: Full-width embedded map
 
 **Content**:
+
 - Google Maps embed showing office location
 - Or static map image if preferred
 
@@ -105,12 +114,15 @@ Form submissions can be handled via:
 **Possible Questions**:
 
 1. **How quickly can you deploy?**
+
    > Depending on the scope, typical deployments take 4-8 weeks from contract signing. For urgent needs, we can often accelerate timelines.
 
 2. **Do you work with existing BMS systems?**
+
    > Yes, our platform integrates with major BMS platforms including Tridium Niagara and Midea. We support BACnet, Modbus, and other standard protocols.
 
 3. **What's the minimum deployment size?**
+
    > We work with organizations of various sizes. Contact us to discuss your specific situation.
 
 4. **Do you offer a pilot program?**
@@ -167,6 +179,7 @@ Cons: Requires email service setup
 After successful form submission, either:
 
 **Option A**: Show inline success message (stay on page)
+
 ```
 ✓ Message Sent
 Thank you for reaching out. We'll get back to you within 1-2 business days.
@@ -174,6 +187,7 @@ Thank you for reaching out. We'll get back to you within 1-2 business days.
 ```
 
 **Option B**: Redirect to thank you page
+
 ```
 /contact/thank-you
 ```
@@ -185,6 +199,7 @@ Thank you for reaching out. We'll get back to you within 1-2 business days.
 ## Tracking & Analytics
 
 Consider tracking:
+
 - Form submissions (as conversion event)
 - Which "Interest" option is selected most
 - Bounce rate on contact page
@@ -195,11 +210,11 @@ This can be implemented via Google Analytics or similar.
 
 ## SEO Notes
 
-| Field | Content |
-|-------|---------|
-| Title | Contact Us \| Softgrid Sensing |
+| Field            | Content                                                                                                                                        |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title            | Contact Us \| Softgrid Sensing                                                                                                                 |
 | Meta Description | Contact Softgrid Sensing for lift monitoring, facility management, or digital twin solutions. Based in Singapore, serving clients across Asia. |
-| H1 | Get in Touch |
+| H1               | Get in Touch                                                                                                                                   |
 
 ---
 
@@ -208,7 +223,7 @@ This can be implemented via Google Analytics or similar.
 - Keep the form simple and not overwhelming
 - Use adequate spacing between fields
 - Clear labels above each field
-- Show required indicator (*) only where necessary
+- Show required indicator (\*) only where necessary
 - Primary CTA button should stand out
 - Consider adding a subtle "We typically respond within 24 hours" note
 

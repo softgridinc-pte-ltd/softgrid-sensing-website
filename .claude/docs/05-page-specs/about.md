@@ -39,16 +39,21 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 
 **Timeline**:
 
-| Year | Milestone                                                 |
-| ---- | --------------------------------------------------------- |
-| 2017 | Founded in Singapore, started with lift remote monitoring |
-| 2019 | Awarded NRF Cities of Tomorrow grant (S$2.1M)             |
-| 2020 | Deployed LTMS for HDB, began national scale rollout       |
-| 2021 | BCA Sandbox certification for RM&D                        |
-| 2022 | Expanded to facility management (IRIS) and digital twin   |
-| 2023 | 10,000+ lifts milestone                                   |
-| 2024 | Platform approach: FOS (Facility Operating System)        |
-| 2025 | International expansion (Japan POC, China project)        |
+| Year    | Milestone                                                                                                                                              |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2017    | Founded in Singapore, started with lift remote monitoring                                                                                              |
+| Q4 2017 | LiftGuardian and LiftProf Go-Live                                                                                                                      |
+| Q2 2018 | Lift BlackBox (LBB) Mass Production                                                                                                                    |
+| Q4 2019 | NRF National Awardee — City of Tomorrow IoT Monitoring System for Urban Sustainability                                                                 |
+| Q3 2020 | LMD 6000 Mass Production for HDB; began national-scale rollout                                                                                         |
+| Q4 2021 | BCA Sandbox certification for RM&D                                                                                                                     |
+| Q1 2023 | Rollout of AI-enhanced analytical engine for advanced preventive maintenance                                                                           |
+| Q4 2023 | Achieved platform security protocol compliance; improved data processing capability                                                                    |
+| Q1 2024 | SaaS-based device management system Go-Live                                                                                                            |
+| Q3 2024 | Expanded to facility management and digital twin                                                                                                       |
+| Q4 2024 | Softgrid Fusion LTMS successfully conducted trial with HDB                                                                                             |
+| 2025    | Reached 10,000+ lifts milestone                                                                                                                        |
+| Q4 2025 | Launched AI-driven Facility Operating System (FOS): Unified platform for building management, remote sensing, predictive maintenance, and digital twin |
 
 **Narrative Version** (alternative):
 

@@ -43,18 +43,18 @@ npx create-next-app@latest softgrid-website --typescript --tailwind --eslint --a
 Edit `next.config.ts`:
 
 ```typescript
-import type { NextConfig } from 'next'
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
   },
   // If deploying to GitHub Pages with custom domain, basePath is not needed
-  // basePath: '', 
-}
+  // basePath: '',
+};
 
-export default nextConfig
+export default nextConfig;
 ```
 
 ### 1.3 Add Output Directory to .gitignore
@@ -170,18 +170,18 @@ Log into Siteground and update DNS records:
 
 **For apex domain (softgridsensing.com)**:
 
-| Type | Name | Value |
-|------|------|-------|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
+| Type | Name | Value           |
+| ---- | ---- | --------------- |
+| A    | @    | 185.199.108.153 |
+| A    | @    | 185.199.109.153 |
+| A    | @    | 185.199.110.153 |
+| A    | @    | 185.199.111.153 |
 
 **For www subdomain**:
 
-| Type | Name | Value |
-|------|------|-------|
-| CNAME | www | YOUR_USERNAME.github.io |
+| Type  | Name | Value                   |
+| ----- | ---- | ----------------------- |
+| CNAME | www  | YOUR_USERNAME.github.io |
 
 Replace `YOUR_USERNAME` with the actual GitHub username or organization name.
 
@@ -260,21 +260,22 @@ npx serve out
 For client-side routing, add `404.html` that redirects to index:
 
 Create `public/404.html`:
+
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
-  <script>
-    // Redirect to home page (simple approach)
-    // For better SPA support, implement proper redirect logic
-    window.location.href = '/';
-  </script>
-</head>
-<body>
-  Redirecting...
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Redirect to home page (simple approach)
+      // For better SPA support, implement proper redirect logic
+      window.location.href = "/";
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
 </html>
 ```
 
@@ -342,6 +343,7 @@ For large images or videos, use AWS S3 instead of Git:
 ### Uptime Monitoring
 
 Consider setting up:
+
 - GitHub Status for deployment status
 - UptimeRobot or similar for website uptime
 
@@ -353,7 +355,7 @@ Add Google Analytics or similar:
 2. Add tracking code to `app/layout.tsx`
 
 ```tsx
-import Script from 'next/script'
+import Script from "next/script";
 
 export default function RootLayout({ children }) {
   return (
@@ -374,7 +376,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }
 ```
 

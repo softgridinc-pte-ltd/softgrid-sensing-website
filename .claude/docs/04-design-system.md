@@ -274,22 +274,22 @@ Use Tailwind's default spacing scale. Key values:
 **Nav Link**
 ```jsx
 <a className="
-  text-slate-100 
-  hover:text-cyan-400 
-  font-medium 
+  text-slate-100
+  hover:text-cyan-400
+  font-medium
   transition-colors
 ">
-  Platform
+  Solutions
 </a>
 ```
 
 **Active Nav Link**
 ```jsx
 <a className="
-  text-cyan-400 
+  text-cyan-400
   font-medium
 ">
-  Platform
+  Solutions
 </a>
 ```
 

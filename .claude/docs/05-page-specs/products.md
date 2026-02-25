@@ -3,6 +3,7 @@
 ## Overview
 
 The Products section consists of:
+
 - `/products` - Parent page (overview of all products)
 - `/products/hardware` - Hardware products overview
 - `/products/software` - Software products overview
@@ -13,9 +14,11 @@ The Products section consists of:
 # Products Parent Page
 
 ## URL
+
 `/products`
 
 ## Purpose
+
 Showcase the complete product portfolio. Demonstrate that Softgrid is a product company (not just services).
 
 ## Sections
@@ -23,6 +26,7 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 ### Section 1: Hero
 
 **Content**:
+
 - **Tagline**: `Product Portfolio`
 - **Headline**: `End-to-End Products, Built In-House`
 - **Subheadline**: `From hardware sensors to cloud platforms—we design, develop, and deploy the full stack.`
@@ -32,6 +36,7 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 **Layout**: Short text block
 
 **Content**:
+
 > "We're not a system integrator reselling other vendors' products. Every component in our stack is designed and built by our team. This means seamless integration, full control, and the ability to customize for your specific needs."
 
 ### Section 3: Hardware Products
@@ -103,10 +108,12 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 **Layout**: Text block with icons
 
 **Content**:
+
 - **Section Title**: `Built to Integrate`
 - **Body**: `Our products are designed to work together—and with your existing systems.`
 
 **Integration Points**:
+
 - Midea iBuilding / iEasyCare
 - Tridium Niagara
 - BACnet / Modbus protocols
@@ -116,6 +123,7 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 ### Section 6: CTA
 
 **Content**:
+
 - **Headline**: `Want to See Our Products in Action?`
 - **CTA**: `Request a Demo` → /contact
 
@@ -124,20 +132,23 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 # Hardware Overview Page
 
 ## URL
+
 `/products/hardware`
 
 ## Sections
 
 ### Hero
+
 - **Headline**: `Hardware Products`
 - **Subheadline**: `Industrial-grade IoT devices designed for reliability and ease of deployment.`
 
 ### Product: LMD Series
 
 **Content**:
+
 - **Name**: LMD Series (LMD6000, LMDC)
 - **Tagline**: `Lift Monitoring Device`
-- **Description**: 
+- **Description**:
   > Non-intrusive IoT sensors for elevator monitoring. Installs without voiding manufacturer warranties. Edge processing handles data locally, reducing bandwidth and ensuring operation even during internet outages.
 
 **Key Features**:
@@ -161,6 +172,7 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 ### Product: LBB
 
 **Content**:
+
 - **Name**: LBB (Lift BlackBox)
 - **Tagline**: `Lift Event Recorder`
 - **Description**:
@@ -179,11 +191,13 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 # Software Overview Page
 
 ## URL
+
 `/products/software`
 
 ## Sections
 
 ### Hero
+
 - **Headline**: `Software Products`
 - **Subheadline**: `Cloud-native platforms for monitoring, analytics, and operations.`
 
@@ -192,6 +206,7 @@ Showcase the complete product portfolio. Demonstrate that Softgrid is a product 
 Display all 5 software products with more detail than the parent page:
 
 **For each product include**:
+
 - Full name and tagline
 - 2-3 sentence description
 - Key features (3-4 bullet points)
@@ -201,6 +216,7 @@ Display all 5 software products with more detail than the parent page:
 ### Product Details
 
 **LTMS - Lift Telemonitoring System**
+
 - Target: Public sector (HDB, Town Councils)
 - Key Features:
   - Real-time lift status monitoring
@@ -210,6 +226,7 @@ Display all 5 software products with more detail than the parent page:
 - Deployment: 10,000+ lifts monitored
 
 **RM&D System - Remote Monitoring & Diagnostics**
+
 - Target: Private sector lift companies
 - Key Features:
   - BCA Code of Practice compliant
@@ -219,6 +236,7 @@ Display all 5 software products with more detail than the parent page:
 - Certification: BCA Sandbox certified
 
 **IRIS - Integrated Resource & Information System**
+
 - Target: Managing agents, property companies
 - Key Features:
   - Work order management
@@ -228,6 +246,7 @@ Display all 5 software products with more detail than the parent page:
 - Status: Pilot deployed, SaaS planned
 
 **Cloud BMS - Cloud Building Management System**
+
 - Target: Building owners, facility managers
 - Key Features:
   - Unified dashboard for all building systems
@@ -236,6 +255,7 @@ Display all 5 software products with more detail than the parent page:
   - Bi-directional control (MQTT QoS 2)
 
 **Digital Twin Platform**
+
 - Target: Engineering firms, infrastructure owners
 - Key Features:
   - Web-based (no installation)
@@ -249,6 +269,7 @@ Display all 5 software products with more detail than the parent page:
 ## Individual Product Pages (Phase 2)
 
 If needed, create deep-dive pages for each product:
+
 - `/products/hardware/lmd`
 - `/products/hardware/lbb`
 - `/products/software/ltms`
@@ -258,6 +279,7 @@ If needed, create deep-dive pages for each product:
 - `/products/software/digital-twin`
 
 Each would include:
+
 - Full specifications
 - Screenshots/demos
 - Use cases
@@ -269,8 +291,8 @@ Each would include:
 
 ## SEO Notes
 
-| Page | Title | Meta Description |
-|------|-------|------------------|
-| /products | Products \| Softgrid Sensing | Explore Softgrid's end-to-end product portfolio—IoT hardware and cloud software for facility operations. |
+| Page               | Title                         | Meta Description                                                                                                       |
+| ------------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| /products          | Products \| Softgrid Sensing  | Explore Softgrid's end-to-end product portfolio—IoT hardware and cloud software for facility operations.               |
 | /products/hardware | Hardware Products \| Softgrid | Industrial IoT devices for lift monitoring—LMD Series and Lift BlackBox. Non-intrusive, edge-processed, BCA certified. |
-| /products/software | Software Products \| Softgrid | Cloud platforms for facility operations—LTMS, RM&D, IRIS CMMS, Cloud BMS, and Digital Twin. |
+| /products/software | Software Products \| Softgrid | Cloud platforms for facility operations—LTMS, RM&D, IRIS CMMS, Cloud BMS, and Digital Twin.                            |

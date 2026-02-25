@@ -20,7 +20,7 @@ Create a strong first impression. Communicate what Softgrid does, why it matters
 - **Subheadline**: `From lift monitoring to building management—one intelligent platform for predictive maintenance, real-time control, and operational excellence.`
 - **CTA Buttons**: 
   - Primary: `Contact Us` → links to /contact
-  - Secondary: `See Platform` → links to /platform
+  - Secondary: `Learn More` → scrolls to #platform section on homepage
 
 **Visual**:
 - Dark background with subtle grid pattern
@@ -80,7 +80,7 @@ Create a strong first impression. Communicate what Softgrid does, why it matters
 3. **Workflow Automation** - From alert to work order to verification
 4. **Digital Twin** - Real-time visualization and simulation
 
-**CTA**: `Explore the Platform →` → links to /platform
+**CTA**: `Explore Solutions →` → links to /solutions
 
 ---
 

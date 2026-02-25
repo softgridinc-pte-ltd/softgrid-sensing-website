@@ -59,7 +59,6 @@ Addresses competitive positioning. We have real products, real customers, real s
 | Page | Primary Message |
 |------|-----------------|
 | Home | We are THE AI-powered platform for facility operations |
-| Platform | This is how our technology works (FOS architecture) |
 | Solutions | Here's how we solve YOUR specific problem |
 | Products | These are real products you can buy/deploy |
 | Case Studies | Here's proof it works at scale |

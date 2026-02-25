@@ -23,7 +23,7 @@ From lift monitoring to building management—one intelligent platform for predi
 **CTA Buttons**:
 
 - Primary: `Contact Us`
-- Secondary: `See Platform`
+- Secondary: `Learn More` (scrolls to #platform section)
 
 ---
 
@@ -102,7 +102,7 @@ From hardware sensors to cloud analytics to mobile apps—fully integrated.
 **CTA**:
 
 ```
-Explore the Platform →
+Explore Solutions →
 ```
 
 ---
@@ -229,7 +229,6 @@ Products:
 
 - Hardware
 - Software
-- Platform
 
 Company:
 
