@@ -72,18 +72,6 @@ softgrid-website/
 Home | Solutions | Products | Case Studies | About | Contact
 ```
 
-## Key Documents
-
-| Document                         | Description                            |
-| -------------------------------- | -------------------------------------- |
-| `01-company-background.md`       | Company history, products, positioning |
-| `02-website-strategy.md`         | Goals, audience, core narrative        |
-| `03-information-architecture.md` | Site structure, page hierarchy         |
-| `04-design-system.md`            | Colors, typography, components         |
-| `05-page-specs/*.md`             | Detailed spec for each page            |
-| `06-content/*.md`                | Actual copy/content for pages          |
-| `07-deployment.md`               | Deployment and DNS setup guide         |
-
 ## Important Context
 
 This company wants to position itself as a **platform company** (not a project-based services company). The website should convey:

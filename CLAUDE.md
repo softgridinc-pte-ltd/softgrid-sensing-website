@@ -27,6 +27,7 @@ Read docs in this order before coding:
 6. `05-page-specs/*.md` — Detailed spec per page
 7. `06-content/*.md` — Actual copy
 8. `07-deployment.md` — GitHub Pages setup
+9. `08-style-guide.md` — Implementation Style Guide
 
 ## Design
 
