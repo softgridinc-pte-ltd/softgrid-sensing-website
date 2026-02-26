@@ -17,16 +17,19 @@
 - [x] Added 404.html fallback
 
 **Shared UI Components:**
+
 - [x] `components/ui/Button.tsx` - Primary, secondary, ghost variants with Link support
 - [x] `components/ui/Card.tsx` - Standard card + FeatureCard with icon
 - [x] `components/ui/SectionHeader.tsx` - Reusable section title + subtitle
 - [x] `components/ui/StatBlock.tsx` - Animated stat counter with IntersectionObserver
 
 **Layout Components:**
+
 - [x] `components/layout/Header.tsx` - Sticky header with glass-morphism, desktop nav with dropdowns, mobile hamburger menu
 - [x] `components/layout/Footer.tsx` - 4-column layout with brand, links, and contact info
 
 **Home Page Sections:**
+
 - [x] `HeroSection` - Full-height hero with grid pattern, gradient glow, tagline pill, headline, CTAs
 - [x] `ShiftSection` - Before/after comparison grid with staggered scroll animations
 - [x] `PlatformSection` - Architecture diagram (4 layers) + 4 capability cards
@@ -36,6 +39,7 @@
 - [x] `CTASection` - Full-width CTA banner with gradient glow
 
 **Utilities:**
+
 - [x] `hooks/useInView.ts` - IntersectionObserver hook for scroll animations
 
 **Build status:** Passing (static export to `/out`)
@@ -47,12 +51,10 @@ _None_
 
 ## Next Steps
 
-1. Build remaining pages per build order: Contact → About → Platform → Solutions → Products → Case Studies
-2. Add actual partner/client logos when available
-3. Add favicon and social sharing images (OG images)
+1. Build remaining pages per build order: Solutions → Products → Case Studies
+2. DNS configuration at Siteground
+3. Push to GitHub and enable Pages
 4. Set up analytics (GA4) if needed
-5. DNS configuration at Siteground
-6. Push to GitHub and enable Pages
 
 ## Technical Notes
 
