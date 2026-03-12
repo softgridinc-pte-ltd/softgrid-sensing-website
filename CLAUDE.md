@@ -20,18 +20,18 @@ npm run build    # Build (static export to /out)
 Read docs in this order before coding:
 
 1. `README.md` — Project overview, structure, tech details
-2. `01-company-background.md` — Company, products, positioning
-3. `02-website-strategy.md` — Goals, audience, messaging
-4. `03-information-architecture.md` — Site map, page layouts
-5. `04-design-system.md` — Colors, typography, components **(IMPORTANT)**
-6. `05-page-specs/*.md` — Detailed spec per page
-7. `06-content/*.md` — Actual copy
-8. `07-deployment.md` — GitHub Pages setup
-9. `08-style-guide.md` — Implementation Style Guide
+2. `docs/01-company-background.md` — Company, products, positioning
+3. `docs/02-website-strategy.md` — Goals, audience, messaging
+4. `docs/03-information-architecture.md` — Site map, page layouts
+5. `docs/04-design-system.md` — Colors, typography, components **(IMPORTANT)**
+6. `docs/05-page-specs/*.md` — Detailed spec per page
+7. `docs/06-content/*.md` — Actual copy
+8. `docs/07-deployment.md` — GitHub Pages setup
+9. `docs/08-style-guide.md` — Implementation Style Guide
 
 ## Design
 
-Dark mode industrial tech. Details in `04-design-system.md`.
+Dark mode industrial tech. Details in `docs/04-design-system.md`.
 
 A customized `frontend-design` skill at `.claude/skills/frontend-design/SKILL.md` auto-activates for frontend work. It already incorporates our design system.
 
