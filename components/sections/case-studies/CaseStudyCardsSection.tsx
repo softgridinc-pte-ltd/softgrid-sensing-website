@@ -47,6 +47,34 @@ const caseStudies: CaseStudy[] = [
     products: ['LMD Series', 'RM&D System'],
     href: '/case-studies/chevalier',
   },
+  {
+    client: 'CPG FM',
+    industry: 'Facility Operations',
+    headline: 'AI-Powered Facility Management for Singapore\u2019s Properties',
+    summary:
+      'CPG FM deployed IRIS CMMS and Athena AI knowledge base to digitize facility operations — replacing paper work orders with a full digital lifecycle and AI-powered decision support.',
+    stats: [
+      { value: 'IRIS', label: 'CMMS Deployed' },
+      { value: 'Athena', label: 'AI Knowledge Base' },
+      { value: 'Digital', label: 'Work Order Lifecycle' },
+    ],
+    products: ['IRIS', 'Athena'],
+    href: '/case-studies/cpg-fm',
+  },
+  {
+    client: 'National Parks Board (NParks)',
+    industry: 'Infrastructure & Environmental',
+    headline: 'Monthly Forest Cover Monitoring Across Singapore',
+    summary:
+      'Automated satellite-based monitoring of 26 ecological areas — AI-powered image classification at 4.76m resolution, fully automated with zero manual processing.',
+    stats: [
+      { value: '26', label: 'Ecological Areas' },
+      { value: '4.76m', label: 'Resolution' },
+      { value: 'Monthly', label: 'Monitoring Cycle' },
+    ],
+    products: ['Fusion RSA'],
+    href: '/case-studies/nparks',
+  },
 ]
 
 function CaseStudyCard({
