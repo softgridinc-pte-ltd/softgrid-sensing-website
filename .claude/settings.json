@@ -1,18 +1,6 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(*)",
-      "Write(*)",
-      "Read(*)",
-      "WebFetch(*)"
-    ],
-    "deny": [
-      "Bash(rm -rf /)",
-      "Bash(rm -rf ~)"
-    ]
-  },
-  "preferences": {
-    "autoCompact": true,
-    "compactThreshold": 80000
+    "allow": ["Bash", "Read", "Bash(*)", "Write(**)", "WebSearch", "WebFetch"],
+    "deny": ["Bash(rm *)", "Bash(rm)", "Bash(unlink *)", "Bash(rmdir *)"]
   }
 }
