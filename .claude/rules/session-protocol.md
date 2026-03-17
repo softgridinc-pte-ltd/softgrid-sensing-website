@@ -4,26 +4,7 @@
 
 1. Read `PROGRESS.md` for current status
 2. Confirm current phase and task with user
-3. Create a plan before executing
-
-### During a Session
-
-- Focus on one task at a time
-- **Run verification after each code change**
-- Fix all errors before moving forward
-
-### Ending a Session
-
-When user says "session end" or "update progress":
-
-Update `PROGRESS.md` with:
-
-- What was completed (move to completed section)
-- What's in progress
-- Any blockers or technical notes
-- Next steps for next session
-
----
+3. Create a plan under /plan before executing
 
 ## Code Verification Rules
 

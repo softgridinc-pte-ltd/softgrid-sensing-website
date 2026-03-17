@@ -20,15 +20,13 @@ A customized `frontend-design` skill at `.claude/skills/frontend-design/SKILL.md
 
 **Aesthetic**: "Industrial tech premium" — confident, sophisticated, trustworthy. Not generic corporate. Not startup playful.
 
-## Operating Protocol
-
-1. Manage the task brief in /plans/
-2. Read the relevant doc(s) in /docs/
-3. Update PROGRESS.md
-4. Note any open questions or content issues
-
 ---
 
-## Progress Tracking
+## Documentation
 
-Maintain `PROGRESS.md` with task status, completion dates, and open questions.
+| File | Purpose |
+|------|---------|
+| `PROGRESS.md` | Current phase, session logs, project status |
+| `.claude/rules/session-protocol.md` | Session workflow and verification rules |
+| `.claude/rules/coding-style.md` | TypeScript, React, Next.js coding patterns |
+| `.claude/rules/git-workflow.md` | Commit conventions |
