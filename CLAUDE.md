@@ -1,8 +1,8 @@
 # CLAUDE.md
 
-## What Is This
+## Project Context
 
-Corporate website for **Softgrid Sensing** — Singapore-based AI-driven Facility Operating System platform. 10,000+ lifts monitored across Singapore.
+Softgrid Sensing is a Singapore-based IoT + AI company repositioning as an **AI-Powered Facility Operating System (FOS) platform company**. The website serves customers, investors and partners.
 
 ## Tech Stack
 
@@ -11,39 +11,24 @@ Next.js (App Router) + TypeScript + Tailwind CSS → GitHub Pages (static export
 ## Commands
 
 ```bash
-npm run dev      # Development
-npm run build    # Build (static export to /out)
+pnpm dev      # Start Next.js dev server
+pnpm build    # Build (static export to /out)
 ```
-
-## Documentation
-
-Read docs in this order before coding:
-
-1. `README.md` — Project overview, structure, tech details
-2. `docs/01-company-background.md` — Company, products, positioning
-3. `docs/02-website-strategy.md` — Goals, audience, messaging
-4. `docs/03-information-architecture.md` — Site map, page layouts
-5. `docs/04-design-system.md` — Colors, typography, components **(IMPORTANT)**
-6. `docs/05-page-specs/*.md` — Detailed spec per page
-7. `docs/06-content/*.md` — Actual copy
-8. `docs/07-deployment.md` — GitHub Pages setup
-9. `docs/08-style-guide.md` — Implementation Style Guide
-
 ## Design
-
-Dark mode industrial tech. Details in `docs/04-design-system.md`.
 
 A customized `frontend-design` skill at `.claude/skills/frontend-design/SKILL.md` auto-activates for frontend work. It already incorporates our design system.
 
 **Aesthetic**: "Industrial tech premium" — confident, sophisticated, trustworthy. Not generic corporate. Not startup playful.
 
-## Build Order
+## Operating Protocol
 
-1. Shared components (Header, Footer, Button, Card)
-2. Home → Contact → About → Solutions → Products → Case Studies
+1. Manage the task brief in /plans/
+2. Read the relevant doc(s) in /docs/
+3. Update PROGRESS.md
+4. Note any open questions or content issues
 
-## Key Context
+---
 
-- **Narrative**: "The Shift" — people-driven → technology-driven operations
-- **Trust signals**: 10,000+ assets, 8 years, BCA certified, S$2.1M NRF grant
-- **Audience**: B2B enterprise (Town Councils, property managers, lift companies)
+## Progress Tracking
+
+Maintain `PROGRESS.md` with task status, completion dates, and open questions.

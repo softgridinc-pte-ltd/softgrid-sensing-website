@@ -45,17 +45,6 @@
 **Build status:** Passing (static export to `/out`)
 **Lint status:** No warnings or errors
 
-## In Progress
-
-_None_
-
-## Next Steps
-
-1. Build remaining pages per build order: Solutions → Products → Case Studies
-2. DNS configuration at Siteground
-3. Push to GitHub and enable Pages
-4. Set up analytics (GA4) if needed
-
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
