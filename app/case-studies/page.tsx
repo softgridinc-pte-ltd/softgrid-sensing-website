@@ -22,9 +22,9 @@ export default function CaseStudiesPage(): React.ReactElement {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5 mb-8">
-            <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse-slow" />
-            <span className="text-cyan-400 text-sm font-medium tracking-wide">Proven at Scale</span>
+          <div className="flex items-center gap-3.5 justify-center mb-8">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
+            <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">Proven at Scale</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
             Case Studies

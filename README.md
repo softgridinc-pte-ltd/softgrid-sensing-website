@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is the corporate website for **Softgrid Sensing**, a Singapore-based AI-driven Facility Operating System (FOS) platform company. The website serves as the company's digital presence for potential customers and investors.
+This is the corporate website for **Softgrid Sensing**, a Singapore-based AI-driven Facility Operating System (AFOS) platform company. The website serves as the company's digital presence for potential customers and investors.
 
 ## Company Quick Summary
 
@@ -10,7 +10,7 @@ This is the corporate website for **Softgrid Sensing**, a Singapore-based AI-dri
 - **Founded**: 2017, Singapore
 - **Core Business**: AI-driven Industrial IoT, Predictive Maintenance, Digital Twin
 - **Key Achievement**: 10,000+ lifts monitored across Singapore (HDB & private sector)
-- **Positioning**: AI-Driven Facility Operating System (FOS) Platform
+- **Positioning**: AI-Driven Facility Operating System (AFOS) Platform
 
 ## Tech Stack
 

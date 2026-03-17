@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowUpDown, Building2, Box, Leaf } from 'lucide-react'
+import { Activity, Building2, LayoutGrid, Satellite } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { SectionHeader } from '@/components/ui/SectionHeader'
@@ -17,32 +17,32 @@ interface Solution {
 
 const solutions: Solution[] = [
   {
-    icon: <ArrowUpDown className="w-6 h-6 text-cyan-500" />,
-    title: 'Lift Monitoring & Compliance',
+    icon: <Activity className="w-6 h-6 text-cyan-500" />,
+    title: 'Smart Vertical Transport',
     description:
-      'BCA-certified remote monitoring and predictive maintenance for lifts. From edge sensors to compliance reports.',
-    href: '/solutions/lift-monitoring',
+      'BCA-certified monitoring and predictive maintenance for lifts and escalators. Proven on 10,000+ assets.',
+    href: '/solutions/vertical-transport',
   },
   {
     icon: <Building2 className="w-6 h-6 text-cyan-500" />,
-    title: 'Smart Facility Management',
+    title: 'Smart Building Management',
     description:
-      'Unified platform for building operations\u2014work orders, asset tracking, energy monitoring, and more.',
-    href: '/solutions/facility-management',
+      'Unified, brand-agnostic monitoring and control for all your building systems \u2014 regardless of BMS vendor.',
+    href: '/solutions/building-management',
   },
   {
-    icon: <Box className="w-6 h-6 text-cyan-500" />,
-    title: 'Digital Twin & Visualization',
+    icon: <LayoutGrid className="w-6 h-6 text-cyan-500" />,
+    title: 'Smart Facility Operations',
     description:
-      'Real-time simulation and structural health monitoring for high-value infrastructure assets.',
-    href: '/solutions/digital-twin',
+      'AI-powered work orders, asset management, and knowledge base for managing agents and property companies.',
+    href: '/solutions/facility-operations',
   },
   {
-    icon: <Leaf className="w-6 h-6 text-cyan-500" />,
-    title: 'Environmental Monitoring',
+    icon: <Satellite className="w-6 h-6 text-cyan-500" />,
+    title: 'Infrastructure & Environmental',
     description:
-      'Remote sensing and AI analysis for land cover monitoring and environmental compliance.',
-    href: '/solutions/environmental-monitoring',
+      'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure.',
+    href: '/solutions/infrastructure-environmental',
   },
 ]
 

@@ -69,7 +69,7 @@ Create a strong first impression. Communicate what Softgrid does, why it matters
 **Architecture Diagram** (simplified):
 ```
 [Hardware] → [Edge Processing] → [Cloud Platform] → [Applications]
-   LMD         Local AI          FOS Engine        Dashboard
+   LMD         Local AI          AFOS Engine        Dashboard
    LBB         Resilient         Analytics         Mobile App
    Sensors     Logic             AI/ML             Alerts
 ```
@@ -178,7 +178,7 @@ Create a strong first impression. Communicate what Softgrid does, why it matters
 ## Technical Notes
 
 ### SEO
-- **Title**: `Softgrid Sensing | AI-Powered Facility Operating System`
+- **Title**: `Softgrid Sensing | AI-Driven Facility Operating System`
 - **Meta Description**: `Softgrid provides AI-driven facility operating systems for predictive maintenance, lift monitoring, and smart building management. Trusted by HDB with 10,000+ assets monitored.`
 - **H1**: The main headline in Hero section
 

@@ -1,5 +1,4 @@
-import { HardwareProductsSection } from '@/components/sections/products/HardwareProductsSection'
-import { SoftwareProductsSection } from '@/components/sections/products/SoftwareProductsSection'
+import { ProductSeriesSection } from '@/components/sections/products/ProductSeriesSection'
 import { Button } from '@/components/ui/Button'
 
 import type { Metadata } from 'next'
@@ -7,15 +6,18 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Products | Softgrid Sensing',
   description:
-    "Explore Softgrid's end-to-end product portfolio — IoT hardware and cloud software platforms for facility operations.",
+    "Explore Softgrid's AFOS product portfolio: Sense, Fusion, Orches, and Cortex — four product series powered by the AFOS platform.",
 }
 
 const integrationTags = [
-  'Midea iBuilding',
-  'Tridium Niagara',
+  'MQTT',
+  'CoAP',
+  'OPC-UA',
   'BACnet',
   'Modbus',
   'REST API',
+  'Tridium Niagara',
+  'Midea iBuilding',
 ]
 
 export default function ProductsPage(): React.ReactElement {
@@ -30,15 +32,15 @@ export default function ProductsPage(): React.ReactElement {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5 mb-8">
-            <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse-slow" />
-            <span className="text-cyan-400 text-sm font-medium tracking-wide">Product Portfolio</span>
+          <div className="flex items-center gap-3.5 justify-center mb-8">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
+            <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">Product Portfolio</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
-            End-to-End Products, Built In-House
+            End-to-End Products. Built In-House. Powered by AFOS.
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            From hardware sensors to cloud platforms &mdash; we design, develop, and deploy the full stack. No reselling. No integration patchwork.
+            From real-time monitoring to AI-powered analytics &mdash; every product is designed, developed, and deployed by our team. No reselling. No stitching together third-party tools.
           </p>
         </div>
       </section>
@@ -54,11 +56,8 @@ export default function ProductsPage(): React.ReactElement {
         </div>
       </section>
 
-      {/* Hardware Products */}
-      <HardwareProductsSection />
-
-      {/* Software Products */}
-      <SoftwareProductsSection />
+      {/* Product Series */}
+      <ProductSeriesSection />
 
       {/* Integration Note */}
       <section className="bg-navy-900 py-16 md:py-24">

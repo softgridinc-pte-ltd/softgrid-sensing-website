@@ -5,13 +5,13 @@ import {
   CalendarClock,
   Users,
   Boxes,
-  AlertTriangle,
+  MonitorSmartphone,
   ArrowRight,
   Zap,
   Gauge,
   Cpu,
   LayoutDashboard,
-  ShieldCheck,
+  Atom,
 } from 'lucide-react'
 import { useInView } from '@/hooks/useInView'
 
@@ -65,12 +65,12 @@ const shiftData: ShiftRow[] = [
   },
   {
     traditional: {
-      icon: <AlertTriangle className="w-6 h-6" />,
-      text: 'Respond after failure occurs',
+      icon: <MonitorSmartphone className="w-6 h-6" />,
+      text: 'Generic IT tools adapted for facilities',
     },
     modern: {
-      icon: <ShieldCheck className="w-6 h-6" />,
-      text: 'Prevent failures before they happen',
+      icon: <Atom className="w-6 h-6" />,
+      text: 'Purpose-built AI for facility operations',
     },
   },
 ]

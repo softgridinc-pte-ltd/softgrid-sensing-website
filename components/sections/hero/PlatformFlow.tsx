@@ -7,10 +7,10 @@ interface FlowNode {
 }
 
 const NODES: readonly FlowNode[] = [
-  { cx: 280, cy: 700, label: 'Hardware' },
-  { cx: 540, cy: 660, label: 'Edge' },
-  { cx: 900, cy: 660, label: 'Cloud' },
-  { cx: 1160, cy: 700, label: 'Applications' },
+  { cx: 280, cy: 700, label: 'Sense' },
+  { cx: 540, cy: 660, label: 'Predict' },
+  { cx: 900, cy: 660, label: 'Act' },
+  { cx: 1160, cy: 700, label: 'Learn' },
 ] as const
 
 const PATHS = [
@@ -145,44 +145,44 @@ export function PlatformFlow(): React.ReactElement {
 
               {/* Node icons (abstract geometric shapes) */}
               {i === 0 && (
-                /* Hardware — chip/sensor shape */
+                /* Sense — radio/signal waves */
                 <g opacity="0.6">
-                  <rect x={node.cx - 8} y={node.cy - 8} width="16" height="16" rx="2" fill="none" stroke="#00b4d8" strokeWidth="1" />
-                  <rect x={node.cx - 4} y={node.cy - 4} width="8" height="8" rx="1" fill="#00b4d8" opacity="0.3" />
-                  <line x1={node.cx - 12} y1={node.cy} x2={node.cx - 8} y2={node.cy} stroke="#00b4d8" strokeWidth="0.8" />
-                  <line x1={node.cx + 8} y1={node.cy} x2={node.cx + 12} y2={node.cy} stroke="#00b4d8" strokeWidth="0.8" />
-                  <line x1={node.cx} y1={node.cy - 12} x2={node.cx} y2={node.cy - 8} stroke="#00b4d8" strokeWidth="0.8" />
-                  <line x1={node.cx} y1={node.cy + 8} x2={node.cx} y2={node.cy + 12} stroke="#00b4d8" strokeWidth="0.8" />
+                  <circle cx={node.cx} cy={node.cy} r="3" fill="#00b4d8" opacity="0.4" />
+                  <path d={`M${node.cx - 7},${node.cy - 7} A10,10 0 0,1 ${node.cx + 7},${node.cy - 7}`} fill="none" stroke="#00b4d8" strokeWidth="0.8" />
+                  <path d={`M${node.cx - 11},${node.cy - 11} A16,16 0 0,1 ${node.cx + 11},${node.cy - 11}`} fill="none" stroke="#00b4d8" strokeWidth="0.8" opacity="0.5" />
                 </g>
               )}
               {i === 1 && (
-                /* Edge — processing/hexagon */
+                /* Predict — brain/neural network */
                 <g opacity="0.6">
-                  <polygon
-                    points={`${node.cx},${node.cy - 10} ${node.cx + 9},${node.cy - 5} ${node.cx + 9},${node.cy + 5} ${node.cx},${node.cy + 10} ${node.cx - 9},${node.cy + 5} ${node.cx - 9},${node.cy - 5}`}
-                    fill="#00b4d8"
-                    opacity="0.15"
-                    stroke="#00b4d8"
-                    strokeWidth="0.8"
-                  />
-                  <circle cx={node.cx} cy={node.cy} r="3" fill="#00b4d8" opacity="0.4" />
+                  <circle cx={node.cx - 6} cy={node.cy - 5} r="2.5" fill="#00b4d8" opacity="0.2" stroke="#00b4d8" strokeWidth="0.8" />
+                  <circle cx={node.cx + 6} cy={node.cy - 5} r="2.5" fill="#00b4d8" opacity="0.2" stroke="#00b4d8" strokeWidth="0.8" />
+                  <circle cx={node.cx} cy={node.cy + 6} r="2.5" fill="#00b4d8" opacity="0.2" stroke="#00b4d8" strokeWidth="0.8" />
+                  <circle cx={node.cx} cy={node.cy - 1} r="3" fill="#00b4d8" opacity="0.35" />
+                  <line x1={node.cx - 4} y1={node.cy - 4} x2={node.cx - 1} y2={node.cy - 1} stroke="#00b4d8" strokeWidth="0.8" />
+                  <line x1={node.cx + 4} y1={node.cy - 4} x2={node.cx + 1} y2={node.cy - 1} stroke="#00b4d8" strokeWidth="0.8" />
+                  <line x1={node.cx} y1={node.cy + 2} x2={node.cx} y2={node.cy + 4} stroke="#00b4d8" strokeWidth="0.8" />
                 </g>
               )}
               {i === 2 && (
-                /* Cloud — simplified cloud shape */
+                /* Act — lightning bolt / zap */
                 <g opacity="0.6">
-                  <circle cx={node.cx - 4} cy={node.cy + 1} r="6" fill="#00b4d8" opacity="0.15" stroke="#00b4d8" strokeWidth="0.8" />
-                  <circle cx={node.cx + 4} cy={node.cy + 1} r="6" fill="#00b4d8" opacity="0.15" stroke="#00b4d8" strokeWidth="0.8" />
-                  <circle cx={node.cx} cy={node.cy - 4} r="5" fill="#00b4d8" opacity="0.15" stroke="#00b4d8" strokeWidth="0.8" />
+                  <polygon
+                    points={`${node.cx - 2},${node.cy - 10} ${node.cx + 6},${node.cy - 10} ${node.cx + 1},${node.cy - 1} ${node.cx + 5},${node.cy - 1} ${node.cx - 3},${node.cy + 10} ${node.cx},${node.cy + 1} ${node.cx - 4},${node.cy + 1}`}
+                    fill="#00b4d8"
+                    opacity="0.25"
+                    stroke="#00b4d8"
+                    strokeWidth="0.8"
+                  />
                 </g>
               )}
               {i === 3 && (
-                /* Applications — grid of 4 squares */
+                /* Learn — circular arrows / feedback loop */
                 <g opacity="0.6">
-                  <rect x={node.cx - 9} y={node.cy - 9} width="7" height="7" rx="1.5" fill="#00b4d8" opacity="0.25" stroke="#00b4d8" strokeWidth="0.8" />
-                  <rect x={node.cx + 2} y={node.cy - 9} width="7" height="7" rx="1.5" fill="#00b4d8" opacity="0.25" stroke="#00b4d8" strokeWidth="0.8" />
-                  <rect x={node.cx - 9} y={node.cy + 2} width="7" height="7" rx="1.5" fill="#00b4d8" opacity="0.25" stroke="#00b4d8" strokeWidth="0.8" />
-                  <rect x={node.cx + 2} y={node.cy + 2} width="7" height="7" rx="1.5" fill="#00b4d8" opacity="0.25" stroke="#00b4d8" strokeWidth="0.8" />
+                  <path d={`M${node.cx + 8},${node.cy - 3} A9,9 0 1,0 ${node.cx + 3},${node.cy + 8}`} fill="none" stroke="#00b4d8" strokeWidth="1" />
+                  <polygon points={`${node.cx + 3},${node.cy + 5} ${node.cx + 6},${node.cy + 9} ${node.cx},${node.cy + 9}`} fill="#00b4d8" opacity="0.5" />
+                  <path d={`M${node.cx - 8},${node.cy + 3} A9,9 0 1,0 ${node.cx - 3},${node.cy - 8}`} fill="none" stroke="#00b4d8" strokeWidth="1" />
+                  <polygon points={`${node.cx - 3},${node.cy - 5} ${node.cx - 6},${node.cy - 9} ${node.cx},${node.cy - 9}`} fill="#00b4d8" opacity="0.5" />
                 </g>
               )}
 

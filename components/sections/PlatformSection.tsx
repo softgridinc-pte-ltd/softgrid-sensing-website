@@ -1,12 +1,11 @@
 'use client'
 
 import {
-  Server,
-  Cpu,
-  Cloud,
-  MonitorSmartphone,
-  Database,
+  Radio,
   BrainCircuit,
+  Zap,
+  RefreshCw,
+  Database,
   Workflow,
   Box,
   ChevronRight,
@@ -16,28 +15,28 @@ import { useInView } from '@/hooks/useInView'
 
 const architectureLayers = [
   {
-    icon: <Server className="w-6 h-6 text-cyan-500" />,
-    title: 'Hardware',
-    subtitle: 'Sensors & Edge Devices',
-    items: ['LMD Series', 'LBB', 'Sensors'],
+    icon: <Radio className="w-6 h-6 text-cyan-500" />,
+    title: 'Sense',
+    subtitle: 'Collect & Connect',
+    items: ['IoT Sensors', 'Edge Devices', 'Multi-Protocol'],
   },
   {
-    icon: <Cpu className="w-6 h-6 text-cyan-500" />,
-    title: 'Edge',
-    subtitle: 'Local Processing',
-    items: ['Local AI', 'Resilient Logic', 'Connectivity'],
+    icon: <BrainCircuit className="w-6 h-6 text-cyan-500" />,
+    title: 'Predict',
+    subtitle: 'Analyze & Foresee',
+    items: ['Anomaly Detection', 'Fault Prediction', 'AI/ML'],
   },
   {
-    icon: <Cloud className="w-6 h-6 text-cyan-500" />,
-    title: 'Cloud',
-    subtitle: 'FOS Engine & Analytics',
-    items: ['Analytics', 'AI/ML', 'Storage'],
+    icon: <Zap className="w-6 h-6 text-cyan-500" />,
+    title: 'Act',
+    subtitle: 'Automate & Execute',
+    items: ['Work Orders', 'Dispatch', 'Alerts'],
   },
   {
-    icon: <MonitorSmartphone className="w-6 h-6 text-cyan-500" />,
-    title: 'Applications',
-    subtitle: 'Dashboard & Mobile',
-    items: ['Dashboard', 'Mobile App', 'Alerts'],
+    icon: <RefreshCw className="w-6 h-6 text-cyan-500" />,
+    title: 'Learn',
+    subtitle: 'Improve & Evolve',
+    items: ['Feedback Loop', 'Model Training', 'Optimization'],
   },
 ]
 

@@ -7,13 +7,15 @@
 │  Logo    Home   Solutions ▼   Products ▼   Case Studies   About   Contact  │
 └─────────────────────────────────────────────────────────────────────────┘
                                   │              │
-                                  │              ├── Hardware
-                                  │              └── Software
+                                  │              ├── AFOS Sense
+                                  │              ├── AFOS Fusion
+                                  │              ├── AFOS Orches
+                                  │              └── AFOS Cortex
                                   │
-                                  ├── Lift Monitoring & Compliance
-                                  ├── Smart Facility Management
-                                  ├── Digital Twin & Visualization
-                                  └── Environmental Monitoring (optional)
+                                  ├── Smart Vertical Transport
+                                  ├── Smart Building Management
+                                  ├── Smart Facility Operations
+                                  └── Infrastructure & Environmental
 ```
 
 ## Page Hierarchy
@@ -21,20 +23,15 @@
 ```
 /                                   # Home
 ├── /solutions                      # Solutions overview
-│   ├── /solutions/lift-monitoring  # Vertical Transport
-│   ├── /solutions/facility-management  # Smart FM
-│   ├── /solutions/digital-twin     # Digital Twin
-│   └── /solutions/environmental-monitoring  # Remote Sensing (optional)
+│   ├── /solutions/vertical-transport       # Smart Vertical Transport
+│   ├── /solutions/building-management      # Smart Building Management
+│   ├── /solutions/facility-operations      # Smart Facility Operations
+│   └── /solutions/infrastructure-environmental  # Infrastructure & Environmental
 ├── /products                       # Products overview
-│   ├── /products/hardware          # Hardware products
-│   │   ├── /products/hardware/lmd  # LMD Series (optional deep page)
-│   │   └── /products/hardware/lbb  # LBB (optional deep page)
-│   └── /products/software          # Software products
-│       ├── /products/software/ltms # LTMS (optional deep page)
-│       ├── /products/software/rmd  # RM&D System
-│       ├── /products/software/iris # IRIS
-│       ├── /products/software/cloud-bms  # Cloud BMS
-│       └── /products/software/digital-twin  # Digital Twin Platform
+│   ├── /products/sense             # AFOS Sense (Edge Devices)
+│   ├── /products/fusion            # AFOS Fusion (Monitoring & Diagnostics)
+│   ├── /products/orches            # AFOS Orches (Operations & Maintenance)
+│   └── /products/cortex            # AFOS Cortex (Data & Intelligence)
 ├── /case-studies                   # Case Studies overview
 │   ├── /case-studies/hdb           # HDB case study
 │   └── /case-studies/chevalier     # Chevalier case study
@@ -63,7 +60,7 @@
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                         HERO SECTION                                    │
-│         "The AI-Powered Platform for Facility Operations"              │
+│         "The AI-Driven Platform for Facility Operations"              │
 │                    [Contact Us]  [Learn More]                          │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -86,7 +83,7 @@
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                     SOLUTIONS PREVIEW                                   │
-│   [Lift Monitoring]  [Facility Mgmt]  [Digital Twin]  [Remote Sensing]  │
+│   [Vertical Transport]  [Building Mgmt]  [Facility Ops]  [Infrastructure]  │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
@@ -109,20 +106,19 @@
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                         HERO                                            │
-│                    "Solutions by Domain"                                │
+│              "Solutions Built for How You Operate"                      │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
+│   ┌─────────────────────────────────────────────────────────────┐        │
+│   │              Smart Vertical Transport (featured)            │        │
+│   │                      [Learn More]                           │        │
+│   └─────────────────────────────────────────────────────────────┘        │
+│                                                                         │
 │   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐        │
-│   │ Lift Monitoring │  │    Facility     │  │  Digital Twin   │        │
-│   │  & Compliance   │  │   Management    │  │ & Visualization │        │
-│   │                 │  │                 │  │                 │        │
+│   │    Building     │  │    Facility     │  │ Infrastructure  │        │
+│   │   Management    │  │   Operations    │  │ & Environmental │        │
 │   │  [Learn More]   │  │  [Learn More]   │  │  [Learn More]   │        │
 │   └─────────────────┘  └─────────────────┘  └─────────────────┘        │
-│                                                                         │
-│   ┌─────────────────┐                                                   │
-│   │  Environmental  │   (optional, can be removed)                      │
-│   │   Monitoring    │                                                   │
-│   └─────────────────┘                                                   │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
@@ -169,22 +165,21 @@ Each solution page follows this template:
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                         HERO                                            │
-│                  "End-to-End Product Portfolio"                         │
+│         "End-to-End Products. Built In-House. Powered by AFOS."         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
-│                        HARDWARE                                         │
+│              Four Product Series. One Platform.                         │
+│                                                                         │
 │   ┌─────────────────┐  ┌─────────────────┐                             │
-│   │   LMD Series    │  │      LBB        │                             │
-│   │   [Details]     │  │   [Details]     │                             │
+│   │   AFOS Sense    │  │  AFOS Fusion    │                             │
+│   │  Edge Devices   │  │  Monitoring &   │                             │
+│   │ LMD · LBB · EMD │  │  Diagnostics    │                             │
 │   └─────────────────┘  └─────────────────┘                             │
-│                                                                         │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│                        SOFTWARE                                         │
-│   ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐                   │
-│   │ LTMS  │ │ RM&D  │ │ IRIS  │ │Cloud  │ │Digital│                   │
-│   │       │ │       │ │       │ │ BMS   │ │ Twin  │                   │
-│   └───────┘ └───────┘ └───────┘ └───────┘ └───────┘                   │
+│   ┌─────────────────┐  ┌─────────────────┐                             │
+│   │  AFOS Orches    │  │  AFOS Cortex    │                             │
+│   │  Operations &   │  │  Data &         │                             │
+│   │  Maintenance    │  │  Intelligence   │                             │
+│   └─────────────────┘  └─────────────────┘                             │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
@@ -198,7 +193,7 @@ Each solution page follows this template:
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                      COMPANY STORY                                      │
-│         From lift monitoring (2017) to AI-driven FOS platform          │
+│         From lift monitoring (2017) to AI-driven AFOS platform          │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
@@ -256,9 +251,10 @@ Each solution page follows this template:
 │                                                                         │
 │   Solutions          Products          Company          Contact         │
 │   ─────────          ────────          ───────          ───────         │
-│   Lift Monitoring    Hardware          About            Address         │
-│   Facility Mgmt      Software          Case Studies     Email           │
-│   Digital Twin                         Contact          Phone           │
+│   Vertical Transport AFOS Sense        About            Address         │
+│   Building Mgmt      AFOS Fusion       Case Studies     Email           │
+│   Facility Ops       AFOS Orches       Contact          Phone           │
+│   Infrastructure     AFOS Cortex                                        │
 │                                                                         │
 │   ─────────────────────────────────────────────────────────────────     │
 │                                                                         │
@@ -280,12 +276,15 @@ When opened:
 ┌─────────────────────────────────────┐
 │  Home                               │
 │  Solutions                      ▼   │
-│    └─ Lift Monitoring               │
-│    └─ Facility Management           │
-│    └─ Digital Twin                  │
+│    └─ Vertical Transport            │
+│    └─ Building Management           │
+│    └─ Facility Operations           │
+│    └─ Infrastructure & Env.         │
 │  Products                       ▼   │
-│    └─ Hardware                      │
-│    └─ Software                      │
+│    └─ AFOS Sense                    │
+│    └─ AFOS Fusion                   │
+│    └─ AFOS Orches                   │
+│    └─ AFOS Cortex                   │
 │  Case Studies                       │
 │  About                              │
 │  Contact                            │

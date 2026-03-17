@@ -48,31 +48,31 @@ export function HeroSection(): React.ReactElement {
       {/* Layer 10: Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center -mt-12">
         {/* Tagline */}
-        <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5 mb-8">
-          <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse-slow" />
-          <span className="text-cyan-400 text-sm font-medium tracking-wide">
+        <div className="flex items-center gap-3.5 justify-center mb-8">
+          <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
+          <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">
             AI-Driven Facility Operating System
           </span>
         </div>
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 max-w-5xl mx-auto">
-          The Platform That Transforms Your{' '}
-          <span className="text-gradient">Facility Operations</span>
+          Smarter Buildings. Predictive Maintenance.{' '}
+          <span className="text-gradient">One Platform.</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          One intelligent platform for predictive maintenance, real-time control, and operational excellence.
+          Softgrid AFOS connects your assets, predicts equipment failures, and automates facility operations &mdash; from sensor to insight, in one platform.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
-            Contact Us
+          <Button href="/solutions" variant="primary" className="min-w-[160px]">
+            Explore Solutions
           </Button>
-          <Button href="#platform" variant="secondary" className="min-w-[160px]">
-            Learn More
+          <Button href="/contact" variant="secondary" className="min-w-[160px]">
+            Book a Demo
           </Button>
         </div>
 

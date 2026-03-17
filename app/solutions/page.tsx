@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Solutions | Softgrid Sensing',
   description:
-    "Explore Softgrid's AI-powered solutions for lift monitoring, facility management, digital twin, and environmental monitoring.",
+    'Facility solutions for lift operators, building owners, and managing agents. BCA certified, AI-powered, proven at scale across Singapore.',
 }
 
 export default function SolutionsPage(): React.ReactElement {
@@ -21,15 +21,15 @@ export default function SolutionsPage(): React.ReactElement {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5 mb-8">
-            <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse-slow" />
-            <span className="text-cyan-400 text-sm font-medium tracking-wide">Domain Expertise</span>
+          <div className="flex items-center gap-3.5 justify-center mb-8">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
+            <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">Solutions</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
-            Solutions Built for Your Industry
+            Solutions Built for How You Operate
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Whether you manage lifts, buildings, or infrastructure &mdash; we have a solution designed for your operations and proven at scale.
+            Whether you manage lifts, buildings, or entire facility portfolios &mdash; we have a proven solution that fits your needs.
           </p>
         </div>
       </section>

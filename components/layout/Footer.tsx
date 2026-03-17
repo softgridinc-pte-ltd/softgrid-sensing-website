@@ -10,16 +10,19 @@ const footerColumns: FooterColumn[] = [
   {
     title: 'Solutions',
     links: [
-      { label: 'Lift Monitoring', href: '/solutions/lift-monitoring' },
-      { label: 'Facility Management', href: '/solutions/facility-management' },
-      { label: 'Digital Twin', href: '/solutions/digital-twin' },
+      { label: 'Vertical Transport', href: '/solutions/vertical-transport' },
+      { label: 'Building Management', href: '/solutions/building-management' },
+      { label: 'Facility Operations', href: '/solutions/facility-operations' },
+      { label: 'Infrastructure & Environmental', href: '/solutions/infrastructure-environmental' },
     ],
   },
   {
     title: 'Products',
     links: [
-      { label: 'Hardware', href: '/products/hardware' },
-      { label: 'Software', href: '/products/software' },
+      { label: 'AFOS Sense', href: '/products/sense' },
+      { label: 'AFOS Fusion', href: '/products/fusion' },
+      { label: 'AFOS Orches', href: '/products/orches' },
+      { label: 'AFOS Cortex', href: '/products/cortex' },
     ],
   },
   {

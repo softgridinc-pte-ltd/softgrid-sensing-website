@@ -40,7 +40,7 @@
 ### Three-Layer Messaging
 
 **Layer 1 — Atmosphere (Hero)**
-> "The AI-Powered Platform for Facility Operations"
+> "The AI-Driven Platform for Facility Operations"
 
 Creates first impression. Big, confident statement about what we are.
 

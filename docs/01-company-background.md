@@ -39,7 +39,7 @@ Softgrid (Holding)
 
 ### New Positioning (V2)
 
-**"AI-Driven Facility Operating System (FOS) Platform Company"**
+**"AI-Driven Facility Operating System (AFOS) Platform Company"**
 
 The key insight: Lift monitoring is just ONE vertical module on the platform. The platform itself is the real product.
 

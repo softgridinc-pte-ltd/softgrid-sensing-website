@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Activity, Building2, Box, Satellite } from 'lucide-react'
+import { Activity, Building2, LayoutGrid, Satellite } from 'lucide-react'
 import { useInView } from '@/hooks/useInView'
 
 interface SolutionCard {
@@ -15,37 +15,37 @@ interface SolutionCard {
 
 const solutions: SolutionCard[] = [
   {
-    title: 'Lift Monitoring & Compliance',
+    title: 'Smart Vertical Transport',
     description:
-      'BCA-certified remote monitoring, predictive maintenance, and automated compliance reporting for vertical transport — proven across 10,000+ lifts in Singapore.',
-    audience: 'For lift companies, town councils & property managers',
+      'BCA-certified monitoring and predictive maintenance for lifts and escalators. From real-time status to AI-driven fault prediction \u2014 proven on 10,000+ assets.',
+    audience: 'For lift companies, Town Councils & transport authorities',
     icon: <Activity className="w-6 h-6 text-cyan-500" />,
-    href: '/solutions/lift-monitoring',
+    href: '/solutions/vertical-transport',
     featured: true,
   },
   {
-    title: 'Smart Facility Management',
+    title: 'Smart Building Management',
     description:
-      'Unified platform for building operations — from automated work orders to asset tracking to energy monitoring.',
-    audience: 'For managing agents & property companies',
+      'Unified, brand-agnostic monitoring and control for all your building systems. One dashboard for HVAC, energy, fire, lighting \u2014 regardless of BMS vendor.',
+    audience: 'For building owners & facility managers',
     icon: <Building2 className="w-6 h-6 text-cyan-500" />,
-    href: '/solutions/facility-management',
+    href: '/solutions/building-management',
   },
   {
-    title: 'Digital Twin & Visualization',
+    title: 'Smart Facility Operations',
     description:
-      'Real-time 3D simulation and structural health monitoring for high-value infrastructure and assets.',
-    audience: 'For engineering firms & asset owners',
-    icon: <Box className="w-6 h-6 text-cyan-500" />,
-    href: '/solutions/digital-twin',
+      'Transform your operations from paper-based and reactive to digital and predictive. AI-powered work orders, asset management, and knowledge at your fingertips.',
+    audience: 'For managing agents & property management companies',
+    icon: <LayoutGrid className="w-6 h-6 text-cyan-500" />,
+    href: '/solutions/facility-operations',
   },
   {
-    title: 'Environmental Monitoring',
+    title: 'Infrastructure & Environmental',
     description:
-      'Remote sensing and AI-powered analysis for land cover monitoring, change detection, and environmental compliance.',
-    audience: 'For government agencies',
+      'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure \u2014 the same platform, at planetary scale.',
+    audience: 'For government agencies & large-scale asset operators',
     icon: <Satellite className="w-6 h-6 text-cyan-500" />,
-    href: '/solutions/environmental-monitoring',
+    href: '/solutions/infrastructure-environmental',
   },
 ]
 

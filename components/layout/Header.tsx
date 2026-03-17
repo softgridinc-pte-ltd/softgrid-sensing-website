@@ -14,22 +14,25 @@ interface NavItem {
 }
 
 const navigation: NavItem[] = [
-  { label: 'Home', href: '/' },
+  { label: 'Platform', href: '/platform' },
   {
     label: 'Solutions',
     href: '/solutions',
     children: [
-      { label: 'Lift Monitoring & Compliance', href: '/solutions/lift-monitoring' },
-      { label: 'Smart Facility Management', href: '/solutions/facility-management' },
-      { label: 'Digital Twin & Visualization', href: '/solutions/digital-twin' },
+      { label: 'Smart Vertical Transport', href: '/solutions/vertical-transport' },
+      { label: 'Smart Building Management', href: '/solutions/building-management' },
+      { label: 'Smart Facility Operations', href: '/solutions/facility-operations' },
+      { label: 'Infrastructure & Environmental', href: '/solutions/infrastructure-environmental' },
     ],
   },
   {
     label: 'Products',
     href: '/products',
     children: [
-      { label: 'Hardware', href: '/products/hardware' },
-      { label: 'Software', href: '/products/software' },
+      { label: 'AFOS Sense', href: '/products/sense' },
+      { label: 'AFOS Fusion', href: '/products/fusion' },
+      { label: 'AFOS Orches', href: '/products/orches' },
+      { label: 'AFOS Cortex', href: '/products/cortex' },
     ],
   },
   { label: 'Case Studies', href: '/case-studies' },
@@ -125,7 +128,7 @@ export function Header(): React.ReactElement {
               {/* Desktop Dropdown */}
               {item.children && openDropdown === item.label && (
                 <div className="absolute top-full left-0 pt-1">
-                  <div className="bg-navy-800 border border-navy-700 rounded-lg py-2 min-w-[240px] shadow-xl">
+                  <div className="bg-navy-800 border border-navy-700 rounded-lg py-2 min-w-[280px] shadow-xl">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}

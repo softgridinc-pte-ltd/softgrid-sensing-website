@@ -53,7 +53,7 @@ Build trust and credibility. Show that Softgrid is a real company with history, 
 | Q3 2024 | Expanded to facility management and digital twin                                                                                                       |
 | Q4 2024 | Softgrid Fusion LTMS successfully conducted trial with HDB                                                                                             |
 | 2025    | Reached 10,000+ lifts milestone                                                                                                                        |
-| Q4 2025 | Launched AI-driven Facility Operating System (FOS): Unified platform for building management, remote sensing, predictive maintenance, and digital twin |
+| Q4 2025 | Launched AI-driven Facility Operating System (AFOS): Unified platform for building management, remote sensing, predictive maintenance, and digital twin |
 
 **Narrative Version** (alternative):
 

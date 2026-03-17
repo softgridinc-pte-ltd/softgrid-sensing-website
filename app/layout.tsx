@@ -18,11 +18,11 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Softgrid Sensing | AI-Powered Facility Operating System',
+  title: 'Softgrid Sensing | AI-Driven Facility Operating System',
   description:
     'Softgrid provides AI-driven facility operating systems for predictive maintenance, lift monitoring, and smart building management. Trusted by HDB with 10,000+ assets monitored in Singapore.',
   openGraph: {
-    title: 'Softgrid Sensing | AI-Powered Facility Operating System',
+    title: 'Softgrid Sensing | AI-Driven Facility Operating System',
     description:
       'One intelligent platform for predictive maintenance, real-time control, and operational excellence. From lift monitoring to building management.',
     type: 'website',

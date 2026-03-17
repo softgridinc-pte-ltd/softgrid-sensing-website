@@ -45,7 +45,7 @@ Facility operations are changing. Are you ready?
 
 | Traditional Approach                              | The Softgrid Way                                  |
 | ------------------------------------------------- | ------------------------------------------------- |
-| Reactive maintenance—fix when broken              | Predictive maintenance—know before it fails       |
+| Reactive maintenance—fix when broken              | Predictive maintenance — know before it fails       |
 | Monthly routine inspections                       | Condition-based intervention                      |
 | People running processes, supported by technology | Technology running processes, supported by people |
 | Siloed systems for each equipment type            | One unified platform for all assets               |
@@ -71,7 +71,7 @@ From hardware sensors to cloud analytics to mobile apps—fully integrated.
 
 - Hardware Layer: `Sensors & Edge Devices`
 - Edge Layer: `Local Processing & Connectivity`
-- Cloud Layer: `FOS Engine & Analytics`
+- Cloud Layer: `AFOS Engine & Analytics`
 - Patform Layer: `Dashboard & Mobile`
 
 **Capability Cards**:
@@ -249,7 +249,7 @@ Contact:
 **Page Title**:
 
 ```
-Softgrid Sensing | AI-Powered Facility Operating System
+Softgrid Sensing | AI-Driven Facility Operating System
 ```
 
 **Meta Description**:
@@ -261,7 +261,7 @@ Softgrid provides AI-driven facility operating systems for predictive maintenanc
 **Open Graph Title**:
 
 ```
-Softgrid Sensing | AI-Powered Facility Operating System
+Softgrid Sensing | AI-Driven Facility Operating System
 ```
 
 **Open Graph Description**:
