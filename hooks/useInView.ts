@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from 'react'
 interface UseInViewOptions {
   threshold?: number
   triggerOnce?: boolean
+  rootMargin?: string
 }
 
-export function useInView({ threshold = 0.1, triggerOnce = true }: UseInViewOptions = {}): {
+export function useInView({ threshold = 0.1, triggerOnce = true, rootMargin }: UseInViewOptions = {}): {
   ref: React.RefObject<HTMLDivElement>
   isInView: boolean
 } {
@@ -27,12 +28,12 @@ export function useInView({ threshold = 0.1, triggerOnce = true }: UseInViewOpti
           setIsInView(false)
         }
       },
-      { threshold }
+      { threshold, rootMargin }
     )
 
     observer.observe(element)
     return () => observer.disconnect()
-  }, [threshold, triggerOnce])
+  }, [threshold, triggerOnce, rootMargin])
 
   return { ref, isInView }
 }

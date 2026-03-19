@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Cpu, Radio, Wrench, Brain } from 'lucide-react'
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface ProductSeries {
   icon: React.ReactNode
@@ -53,11 +53,11 @@ const productSeries: ProductSeries[] = [
 ]
 
 export function ProductSeriesSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { containerRef, getItemProps } = useScrollRevealGroup()
 
   return (
     <section className="bg-navy-900 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section label */}
         <div className="flex items-center gap-4 mb-4">
           <span className="text-cyan-400 text-sm font-semibold uppercase tracking-[0.2em]">
@@ -78,10 +78,8 @@ export function ProductSeriesSection(): React.ReactElement {
           {productSeries.map((series, i) => (
             <div
               key={series.name}
-              className={`group bg-navy-800 border border-navy-700 rounded-xl p-8 transition-all duration-300 hover:border-cyan-500/50 hover:scale-[1.01] ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className={`group bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/50 hover:scale-[1.01] ${getItemProps(i).className}`}
+              style={getItemProps(i).style}
             >
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">

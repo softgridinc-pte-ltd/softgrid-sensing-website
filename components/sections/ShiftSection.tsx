@@ -13,7 +13,7 @@ import {
   LayoutDashboard,
   Atom,
 } from 'lucide-react'
-import { useInView } from '@/hooks/useInView'
+import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
 
 import type { ReactNode } from 'react'
 
@@ -76,8 +76,6 @@ const shiftData: ShiftRow[] = [
 ]
 
 export function ShiftSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.15 })
-
   return (
     <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
       {/* Background: subtle left-to-right gradient overlay */}
@@ -91,7 +89,7 @@ export function ShiftSection(): React.ReactElement {
         style={{ background: 'radial-gradient(circle, rgba(0,180,216,0.06) 0%, transparent 70%)' }}
       />
 
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-14 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
             The Shift
@@ -121,14 +119,9 @@ export function ShiftSection(): React.ReactElement {
           {/* Rows */}
           <div className="space-y-5">
             {shiftData.map((row, i) => (
+              <ScrollRevealItem key={i}>
               <div
-                key={i}
-                className={`grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-5 items-center transition-all duration-500 ${
-                  isInView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-4'
-                }`}
-                style={{ transitionDelay: `${i * 100}ms` }}
+                className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-5 items-center"
               >
                 {/* Traditional */}
                 <div className="flex items-center gap-4 bg-navy-900/80 rounded-lg px-5 py-5 border border-red-900/20 shadow-[inset_0_1px_3px_rgba(0,0,0,0.3)] transition-all duration-300 hover:brightness-110 hover:border-red-900/30">
@@ -150,6 +143,7 @@ export function ShiftSection(): React.ReactElement {
                   <span className="text-slate-100 text-base">{row.modern.text}</span>
                 </div>
               </div>
+              </ScrollRevealItem>
             ))}
           </div>
         </div>

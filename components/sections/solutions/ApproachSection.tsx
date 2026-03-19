@@ -1,6 +1,6 @@
 'use client'
 
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface ApproachStep {
   title: string
@@ -18,11 +18,11 @@ export function ApproachSection({
   subtitle,
   steps,
 }: ApproachSectionProps): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { containerRef, getItemProps } = useScrollRevealGroup()
 
   return (
-    <section className="bg-navy-900 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+    <section ref={containerRef} className="bg-navy-900 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-[3px] text-cyan-400">{title}</span>
           {subtitle && <p className="text-lg text-slate-400 mt-3 max-w-2xl mx-auto">{subtitle}</p>}
@@ -32,10 +32,8 @@ export function ApproachSection({
           {steps.map((step, i) => (
             <div
               key={step.title}
-              className={`relative bg-navy-800 border border-navy-700 rounded-xl p-6 transition-all duration-300 hover:border-cyan-500/50 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className={`relative bg-navy-800 border border-navy-700 rounded-xl p-6 hover:border-cyan-500/50 ${getItemProps(i).className}`}
+              style={getItemProps(i).style}
             >
               <div className="w-8 h-8 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-cyan-400 text-sm font-bold">{i + 1}</span>

@@ -1,7 +1,7 @@
 'use client'
 
 import { Building2, Landmark, Wrench, TreePine, Building, HardHat } from 'lucide-react'
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 const industries = [
   { icon: <Building2 className="w-8 h-8 text-cyan-500" />, label: 'Public Housing' },
@@ -13,7 +13,7 @@ const industries = [
 ]
 
 export function IndustriesSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.15 })
+  const { containerRef, getItemProps } = useScrollRevealGroup()
 
   return (
     <section className="bg-navy-900 py-16 md:py-24">
@@ -22,14 +22,12 @@ export function IndustriesSection(): React.ReactElement {
           Industries We Serve
         </h2>
 
-        <div ref={ref} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div ref={containerRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
           {industries.map((item, i) => (
             <div
               key={item.label}
-              className={`flex flex-col items-center text-center transition-all duration-500 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              className={`flex flex-col items-center text-center ${getItemProps(i).className}`}
+              style={getItemProps(i).style}
             >
               <div className="mb-3">{item.icon}</div>
               <span className="text-sm text-slate-400">{item.label}</span>

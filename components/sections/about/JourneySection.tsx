@@ -1,6 +1,6 @@
 'use client'
 
-import { useInView } from '@/hooks/useInView'
+import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
 
 interface Milestone {
   year: string
@@ -24,13 +24,11 @@ const milestones: Milestone[] = [
 ]
 
 export function JourneySection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
-
   return (
     <section className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      <div ref={ref} className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Journey</h2>
           <p className="text-lg text-cyan-400 max-w-2xl mx-auto">
@@ -50,12 +48,9 @@ export function JourneySection(): React.ReactElement {
               const isLeft = i % 2 === 0
 
               return (
-                <div
+                <ScrollRevealItem
                   key={`${milestone.year}-${milestone.title.slice(0, 20)}`}
-                  className={`relative transition-all duration-500 ${
-                    isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-                  }`}
-                  style={{ transitionDelay: `${i * 80}ms` }}
+                  className="relative"
                 >
                   {/* Mobile layout */}
                   <div className="md:hidden flex items-start gap-4 pl-0">
@@ -94,7 +89,7 @@ export function JourneySection(): React.ReactElement {
                       <div className="w-2 h-2 bg-cyan-400 rounded-full timeline-dot" />
                     </div>
                   </div>
-                </div>
+                </ScrollRevealItem>
               )
             })}
           </div>

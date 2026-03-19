@@ -4,7 +4,7 @@ import { Activity, Building2, LayoutGrid, Satellite } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 import type { ReactNode } from 'react'
 
@@ -47,11 +47,11 @@ const solutions: Solution[] = [
 ]
 
 export function SolutionsSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { containerRef, getItemProps } = useScrollRevealGroup()
 
   return (
     <section className="bg-navy-900 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
         <SectionHeader
           title="Solutions for Every Domain"
           subtitle="Deep expertise across vertical transport, facilities, and infrastructure."
@@ -61,10 +61,8 @@ export function SolutionsSection(): React.ReactElement {
           {solutions.map((solution, i) => (
             <div
               key={solution.title}
-              className={`h-full transition-all duration-500 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className={`h-full ${getItemProps(i).className}`}
+              style={getItemProps(i).style}
             >
               <Card className="p-6 md:p-8 h-full flex flex-col">
                 <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">

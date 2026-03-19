@@ -2,7 +2,7 @@
 
 import { Radio, BrainCircuit, Workflow, Database, ArrowRight, ArrowDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 import type { ReactNode } from 'react'
 
@@ -20,13 +20,13 @@ const engines: Engine[] = [
 ]
 
 export function PlatformSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { containerRef, getItemProps } = useScrollRevealGroup()
 
   return (
     <section id="platform" className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      <div ref={ref} className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
+      <div ref={containerRef} className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -42,10 +42,8 @@ export function PlatformSection(): React.ReactElement {
 
           {/* Layer 4: Solutions (top) */}
           <div
-            className={`rounded-t-xl border border-navy-700/50 bg-navy-800/30 px-6 py-5 md:px-8 md:py-6 transition-all duration-500 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '300ms' }}
+            className={`rounded-t-xl border border-navy-700/50 bg-navy-800/30 px-6 py-5 md:px-8 md:py-6 ${getItemProps(3).className}`}
+            style={getItemProps(3).style}
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div>
@@ -62,10 +60,8 @@ export function PlatformSection(): React.ReactElement {
 
           {/* Layer 3: Products */}
           <div
-            className={`border-x border-navy-700/50 bg-navy-800/50 px-6 py-5 md:px-8 md:py-6 transition-all duration-500 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '200ms' }}
+            className={`border-x border-navy-700/50 bg-navy-800/50 px-6 py-5 md:px-8 md:py-6 ${getItemProps(2).className}`}
+            style={getItemProps(2).style}
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div>
@@ -82,10 +78,8 @@ export function PlatformSection(): React.ReactElement {
 
           {/* Layer 2: Platform (the core — most prominent) */}
           <div
-            className={`border border-cyan-500/20 bg-navy-800 px-6 py-8 md:px-8 md:py-10 relative transition-all duration-500 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '100ms' }}
+            className={`border border-cyan-500/20 bg-navy-800 px-6 py-8 md:px-8 md:py-10 relative ${getItemProps(1).className}`}
+            style={getItemProps(1).style}
           >
             {/* Subtle glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/[0.03] via-cyan-500/[0.06] to-cyan-500/[0.03] pointer-events-none" />
@@ -175,10 +169,8 @@ export function PlatformSection(): React.ReactElement {
 
           {/* Layer 1: Industry (bottom — the ground) */}
           <div
-            className={`rounded-b-xl border border-navy-700/50 border-t-0 bg-navy-900 px-6 py-5 md:px-8 md:py-6 transition-all duration-500 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '0ms' }}
+            className={`rounded-b-xl border border-navy-700/50 border-t-0 bg-navy-900 px-6 py-5 md:px-8 md:py-6 ${getItemProps(0).className}`}
+            style={getItemProps(0).style}
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div>

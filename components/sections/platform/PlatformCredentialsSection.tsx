@@ -1,7 +1,7 @@
 'use client'
 
 import { Clock, Microscope, Award, Shield, Cloud, Activity, Plug } from 'lucide-react'
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface Credential {
   icon: React.ReactNode
@@ -48,11 +48,11 @@ const credentials: Credential[] = [
 ]
 
 export function PlatformCredentialsSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { containerRef, getItemProps } = useScrollRevealGroup({ staggerInterval: 80 })
 
   return (
     <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Built on Proven Technology
@@ -66,10 +66,8 @@ export function PlatformCredentialsSection(): React.ReactElement {
           {credentials.map((cred, i) => (
             <div
               key={cred.label}
-              className={`bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              className={`bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-cyan-500/50 ${getItemProps(i).className}`}
+              style={getItemProps(i).style}
             >
               <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
                 {cred.icon}

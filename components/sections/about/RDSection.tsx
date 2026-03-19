@@ -2,7 +2,7 @@
 
 import { Code2, Handshake, Award } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 import type { ReactNode } from 'react'
 
@@ -40,11 +40,11 @@ const stats = [
 ]
 
 export function RDSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { containerRef, getItemProps } = useScrollRevealGroup()
 
   return (
     <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">R&D at Our Core</h2>
           <p className="text-lg text-cyan-400 max-w-2xl mx-auto">
@@ -55,13 +55,7 @@ export function RDSection(): React.ReactElement {
         {/* Three pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
           {pillars.map((pillar, i) => (
-            <div
-              key={pillar.title}
-              className={`transition-all duration-500 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
+            <div key={pillar.title} className={getItemProps(i).className} style={getItemProps(i).style}>
               <Card className="p-8 h-full">
                 <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">
                   {pillar.icon}
@@ -75,10 +69,8 @@ export function RDSection(): React.ReactElement {
 
         {/* Stats row */}
         <div
-          className={`flex flex-col sm:flex-row items-stretch justify-center divide-y sm:divide-y-0 sm:divide-x divide-navy-700/50 bg-navy-900/50 border border-navy-700 rounded-xl transition-all duration-700 ${
-            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-          style={{ transitionDelay: '300ms' }}
+          className={`flex flex-col sm:flex-row items-stretch justify-center divide-y sm:divide-y-0 sm:divide-x divide-navy-700/50 bg-navy-900/50 border border-navy-700 rounded-xl ${getItemProps(3).className}`}
+          style={getItemProps(3).style}
         >
           {stats.map((stat) => (
             <div key={stat.label} className="flex-1 px-8 py-6 text-center">

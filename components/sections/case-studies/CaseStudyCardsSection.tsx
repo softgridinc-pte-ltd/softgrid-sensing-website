@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useInView } from '@/hooks/useInView'
+import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
 
 interface Stat {
   value: string
@@ -77,22 +77,9 @@ const caseStudies: CaseStudy[] = [
   },
 ]
 
-function CaseStudyCard({
-  study,
-  index,
-  isInView,
-}: {
-  study: CaseStudy
-  index: number
-  isInView: boolean
-}): React.ReactElement {
+function CaseStudyCard({ study }: { study: CaseStudy }): React.ReactElement {
   return (
-    <div
-      className={`group bg-navy-800 border border-navy-700 rounded-xl p-8 transition-all duration-500 hover:border-cyan-500/30 ${
-        isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
-      style={{ transitionDelay: `${index * 150}ms` }}
-    >
+    <div className="group bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/30">
       <div className="space-y-5">
         {/* Client + industry */}
         <div className="flex flex-wrap items-center gap-3">
@@ -147,19 +134,14 @@ function CaseStudyCard({
 }
 
 export function CaseStudyCardsSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
-
   return (
     <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {caseStudies.map((study, i) => (
-            <CaseStudyCard
-              key={study.client}
-              study={study}
-              index={i}
-              isInView={isInView}
-            />
+          {caseStudies.map((study) => (
+            <ScrollRevealItem key={study.client}>
+              <CaseStudyCard study={study} />
+            </ScrollRevealItem>
           ))}
         </div>
       </div>

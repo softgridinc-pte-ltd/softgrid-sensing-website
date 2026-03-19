@@ -48,7 +48,7 @@ export function HeroSection(): React.ReactElement {
       {/* Layer 10: Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center -mt-12">
         {/* Tagline */}
-        <div className="flex items-center gap-3.5 justify-center mb-8">
+        <div className="hero-entrance hero-entrance-1 flex items-center gap-3.5 justify-center mb-8">
           <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
           <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">
             AI-Driven Facility Operating System
@@ -56,18 +56,18 @@ export function HeroSection(): React.ReactElement {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 max-w-5xl mx-auto">
+        <h1 className="hero-entrance hero-entrance-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 max-w-5xl mx-auto">
           Smarter Buildings. Predictive Maintenance.{' '}
           <span className="text-gradient">One Platform.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="hero-entrance hero-entrance-3 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
           Softgrid AFOS connects your assets, predicts equipment failures, and automates facility operations &mdash; from sensor to insight, in one platform.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="hero-entrance hero-entrance-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href="/solutions" variant="primary" className="min-w-[160px]">
             Explore Solutions
           </Button>
@@ -79,7 +79,7 @@ export function HeroSection(): React.ReactElement {
       </div>
 
       {/* Scroll indicator — fixed to bottom of hero */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-cyan-400">
+      <div className="hero-entrance hero-entrance-5 absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-cyan-400">
         <span className="text-xs uppercase tracking-widest">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-cyan-400 to-transparent" />
       </div>

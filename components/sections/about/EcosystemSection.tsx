@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useInView } from '@/hooks/useInView'
+import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface Partner {
   name: string
@@ -51,11 +51,11 @@ interface EcosystemSectionProps {
 }
 
 export function EcosystemSection({ variant = 'darker' }: EcosystemSectionProps): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { containerRef, getItemProps } = useScrollRevealGroup({ staggerInterval: 120 })
 
   return (
     <section className={`${variant === 'dark' ? 'bg-navy-800' : 'bg-navy-900'} py-16 md:py-24`}>
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Part of the Ecosystem</h2>
           <p className="text-lg text-cyan-400 max-w-2xl mx-auto">
@@ -63,15 +63,9 @@ export function EcosystemSection({ variant = 'darker' }: EcosystemSectionProps):
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div ref={containerRef} className="space-y-12">
           {categories.map((category, catIdx) => (
-            <div
-              key={category.label}
-              className={`transition-all duration-500 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${catIdx * 120}ms` }}
-            >
+            <div key={category.label} className={getItemProps(catIdx).className} style={getItemProps(catIdx).style}>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-5 text-center">
                 {category.label}
               </p>
