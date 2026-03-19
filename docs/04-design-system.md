@@ -2,405 +2,297 @@
 
 ## Design Direction
 
-**Theme**: Dark mode, industrial tech aesthetic
-**Feel**: Professional, confident, technology-forward, grounded
+**Theme**: Dual-mode — dark sections (hero, platform, stats, CTA) + light sections (shift, solutions, ecosystem)
+**Feel**: Industrial tech premium — confident, sophisticated, trustworthy. Not generic corporate. Not startup playful.
+
+---
 
 ## Color Palette
 
-### Primary Colors
+### Navy (Backgrounds + Headings on Light)
 
-```css
-/* Background Colors */
---bg-primary: #0d1b2a;      /* Deep navy - main background */
---bg-secondary: #1b263b;    /* Lighter navy - cards, sections */
---bg-tertiary: #415a77;     /* Even lighter - hover states */
+| Token | Hex | Role |
+|-------|-----|------|
+| `navy-900` | `#0A1628` | Primary dark background, hero, footer; **headings on light bg** |
+| `navy-800` | `#111D35` | Alternate dark sections, cards on dark bg |
+| `navy-700` | `#162544` | Borders on dark backgrounds |
+| `navy-600` | `#1E3A5F` | Subtle borders on dark bg; **subtitles on light bg** |
 
-/* Accent Color */
---accent-primary: #00b4d8;  /* Cyan/teal - buttons, links, highlights */
---accent-secondary: #0077b6; /* Darker cyan - hover states */
---accent-tertiary: #90e0ef; /* Light cyan - subtle highlights */
+### Cyan (Brand Accent)
 
-/* Text Colors */
---text-primary: #ffffff;    /* White - headings */
---text-secondary: #e0e1dd;  /* Off-white - body text */
---text-tertiary: #778da9;   /* Muted - secondary text, captions */
+| Token | Hex | Role |
+|-------|-----|------|
+| `cyan-700` | `#005f8a` | Ghost button hover on light bg |
+| `cyan-600` | `#0077b6` | **Primary accent on light bg** — icons, links, labels, borders |
+| `cyan-500` | `#00b4d8` | **Primary accent on dark bg** — buttons, CTA bg, icons on dark |
+| `cyan-400` | `#90e0ef` | Accent text on dark bg, highlights |
+| `cyan-300` | `#48cae4` | Lighter highlights |
+| `cyan-200` | `#b8ecf4` | Card hover border on light bg |
+| `cyan-100` | `#d5f3f9` | Icon container border on light bg |
+| `cyan-50` | `#eafbfd` | Icon container bg on light bg |
 
-/* Semantic Colors */
---success: #10b981;         /* Green - success states */
---warning: #f59e0b;         /* Amber - warning states */
---error: #ef4444;           /* Red - error states */
-```
+### Gray (Light Section Backgrounds & Text)
 
-### Tailwind Config
+Uses Tailwind's built-in `slate` palette (remove custom slate overrides):
 
-```javascript
-// tailwind.config.ts
-const config = {
-  theme: {
-    extend: {
-      colors: {
-        // Backgrounds
-        'navy': {
-          900: '#0d1b2a',
-          800: '#1b263b',
-          700: '#415a77',
-          600: '#778da9',
-        },
-        // Accent
-        'cyan': {
-          400: '#90e0ef',
-          500: '#00b4d8',
-          600: '#0077b6',
-        },
-        // Text
-        'slate': {
-          100: '#e0e1dd',
-          400: '#778da9',
-        }
-      }
-    }
-  }
-}
-```
+| Token | Hex | Role |
+|-------|-----|------|
+| `slate-50` | `#f8fafc` | Light section background (alternate) |
+| `slate-100` | `#f1f5f9` | Light section background, light card bg |
+| `slate-200` | `#e2e8f0` | Card borders on light bg, dividers |
+| `slate-300` | `#cbd5e1` | Outline button border on light bg |
+| `slate-400` | `#94a3b8` | Muted text (both dark and light contexts) |
+| `slate-500` | `#64748b` | Secondary text on light bg, labels |
+| `slate-600` | `#475569` | Body text on light bg |
+| `slate-700` | `#334155` | Strong body text on light bg |
+| `slate-800` | `#1e293b` | — |
+| `slate-900` | `#0f172a` | Heading text on light bg |
+
+### Semantic Colors
+
+| Token | Hex | Role |
+|-------|-----|------|
+| `teal-600` | `#0D9488` | Secondary accent (icons) |
+| `teal-100` | `#CCFBF1` | Secondary icon bg on light |
+| `amber-500` | `#F59E0B` | Warning, accent variety |
+| `amber-100` | `#FEF3C7` | Warning bg |
+
+### Common Opacity Patterns
+
+- `bg-cyan-500/10` — icon container bg (both dark and light)
+- `border-cyan-500/20` — icon container border (both)
+- `border-cyan-500/50` — card hover border (dark sections only)
+- `bg-cyan-500/8` — glow overlays
+- `bg-navy-900/80` — header backdrop
+- `border-white/20` — outline button border (on dark bg)
+
+---
 
 ## Typography
 
 ### Font Stack
 
-```css
-/* Primary Font - Headings and UI */
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+| Role | Font | CSS Variable | Weights |
+|------|------|-------------|---------|
+| Display / Headings | Outfit | `--font-heading` | 300–800 (variable) |
+| Body | DM Sans | `--font-body` | 400–700 (variable) |
 
-/* Alternative: If you want more geometric/tech feel */
-font-family: 'DM Sans', sans-serif;
-/* or */
-font-family: 'Space Grotesk', sans-serif;
-```
+Loaded via `next/font/google` in root layout. All `h1-h6` get `font-heading` via globals.css base layer.
 
-### Font Sizes (Tailwind)
+### Text Hierarchy — Dark Sections
 
-| Element | Class | Size | Weight |
-|---------|-------|------|--------|
-| H1 (Hero) | `text-5xl md:text-6xl lg:text-7xl` | 48/60/72px | font-bold |
-| H2 (Section) | `text-3xl md:text-4xl` | 30/36px | font-bold |
-| H3 (Subsection) | `text-2xl` | 24px | font-semibold |
-| H4 (Card title) | `text-xl` | 20px | font-semibold |
-| Body | `text-base` | 16px | font-normal |
-| Body Large | `text-lg` | 18px | font-normal |
-| Small | `text-sm` | 14px | font-normal |
-| Caption | `text-xs` | 12px | font-normal |
+| Element | Classes | When to use |
+|---------|---------|-------------|
+| H1 (hero) | `text-4xl md:text-5xl lg:text-6xl font-bold text-white` | Page hero headline |
+| H2 (section) | `text-3xl md:text-4xl font-bold text-white` | Section headings |
+| H3 (card title) | `text-lg font-semibold text-white` | Card/feature titles |
+| Subtitle (section) | `text-lg text-cyan-400` | Below section H2 |
+| Subtitle (hero) | `text-lg md:text-xl text-slate-400` | Below page H1 |
+| Body (card) | `text-slate-400 leading-relaxed` | Card descriptions |
+| Label (uppercase) | `text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400` | Section divider labels |
 
-### Line Heights
+### Text Hierarchy — Light Sections
 
-```css
-/* Headings */
-line-height: 1.1;  /* tight */
+**RULE: No cyan-500 on light backgrounds.** Minimum is cyan-600 (#0077b6) for contrast/readability.
 
-/* Body */
-line-height: 1.6;  /* relaxed */
-```
+| Element | Classes | When to use |
+|---------|---------|-------------|
+| H2 (section) | `text-3xl md:text-4xl font-bold text-navy-900` | Section headings |
+| H3 (card title) | `text-lg font-semibold text-navy-900` | Card/feature titles |
+| Subtitle (section) | `text-lg text-navy-600` | Below section H2 |
+| Body (card) | `text-slate-600 leading-relaxed` | Card descriptions |
+| Body (paragraph) | `text-slate-600 leading-relaxed` | Long-form text |
+| Label (uppercase) | `text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600` | Section divider labels |
+| Accent link | `text-cyan-600 hover:text-cyan-700` | Links, ghost buttons |
+| Icons | `text-cyan-600` | Icons in cards/features |
 
-## Spacing
+### Text Hierarchy — Cyan CTA Section
 
-Use Tailwind's default spacing scale. Key values:
+| Element | Classes |
+|---------|---------|
+| H2 | `text-3xl md:text-4xl font-bold text-white` |
+| Subtitle | `text-lg text-white/80` |
 
-| Use Case | Tailwind Class | Value |
-|----------|----------------|-------|
-| Section padding (vertical) | `py-16 md:py-24` | 64px / 96px |
-| Section padding (horizontal) | `px-4 md:px-8 lg:px-16` | 16/32/64px |
-| Component gap | `gap-8` | 32px |
-| Card padding | `p-6 md:p-8` | 24/32px |
-| Text spacing | `space-y-4` | 16px |
+---
+
+## Section Backgrounds & Rhythm
+
+### Home Page Section Order
+
+| # | Section | Background | Theme |
+|---|---------|-----------|-------|
+| 1 | Hero | `navy-900` + overlays | Dark |
+| 2 | The Shift | `white` | **Light** |
+| 3 | Platform at a Glance | `navy-900` | Dark |
+| 4 | Stats | `navy-800` | Dark |
+| 5 | Solutions | `slate-50` (#f8fafc) | **Light** |
+| 6 | Ecosystem / Logos | `white` | **Light** |
+| 7 | Closing CTA | `cyan-500` (#00b4d8) | **Cyan** |
+
+### Rules
+- Dark sections: `bg-navy-900` or `bg-navy-800` (alternate)
+- Light sections: `bg-white` or `bg-slate-50` (alternate)
+- CTA sections: `bg-cyan-500` with white text
+- Never place two identical backgrounds adjacent to each other
+- Light sections provide breathing room between dark sections
+
+---
 
 ## Components
 
 ### Buttons
 
-**Primary Button**
-```jsx
-<button className="
-  bg-cyan-500 
-  hover:bg-cyan-600 
-  text-white 
-  font-semibold 
-  px-6 py-3 
-  rounded-lg 
-  transition-colors
-">
-  Contact Us
-</button>
-```
+#### Variants by Context
 
-**Secondary Button (Outline)**
-```jsx
-<button className="
-  border border-cyan-500 
-  text-cyan-500 
-  hover:bg-cyan-500 
-  hover:text-white 
-  font-semibold 
-  px-6 py-3 
-  rounded-lg 
-  transition-colors
-">
-  Learn More
-</button>
-```
+| Variant | On Dark Background | On Light Background |
+|---------|-------------------|---------------------|
+| **primary** | `bg-cyan-500 text-white` hover: `bg-cyan-600` + glow shadow `0 0 32px rgba(0,180,216,0.4)` | Same |
+| **secondary** | `border-[1.5px] border-white/20 text-white` hover: `border-white/40` | `border-[1.5px] border-slate-300 text-navy-900` hover: `border-slate-400` |
+| **ghost** | `text-cyan-400` hover: `text-cyan-300` | `text-cyan-600` hover: `text-cyan-700` |
+| **white** | `bg-white text-navy-900` hover: `shadow-lg` | n/a |
 
-**Ghost Button**
-```jsx
-<button className="
-  text-cyan-400 
-  hover:text-cyan-300 
-  font-semibold 
-  transition-colors
-">
-  View Details →
-</button>
-```
+#### Shared Properties
+- All buttons: `font-semibold px-6 py-3 rounded-lg transition-all duration-200`
+- Primary on hover: `hover:scale-[1.02]`
+- Border radius: `rounded-lg` (8px) — NOT rounded-xl
 
 ### Cards
 
-**Standard Card**
-```jsx
-<div className="
-  bg-navy-800 
-  border border-navy-700 
-  rounded-xl 
-  p-6 
-  hover:border-cyan-500/50 
-  transition-colors
-">
-  <h3 className="text-xl font-semibold text-white mb-2">
-    Card Title
-  </h3>
-  <p className="text-slate-100">
-    Card description text goes here.
-  </p>
-</div>
+#### Dark Card (on navy backgrounds)
+
+```
+bg-navy-800 border border-navy-700 rounded-2xl
+hover:-translate-y-2 hover:shadow-[0_8px_32px_rgba(0,180,216,0.12)]
+transition-all duration-300
 ```
 
-**Feature Card (with icon)**
-```jsx
-<div className="
-  bg-navy-800 
-  border border-navy-700 
-  rounded-xl 
-  p-8 
-  text-center
-">
-  <div className="
-    w-12 h-12 
-    bg-cyan-500/20 
-    rounded-lg 
-    flex items-center justify-center 
-    mx-auto mb-4
-  ">
-    <IconComponent className="w-6 h-6 text-cyan-500" />
-  </div>
-  <h3 className="text-xl font-semibold text-white mb-2">
-    Feature Title
-  </h3>
-  <p className="text-slate-400">
-    Feature description.
-  </p>
-</div>
+#### Light Card (on white/slate backgrounds)
+
+```
+bg-white border border-slate-200 rounded-2xl
+hover:-translate-y-1 hover:shadow-lg
+transition-all duration-300
 ```
 
-### Section Container
+#### Icon Container
 
-```jsx
-<section className="bg-navy-900 py-16 md:py-24">
-  <div className="max-w-7xl mx-auto px-4 md:px-8">
-    {/* Section content */}
-  </div>
-</section>
-```
-
-**Alternate Section (slightly lighter background)**
-```jsx
-<section className="bg-navy-800 py-16 md:py-24">
-  <div className="max-w-7xl mx-auto px-4 md:px-8">
-    {/* Section content */}
-  </div>
-</section>
-```
+| Context | Background | Border | Icon Color |
+|---------|-----------|--------|------------|
+| Dark sections | `bg-cyan-500/10` | `border-cyan-500/20` | `text-cyan-500` |
+| Light sections | `bg-cyan-50` | `border-cyan-100` | `text-cyan-600` |
 
 ### Section Header
 
-```jsx
-<div className="text-center mb-12">
-  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-    Section Title
-  </h2>
-  <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-    Section subtitle or description goes here.
-  </p>
-</div>
-```
+Accepts `colorScheme` prop (`'dark'` | `'light'`):
+- Dark: `text-white` title, `text-cyan-400` subtitle
+- Light: `text-slate-900` title, `text-slate-500` subtitle
 
-### Stat Block
+---
 
-```jsx
-<div className="text-center">
-  <div className="text-4xl md:text-5xl font-bold text-cyan-500 mb-2">
-    10,000+
-  </div>
-  <div className="text-slate-400">
-    Assets Monitored
-  </div>
-</div>
-```
+## Spacing
 
-### Navigation
+| Use Case | Tailwind Class | Value |
+|----------|---------------|-------|
+| Section padding (vertical) | `py-16 md:py-24` | 64px / 96px |
+| Section padding (horizontal) | `px-4 md:px-8` | 16px / 32px |
+| Content max-width | `max-w-7xl mx-auto` | 1280px |
+| Narrow content | `max-w-3xl mx-auto` | 768px |
+| Section header → content gap | `mb-12 md:mb-16` | 48px / 64px |
+| Card padding | `p-6 md:p-8` | 24px / 32px |
+| Card gap | `gap-6` | 24px |
+| Page hero top padding | `pt-36 md:pt-44` | 144px / 176px (accounts for fixed h-16 header) |
+| CTA section padding | `py-20 md:py-28` | 80px / 112px |
 
-**Desktop**
-```jsx
-<header className="
-  bg-navy-900/80 
-  backdrop-blur-md 
-  border-b border-navy-800 
-  fixed w-full 
-  z-50
-">
-  <nav className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-    <Logo />
-    <NavLinks />
-    <CTAButton />
-  </nav>
-</header>
-```
-
-**Nav Link**
-```jsx
-<a className="
-  text-slate-100
-  hover:text-cyan-400
-  font-medium
-  transition-colors
-">
-  Solutions
-</a>
-```
-
-**Active Nav Link**
-```jsx
-<a className="
-  text-cyan-400
-  font-medium
-">
-  Solutions
-</a>
-```
+---
 
 ## Visual Elements
 
-### Decorative Grid Pattern (Background)
+### Grid Pattern (Dark sections only)
 
-For tech/industrial feel, use subtle grid or circuit-board-like patterns:
-
-```jsx
-<div className="
-  absolute inset-0 
-  bg-[linear-gradient(to_right,#1b263b_1px,transparent_1px),linear-gradient(to_bottom,#1b263b_1px,transparent_1px)] 
-  bg-[size:4rem_4rem]
-  opacity-20
-"/>
+```css
+background-image:
+  linear-gradient(rgba(0, 180, 216, 0.04) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(0, 180, 216, 0.04) 1px, transparent 1px);
+background-size: 80px 80px;
 ```
 
-### Gradient Accents
+Use with `opacity-30` and radial mask for hero backgrounds.
 
-```jsx
-/* Subtle gradient overlay for hero sections */
-<div className="
-  absolute inset-0 
-  bg-gradient-to-b 
-  from-cyan-500/10 
-  to-transparent
-"/>
+### Glow Effects
+
+| Class | Value | Use |
+|-------|-------|-----|
+| `glow-cyan` | `0 0 50px rgba(0,180,216,0.15)` | Subtle element glow |
+| `glow-cyan-strong` | `0 0 80px rgba(0,180,216,0.25)` | Strong element glow |
+| Button hover glow | `0 0 32px rgba(0,180,216,0.4)` | Primary button hover |
+
+### CTA Section Background
+
+```
+bg-cyan-500 with overlay:
+radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)
 ```
 
-### Glow Effect (for key elements)
+---
 
-```jsx
-<div className="
-  shadow-[0_0_50px_rgba(0,180,216,0.3)]
-"/>
-```
+## Scroll Animations
+
+### Presets
+
+| Name | Hidden State | Visible State | Use For |
+|------|-------------|--------------|---------|
+| `fade-up` | `opacity-0 translate-y-[60px]` | `opacity-100 translate-y-0` | Default, card grids, stacks |
+| `fade-left` | `opacity-0 -translate-x-[40px]` | `opacity-100 translate-x-0` | Left column in comparisons |
+| `fade-right` | `opacity-0 translate-x-[40px]` | `opacity-100 translate-x-0` | Right column in comparisons |
+| `scale-up` | `opacity-0 scale-95` | `opacity-100 scale-100` | Stat numbers, badges |
+| `fade-in` | `opacity-0` | `opacity-100` | Logo rows, wide content |
+
+### Timing
+- Duration: `600ms` for scroll reveal
+- Easing: `ease-out`
+- Stagger: `100ms` between items (cards), `80ms` (small items)
+- All animations respect `prefers-reduced-motion: reduce`
+
+---
+
+## Iconography
+
+**Library**: Lucide React
+- Outline style (not filled)
+- Size: `w-5 h-5` inline, `w-6 h-6` standalone, `w-8 h-8` feature cards
+- Color: `text-cyan-500` on dark bg, `text-cyan-500` on light bg (consistent)
+
+---
 
 ## Responsive Breakpoints
 
 Follow Tailwind defaults:
 
 | Breakpoint | Min Width | Use Case |
-|------------|-----------|----------|
+|-----------|-----------|----------|
 | `sm` | 640px | Large phones |
 | `md` | 768px | Tablets |
 | `lg` | 1024px | Laptops |
 | `xl` | 1280px | Desktops |
-| `2xl` | 1536px | Large screens |
 
-## Iconography
+Primary viewing context: desktop (office environment).
 
-Use **Lucide React** for icons:
-
-```bash
-npm install lucide-react
-```
-
-```jsx
-import { Server, Cpu, Shield, BarChart3 } from 'lucide-react';
-```
-
-Preferred icon style:
-- Outline style (not filled)
-- Size: `w-5 h-5` for inline, `w-6 h-6` for standalone, `w-8 h-8` for feature cards
-- Color: `text-cyan-500` for accent, `text-slate-400` for neutral
-
-## Images
-
-### Style Guidelines
-- Industrial/tech imagery (machinery, control rooms, buildings)
-- NOT generic stock photos of people smiling
-- Prefer actual product screenshots
-- Use overlays/filters to match dark theme if images are too bright
-
-### Image Treatment
-
-```jsx
-/* Dark overlay for images */
-<div className="relative">
-  <img src="..." className="w-full h-full object-cover" />
-  <div className="absolute inset-0 bg-navy-900/60" />
-</div>
-```
-
-## Animation
-
-Keep animations subtle and professional:
-
-```jsx
-/* Hover transitions */
-transition-colors duration-200
-
-/* Fade in on scroll (use Intersection Observer) */
-transition-opacity duration-500
-
-/* Button hover scale (very subtle) */
-hover:scale-[1.02] transition-transform
-```
+---
 
 ## Do's and Don'ts
 
-### Do's
-- Use consistent spacing (stick to Tailwind scale)
-- Maintain high contrast for readability
-- Use accent color sparingly for impact
-- Keep UI elements aligned to grid
+### Do
+- Alternate dark and light sections for visual rhythm
+- Use generous whitespace (120-160px section padding on desktop)
+- Use accent color sparingly for maximum impact
+- Add glow effects on interactive elements (buttons, cards)
+- Use `colorScheme` prop for dual-themed components
 
-### Don'ts
-- Don't use too many colors
-- Don't use bright backgrounds
-- Don't overuse animations
-- Don't use rounded-full on cards (use rounded-lg or rounded-xl)
-- Don't use shadows on dark backgrounds (they don't work well)
+### Don't
+- Don't use dark-on-dark everywhere (monotone fatigue)
+- Don't use `rounded-full` on cards
+- Don't place two identical backgrounds adjacent
+- Don't use generic stock photos
+- Don't use purple gradients or floating particles
+- Don't use Inter or Roboto for headings (use Plus Jakarta Sans)

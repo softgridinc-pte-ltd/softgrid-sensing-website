@@ -14,7 +14,7 @@ export default function HomePage(): React.ReactElement {
       <PlatformSection />
       <StatsSection />
       <SolutionsSection />
-      <EcosystemSection variant="dark" />
+      <EcosystemSection variant="light" />
       <CTASection />
     </>
   )

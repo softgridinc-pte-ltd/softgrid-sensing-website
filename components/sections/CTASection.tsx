@@ -7,9 +7,15 @@ export function CTASection(): React.ReactElement {
   const { containerRef, getItemProps } = useScrollRevealGroup()
 
   return (
-    <section className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
+    <section className="bg-cyan-500 py-20 md:py-28 relative overflow-hidden">
+      {/* Radial gradient overlay for depth */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)',
+        }}
+      />
 
       <div ref={containerRef} className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
         <h2
@@ -19,7 +25,7 @@ export function CTASection(): React.ReactElement {
           Ready to Transform Your Operations?
         </h2>
         <p
-          className={`text-lg text-slate-400 mb-10 leading-relaxed ${getItemProps(1).className}`}
+          className={`text-lg text-white/80 mb-10 leading-relaxed ${getItemProps(1).className}`}
           style={getItemProps(1).style}
         >
           Let&apos;s discuss how Softgrid can help you move from reactive to predictive.
@@ -28,7 +34,7 @@ export function CTASection(): React.ReactElement {
           className={`flex flex-col sm:flex-row items-center justify-center gap-4 ${getItemProps(2).className}`}
           style={getItemProps(2).style}
         >
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
+          <Button href="/contact" variant="white" className="min-w-[160px]">
             Contact Us
           </Button>
           <Button href="/contact" variant="secondary" className="min-w-[160px]">

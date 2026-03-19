@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { useInView } from './useInView'
+import { getHiddenClass, getVisibleClass } from '@/lib/scrollAnimations'
+
+import type { ScrollAnimation } from '@/lib/scrollAnimations'
 
 interface UseScrollRevealGroupOptions {
   staggerInterval?: number
+  animation?: ScrollAnimation
 }
 
 interface ItemProps {
@@ -18,11 +22,9 @@ interface UseScrollRevealGroupReturn {
   isInView: boolean
 }
 
-const HIDDEN = 'opacity-0 translate-y-[60px] transition-all duration-[600ms] ease-out'
-const VISIBLE = 'opacity-100 translate-y-0 transition-all duration-[600ms] ease-out'
-
 export function useScrollRevealGroup({
   staggerInterval = 100,
+  animation = 'fade-up',
 }: UseScrollRevealGroupOptions = {}): UseScrollRevealGroupReturn {
   const { ref, isInView } = useInView({
     threshold: 0.15,
@@ -44,7 +46,7 @@ export function useScrollRevealGroup({
   const shouldShow = isInView || prefersReducedMotion
 
   const getItemProps = (index: number): ItemProps => ({
-    className: shouldShow ? VISIBLE : HIDDEN,
+    className: shouldShow ? getVisibleClass(animation) : getHiddenClass(animation),
     style: { transitionDelay: shouldShow && !prefersReducedMotion ? `${index * staggerInterval}ms` : '0ms' },
   })
 

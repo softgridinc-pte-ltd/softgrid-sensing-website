@@ -12,7 +12,7 @@ const stats = [
 ]
 
 export function StatsSection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
+  const { containerRef, getItemProps } = useScrollRevealGroup({ animation: 'scale-up' })
 
   return (
     <section className="bg-navy-800 py-20 md:py-24 relative overflow-hidden">

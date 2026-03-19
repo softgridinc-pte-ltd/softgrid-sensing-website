@@ -1,41 +1,87 @@
 # Implementation Style Guide
 
-Practical reference derived from actual codebase. When in doubt, read the source code — this guide summarizes patterns already in use.
+Practical reference derived from the design system. When in doubt, read `docs/04-design-system.md` for the full spec.
 
 ---
 
 ## Conventions
 
-- Fonts: Outfit (headings) + DM Sans (body) — not Inter or Space Grotesk
-- Custom color tokens override Tailwind defaults (cyan-400 is #90e0ef, NOT #22d3ee)
-- Cards use `rounded-xl`, buttons use `rounded-lg`
-- Section backgrounds alternate: navy-900 → navy-800 → navy-900
+- Fonts: Plus Jakarta Sans (headings) + Inter (body)
+- Custom color tokens override Tailwind defaults (see Color Tokens below)
+- Cards use `rounded-2xl`, buttons use `rounded-lg`
+- Components accept `colorScheme?: 'dark' | 'light'` for dual-themed rendering
 
-## Colors (Custom Tailwind Tokens)
+---
+
+## Color Tokens (Custom Tailwind)
 
 These are **NOT** Tailwind defaults. All are overridden in `tailwind.config.ts`.
 
-| Token       | Hex       | Role                                           |
-| ----------- | --------- | ---------------------------------------------- |
-| `navy-900`  | `#0d1b2a` | Primary page background                        |
-| `navy-800`  | `#1b263b` | Cards, alternating section backgrounds         |
-| `navy-700`  | `#415a77` | Borders, dividers, card borders                |
-| `navy-600`  | `#778da9` | Subtle borders (integration pills, tags)       |
-| `cyan-600`  | `#0077b6` | Primary button hover (`hover:bg-cyan-600`)     |
-| `cyan-500`  | `#00b4d8` | Primary accent — buttons, icons, stat values   |
-| `cyan-400`  | `#90e0ef` | Accent text — links, labels, section subtitles |
-| `slate-400` | `#778da9` | Secondary/muted text (descriptions, captions)  |
-| `slate-100` | `#e0e1dd` | Default body text (set on `<body>`)            |
-| `white`     | `#ffffff` | Headlines, card titles, primary emphasis       |
+| Token | Hex | Role |
+|-------|-----|------|
+| `navy-900` | `#0A1628` | Primary dark background |
+| `navy-800` | `#111D35` | Alternate dark sections, cards on dark bg |
+| `navy-700` | `#162544` | Borders on dark backgrounds |
+| `navy-600` | `#1E3A5F` | Subtle borders, tags |
+| `cyan-500` | `#00b4d8` | Primary accent on **dark bg** — buttons, icons, CTA bg |
+| `cyan-600` | `#0077b6` | Primary accent on **light bg** — icons, links, labels; button hover |
+| `cyan-700` | `#005f8a` | Ghost button hover on light bg |
+| `cyan-400` | `#90e0ef` | Accent text on dark bg |
+| `cyan-300` | `#48cae4` | Lighter highlights |
+| `cyan-200` | `#b8ecf4` | Card hover border on light bg |
+| `cyan-100` | `#d5f3f9` | Icon container border on light bg |
+| `cyan-50` | `#eafbfd` | Icon container bg on light bg |
 
-### Common Opacity Patterns
+### Slate/Gray (Tailwind Built-in)
 
-- `bg-cyan-500/10` — icon container background, badge background
-- `border-cyan-500/20` — icon container border, badge border
-- `border-cyan-500/30` — featured card border, hover highlight
-- `border-cyan-500/50` — card hover border
-- `bg-cyan-500/8` — CTA section background glow
-- `bg-navy-900/80` — header backdrop
+The `slate` palette uses **Tailwind's built-in values** (no custom overrides). Key roles:
+
+| Token | Hex | Role |
+|-------|-----|------|
+| `slate-50` | `#f8fafc` | Light section bg (alternate) |
+| `slate-200` | `#e2e8f0` | Card borders & dividers on light bg |
+| `slate-300` | `#cbd5e1` | Outline button border on light bg |
+| `slate-400` | `#94a3b8` | Muted text (both contexts) |
+| `slate-500` | `#64748b` | Subtitle/secondary text on light bg |
+| `slate-600` | `#475569` | Body text on light bg |
+| `slate-900` | `#0f172a` | Heading text on light bg |
+
+---
+
+## Text Color Rules
+
+### On Dark Backgrounds (navy-900, navy-800)
+
+| Purpose | Class |
+|---------|-------|
+| Headings | `text-white` |
+| Body text | `text-slate-400` |
+| Subtitle (section) | `text-cyan-400` |
+| Subtitle (hero) | `text-slate-400` |
+| Muted text | `text-slate-500` |
+| Links / accent | `text-cyan-400 hover:text-cyan-300` |
+| Icons | `text-cyan-500` |
+
+### On Light Backgrounds (white, slate-50)
+
+**RULE: No cyan-500 on light backgrounds.** Use cyan-600 minimum.
+
+| Purpose | Class |
+|---------|-------|
+| Headings | `text-navy-900` |
+| Body text | `text-slate-600` |
+| Subtitle (section) | `text-navy-600` |
+| Muted text | `text-slate-400` |
+| Links / accent | `text-cyan-600 hover:text-cyan-700` |
+| Labels (uppercase) | `text-cyan-600` |
+| Icons | `text-cyan-600` |
+
+### On Cyan CTA Background (cyan-500)
+
+| Purpose | Class |
+|---------|-------|
+| Headings | `text-white` |
+| Subtitle | `text-white/80` |
 
 ---
 
@@ -45,31 +91,20 @@ These are **NOT** Tailwind defaults. All are overridden in `tailwind.config.ts`.
 
 - **Headings**: `Outfit` via CSS variable `--font-heading` → Tailwind class `font-heading`
 - **Body**: `DM Sans` via CSS variable `--font-body` → Tailwind class `font-body`
-- Loaded via `next/font/google` in root layout. All `h1-h6` automatically get `font-heading` via globals.css.
+- Loaded via `next/font/google` in root layout. All `h1-h6` get `font-heading` via globals.css.
 
-### Text Hierarchy
+### Type Scale
 
-| Element            | Classes                                                          | When to use                   |
-| ------------------ | ---------------------------------------------------------------- | ----------------------------- |
-| H1 (hero)          | `text-4xl md:text-5xl lg:text-6xl font-bold text-white`          | Page hero headline            |
-| H1 (home hero)     | `text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold`         | Home page only (larger)       |
-| H2 (section)       | `text-3xl md:text-4xl font-bold text-white`                      | Section headings              |
-| H3 (card title)    | `text-lg font-semibold text-white` or `text-xl font-semibold`    | Card/feature titles           |
-| Subtitle (section) | `text-lg text-cyan-400`                                          | Below section H2              |
-| Subtitle (hero)    | `text-lg md:text-xl text-slate-400`                              | Below page H1                 |
-| Body (long form)   | `text-lg md:text-xl text-slate-300 leading-[1.8]`                | Paragraphs (About page story) |
-| Body (card desc)   | `text-slate-400 leading-relaxed` or `text-sm text-slate-400`     | Card descriptions             |
-| Label (uppercase)  | `text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400` | Section divider labels        |
-| Label (pill/badge) | `text-cyan-400 text-sm font-medium tracking-wide`                | Hero eyebrow badges           |
-
-### Key Rules
-
-- `text-white` for titles only, never for body text
-- `text-slate-300` for paragraph-length body text
-- `text-slate-400` for shorter descriptions and secondary text
-- `text-cyan-400` for accent text: links, labels, proof points, subtitles
-- `text-cyan-500` for icons only (not text on dark backgrounds)
-- `text-slate-500` for very muted text (e.g., product variant notes)
+| Element | Class | Size | Weight |
+|---------|-------|------|--------|
+| H1 (hero) | `text-4xl md:text-5xl lg:text-6xl` | 36/48/60px | font-bold |
+| H1 (home hero) | `text-4xl sm:text-5xl md:text-6xl lg:text-7xl` | 36/48/60/72px | font-bold |
+| H2 (section) | `text-3xl md:text-4xl` | 30/36px | font-bold |
+| H3 (card title) | `text-lg` or `text-xl` | 18/20px | font-semibold |
+| Body | `text-base` | 16px | font-normal |
+| Body Large | `text-lg` | 18px | font-normal |
+| Small | `text-sm` | 14px | font-normal |
+| Label | `text-xs uppercase tracking-[0.2em]` | 12px | font-semibold |
 
 ---
 
@@ -79,125 +114,32 @@ These are **NOT** Tailwind defaults. All are overridden in `tailwind.config.ts`.
 
 ```
 max-w-7xl mx-auto px-4 md:px-8       — Standard content width
-max-w-3xl mx-auto px-4 md:px-8       — Narrow (text-heavy, CTA sections)
+max-w-5xl mx-auto px-4 md:px-8       — Medium (platform diagram)
+max-w-3xl mx-auto px-4 md:px-8       — Narrow (CTA, text-heavy)
 ```
 
 ### Section Spacing
 
 ```
-py-16 md:py-24      — Standard section
-py-20 md:py-28      — Hero-adjacent section (slightly more breathing room)
-pt-36 pb-20 md:pt-44 md:pb-24  — Page hero (accounts for fixed header h-16)
+py-16 md:py-24              — Standard section
+py-20 md:py-28              — CTA section (more breathing room)
+pt-36 pb-20 md:pt-44 md:pb-24  — Page hero (accounts for fixed h-16 header)
 ```
 
 ### Section Background Alternation
 
-Sections alternate between `bg-navy-900` and `bg-navy-800` for visual rhythm. The page background is `bg-navy-900`, so the first content section after hero is typically `bg-navy-800`.
-
-### Gap & Spacing
-
+Home page pattern:
 ```
-gap-8               — Between grid/flex items (cards)
-mb-12 md:mb-16      — After section header, before content
-space-y-4 to space-y-5  — Between stacked elements inside cards
-mb-5 to mb-6        — After icon container in cards
-```
-
----
-
-## Page Structure Pattern
-
-All pages are **Server Components** (no `'use client'`). They export `metadata` and a default function returning `<>...</>`.
-
-```tsx
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Page Title | Softgrid Sensing",
-  description: "...",
-};
-
-export default function PageName(): React.ReactElement {
-  return (
-    <>
-      {/* Hero */}
-      <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden">
-        {/* Grid + glow backgrounds */}
-        {/* Content with relative z-10 */}
-      </section>
-
-      {/* Sections — alternate bg-navy-800 / bg-navy-900 */}
-      <ClientSection />
-
-      {/* CTA */}
-      <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-        {/* Glow + centered content */}
-      </section>
-    </>
-  );
-}
+Hero        → bg-navy-900 (dark)
+Shift       → bg-white (light)
+Platform    → bg-navy-900 (dark)
+Stats       → bg-navy-800 (dark)
+Solutions   → bg-slate-50 (light)
+Ecosystem   → bg-white (light)
+CTA         → bg-cyan-500 (cyan)
 ```
 
-Header and Footer are rendered by the root layout — pages never include them.
-
----
-
-## Hero Section Template
-
-```tsx
-<section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden">
-  {/* Grid background */}
-  <div className="absolute inset-0 grid-pattern opacity-30" />
-
-  {/* Radial glow */}
-  <div
-    className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[160px]"
-    style={{
-      background:
-        "radial-gradient(ellipse at center, rgba(0,180,216,0.1) 0%, transparent 70%)",
-    }}
-  />
-
-  <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-    {/* Eyebrow badge */}
-    <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5 mb-8">
-      <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse-slow" />
-      <span className="text-cyan-400 text-sm font-medium tracking-wide">
-        Label
-      </span>
-    </div>
-
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
-      Headline
-    </h1>
-    <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-      Subheadline
-    </p>
-  </div>
-</section>
-```
-
----
-
-## CTA Section Template
-
-```tsx
-<section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-
-  <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
-    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-      CTA Headline
-    </h2>
-    <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-      Supporting text.
-    </p>
-    <Button href="/contact" variant="primary" className="min-w-[160px]">
-      CTA Label
-    </Button>
-  </div>
-</section>
-```
+For other pages: dark sections alternate `navy-900` / `navy-800`. Light sections alternate `white` / `slate-50`.
 
 ---
 
@@ -205,160 +147,83 @@ Header and Footer are rendered by the root layout — pages never include them.
 
 ### Button (`@/components/ui/Button`)
 
-| Variant     | Visual                                                                   |
-| ----------- | ------------------------------------------------------------------------ |
-| `primary`   | `bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg hover:scale-[1.02]` |
-| `secondary` | `border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white`       |
-| `ghost`     | `text-cyan-400 hover:text-cyan-300` (no background or border)            |
+| Variant | On Dark | On Light |
+|---------|---------|----------|
+| `primary` | `bg-cyan-500 hover:bg-cyan-600` + glow | Same |
+| `secondary` | `border-white/20 text-white` | `border-slate-300 text-navy-900` |
+| `ghost` | `text-cyan-400 hover:text-cyan-300` | `text-cyan-600 hover:text-cyan-700` |
+| `white` | `bg-white text-navy-900 hover:shadow-lg` | n/a |
+
+Primary button hover glow: `hover:shadow-[0_0_32px_rgba(0,180,216,0.4)]`
 
 With `href` → renders `<Link>`. Without → renders `<button>`.
+Accepts `colorScheme?: 'dark' | 'light'` prop (default `'dark'`).
 
-### Card
+### Card (`@/components/ui/Card`)
 
-```
-bg-navy-800 border border-navy-700 rounded-xl p-6 (or p-8 for larger cards)
-hover:border-cyan-500/50 transition-all duration-300
-```
+| Context | Style |
+|---------|-------|
+| Dark | `bg-navy-800 border-navy-700 rounded-2xl` hover: `-translate-y-2 shadow-[0_8px_32px_rgba(0,180,216,0.12)]` |
+| Light | `bg-white border-slate-200 rounded-2xl` hover: `-translate-y-1 shadow-lg` |
 
-Note: Cards use `rounded-xl`, buttons use `rounded-lg`.
+Accepts `colorScheme?: 'dark' | 'light'` prop (default `'dark'`).
+
+### SectionHeader (`@/components/ui/SectionHeader`)
+
+Accepts `colorScheme?: 'dark' | 'light'` prop:
+- Dark: `text-white` title, `text-cyan-400` subtitle
+- Light: `text-slate-900` title, `text-slate-500` subtitle
 
 ### Icon Container
 
 ```tsx
-<div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">
-  <SomeIcon className="w-6 h-6 text-cyan-500" />
+{/* Dark sections */}
+<div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center">
+  <Icon className="w-6 h-6 text-cyan-500" />
+</div>
+
+{/* Light sections */}
+<div className="w-12 h-12 bg-cyan-50 border border-cyan-100 rounded-lg flex items-center justify-center">
+  <Icon className="w-6 h-6 text-cyan-600" />
 </div>
 ```
 
-Smaller variant: `w-10 h-10` container, `w-5 h-5` icon.
-
-### Badge / Pill
+### CTA Section
 
 ```tsx
-{
-  /* Eyebrow badge (hero) */
-}
-<div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5">
-  <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse-slow" />
-  <span className="text-cyan-400 text-sm font-medium tracking-wide">Label</span>
-</div>;
-
-{
-  /* Tag pill (cards) */
-}
-<span className="bg-cyan-500/10 text-cyan-400 text-xs rounded-full px-3 py-1">
-  Tag
-</span>;
-
-{
-  /* Outlined pill (integration/product tags) */
-}
-<span className="border border-navy-600 text-slate-400 text-xs rounded-full px-4 py-1.5">
-  Tag
-</span>;
+<section className="bg-cyan-500 py-20 md:py-28 relative overflow-hidden">
+  {/* Radial gradient overlay for depth */}
+  <div className="absolute inset-0" style={{
+    background: 'radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)'
+  }} />
+  <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">...</h2>
+    <p className="text-lg text-white/80 mb-10">...</p>
+    <Button variant="white">...</Button>
+  </div>
+</section>
 ```
-
-### Section Label (with divider line)
-
-```tsx
-<div className="flex items-center gap-4 mb-10">
-  <span className="text-cyan-400 text-sm font-semibold uppercase tracking-[0.2em]">
-    Label
-  </span>
-  <div className="flex-1 h-px bg-navy-700" />
-</div>
-```
-
-### "Learn More →" Link Pattern
-
-```tsx
-<Link
-  href={href}
-  className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 font-medium transition-colors duration-200"
->
-  Learn More
-  <span className="transition-transform duration-200 group-hover:translate-x-1">
-    &rarr;
-  </span>
-</Link>
-```
-
-Requires `group` class on the parent container.
 
 ---
 
-## Scroll Animation Pattern
+## Scroll Animation
 
-All scroll-triggered animations use the `useInView` hook (`@/hooks/useInView`).
+### Presets (via `animation` prop)
 
-### Rules
+| Name | Effect | Use For |
+|------|--------|---------|
+| `fade-up` | Slide up 60px + fade | Default, card grids |
+| `fade-left` | Slide from left 40px + fade | Left column in comparisons |
+| `fade-right` | Slide from right 40px + fade | Right column in comparisons |
+| `scale-up` | Scale from 95% + fade | Stat numbers, badges |
+| `fade-in` | Opacity only | Logo rows, wide content |
 
-1. The section component must be `'use client'`
-2. `ref` goes on the **container div**, not the `<section>`
-3. Individual children use conditional classes + staggered `transitionDelay`
-4. Default threshold: `0.1` (triggers when 10% visible)
-5. Triggers once by default
+### Timing
 
-### Template
-
-```tsx
-"use client";
-
-import { useInView } from "@/hooks/useInView";
-
-export function AnimatedSection(): React.ReactElement {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
-  return (
-    <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 md:px-8">
-        {items.map((item, i) => (
-          <div
-            key={item.id}
-            className={`transition-all duration-500 ${
-              isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-            style={{ transitionDelay: `${i * 100}ms` }}
-          >
-            {/* content */}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-```
-
-### Timing Conventions
-
-- `duration-500` for scroll reveal transitions
-- `duration-300` for hover transitions
-- `duration-200` for button/link color transitions
-- Stagger: `i * 100ms` (cards), `i * 80ms` (small items like icons)
-
----
-
-## CSS Utilities (from globals.css)
-
-| Class                 | Effect                                         |
-| --------------------- | ---------------------------------------------- |
-| `grid-pattern`        | Subtle 4rem grid lines (use with `opacity-30`) |
-| `grid-pattern-masked` | Grid with radial mask (hero backgrounds)       |
-| `glow-cyan`           | `box-shadow: 0 0 50px rgba(0,180,216,0.15)`    |
-| `glow-cyan-strong`    | `box-shadow: 0 0 80px rgba(0,180,216,0.25)`    |
-| `text-gradient`       | Gradient text from cyan-400 to cyan-500        |
-| `animate-pulse-slow`  | Slow 4s pulse (used on badge dots)             |
-| `animate-fade-in`     | 0.6s ease-out fade in                          |
-| `animate-fade-in-up`  | 0.6s ease-out fade in + slide up 24px          |
-
----
-
-## Navigation (Header)
-
-- Active detection: `pathname.startsWith(href)` (except `/` which uses exact match)
-- Active class: `text-cyan-400`
-- Default class: `text-slate-100 hover:text-cyan-400`
-- New pages automatically highlight if their route matches an existing nav `href`
+- Duration: `600ms`
+- Easing: `ease-out`
+- Stagger: `100ms` between items
+- Reduced motion: all animations skipped when `prefers-reduced-motion: reduce`
 
 ---
 
@@ -369,24 +234,41 @@ app/
   [page]/page.tsx              — Server Component, metadata + layout
 
 components/
-  layout/Header.tsx            — 'use client' (navigation)
+  layout/Header.tsx            — 'use client' (navigation state)
   layout/Footer.tsx            — Server Component
-  ui/Button.tsx                — Shared button
-  ui/Card.tsx                  — Shared card
-  ui/SectionHeader.tsx         — Centered section heading
+  ui/Button.tsx                — colorScheme-aware button
+  ui/Card.tsx                  — colorScheme-aware card
+  ui/SectionHeader.tsx         — colorScheme-aware section heading
   ui/StatBlock.tsx             — 'use client' (animated counter)
+  ui/ScrollRevealItem.tsx      — 'use client' (animation-aware)
   sections/[page]/             — Page-specific section components
 
 hooks/
-  useInView.ts                 — 'use client' (Intersection Observer)
+  useInView.ts                 — Intersection Observer
+  useScrollRevealGroup.ts      — Grouped stagger reveal
+
+lib/
+  scrollAnimations.ts          — Animation preset definitions
 ```
 
 ### `'use client'` Boundary
 
 Push it as far down as possible. Only add when component uses:
-
 - `useInView`, `useState`, `useEffect`, `useRef`
 - Event handlers, browser APIs
 - `usePathname` (Header)
 
 Pages themselves are always Server Components.
+
+---
+
+## CSS Utilities (from globals.css)
+
+| Class | Effect |
+|-------|--------|
+| `grid-pattern` | 80px grid lines (use with `opacity-30`) |
+| `grid-pattern-masked` | Grid with radial mask (hero backgrounds) |
+| `glow-cyan` | `box-shadow: 0 0 50px rgba(0,180,216,0.15)` |
+| `glow-cyan-strong` | `box-shadow: 0 0 80px rgba(0,180,216,0.25)` |
+| `text-gradient` | Gradient text from cyan-400 to cyan-500 |
+| `animate-pulse-slow` | Slow 4s pulse (badge dots) |
