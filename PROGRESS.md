@@ -45,9 +45,34 @@
 **Build status:** Passing (static export to `/out`)
 **Lint status:** No warnings or errors
 
+### Session — Scroll Animation Overhaul (2026-03-20)
+
+**Per-element scroll animations — matching design reference**
+
+Replaced the React hook-based animation system (`useScrollRevealGroup`) with a global `data-animate` system on the home page. Every element now animates independently as it scrolls into the viewport, with staggered delays for sibling groups.
+
+**What was built:**
+
+- [x] `components/ui/ScrollAnimator.tsx` — Global client component mounted in `app/layout.tsx`. Uses `IntersectionObserver` (threshold 0.15, rootMargin -40px) to watch every `[data-animate]` element individually. Adds `.animated` class on intersect. Processes `[data-animate-stagger]` containers to auto-assign `transitionDelay` (i × 100ms) to direct children. Re-runs on route changes via `usePathname`.
+- [x] `app/globals.css` — Added `[data-animate]` CSS rules: starts `opacity:0; translateY(60px)`, transitions to visible on `.animated` class. Respects `prefers-reduced-motion`.
+- [x] Updated home page sections (Stats, Shift, Platform, Solutions, Ecosystem, CTA) to use `data-animate` / `data-animate-stagger` attributes instead of `useScrollRevealGroup`.
+
+**How to apply to other pages:**
+
+1. Add `data-animate` attribute to any element that should fade-in on scroll
+2. Add `data-animate-stagger` attribute to a parent container — its direct children with `data-animate` will get auto-staggered delays (100ms apart)
+3. Remove `useScrollRevealGroup` hook usage and `ScrollRevealItem` wrappers from the section
+4. No other changes needed — `ScrollAnimator` in the layout handles everything globally
+
+**What NOT to change:**
+
+- Hero section — keeps its own CSS `hero-entrance` keyframe animations (not scroll-triggered). User prefers current centered layout with abstract SVG visualizations.
+- `useScrollRevealGroup` hook and `ScrollRevealItem` component still exist — used by pages not yet migrated (platform, solutions, about, case-studies, products). Remove usage as those pages are updated.
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
 - `scripts/` directory excluded from tsconfig to avoid Playwright type errors
 - Design system fonts: Outfit (headings), DM Sans (body) — loaded via `next/font/google`
 - All page sections use Server Components except those needing interactivity (Header, StatBlock, Shift/Platform/Solutions/TrustedBy sections use `useInView` hook)
+- Scroll animations: Use global `data-animate` system (see ScrollAnimator.tsx), not React hooks. The `useScrollRevealGroup` approach was replaced because it observes the container (all children animate at once) rather than individual elements.
