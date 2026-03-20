@@ -4,7 +4,6 @@ import { Activity, Building2, LayoutGrid, Satellite } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 import type { ReactNode } from 'react'
 
@@ -47,23 +46,23 @@ const solutions: Solution[] = [
 ]
 
 export function SolutionsSection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   return (
     <section className="bg-slate-50 py-16 md:py-24">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
-        <SectionHeader
-          title="Solutions for Every Domain"
-          subtitle="Deep expertise across vertical transport, facilities, and infrastructure."
-          colorScheme="light"
-        />
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div data-animate>
+          <SectionHeader
+            title="Solutions for Every Domain"
+            subtitle="Deep expertise across vertical transport, facilities, and infrastructure."
+            colorScheme="light"
+          />
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          {solutions.map((solution, i) => (
+        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {solutions.map((solution) => (
             <div
               key={solution.title}
-              className={`h-full ${getItemProps(i).className}`}
-              style={getItemProps(i).style}
+              data-animate
+              className="h-full"
             >
               <Card colorScheme="light" className="p-6 md:p-8 h-full flex flex-col">
                 <div className="w-12 h-12 bg-cyan-50 border border-cyan-100 rounded-lg flex items-center justify-center mb-5">

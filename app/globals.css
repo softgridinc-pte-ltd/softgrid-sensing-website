@@ -137,6 +137,18 @@
   animation: timeline-dot-pulse 3s ease-in-out infinite;
 }
 
+/* Scroll-triggered animations — mirrors design ref [data-animate] pattern */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate].animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-glow,
   .hero-node,
@@ -146,5 +158,11 @@
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

@@ -2,7 +2,6 @@
 
 import { Radio, BrainCircuit, Workflow, Database, ArrowRight, ArrowDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 import type { ReactNode } from 'react'
 
@@ -20,15 +19,13 @@ const engines: Engine[] = [
 ]
 
 export function PlatformSection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   return (
     <section id="platform" className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      <div ref={containerRef} className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div data-animate className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             One Platform. Modular Products. Tailored Solutions.
           </h2>
@@ -38,12 +35,12 @@ export function PlatformSection(): React.ReactElement {
         </div>
 
         {/* Stack — rendered top to bottom visually, but conceptually bottom-up */}
-        <div className="space-y-0">
+        <div data-animate-stagger className="space-y-0">
 
           {/* Layer 4: Solutions (top) */}
           <div
-            className={`rounded-t-xl border border-navy-700/50 bg-navy-800/30 px-6 py-5 md:px-8 md:py-6 ${getItemProps(3).className}`}
-            style={getItemProps(3).style}
+            data-animate
+            className="rounded-t-xl border border-navy-700/50 bg-navy-800/30 px-6 py-5 md:px-8 md:py-6"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div>
@@ -60,8 +57,8 @@ export function PlatformSection(): React.ReactElement {
 
           {/* Layer 3: Products */}
           <div
-            className={`border-x border-navy-700/50 bg-navy-800/50 px-6 py-5 md:px-8 md:py-6 ${getItemProps(2).className}`}
-            style={getItemProps(2).style}
+            data-animate
+            className="border-x border-navy-700/50 bg-navy-800/50 px-6 py-5 md:px-8 md:py-6"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div>
@@ -78,8 +75,8 @@ export function PlatformSection(): React.ReactElement {
 
           {/* Layer 2: Platform (the core — most prominent) */}
           <div
-            className={`border border-cyan-500/20 bg-navy-800 px-6 py-8 md:px-8 md:py-10 relative ${getItemProps(1).className}`}
-            style={getItemProps(1).style}
+            data-animate
+            className="border border-cyan-500/20 bg-navy-800 px-6 py-8 md:px-8 md:py-10 relative"
           >
             {/* Subtle glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/[0.03] via-cyan-500/[0.06] to-cyan-500/[0.03] pointer-events-none" />
@@ -169,8 +166,8 @@ export function PlatformSection(): React.ReactElement {
 
           {/* Layer 1: Industry (bottom — the ground) */}
           <div
-            className={`rounded-b-xl border border-navy-700/50 border-t-0 bg-navy-900 px-6 py-5 md:px-8 md:py-6 ${getItemProps(0).className}`}
-            style={getItemProps(0).style}
+            data-animate
+            className="rounded-b-xl border border-navy-700/50 border-t-0 bg-navy-900 px-6 py-5 md:px-8 md:py-6"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div>
@@ -187,7 +184,7 @@ export function PlatformSection(): React.ReactElement {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div data-animate className="text-center mt-12">
           <Button href="/platform" variant="ghost">
             Explore the Platform &rarr;
           </Button>

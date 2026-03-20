@@ -13,7 +13,6 @@ import {
   LayoutDashboard,
   Atom,
 } from 'lucide-react'
-import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
 
 import type { ReactNode } from 'react'
 
@@ -79,7 +78,7 @@ export function ShiftSection(): React.ReactElement {
   return (
     <section className="bg-white py-16 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-14 md:mb-20">
+        <div data-animate className="text-center mb-14 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-5">
             The Shift
           </h2>
@@ -91,7 +90,7 @@ export function ShiftSection(): React.ReactElement {
         {/* Comparison grid */}
         <div className="max-w-5xl mx-auto">
           {/* Column headers */}
-          <div className="grid grid-cols-[1fr_auto_1fr] gap-5 mb-8">
+          <div data-animate className="grid grid-cols-[1fr_auto_1fr] gap-5 mb-8">
             <div className="text-center">
               <span className="text-base font-semibold uppercase tracking-wider text-slate-400">
                 Traditional Approach
@@ -106,14 +105,15 @@ export function ShiftSection(): React.ReactElement {
           </div>
 
           {/* Rows */}
-          <div className="space-y-5">
+          <div data-animate-stagger className="space-y-5">
             {shiftData.map((row, i) => (
-              <ScrollRevealItem key={i}>
               <div
+                key={i}
+                data-animate
                 className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-5 items-center"
               >
                 {/* Traditional */}
-                <div className="flex items-center gap-4 bg-slate-50 rounded-lg px-5 py-5 border border-slate-200 transition-all duration-300 hover:bg-slate-100">
+                <div className="flex items-center gap-4 bg-slate-50 rounded-lg px-5 py-5 border border-slate-200 transition-colors duration-300 hover:bg-slate-100">
                   <div className="text-slate-400 shrink-0">{row.traditional.icon}</div>
                   <span className="text-slate-600 text-base">{row.traditional.text}</span>
                 </div>
@@ -126,12 +126,11 @@ export function ShiftSection(): React.ReactElement {
                 </div>
 
                 {/* Modern */}
-                <div className="flex items-center gap-4 bg-cyan-50 rounded-lg px-5 py-5 border-l-2 border-cyan-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                <div className="flex items-center gap-4 bg-cyan-50 rounded-lg px-5 py-5 border-l-2 border-cyan-600 transition-colors duration-300 hover:bg-cyan-100">
                   <div className="text-cyan-600 shrink-0">{row.modern.icon}</div>
                   <span className="text-navy-900 text-base font-medium">{row.modern.text}</span>
                 </div>
               </div>
-              </ScrollRevealItem>
             ))}
           </div>
         </div>

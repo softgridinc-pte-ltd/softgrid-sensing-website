@@ -1,11 +1,8 @@
 'use client'
 
 import { Button } from '@/components/ui/Button'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 export function CTASection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   return (
     <section className="bg-cyan-500 py-20 md:py-28 relative overflow-hidden">
       {/* Radial gradient overlay for depth */}
@@ -17,22 +14,22 @@ export function CTASection(): React.ReactElement {
         }}
       />
 
-      <div ref={containerRef} className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
+      <div data-animate-stagger className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
         <h2
-          className={`text-3xl md:text-4xl font-bold text-white mb-4 ${getItemProps(0).className}`}
-          style={getItemProps(0).style}
+          data-animate
+          className="text-3xl md:text-4xl font-bold text-white mb-4"
         >
           Ready to Transform Your Operations?
         </h2>
         <p
-          className={`text-lg text-white/80 mb-10 leading-relaxed ${getItemProps(1).className}`}
-          style={getItemProps(1).style}
+          data-animate
+          className="text-lg text-white/80 mb-10 leading-relaxed"
         >
           Let&apos;s discuss how Softgrid can help you move from reactive to predictive.
         </p>
         <div
-          className={`flex flex-col sm:flex-row items-center justify-center gap-4 ${getItemProps(2).className}`}
-          style={getItemProps(2).style}
+          data-animate
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button href="/contact" variant="white" className="min-w-[160px]">
             Contact Us

@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface Partner {
   name: string
@@ -51,7 +50,6 @@ interface EcosystemSectionProps {
 }
 
 export function EcosystemSection({ variant = 'darker' }: EcosystemSectionProps): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup({ staggerInterval: 120, animation: 'fade-in' })
   const isLight = variant === 'light'
 
   const bgClass = isLight ? 'bg-white' : variant === 'dark' ? 'bg-navy-800' : 'bg-navy-900'
@@ -65,16 +63,16 @@ export function EcosystemSection({ variant = 'darker' }: EcosystemSectionProps):
   return (
     <section className={`${bgClass} py-16 md:py-24`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div data-animate className="text-center mb-12 md:mb-16">
           <h2 className={`text-3xl md:text-4xl font-bold ${headingColor} mb-4`}>Part of the Ecosystem</h2>
           <p className={`text-lg ${subtitleColor} max-w-2xl mx-auto`}>
             We work with Singapore&apos;s leading organizations across government, industry, and research.
           </p>
         </div>
 
-        <div ref={containerRef} className="space-y-12">
-          {categories.map((category, catIdx) => (
-            <div key={category.label} className={getItemProps(catIdx).className} style={getItemProps(catIdx).style}>
+        <div data-animate-stagger className="space-y-12">
+          {categories.map((category) => (
+            <div key={category.label} data-animate>
               <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${labelColor} mb-5 text-center`}>
                 {category.label}
               </p>

@@ -1,6 +1,7 @@
 import { Outfit, DM_Sans } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { ScrollAnimator } from '@/components/ui/ScrollAnimator'
 import './globals.css'
 
 import type { Metadata } from 'next'
@@ -40,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
       <body>
+        <ScrollAnimator />
         <Header />
         <main>{children}</main>
         <Footer />
