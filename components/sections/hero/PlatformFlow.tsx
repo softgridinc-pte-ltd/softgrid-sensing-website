@@ -145,44 +145,44 @@ export function PlatformFlow(): React.ReactElement {
 
               {/* Node icons (abstract geometric shapes) */}
               {i === 0 && (
-                /* Sense — radio/signal waves */
-                <g opacity="0.6">
-                  <circle cx={node.cx} cy={node.cy} r="3" fill="#00b4d8" opacity="0.4" />
-                  <path d={`M${node.cx - 7},${node.cy - 7} A10,10 0 0,1 ${node.cx + 7},${node.cy - 7}`} fill="none" stroke="#00b4d8" strokeWidth="0.8" />
-                  <path d={`M${node.cx - 11},${node.cy - 11} A16,16 0 0,1 ${node.cx + 11},${node.cy - 11}`} fill="none" stroke="#00b4d8" strokeWidth="0.8" opacity="0.5" />
+                /* Sense — radio/signal waves (shifted up 3px to visually center) */
+                <g transform={`translate(0, 3)`}>
+                  <circle cx={node.cx} cy={node.cy} r="3" fill="#90e0ef" />
+                  <path d={`M${node.cx - 7},${node.cy - 7} A10,10 0 0,1 ${node.cx + 7},${node.cy - 7}`} fill="none" stroke="#90e0ef" strokeWidth="1.5" />
+                  <path d={`M${node.cx - 11},${node.cy - 11} A16,16 0 0,1 ${node.cx + 11},${node.cy - 11}`} fill="none" stroke="#90e0ef" strokeWidth="1.5" opacity="0.8" />
                 </g>
               )}
               {i === 1 && (
                 /* Predict — brain/neural network */
-                <g opacity="0.6">
-                  <circle cx={node.cx - 6} cy={node.cy - 5} r="2.5" fill="#00b4d8" opacity="0.2" stroke="#00b4d8" strokeWidth="0.8" />
-                  <circle cx={node.cx + 6} cy={node.cy - 5} r="2.5" fill="#00b4d8" opacity="0.2" stroke="#00b4d8" strokeWidth="0.8" />
-                  <circle cx={node.cx} cy={node.cy + 6} r="2.5" fill="#00b4d8" opacity="0.2" stroke="#00b4d8" strokeWidth="0.8" />
-                  <circle cx={node.cx} cy={node.cy - 1} r="3" fill="#00b4d8" opacity="0.35" />
-                  <line x1={node.cx - 4} y1={node.cy - 4} x2={node.cx - 1} y2={node.cy - 1} stroke="#00b4d8" strokeWidth="0.8" />
-                  <line x1={node.cx + 4} y1={node.cy - 4} x2={node.cx + 1} y2={node.cy - 1} stroke="#00b4d8" strokeWidth="0.8" />
-                  <line x1={node.cx} y1={node.cy + 2} x2={node.cx} y2={node.cy + 4} stroke="#00b4d8" strokeWidth="0.8" />
+                <g>
+                  <circle cx={node.cx - 6} cy={node.cy - 5} r="2.5" fill="#00b4d8" opacity="0.5" stroke="#90e0ef" strokeWidth="1" />
+                  <circle cx={node.cx + 6} cy={node.cy - 5} r="2.5" fill="#00b4d8" opacity="0.5" stroke="#90e0ef" strokeWidth="1" />
+                  <circle cx={node.cx} cy={node.cy + 6} r="2.5" fill="#00b4d8" opacity="0.5" stroke="#90e0ef" strokeWidth="1" />
+                  <circle cx={node.cx} cy={node.cy - 1} r="3" fill="#90e0ef" opacity="0.8" />
+                  <line x1={node.cx - 4} y1={node.cy - 4} x2={node.cx - 1} y2={node.cy - 1} stroke="#90e0ef" strokeWidth="1.2" />
+                  <line x1={node.cx + 4} y1={node.cy - 4} x2={node.cx + 1} y2={node.cy - 1} stroke="#90e0ef" strokeWidth="1.2" />
+                  <line x1={node.cx} y1={node.cy + 2} x2={node.cx} y2={node.cy + 4} stroke="#90e0ef" strokeWidth="1.2" />
                 </g>
               )}
               {i === 2 && (
                 /* Act — lightning bolt / zap */
-                <g opacity="0.6">
+                <g>
                   <polygon
                     points={`${node.cx - 2},${node.cy - 10} ${node.cx + 6},${node.cy - 10} ${node.cx + 1},${node.cy - 1} ${node.cx + 5},${node.cy - 1} ${node.cx - 3},${node.cy + 10} ${node.cx},${node.cy + 1} ${node.cx - 4},${node.cy + 1}`}
-                    fill="#00b4d8"
-                    opacity="0.25"
-                    stroke="#00b4d8"
-                    strokeWidth="0.8"
+                    fill="#90e0ef"
+                    opacity="0.7"
+                    stroke="#90e0ef"
+                    strokeWidth="1"
                   />
                 </g>
               )}
               {i === 3 && (
                 /* Learn — circular arrows / feedback loop */
-                <g opacity="0.6">
-                  <path d={`M${node.cx + 8},${node.cy - 3} A9,9 0 1,0 ${node.cx + 3},${node.cy + 8}`} fill="none" stroke="#00b4d8" strokeWidth="1" />
-                  <polygon points={`${node.cx + 3},${node.cy + 5} ${node.cx + 6},${node.cy + 9} ${node.cx},${node.cy + 9}`} fill="#00b4d8" opacity="0.5" />
-                  <path d={`M${node.cx - 8},${node.cy + 3} A9,9 0 1,0 ${node.cx - 3},${node.cy - 8}`} fill="none" stroke="#00b4d8" strokeWidth="1" />
-                  <polygon points={`${node.cx - 3},${node.cy - 5} ${node.cx - 6},${node.cy - 9} ${node.cx},${node.cy - 9}`} fill="#00b4d8" opacity="0.5" />
+                <g>
+                  <path d={`M${node.cx + 8},${node.cy - 3} A9,9 0 1,0 ${node.cx + 3},${node.cy + 8}`} fill="none" stroke="#90e0ef" strokeWidth="1.5" />
+                  <polygon points={`${node.cx + 3},${node.cy + 5} ${node.cx + 6},${node.cy + 9} ${node.cx},${node.cy + 9}`} fill="#90e0ef" opacity="0.9" />
+                  <path d={`M${node.cx - 8},${node.cy + 3} A9,9 0 1,0 ${node.cx - 3},${node.cy - 8}`} fill="none" stroke="#90e0ef" strokeWidth="1.5" />
+                  <polygon points={`${node.cx - 3},${node.cy - 5} ${node.cx - 6},${node.cy - 9} ${node.cx},${node.cy - 9}`} fill="#90e0ef" opacity="0.9" />
                 </g>
               )}
 
@@ -191,7 +191,7 @@ export function PlatformFlow(): React.ReactElement {
                 x={node.cx}
                 y={node.cy + 46}
                 textAnchor="middle"
-                fill="#778da9"
+                fill="#90e0ef"
                 fontSize="11"
                 fontFamily="var(--font-body), sans-serif"
                 letterSpacing="0.05em"
