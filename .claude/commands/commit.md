@@ -8,7 +8,5 @@ Read the git workflow rules in `.claude/rules/git-workflow.md` for commit messag
 
 ## Important
 
-- If there are mixed unrelated changes, ask the user whether to:
-  - Commit everything together with a general message
-  - Split into multiple focused commits
+- If there are mixed unrelated changes, always split into multiple focused commits
 - Always show `git status` before and `git log -1` after committing
