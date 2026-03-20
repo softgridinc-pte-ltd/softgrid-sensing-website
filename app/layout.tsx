@@ -17,6 +17,7 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
+
 export const metadata: Metadata = {
   title: 'Softgrid Sensing | AI-Driven Facility Operating System',
   description:

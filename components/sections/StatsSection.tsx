@@ -5,9 +5,10 @@ import { StatBlock } from '@/components/ui/StatBlock'
 import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 const stats = [
-  { value: '10,000+', label: 'Assets Monitored' },
-  { value: '85%+', label: 'Prediction Accuracy' },
+  { value: '10,000+', label: 'Lifts Monitored' },
+  { value: '>85%', label: 'Prediction Accuracy' },
   { value: '8+', label: 'Years in Singapore' },
+  { value: 'NRF', label: 'Grant Awarded' },
   { value: '4,000+', label: 'HDB Blocks' },
 ]
 
@@ -15,8 +16,13 @@ export function StatsSection(): React.ReactElement {
   const { containerRef, getItemProps } = useScrollRevealGroup({ animation: 'scale-up' })
 
   return (
-    <section className="bg-navy-800 py-20 md:py-24 relative overflow-hidden">
-      {/* Subtle glow */}
+    <section
+      className="bg-navy-800 py-12 md:py-16 relative overflow-hidden border-t border-b"
+      style={{
+        borderColor: 'rgba(0, 180, 216, 0.08)',
+      }}
+    >
+      {/* Subtle center glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px]" />
 
       <div ref={containerRef} className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
@@ -38,8 +44,8 @@ export function StatsSection(): React.ReactElement {
 
         {/* BCA Certified badge */}
         <div
-          className={`flex justify-center mt-10 ${getItemProps(4).className}`}
-          style={getItemProps(4).style}
+          className={`flex justify-center mt-10 ${getItemProps(5).className}`}
+          style={getItemProps(5).style}
         >
           <div className="inline-flex items-center gap-2.5 border border-cyan-500/20 bg-cyan-500/5 rounded-full px-5 py-2.5">
             <ShieldCheck className="w-4.5 h-4.5 text-cyan-400" strokeWidth={2} />
