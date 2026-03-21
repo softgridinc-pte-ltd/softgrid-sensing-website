@@ -103,7 +103,7 @@ Key hardware features:
 
 - In-house R&D team
 - Collaboration with A\*STAR and SIMTech
-- NRF Grant: S$2.1M (Cities of Tomorrow R&D Programme)
+- NRF Grant: [redacted] (Cities of Tomorrow R&D Programme)
 - BCA Sandbox certified for RM&D solutions
 
 ## Clients & Partners
@@ -114,7 +114,7 @@ Key hardware features:
 | ------------- | ----------------------- |
 | HDB           | 10,000+ lifts monitored |
 | BCA           | RM&D certification      |
-| NRF           | S$2.1M grant            |
+| NRF           | [redacted] grant            |
 | Town Councils | LTMS users              |
 | NParks        | Remote sensing project  |
 | JTC           | Partner                 |
@@ -164,7 +164,7 @@ Key hardware features:
 | Lifts Monitored    | 10,000+ | Across Singapore, HDB & private          |
 | Years in Singapore | 8       | Since 2017                               |
 | AI Accuracy        | 85%+    | Fault prediction (verify with tech team) |
-| NRF Grant          | S$2.1M  | Cities of Tomorrow programme             |
+| NRF Grant          | [redacted]  | Cities of Tomorrow programme             |
 | BCA Certified      | Yes     | RM&D solutions                           |
 | HDB Blocks         | 4,000+  | Blocks with lifts monitored              |
 

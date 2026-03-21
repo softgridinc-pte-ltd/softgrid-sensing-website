@@ -134,6 +134,10 @@ try {
 }
 ```
 
+## Sensitive Data
+
+**Never include monetary values** (grant amounts, revenue, contract values, pricing) in code or docs. Use descriptive labels instead (e.g., "NRF Grant Awarded" not "S$2.1M NRF Grant"). Percentages for outcomes (e.g., "50% cost reduction", "85% accuracy") are acceptable — they describe performance, not financial data.
+
 ## Code Quality Checklist
 
 Before marking work complete:
@@ -146,3 +150,4 @@ Before marking work complete:
 - [ ] No console.log statements
 - [ ] No hardcoded values
 - [ ] No mutation (immutable patterns used)
+- [ ] No sensitive financial data (monetary values, grant amounts, pricing)

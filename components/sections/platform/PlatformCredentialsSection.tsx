@@ -1,7 +1,4 @@
-'use client'
-
 import { Clock, Microscope, Award, Shield, Cloud, Activity, Plug } from 'lucide-react'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface Credential {
   icon: React.ReactNode
@@ -22,7 +19,7 @@ const credentials: Credential[] = [
   },
   {
     icon: <Award className="w-5 h-5 text-cyan-500" />,
-    label: 'S$2.1M NRF Grant',
+    label: 'NRF Grant Awarded',
     detail: 'Cities of Tomorrow national research award',
   },
   {
@@ -48,12 +45,10 @@ const credentials: Credential[] = [
 ]
 
 export function PlatformCredentialsSection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup({ staggerInterval: 80 })
-
   return (
     <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div data-animate className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Built on Proven Technology
           </h2>
@@ -62,12 +57,12 @@ export function PlatformCredentialsSection(): React.ReactElement {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {credentials.map((cred, i) => (
+        <div data-animate-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {credentials.map((cred) => (
             <div
               key={cred.label}
-              className={`bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-cyan-500/50 ${getItemProps(i).className}`}
-              style={getItemProps(i).style}
+              data-animate
+              className="bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-cyan-500/50"
             >
               <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
                 {cred.icon}

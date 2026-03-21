@@ -200,7 +200,7 @@ Each solution page follows this template:
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │                      R&D STRENGTH                                       │
-│   In-house R&D  |  A*STAR Collaboration  |  S$2.1M NRF Grant          │
+│   In-house R&D  |  A*STAR Collaboration  |  NRF Grant                 │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
