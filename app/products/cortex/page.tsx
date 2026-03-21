@@ -1,5 +1,4 @@
-import { ProductBlockSection } from '@/components/sections/products/ProductBlockSection'
-import { Button } from '@/components/ui/Button'
+import Link from 'next/link'
 
 import type { Metadata } from 'next'
 
@@ -9,119 +8,1087 @@ export const metadata: Metadata = {
     'AI knowledge base, digital twin visualization, and predictive analytics — turning your operational data into your most valuable asset.',
 }
 
-const products = [
-  {
-    name: 'Athena',
-    fullName: 'AI Knowledge Base',
-    oneLiner: 'Ask any question about your facilities — in plain English',
-    description:
-      'RAG-powered AI assistant that indexes equipment manuals, SOPs, compliance documents, and historical fault records. Available in any AFOS product surface or as a standalone deployment.',
-    capabilities: [
-      'Retrieval-Augmented Generation on enterprise knowledge',
-      'Natural language query in any language',
-      'Three deployment modes: embedded in IRIS, embedded in any AFOS product, standalone',
-      'Reduces dependency on senior technician expertise',
-      'Training tool for junior staff',
-    ],
-    meta: [
-      { label: 'Traction', value: 'Deployed within IRIS (CPG FM); standalone confirmed' },
-    ],
-  },
-  {
-    name: 'Digital Twin',
-    fullName: 'Digital Twin Platform',
-    oneLiner: 'Web-based 3D visualization and simulation — see your building live, simulate its future',
-    description:
-      'Powered by Unreal Engine with Pixel Streaming — cloud GPU rendered, browser-based. No client-side installation required. Overlays live sensor data on 3D building models for real-time operational visualization.',
-    capabilities: [
-      '300,000+ data updates per second',
-      'Real-time Finite Element Analysis (FEA) visualization',
-      'Live sensor data overlay on 3D building/asset model',
-      "'What-if' scenario simulation for maintenance planning",
-      'Structural Health Monitoring for high-value assets',
-      'No client-side installation required',
-    ],
-    meta: [
-      { label: 'Reference', value: 'Deployed for TCOMS structural health monitoring (offshore/marine)' },
-    ],
-  },
-  {
-    name: 'AI Predictive Analytics',
-    fullName: 'AI Predictive Analytics',
-    oneLiner: 'ML models that predict equipment failures before they happen',
-    description:
-      'Unsupervised learning for anomaly detection and semi-supervised soft clustering for multi-class fault prediction. Developed in collaboration with A*STAR and SIMTech.',
-    capabilities: [
-      '>85% prediction accuracy',
-      '<25% customization for new data models',
-      'Self-training capability from operational data',
-      'Vibration, acceleration, and temperature analysis',
-      'Deployed within RM&D and LTMS',
-    ],
-    meta: [
-      { label: 'R&D Partners', value: 'A*STAR, SIMTech' },
-      { label: 'Status', value: 'Deployed in RM&D and LTMS; standalone packaging evaluated' },
-    ],
-  },
-  {
-    name: 'ESG & Compliance Reporting',
-    fullName: 'ESG & Compliance Reporting',
-    oneLiner: 'Automated compliance reports from operational data',
-    description:
-      'Generates Green Mark 2021 documentation, energy audit reports, and ESG compliance outputs from data already collected by the AFOS platform.',
-    capabilities: [
-      'Green Mark 2021 documentation',
-      'Energy audit report generation',
-      'ESG compliance data outputs',
-      'Automated data collection from all AFOS products',
-    ],
-    meta: [
-      { label: 'Status', value: 'Data collection capabilities exist; report templates under development' },
-    ],
-    badge: 'Under Development',
-  },
-]
-
 export default function CortexPage(): React.ReactElement {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 grid-pattern opacity-30" />
+      {/* SERIES HERO */}
+      <section
+        style={{
+          padding: '80px 64px 64px',
+          background: 'linear-gradient(160deg, #0A1628 0%, #162544 100%)',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Radial glow overlay */}
         <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[160px]"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.1) 0%, transparent 70%)' }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            background:
+              'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)',
+          }}
         />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <div className="flex items-center gap-3.5 justify-center mb-8">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
-            <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">AFOS Cortex</span>
+        {/* Grid texture overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            backgroundImage:
+              'linear-gradient(rgba(0,180,216,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.03) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
+            maskImage:
+              'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
+          }}
+        />
+        <div
+          style={{ position: 'relative', zIndex: 1, maxWidth: 680 }}
+          data-animate
+        >
+          <div
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: 12,
+              fontWeight: 700,
+              textTransform: 'uppercase' as const,
+              letterSpacing: 3,
+              color: '#00b4d8',
+              marginBottom: 20,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+            }}
+          >
+            <span
+              style={{
+                width: 32,
+                height: 1,
+                background: 'linear-gradient(90deg, transparent, #00b4d8)',
+                display: 'block',
+              }}
+            />
+            AFOS Cortex
           </div>
-          <p className="text-cyan-400 text-lg mb-3">Data &amp; Intelligence</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-3xl mx-auto leading-tight">
+          <div
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: 13,
+              fontWeight: 500,
+              color: '#94A3B8',
+              letterSpacing: 1,
+              marginBottom: 12,
+            }}
+          >
+            Data &amp; Intelligence
+          </div>
+          <h1
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: 48,
+              fontWeight: 800,
+              letterSpacing: -2,
+              lineHeight: 1.1,
+              color: '#FFFFFF',
+              marginBottom: 20,
+            }}
+          >
             From Data to Decisions. From Monitoring to Foresight.
           </h1>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            AI knowledge base, digital twin visualization, and predictive analytics &mdash; turning your operational data into your most valuable asset.
+          <p
+            style={{
+              fontSize: 18,
+              lineHeight: 1.7,
+              color: '#94A3B8',
+              maxWidth: 580,
+            }}
+          >
+            AI knowledge base, digital twin visualization, and predictive
+            analytics — turning your operational data into your most valuable
+            asset.
           </p>
         </div>
       </section>
 
-      {/* Product Blocks */}
-      <ProductBlockSection products={products} />
+      {/* PRODUCT 1: ATHENA */}
+      <section style={{ padding: '100px 64px', position: 'relative', background: '#FFFFFF' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: 64, alignItems: 'start', maxWidth: 1200, margin: '0 auto' }}
+          data-animate
+        >
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  background: '#111D35',
+                  border: '1px solid rgba(144,224,239,0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  style={{
+                    width: 22,
+                    height: 22,
+                    stroke: '#90e0ef',
+                    strokeWidth: 1.8,
+                    fill: 'none',
+                    strokeLinecap: 'round',
+                    strokeLinejoin: 'round',
+                  }}
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  textTransform: 'uppercase' as const,
+                  letterSpacing: 1.5,
+                  color: '#0077b6',
+                }}
+              >
+                Athena
+              </div>
+            </div>
+            <h2
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 32,
+                fontWeight: 700,
+                letterSpacing: -1,
+                color: '#0A1628',
+                marginBottom: 8,
+                lineHeight: 1.2,
+              }}
+            >
+              AI Knowledge Base
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 16,
+                fontWeight: 500,
+                color: '#64748B',
+                marginBottom: 24,
+                fontStyle: 'italic',
+              }}
+            >
+              Ask any question about your facilities — in plain English — and
+              get an instant, accurate answer
+            </p>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.8,
+                color: '#475569',
+                marginBottom: 28,
+              }}
+            >
+              Athena is an AI assistant purpose-built for facility operations.
+              Powered by Retrieval-Augmented Generation (RAG), it indexes your
+              equipment manuals, maintenance procedures, compliance documents,
+              and historical fault data — then answers questions in natural
+              language. Embed it in any dashboard, mobile app, or deploy it
+              standalone.
+            </p>
+            <div
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 13,
+                fontWeight: 700,
+                textTransform: 'uppercase' as const,
+                letterSpacing: 1.5,
+                color: '#94A3B8',
+                marginBottom: 14,
+              }}
+            >
+              Key Capabilities
+            </div>
+            <ul style={{ listStyle: 'none', marginBottom: 28, padding: 0 }}>
+              {[
+                'RAG-powered enterprise knowledge retrieval',
+                'Natural language query: "What\'s the procedure for replacing the drive belt on escalator model X?"',
+                'Indexes: equipment manuals, SOPs, compliance docs, historical fault records',
+                'Three deployment modes: embedded in IRIS, embedded in any AFOS product, standalone',
+                'Reduces dependency on senior technician expertise',
+                'Training tool for junior staff',
+              ].map((item) => (
+                <li
+                  key={item}
+                  style={{
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    color: '#334155',
+                    padding: '7px 0 7px 20px',
+                    position: 'relative',
+                    borderBottom: '1px solid #F1F5F9',
+                  }}
+                >
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: 0,
+                      top: 14,
+                      width: 6,
+                      height: 6,
+                      borderRadius: '50%',
+                      background: '#00b4d8',
+                      display: 'block',
+                    }}
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: 1,
+                    color: '#94A3B8',
+                    marginBottom: 4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  Traction
+                </div>
+                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
+                  Deployed within IRIS (CPG FM). Standalone confirmed.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              background: '#0A1628',
+              borderRadius: 24,
+              aspectRatio: '4/3',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              border: '1px solid rgba(0,180,216,0.1)',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                background:
+                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+              }}
+            />
+            <div
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 14,
+                color: '#64748B',
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1.6,
+              }}
+            >
+              [ATHENA QUERY INTERFACE]
+              <br />
+              <br />
+              Natural language question
+              <br />
+              and answer
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* CTA */}
-      <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      {/* PRODUCT 2: DIGITAL TWIN (reversed) */}
+      <section style={{ padding: '100px 64px', position: 'relative', background: '#F8FAFC' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{
+            gap: 64,
+            alignItems: 'start',
+            maxWidth: 1200,
+            margin: '0 auto',
+            direction: 'rtl',
+          }}
+          data-animate
+        >
+          <div style={{ direction: 'ltr' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  background: '#111D35',
+                  border: '1px solid rgba(144,224,239,0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  style={{
+                    width: 22,
+                    height: 22,
+                    stroke: '#90e0ef',
+                    strokeWidth: 1.8,
+                    fill: 'none',
+                    strokeLinecap: 'round',
+                    strokeLinejoin: 'round',
+                  }}
+                >
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  textTransform: 'uppercase' as const,
+                  letterSpacing: 1.5,
+                  color: '#0077b6',
+                }}
+              >
+                Digital Twin Platform
+              </div>
+            </div>
+            <h2
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 32,
+                fontWeight: 700,
+                letterSpacing: -1,
+                color: '#0A1628',
+                marginBottom: 8,
+                lineHeight: 1.2,
+              }}
+            >
+              Digital Twin Platform
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 16,
+                fontWeight: 500,
+                color: '#64748B',
+                marginBottom: 24,
+                fontStyle: 'italic',
+              }}
+            >
+              Web-based 3D visualization and simulation — see your building
+              live, simulate its future
+            </p>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.8,
+                color: '#475569',
+                marginBottom: 28,
+              }}
+            >
+              Softgrid&#39;s Digital Twin platform turns your physical assets
+              into interactive 3D models with live sensor data overlay. Powered
+              by Unreal Engine and delivered via Pixel Streaming, it runs in any
+              web browser — no installation, no special hardware. Use it for
+              real-time monitoring visualization, &quot;what-if&quot; scenario
+              simulation, or structural health monitoring with real-time finite
+              element analysis.
+            </p>
+            <div
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 13,
+                fontWeight: 700,
+                textTransform: 'uppercase' as const,
+                letterSpacing: 1.5,
+                color: '#94A3B8',
+                marginBottom: 14,
+              }}
+            >
+              Key Capabilities
+            </div>
+            <ul style={{ listStyle: 'none', marginBottom: 28, padding: 0 }}>
+              {[
+                'Unreal Engine + Pixel Streaming (cloud GPU rendered, browser-based)',
+                '300,000+ data updates per second',
+                'Real-time Finite Element Analysis (FEA) visualization',
+                'Live sensor data overlay on 3D building/asset model',
+                '"What-if" scenario simulation for maintenance planning',
+                'Structural Health Monitoring for high-value assets',
+                'No client-side installation required',
+              ].map((item) => (
+                <li
+                  key={item}
+                  style={{
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    color: '#334155',
+                    padding: '7px 0 7px 20px',
+                    position: 'relative',
+                    borderBottom: '1px solid #F1F5F9',
+                  }}
+                >
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: 0,
+                      top: 14,
+                      width: 6,
+                      height: 6,
+                      borderRadius: '50%',
+                      background: '#00b4d8',
+                      display: 'block',
+                    }}
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: 1,
+                    color: '#94A3B8',
+                    marginBottom: 4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  Reference
+                </div>
+                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
+                  TCOMS structural health monitoring (offshore/marine)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              direction: 'ltr',
+              background: '#0A1628',
+              borderRadius: 24,
+              aspectRatio: '4/3',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              border: '1px solid rgba(0,180,216,0.1)',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                background:
+                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+              }}
+            />
+            <div
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 14,
+                color: '#64748B',
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1.6,
+              }}
+            >
+              [DIGITAL TWIN VISUALIZATION]
+              <br />
+              <br />
+              3D building with live
+              <br />
+              data overlay
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCT 3: AI PREDICTIVE ANALYTICS */}
+      <section style={{ padding: '100px 64px', position: 'relative', background: '#FFFFFF' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: 64, alignItems: 'start', maxWidth: 1200, margin: '0 auto' }}
+          data-animate
+        >
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  background: '#111D35',
+                  border: '1px solid rgba(144,224,239,0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  style={{
+                    width: 22,
+                    height: 22,
+                    stroke: '#90e0ef',
+                    strokeWidth: 1.8,
+                    fill: 'none',
+                    strokeLinecap: 'round',
+                    strokeLinejoin: 'round',
+                  }}
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  textTransform: 'uppercase' as const,
+                  letterSpacing: 1.5,
+                  color: '#0077b6',
+                }}
+              >
+                AI Predictive Analytics [TBD]
+              </div>
+            </div>
+            <h2
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 32,
+                fontWeight: 700,
+                letterSpacing: -1,
+                color: '#0A1628',
+                marginBottom: 8,
+                lineHeight: 1.2,
+              }}
+            >
+              AI Predictive Analytics
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 16,
+                fontWeight: 500,
+                color: '#64748B',
+                marginBottom: 24,
+                fontStyle: 'italic',
+              }}
+            >
+              ML models that predict equipment failures before they happen —
+              with &gt;83% accuracy
+            </p>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.8,
+                color: '#475569',
+                marginBottom: 28,
+              }}
+            >
+              Our predictive AI engine analyzes vibration, acceleration, and
+              temperature data from connected sensors to detect anomalies and
+              predict failures — weeks before they occur. Developed in
+              collaboration with A*STAR and SIMTech, these models use
+              unsupervised learning for anomaly detection and semi-supervised
+              soft clustering for multi-class fault prediction. Currently
+              powering predictions across our AFOS Fusion products, with less
+              than 25% customization effort required for new equipment types.
+            </p>
+            {/* Metrics display */}
+            <div style={{ display: 'flex', gap: 32, marginBottom: 28 }}>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: '#0A1628',
+                  }}
+                >
+                  &gt;83%
+                </div>
+                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
+                  Prediction accuracy
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: '#0A1628',
+                  }}
+                >
+                  &lt;25%
+                </div>
+                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
+                  Customization for new data models
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: '#0A1628',
+                  }}
+                >
+                  Self-training
+                </div>
+                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
+                  Capability
+                </div>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: 1,
+                    color: '#94A3B8',
+                    marginBottom: 4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  R&amp;D Partners
+                </div>
+                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
+                  A*STAR, SIMTech
+                </div>
+              </div>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: 1,
+                    color: '#94A3B8',
+                    marginBottom: 4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  Status
+                </div>
+                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
+                  Deployed within RM&amp;D and LTMS. Standalone packaging in
+                  evaluation.
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '6px 14px',
+                background: '#F1F5F9',
+                border: '1px solid #E2E8F0',
+                borderRadius: 100,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 12,
+                fontWeight: 600,
+                color: '#64748B',
+                marginTop: 20,
+              }}
+            >
+              Standalone Packaging In Development
+            </div>
+          </div>
+          <div
+            style={{
+              background: '#0A1628',
+              borderRadius: 24,
+              aspectRatio: '4/3',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              border: '1px solid rgba(0,180,216,0.1)',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                background:
+                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+              }}
+            />
+            <div
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 14,
+                color: '#64748B',
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1.6,
+              }}
+            >
+              [AI PREDICTION VISUALIZATION]
+              <br />
+              <br />
+              Anomaly detection chart
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCT 4: ESG & COMPLIANCE REPORTING (reversed) */}
+      <section style={{ padding: '100px 64px', position: 'relative', background: '#F8FAFC' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{
+            gap: 64,
+            alignItems: 'start',
+            maxWidth: 1200,
+            margin: '0 auto',
+            direction: 'rtl',
+          }}
+          data-animate
+        >
+          <div style={{ direction: 'ltr' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  background: '#111D35',
+                  border: '1px solid rgba(144,224,239,0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  style={{
+                    width: 22,
+                    height: 22,
+                    stroke: '#90e0ef',
+                    strokeWidth: 1.8,
+                    fill: 'none',
+                    strokeLinecap: 'round',
+                    strokeLinejoin: 'round',
+                  }}
+                >
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  textTransform: 'uppercase' as const,
+                  letterSpacing: 1.5,
+                  color: '#0077b6',
+                }}
+              >
+                ESG &amp; Compliance Reporting [TBD]
+              </div>
+            </div>
+            <h2
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 32,
+                fontWeight: 700,
+                letterSpacing: -1,
+                color: '#0A1628',
+                marginBottom: 8,
+                lineHeight: 1.2,
+              }}
+            >
+              ESG &amp; Compliance Reporting
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 16,
+                fontWeight: 500,
+                color: '#64748B',
+                marginBottom: 24,
+                fontStyle: 'italic',
+              }}
+            >
+              Automated compliance reports from your operational data — Green
+              Mark, energy audits, ESG
+            </p>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.8,
+                color: '#475569',
+                marginBottom: 28,
+              }}
+            >
+              As Green Mark 2021 and the upcoming Mandatory Energy Improvement
+              regime tighten requirements, building owners need automated,
+              data-driven compliance reporting. This capability leverages
+              operational data already collected by the AFOS platform to generate
+              Green Mark documentation, energy audit reports, and ESG compliance
+              outputs — eliminating manual data collection and report
+              preparation.
+            </p>
+            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: 1,
+                    color: '#94A3B8',
+                    marginBottom: 4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  Status
+                </div>
+                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
+                  Data collection capabilities exist within Cloud BMS and IRIS.
+                  Report templates under development.
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '6px 14px',
+                background: '#F1F5F9',
+                border: '1px solid #E2E8F0',
+                borderRadius: 100,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 12,
+                fontWeight: 600,
+                color: '#64748B',
+                marginTop: 20,
+              }}
+            >
+              Under Development
+            </div>
+          </div>
+          <div
+            style={{
+              direction: 'ltr',
+              background: '#0A1628',
+              borderRadius: 24,
+              aspectRatio: '4/3',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              border: '1px solid rgba(0,180,216,0.1)',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                background:
+                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+              }}
+            />
+            <div
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 14,
+                color: '#64748B',
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1.6,
+              }}
+            >
+              [COMPLIANCE REPORT SAMPLE]
+              <br />
+              <br />
+              Mockup of automated report
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CROSS-SERIES ENHANCEMENT */}
+      <section
+        style={{
+          padding: '80px 64px',
+          background: '#0A1628',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            background:
+              'radial-gradient(ellipse at 30% 50%, rgba(0,180,216,0.06) 0%, transparent 50%)',
+          }}
+        />
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            maxWidth: 800,
+            margin: '0 auto',
+            textAlign: 'center',
+          }}
+          data-animate
+        >
+          <span
+            style={{
+              display: 'block',
+              width: 48,
+              height: 2,
+              background: '#00b4d8',
+              margin: '0 auto 32px',
+            }}
+          />
+          <h2
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: 36,
+              fontWeight: 800,
+              letterSpacing: -1,
+              color: '#FFFFFF',
+              marginBottom: 24,
+            }}
+          >
+            Intelligence That Powers Everything
+          </h2>
+          <p
+            style={{
+              fontSize: 17,
+              lineHeight: 1.8,
+              color: '#94A3B8',
+            }}
+          >
+            AFOS Cortex products don&#39;t just stand alone — they enhance every
+            product across the platform. Athena can be embedded in IRIS for
+            instant knowledge retrieval during work orders. Digital Twin can
+            visualize any asset monitored by our AFOS Fusion products. AI
+            Predictive Analytics powers the fault predictions in RM&amp;D and
+            LTMS. When you add intelligence, the entire platform gets smarter.
+          </p>
+        </div>
+      </section>
+
+      {/* SERIES CTA */}
+      <section
+        style={{
+          padding: '100px 64px',
+          background: '#00b4d8',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            background:
+              'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 50%)',
+          }}
+        />
+        <div style={{ position: 'relative', zIndex: 1 }} data-animate>
+          <h2
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: 40,
+              fontWeight: 800,
+              letterSpacing: -1,
+              color: '#FFFFFF',
+              marginBottom: 32,
+            }}
+          >
             See AFOS Cortex in Action
           </h2>
-          <p className="text-lg text-slate-400 mb-10">Schedule a demo with our team.</p>
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
+          <Link
+            href="/contact"
+            className="hover:shadow-lg hover:scale-[1.02]"
+            style={{
+              display: 'inline-block',
+              background: '#FFFFFF',
+              color: '#0A1628',
+              fontWeight: 600,
+              padding: '14px 32px',
+              borderRadius: 8,
+              fontSize: 15,
+              textDecoration: 'none',
+              transition: 'all 0.2s',
+            }}
+          >
             Request a Demo
-          </Button>
+          </Link>
         </div>
       </section>
     </>
