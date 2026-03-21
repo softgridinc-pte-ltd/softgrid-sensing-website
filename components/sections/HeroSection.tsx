@@ -56,7 +56,7 @@ export function HeroSection(): React.ReactElement {
         </div>
 
         {/* Headline */}
-        <h1 className="hero-entrance hero-entrance-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 max-w-5xl mx-auto">
+        <h1 className="hero-entrance hero-entrance-2 text-4xl sm:text-5xl md:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-3px] mb-6 max-w-5xl mx-auto">
           Smarter Buildings. Predictive Maintenance.{' '}
           <span className="text-gradient">One Platform.</span>
         </h1>

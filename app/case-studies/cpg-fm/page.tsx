@@ -58,7 +58,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
               Facility Operations / Managing Agent
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-4xl mx-auto leading-tight">
             AI-Powered Facility Management for CPG FM
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">

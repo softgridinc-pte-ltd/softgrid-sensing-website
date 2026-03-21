@@ -56,7 +56,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
               Infrastructure &amp; Environmental / Government
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-4xl mx-auto leading-tight">
             Monthly Forest Cover Monitoring Across Singapore
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">

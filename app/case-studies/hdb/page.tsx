@@ -64,7 +64,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               Public Sector / Vertical Transport
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-4xl mx-auto leading-tight">
             Monitoring 10,000+ Lifts Across 4,000+ HDB Blocks
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">

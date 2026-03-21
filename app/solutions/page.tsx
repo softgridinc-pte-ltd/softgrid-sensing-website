@@ -24,7 +24,7 @@ export default function SolutionsPage(): React.ReactElement {
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
             <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">Solutions</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-3xl mx-auto leading-tight">
             Solutions Built for How You Operate
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">

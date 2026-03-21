@@ -99,7 +99,7 @@ export default function CortexPage(): React.ReactElement {
             <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">AFOS Cortex</span>
           </div>
           <p className="text-cyan-400 text-lg mb-3">Data &amp; Intelligence</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-3xl mx-auto leading-tight">
             From Data to Decisions. From Monitoring to Foresight.
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
