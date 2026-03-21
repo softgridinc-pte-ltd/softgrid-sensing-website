@@ -1,7 +1,3 @@
-'use client'
-
-import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
-
 interface Milestone {
   year: string
   title: string
@@ -29,7 +25,7 @@ export function JourneySection(): React.ReactElement {
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
       <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div data-animate className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Journey</h2>
           <p className="text-lg text-cyan-400 max-w-2xl mx-auto">
             From lift monitoring startup to full-stack facility operating system.
@@ -43,12 +39,13 @@ export function JourneySection(): React.ReactElement {
           {/* Line glow */}
           <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400/40 via-cyan-400/15 to-transparent blur-[2px]" />
 
-          <div className="space-y-8 md:space-y-12">
+          <div data-animate-stagger className="space-y-8 md:space-y-12">
             {milestones.map((milestone, i) => {
               const isLeft = i % 2 === 0
 
               return (
-                <ScrollRevealItem
+                <div
+                  data-animate
                   key={`${milestone.year}-${milestone.title.slice(0, 20)}`}
                   className="relative"
                 >
@@ -89,7 +86,7 @@ export function JourneySection(): React.ReactElement {
                       <div className="w-2 h-2 bg-cyan-400 rounded-full timeline-dot" />
                     </div>
                   </div>
-                </ScrollRevealItem>
+                </div>
               )
             })}
           </div>

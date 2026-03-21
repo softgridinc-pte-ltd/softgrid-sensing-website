@@ -114,7 +114,7 @@ export default function CortexPage(): React.ReactElement {
       {/* CTA */}
       <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             See AFOS Cortex in Action
           </h2>

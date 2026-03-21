@@ -1,8 +1,5 @@
-'use client'
-
 import { ShieldCheck, Cpu, Link2, FileCheck2 } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 import type { ReactNode } from 'react'
 
@@ -40,21 +37,18 @@ const pillars: Pillar[] = [
 ]
 
 export function WhySoftgridSection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   return (
     <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-12 md:mb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div data-animate className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose Softgrid?</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((pillar, i) => (
+        <div data-animate-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className={getItemProps(i).className}
-              style={getItemProps(i).style}
+              data-animate
             >
               <Card className="p-8 h-full">
                 <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">

@@ -1,8 +1,5 @@
-'use client'
-
 import Link from 'next/link'
 import { Activity, Building2, LayoutGrid, Satellite } from 'lucide-react'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface SolutionCard {
   title: string
@@ -80,23 +77,21 @@ function SolutionCardItem({ card }: { card: SolutionCard }): React.ReactElement 
 }
 
 export function SolutionCardsSection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   const featuredCard = solutions[0]
   const otherCards = solutions.slice(1)
 
   return (
     <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Featured card — full width */}
-        <div className={`mb-8 ${getItemProps(0).className}`} style={getItemProps(0).style}>
+        <div data-animate className="mb-8">
           <SolutionCardItem card={featuredCard} />
         </div>
 
         {/* 3-card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {otherCards.map((card, i) => (
-            <div key={card.title} className={getItemProps(i + 1).className} style={getItemProps(i + 1).style}>
+        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          {otherCards.map((card) => (
+            <div key={card.title} data-animate>
               <SolutionCardItem card={card} />
             </div>
           ))}

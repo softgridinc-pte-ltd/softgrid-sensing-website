@@ -296,9 +296,7 @@ Add `data-animate-stagger` to a parent container. Its direct children with `data
 - Stagger: `100ms` between items (auto-assigned)
 - All animations respect `prefers-reduced-motion: reduce`
 
-### Legacy
-
-The old hook-based system (`useScrollRevealGroup`, `ScrollRevealItem`, `scrollAnimations.ts` presets) still exists for pages not yet migrated. New pages should use `data-animate`.
+All pages use this system. The old hook-based system (`useScrollRevealGroup`, `ScrollRevealItem`, `scrollAnimations.ts`) has been deleted.
 
 ---
 
@@ -359,15 +357,7 @@ components/
   ui/SectionHeader.tsx         — colorScheme-aware section heading
   ui/StatBlock.tsx             — 'use client' (animated counter)
   ui/ScrollAnimator.tsx        — 'use client' (global data-animate observer, mounted in layout)
-  ui/ScrollRevealItem.tsx      — 'use client' (legacy, used by unmigrated pages)
   sections/[page]/             — Page-specific section components
-
-hooks/
-  useInView.ts                 — Intersection Observer (legacy, used by unmigrated pages)
-  useScrollRevealGroup.ts      — Grouped stagger reveal (legacy, superseded by data-animate)
-
-lib/
-  scrollAnimations.ts          — Animation preset definitions (legacy)
 ```
 
 ### `'use client'` Boundary

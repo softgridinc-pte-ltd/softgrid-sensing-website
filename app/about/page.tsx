@@ -39,7 +39,7 @@ export default function AboutPage(): React.ReactElement {
 
       {/* Company Story */}
       <section className="bg-navy-800 py-20 md:py-28">
-        <div className="max-w-3xl mx-auto px-4 md:px-8">
+        <div className="max-w-3xl mx-auto px-4 md:px-8" data-animate>
           <p className="text-slate-300 text-lg md:text-xl leading-[1.8] mb-8">
             We started in 2017 with a simple mission: make lift monitoring smarter. What began as remote monitoring for HDB lifts has evolved into a full-stack Facility Operating System&mdash;combining IoT hardware, edge computing, AI analytics, and digital twin visualization.
           </p>
@@ -65,7 +65,7 @@ export default function AboutPage(): React.ReactElement {
       <section className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
 
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Work with Us?
           </h2>

@@ -47,7 +47,7 @@ export default function ProductsPage(): React.ReactElement {
 
       {/* Philosophy Block */}
       <section className="bg-navy-800 py-16 md:py-20">
-        <div className="max-w-3xl mx-auto px-4 md:px-8">
+        <div className="max-w-3xl mx-auto px-4 md:px-8" data-animate>
           <div className="border-l-2 border-cyan-500/40 pl-6 md:pl-8">
             <p className="text-lg text-slate-300 leading-relaxed italic">
               We&apos;re not a system integrator reselling other vendors&apos; products. Every component in our stack &mdash; from the sensor on the lift to the dashboard on your screen &mdash; is designed and built by our engineering team. This means seamless integration, faster iteration, and solutions tailored to your operations.
@@ -61,7 +61,7 @@ export default function ProductsPage(): React.ReactElement {
 
       {/* Integration Note */}
       <section className="bg-navy-900 py-16 md:py-24">
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center" data-animate>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Built to Integrate
           </h2>
@@ -85,7 +85,7 @@ export default function ProductsPage(): React.ReactElement {
       <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
 
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Want to See Our Products in Action?
           </h2>

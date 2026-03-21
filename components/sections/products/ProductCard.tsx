@@ -9,8 +9,6 @@ interface ProductCardProps {
   description: string
   proofPoint?: string
   href: string
-  index: number
-  isInView: boolean
 }
 
 export function ProductCard({
@@ -22,15 +20,10 @@ export function ProductCard({
   description,
   proofPoint,
   href,
-  index,
-  isInView,
 }: ProductCardProps): React.ReactElement {
   return (
     <div
-      className={`group bg-navy-800 border border-navy-700 rounded-xl p-6 transition-all duration-300 hover:border-cyan-500/50 ${
-        isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
+      className="group bg-navy-800 border border-navy-700 rounded-xl p-6 transition-all duration-300 hover:border-cyan-500/50"
     >
       <div className="flex items-start gap-3 mb-4">
         <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">

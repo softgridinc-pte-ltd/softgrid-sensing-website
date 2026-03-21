@@ -1,7 +1,3 @@
-'use client'
-
-import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
-
 interface ProductInvolved {
   product: string
   series: string
@@ -16,12 +12,11 @@ export function ProductsInvolvedSection({ products }: ProductsInvolvedSectionPro
   return (
     <section className="bg-navy-800 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-10">
+        <div data-animate className="text-center mb-10">
           <span className="text-xs font-bold uppercase tracking-[3px] text-slate-500">Products Involved</span>
         </div>
 
-        <div className="overflow-x-auto">
-          <ScrollRevealItem>
+        <div data-animate className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-navy-700">
@@ -44,7 +39,6 @@ export function ProductsInvolvedSection({ products }: ProductsInvolvedSectionPro
                 ))}
               </tbody>
             </table>
-          </ScrollRevealItem>
         </div>
       </div>
     </section>

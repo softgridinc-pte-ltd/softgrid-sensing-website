@@ -1,7 +1,4 @@
-'use client'
-
 import { Globe, Layers, RefreshCw } from 'lucide-react'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface Differentiator {
   icon: React.ReactNode
@@ -14,13 +11,13 @@ const differentiators: Differentiator[] = [
     icon: <Globe className="w-6 h-6 text-cyan-500" />,
     title: 'Brand-Agnostic, Source-Agnostic',
     description:
-      'AFOS sits above your existing BMS \u2014 Siemens, Tridium, Honeywell, Midea. It ingests data from any source, any protocol, any vendor. No lock-in.',
+      'AFOS sits above your existing BMS — Siemens, Tridium, Honeywell, Midea. It ingests data from any source, any protocol, any vendor. No lock-in.',
   },
   {
     icon: <Layers className="w-6 h-6 text-cyan-500" />,
     title: 'Full-Stack Self-Built',
     description:
-      'From edge hardware to cloud AI to mobile apps \u2014 every layer is designed and built by Softgrid. No third-party stitching. One team, one codebase, one architecture.',
+      'From edge hardware to cloud AI to mobile apps — every layer is designed and built by Softgrid. No third-party stitching. One team, one codebase, one architecture.',
   },
   {
     icon: <RefreshCw className="w-6 h-6 text-cyan-500" />,
@@ -31,13 +28,11 @@ const differentiators: Differentiator[] = [
 ]
 
 export function PlatformPhilosophySection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   return (
     <section className="bg-navy-800 py-16 md:py-24">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section label */}
-        <div className="flex items-center gap-4 mb-10">
+        <div data-animate className="flex items-center gap-4 mb-10">
           <span className="text-cyan-400 text-sm font-semibold uppercase tracking-[0.2em]">
             What Makes AFOS a Platform
           </span>
@@ -45,7 +40,7 @@ export function PlatformPhilosophySection(): React.ReactElement {
         </div>
 
         {/* Philosophy text */}
-        <div className="max-w-3xl mb-12">
+        <div data-animate className="max-w-3xl mb-12">
           <p className="text-lg text-slate-300 leading-relaxed">
             Most facility management tools are collections of disconnected products marketed as a &ldquo;platform.&rdquo;
             AFOS is different. It&apos;s a unified core that every Softgrid product runs on &mdash; shared data layer,
@@ -55,12 +50,12 @@ export function PlatformPhilosophySection(): React.ReactElement {
         </div>
 
         {/* Differentiator cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {differentiators.map((item, i) => (
+        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {differentiators.map((item) => (
             <div
               key={item.title}
-              className={`bg-navy-900 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/50 ${getItemProps(i).className}`}
-              style={getItemProps(i).style}
+              data-animate
+              className="bg-navy-900 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/50"
             >
               <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">
                 {item.icon}

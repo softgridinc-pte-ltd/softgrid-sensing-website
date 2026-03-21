@@ -1,7 +1,4 @@
-'use client'
-
 import Link from 'next/link'
-import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
 
 interface Stat {
   value: string
@@ -137,11 +134,11 @@ export function CaseStudyCardsSection(): React.ReactElement {
   return (
     <section className="bg-navy-800 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div data-animate-stagger className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {caseStudies.map((study) => (
-            <ScrollRevealItem key={study.client}>
+            <div key={study.client} data-animate>
               <CaseStudyCard study={study} />
-            </ScrollRevealItem>
+            </div>
           ))}
         </div>
       </div>

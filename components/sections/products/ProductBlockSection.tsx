@@ -1,7 +1,3 @@
-'use client'
-
-import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
-
 interface ProductMeta {
   label: string
   value: string
@@ -25,8 +21,7 @@ export function ProductBlockSection({ products }: ProductBlockSectionProps): Rea
   return (
     <div className="space-y-8">
       {products.map((product, i) => (
-        <ScrollRevealItem key={product.name}>
-          <section className={`${i % 2 === 0 ? 'bg-navy-900' : 'bg-navy-800'} py-12 md:py-16`}>
+          <section data-animate key={product.name} className={`${i % 2 === 0 ? 'bg-navy-900' : 'bg-navy-800'} py-12 md:py-16`}>
             <div className="max-w-7xl mx-auto px-4 md:px-8">
               <div className="max-w-3xl">
                 {/* Product name badge */}
@@ -75,7 +70,6 @@ export function ProductBlockSection({ products }: ProductBlockSectionProps): Rea
               </div>
             </div>
           </section>
-        </ScrollRevealItem>
       ))}
     </div>
   )

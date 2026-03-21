@@ -1,7 +1,4 @@
-'use client'
-
 import { Radio, BrainCircuit, Workflow, Database, ChevronRight } from 'lucide-react'
-import { ScrollRevealItem } from '@/components/ui/ScrollRevealItem'
 
 interface Engine {
   icon: React.ReactNode
@@ -81,7 +78,7 @@ export function PlatformEnginesSection(): React.ReactElement {
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div data-animate className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             How AFOS Works
           </h2>
@@ -92,7 +89,7 @@ export function PlatformEnginesSection(): React.ReactElement {
         </div>
 
         {/* Engine flow diagram — Desktop */}
-        <ScrollRevealItem className="hidden lg:flex items-center justify-center gap-3 mb-16">
+        <div data-animate className="hidden lg:flex items-center justify-center gap-3 mb-16">
           {engines.map((engine, i) => (
             <div key={engine.name} className="contents">
               <div className="bg-navy-800 border border-navy-700 rounded-xl px-6 py-6 text-center hover:border-cyan-500/30 transition-colors duration-300 flex-1">
@@ -112,10 +109,10 @@ export function PlatformEnginesSection(): React.ReactElement {
               )}
             </div>
           ))}
-        </ScrollRevealItem>
+        </div>
 
         {/* Engine flow diagram — Mobile */}
-        <ScrollRevealItem className="grid grid-cols-2 gap-4 lg:hidden mb-12">
+        <div data-animate className="grid grid-cols-2 gap-4 lg:hidden mb-12">
           {engines.map((engine) => (
             <div key={engine.name} className="bg-navy-800 border border-navy-700 rounded-xl px-4 py-5 text-center hover:border-cyan-500/30 transition-colors duration-300">
               <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -127,7 +124,7 @@ export function PlatformEnginesSection(): React.ReactElement {
               </p>
             </div>
           ))}
-        </ScrollRevealItem>
+        </div>
 
         {/* Closed-loop indicator */}
         <div className="flex justify-center mb-16">
@@ -138,34 +135,32 @@ export function PlatformEnginesSection(): React.ReactElement {
         </div>
 
         {/* Engine detail cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {engines.map((engine) => (
-            <ScrollRevealItem key={engine.name}>
-              <div className="bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/50">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    {engine.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">{engine.name} Engine</h3>
-                    <p className="text-sm text-cyan-400">{engine.subtitle}</p>
-                  </div>
+            <div data-animate key={engine.name} className="bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  {engine.icon}
                 </div>
-
-                <p className="text-slate-400 mb-5">{engine.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {engine.capabilities.map((cap) => (
-                    <span
-                      key={cap}
-                      className="border border-navy-600 text-slate-300 text-xs rounded-full px-3 py-1"
-                    >
-                      {cap}
-                    </span>
-                  ))}
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{engine.name} Engine</h3>
+                  <p className="text-sm text-cyan-400">{engine.subtitle}</p>
                 </div>
               </div>
-            </ScrollRevealItem>
+
+              <p className="text-slate-400 mb-5">{engine.description}</p>
+
+              <div className="flex flex-wrap gap-2">
+                {engine.capabilities.map((cap) => (
+                  <span
+                    key={cap}
+                    className="border border-navy-600 text-slate-300 text-xs rounded-full px-3 py-1"
+                  >
+                    {cap}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

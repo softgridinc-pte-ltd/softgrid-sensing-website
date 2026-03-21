@@ -1,8 +1,5 @@
-'use client'
-
 import Link from 'next/link'
 import { Cpu, Radio, Wrench, Brain } from 'lucide-react'
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
 
 interface ProductSeries {
   icon: React.ReactNode
@@ -53,33 +50,31 @@ const productSeries: ProductSeries[] = [
 ]
 
 export function ProductSeriesSection(): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   return (
     <section className="bg-navy-900 py-16 md:py-24">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section label */}
-        <div className="flex items-center gap-4 mb-4">
+        <div data-animate className="flex items-center gap-4 mb-4">
           <span className="text-cyan-400 text-sm font-semibold uppercase tracking-[0.2em]">
             Product Series
           </span>
           <div className="flex-1 h-px bg-navy-700" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <h2 data-animate className="text-3xl md:text-4xl font-bold text-white mb-4">
           Four Product Series. One Platform.
         </h2>
-        <p className="text-lg text-slate-400 mb-12 max-w-2xl">
+        <p data-animate className="text-lg text-slate-400 mb-12 max-w-2xl">
           Every product is powered by the AFOS platform — connected by design, not bolted together after the fact.
         </p>
 
         {/* 2x2 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {productSeries.map((series, i) => (
             <div
               key={series.name}
-              className={`group bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/50 hover:scale-[1.01] ${getItemProps(i).className}`}
-              style={getItemProps(i).style}
+              data-animate
+              className="group bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/50 hover:scale-[1.01]"
             >
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">

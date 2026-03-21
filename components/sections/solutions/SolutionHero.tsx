@@ -15,7 +15,7 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
         style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.1) 0%, transparent 70%)' }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center" data-animate>
         <div className="flex items-center gap-3.5 justify-center mb-8">
           <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
           <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">{overline}</span>

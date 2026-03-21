@@ -1,7 +1,3 @@
-'use client'
-
-import { useScrollRevealGroup } from '@/hooks/useScrollRevealGroup'
-
 interface Challenge {
   title: string
   description: string
@@ -18,22 +14,20 @@ export function ChallengeSection({
   subtitle,
   challenges,
 }: ChallengeSectionProps): React.ReactElement {
-  const { containerRef, getItemProps } = useScrollRevealGroup()
-
   return (
-    <section ref={containerRef} className="bg-navy-800 py-16 md:py-24">
+    <section className="bg-navy-800 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-12">
+        <div data-animate className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-[3px] text-slate-500">{title}</span>
           {subtitle && <p className="text-lg text-slate-400 mt-3 max-w-2xl mx-auto">{subtitle}</p>}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {challenges.map((challenge, i) => (
             <div
               key={challenge.title}
-              className={`bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-red-900/30 ${getItemProps(i).className}`}
-              style={getItemProps(i).style}
+              data-animate
+              className="bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-red-900/30"
             >
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-2 h-2 rounded-full bg-red-500/60 mt-2 flex-shrink-0" />

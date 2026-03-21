@@ -40,7 +40,7 @@
 
 **Utilities:**
 
-- [x] `hooks/useInView.ts` - IntersectionObserver hook (legacy — home page now uses `data-animate` system via `ScrollAnimator.tsx`)
+- [x] `components/ui/ScrollAnimator.tsx` - Global `data-animate` scroll animation observer (mounted in layout)
 
 **Build status:** Passing (static export to `/out`)
 **Lint status:** No warnings or errors
@@ -67,12 +67,10 @@ Replaced the React hook-based animation system (`useScrollRevealGroup`) with a g
 **What NOT to change:**
 
 - Hero section — keeps its own CSS `hero-entrance` keyframe animations (not scroll-triggered). User prefers current centered layout with abstract SVG visualizations.
-- `useScrollRevealGroup` hook and `ScrollRevealItem` component still exist — used by pages not yet migrated (platform, solutions, about, case-studies, products). Remove usage as those pages are updated.
 
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
 - `scripts/` directory excluded from tsconfig to avoid Playwright type errors
 - Design system fonts: Outfit (headings), DM Sans (body) — loaded via `next/font/google`
-- Home page scroll animations use global `data-animate` system (see `ScrollAnimator.tsx`). Other pages (platform, solutions, about, case-studies, products) may still use `useInView` / `useScrollRevealGroup` hooks until migrated.
-- Scroll animations: Use global `data-animate` system (see ScrollAnimator.tsx), not React hooks. The `useScrollRevealGroup` approach was replaced because it observes the container (all children animate at once) rather than individual elements.
+- Scroll animations: All pages use global `data-animate` system (see `ScrollAnimator.tsx`). Legacy hooks (`useScrollRevealGroup`, `useInView`, `ScrollRevealItem`, `scrollAnimations.ts`) have been deleted.
