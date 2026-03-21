@@ -12,12 +12,30 @@ interface ProductsInvolvedSectionProps {
   products: ProductInvolved[]
 }
 
-function getSeriesBadgeClasses(series: string): string {
-  if (series.includes('Fusion')) return 'bg-cyan-50 text-cyan-700 border-cyan-200'
-  if (series.includes('Orches')) return 'bg-orange-50 text-orange-700 border-orange-200'
-  if (series.includes('Cortex')) return 'bg-purple-50 text-purple-700 border-purple-200'
-  if (series.includes('Sense')) return 'bg-slate-50 text-slate-600 border-slate-200'
-  return 'bg-slate-50 text-slate-600 border-slate-200'
+function getSeriesBadgeStyle(series: string): React.CSSProperties {
+  if (series.includes('Fusion')) return { background: '#eafbfd', color: '#0077b6', border: '1px solid #b8ecf4' }
+  if (series.includes('Orches')) return { background: '#FFF7ED', color: '#C2410C', border: '1px solid #FED7AA' }
+  if (series.includes('Cortex')) return { background: '#F5F3FF', color: '#7C3AED', border: '1px solid #DDD6FE' }
+  if (series.includes('Sense')) return { background: '#F8FAFC', color: '#475569', border: '1px solid #E2E8F0' }
+  return { background: '#F8FAFC', color: '#475569', border: '1px solid #E2E8F0' }
+}
+
+const thStyle: React.CSSProperties = {
+  fontSize: 12,
+  fontWeight: 700,
+  textTransform: 'uppercase',
+  letterSpacing: 2,
+  color: '#64748B',
+  textAlign: 'left',
+  padding: '14px 20px',
+  borderBottom: '2px solid #E2E8F0',
+}
+
+const tdStyle: React.CSSProperties = {
+  fontSize: 15,
+  color: '#334155',
+  padding: '16px 20px',
+  borderBottom: '1px solid #F1F5F9',
 }
 
 export function ProductsInvolvedSection({
@@ -27,45 +45,110 @@ export function ProductsInvolvedSection({
   products,
 }: ProductsInvolvedSectionProps): React.ReactElement {
   return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="max-w-[1100px] mx-auto px-4 md:px-16">
-        <div data-animate className="text-center mb-10">
-          <span className="block text-xs font-bold uppercase tracking-[2px] text-slate-500 mb-3">{overline}</span>
-          {headline && <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight">{headline}</h2>}
-          {subtitle && <p className="text-[15px] text-slate-600 mt-3 max-w-2xl mx-auto leading-[1.7]">{subtitle}</p>}
-        </div>
+    <section style={{ padding: '80px 64px', background: '#FFFFFF' }}>
+      <div data-animate style={{ textAlign: 'center', marginBottom: 40 }}>
+        <span
+          style={{
+            display: 'block',
+            fontSize: 12,
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: 2,
+            color: '#64748B',
+            marginBottom: 12,
+          }}
+        >
+          {overline}
+        </span>
+        {headline && (
+          <h2
+            style={{
+              fontSize: 36,
+              fontWeight: 800,
+              letterSpacing: -1,
+              color: '#0A1628',
+              textAlign: 'center',
+            }}
+          >
+            {headline}
+          </h2>
+        )}
+        {subtitle && (
+          <p
+            style={{
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: '#475569',
+              marginTop: 12,
+              maxWidth: 672,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            {subtitle}
+          </p>
+        )}
+      </div>
 
-        <div data-animate className="overflow-x-auto">
-          <table className="w-full text-left">
-            <thead>
-              <tr className="border-b-2 border-slate-200">
-                <th className="text-slate-500 text-xs font-bold uppercase tracking-[2px] py-3.5 px-5">Product</th>
-                <th className="text-slate-500 text-xs font-bold uppercase tracking-[2px] py-3.5 px-5">Series</th>
-                <th className="text-slate-500 text-xs font-bold uppercase tracking-[2px] py-3.5 px-5">Role</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((p) => (
-                <tr key={p.product} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                  <td className="text-navy-900 text-[15px] font-semibold py-4 px-5">{p.product}</td>
-                  <td className="py-4 px-5">
-                    <span className={`inline-block text-xs font-semibold border rounded-full px-3 py-1 ${getSeriesBadgeClasses(p.series)}`}>
-                      {p.series}
+      <div data-animate style={{ overflowX: 'auto' }}>
+        <table
+          style={{
+            width: '100%',
+            maxWidth: 1100,
+            margin: '0 auto',
+            borderCollapse: 'collapse',
+          }}
+        >
+          <thead>
+            <tr>
+              <th style={thStyle}>Product</th>
+              <th style={thStyle}>Series</th>
+              <th style={thStyle}>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.product} className="hover:bg-slate-50" style={{ transition: 'background-color 0.15s' }}>
+                <td style={{ ...tdStyle, fontWeight: 600, color: '#0A1628' }}>{p.product}</td>
+                <td style={tdStyle}>
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      padding: '4px 12px',
+                      borderRadius: 100,
+                      fontSize: 12,
+                      fontWeight: 600,
+                      ...getSeriesBadgeStyle(p.series),
+                    }}
+                  >
+                    {p.series}
+                  </span>
+                </td>
+                <td style={tdStyle}>
+                  {p.role}
+                  {p.optional && (
+                    <span
+                      style={{
+                        fontSize: 11,
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        letterSpacing: 1,
+                        color: '#94A3B8',
+                        background: '#F1F5F9',
+                        border: '1px solid #E2E8F0',
+                        borderRadius: 100,
+                        padding: '2px 10px',
+                        marginLeft: 8,
+                      }}
+                    >
+                      Optional
                     </span>
-                  </td>
-                  <td className="text-slate-700 text-[15px] py-4 px-5">
-                    {p.role}
-                    {p.optional && (
-                      <span className="ml-2 text-xs font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 border border-slate-200 rounded-full px-2 py-0.5">
-                        Optional
-                      </span>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   )

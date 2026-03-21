@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/Button'
+import Link from 'next/link'
 
 interface SolutionHeroProps {
   overline: string
@@ -9,35 +9,105 @@ interface SolutionHeroProps {
 export function SolutionHero({ overline, headline, subheadline }: SolutionHeroProps): React.ReactElement {
   return (
     <section
-      className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #0A1628 0%, #162544 100%)' }}
+      style={{
+        padding: '80px 64px 64px',
+        background: 'linear-gradient(160deg, #0A1628 0%, #162544 100%)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
-      {/* Grid texture */}
-      <div className="absolute inset-0 grid-pattern opacity-30" />
-      {/* Radial glow */}
+      {/* Radial glow overlay */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)' }}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)',
+          pointerEvents: 'none',
+        }}
+      />
+      {/* Grid texture overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'linear-gradient(rgba(0,180,216,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.03) 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+          WebkitMaskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
+          maskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
+          pointerEvents: 'none',
+        }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-16 text-center" data-animate>
+      <div data-animate style={{ position: 'relative', zIndex: 1, maxWidth: 720 }}>
         {/* Overline with gradient line */}
-        <div className="flex items-center gap-3 justify-center mb-5">
-          <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
-          <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">{overline}</span>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 12,
+            marginBottom: 20,
+          }}
+        >
+          <div
+            style={{
+              width: 32,
+              height: 1,
+              background: 'linear-gradient(90deg, transparent, #00b4d8)',
+            }}
+          />
+          <span
+            style={{
+              fontSize: 12,
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: 3,
+              color: '#00b4d8',
+            }}
+          >
+            {overline}
+          </span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5 max-w-4xl mx-auto leading-[1.1] tracking-tight">
+        <h1
+          style={{
+            fontSize: 48,
+            fontWeight: 800,
+            letterSpacing: -2,
+            lineHeight: 1.1,
+            color: '#FFFFFF',
+            marginBottom: 20,
+          }}
+        >
           {headline}
         </h1>
 
-        <p className="text-lg text-slate-400 max-w-[620px] mx-auto leading-[1.7] mb-9">
+        <p
+          style={{
+            fontSize: 18,
+            lineHeight: 1.7,
+            color: '#94A3B8',
+            maxWidth: 620,
+            marginBottom: 36,
+          }}
+        >
           {subheadline}
         </p>
 
-        <Button href="/contact" variant="primary" className="px-9 py-4 rounded-md">
+        <Link
+          href="/contact"
+          style={{
+            display: 'inline-block',
+            background: '#00b4d8',
+            color: '#FFFFFF',
+            padding: '16px 36px',
+            borderRadius: 6,
+            fontSize: 16,
+            fontWeight: 600,
+            textDecoration: 'none',
+          }}
+        >
           Contact Us
-        </Button>
+        </Link>
       </div>
     </section>
   )

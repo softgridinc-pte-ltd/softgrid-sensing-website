@@ -4,7 +4,7 @@ import { ApproachSection } from '@/components/sections/solutions/ApproachSection
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
 import { CaseStudyPreview } from '@/components/sections/solutions/CaseStudyPreview'
-import { CTASection } from '@/components/sections/CTASection'
+import Link from 'next/link'
 
 import type { Metadata } from 'next'
 
@@ -129,7 +129,48 @@ export default function InfrastructureEnvironmentalPage(): React.ReactElement {
         href="/contact"
       />
 
-      <CTASection />
+      {/* Closing CTA */}
+      <section
+        style={{
+          padding: '100px 64px',
+          background: '#00b4d8',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 50%)',
+            pointerEvents: 'none',
+          }}
+        />
+        <div data-animate style={{ position: 'relative', zIndex: 1 }}>
+          <h2 style={{ fontSize: 40, fontWeight: 800, letterSpacing: -1, color: '#FFFFFF', marginBottom: 16 }}>
+            Ready to Monitor at Scale?
+          </h2>
+          <div style={{ fontSize: 18, color: 'rgba(255,255,255,0.8)', marginBottom: 32 }}>
+            Let&apos;s discuss how satellite-based monitoring can transform your operations.
+          </div>
+          <Link
+            href="/contact"
+            style={{
+              display: 'inline-block',
+              background: '#FFFFFF',
+              color: '#0A1628',
+              padding: '16px 40px',
+              borderRadius: 6,
+              fontSize: 16,
+              fontWeight: 600,
+              textDecoration: 'none',
+            }}
+          >
+            Contact Us
+          </Link>
+        </div>
+      </section>
     </>
   )
 }

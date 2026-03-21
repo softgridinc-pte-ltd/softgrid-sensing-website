@@ -4,7 +4,7 @@ import { ApproachSection } from '@/components/sections/solutions/ApproachSection
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
 import { CaseStudyPreview } from '@/components/sections/solutions/CaseStudyPreview'
-import { CTASection } from '@/components/sections/CTASection'
+import Link from 'next/link'
 
 import type { Metadata } from 'next'
 
@@ -108,9 +108,10 @@ export default function FacilityOperationsPage(): React.ReactElement {
 
       <ChallengeSection
         overline="The Challenge"
-        headline="What's Holding You Back"
+        headline="What&apos;s Holding You Back"
         subtitle="Managing agents face compounding operational challenges that paper-based processes can't solve."
         challenges={challenges}
+        overlineColor="#D97706"
       />
 
       <ApproachSection
@@ -118,6 +119,9 @@ export default function FacilityOperationsPage(): React.ReactElement {
         headline="Four Steps to Digital Operations"
         subtitle="A systematic transformation path — from digital work orders to a fully connected, AI-augmented facility management platform."
         steps={steps}
+        accentColor="#D97706"
+        lineColor="linear-gradient(180deg, #D97706 0%, rgba(217,119,6,0.15) 100%)"
+        overlineColor="#D97706"
       />
 
       <ProductsInvolvedSection
@@ -130,6 +134,7 @@ export default function FacilityOperationsPage(): React.ReactElement {
         overline="Why It Matters"
         headline="Key Benefits"
         benefits={benefits}
+        overlineColor="#D97706"
       />
 
       <CaseStudyPreview
@@ -138,7 +143,45 @@ export default function FacilityOperationsPage(): React.ReactElement {
         href="/contact"
       />
 
-      <CTASection />
+      {/* Closing CTA */}
+      <section
+        style={{
+          padding: '100px 64px',
+          background: '#00b4d8',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 50%)',
+            pointerEvents: 'none',
+          }}
+        />
+        <div data-animate style={{ position: 'relative', zIndex: 1 }}>
+          <h2 style={{ fontSize: 40, fontWeight: 800, letterSpacing: -1, color: '#FFFFFF', marginBottom: 32 }}>
+            Ready to Digitize Your Facility Operations?
+          </h2>
+          <Link
+            href="/contact"
+            style={{
+              display: 'inline-block',
+              background: '#FFFFFF',
+              color: '#0A1628',
+              padding: '16px 40px',
+              borderRadius: 6,
+              fontSize: 16,
+              fontWeight: 600,
+              textDecoration: 'none',
+            }}
+          >
+            Contact Us
+          </Link>
+        </div>
+      </section>
     </>
   )
 }

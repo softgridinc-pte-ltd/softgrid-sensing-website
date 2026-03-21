@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import { SolutionCardsSection } from '@/components/sections/solutions/SolutionCardsSection'
-import { CTASection } from '@/components/sections/CTASection'
 
 import type { Metadata } from 'next'
 
@@ -35,7 +35,48 @@ export default function SolutionsPage(): React.ReactElement {
 
       <SolutionCardsSection />
 
-      <CTASection />
+      {/* Not Sure CTA */}
+      <section
+        style={{
+          padding: '80px 64px',
+          background: '#0A1628',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 50%)',
+            pointerEvents: 'none',
+          }}
+        />
+        <div data-animate style={{ position: 'relative', zIndex: 1, maxWidth: 600, margin: '0 auto' }}>
+          <h2 style={{ fontSize: 36, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, letterSpacing: -1 }}>
+            Not Sure Which Solution Fits?
+          </h2>
+          <p style={{ fontSize: 17, lineHeight: 1.7, color: '#94A3B8', marginBottom: 36 }}>
+            Talk to our team. We&apos;ll help you identify the right starting point &mdash; and show you how the platform grows with you.
+          </p>
+          <Link
+            href="/contact"
+            style={{
+              display: 'inline-block',
+              background: '#FFFFFF',
+              color: '#0A1628',
+              padding: '16px 40px',
+              borderRadius: 6,
+              fontSize: 16,
+              fontWeight: 600,
+              textDecoration: 'none',
+            }}
+          >
+            Contact Us
+          </Link>
+        </div>
+      </section>
     </>
   )
 }

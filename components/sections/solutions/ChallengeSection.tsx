@@ -9,12 +9,13 @@ interface ChallengeSectionProps {
   headline?: string
   subtitle?: string
   challenges: Challenge[]
+  overlineColor?: string
 }
 
-const indicatorStyles: Record<string, string> = {
-  red: 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.3)]',
-  amber: 'bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.3)]',
-  teal: 'bg-teal-500 shadow-[0_0_8px_rgba(20,184,166,0.3)]',
+const indicatorStyles: Record<string, React.CSSProperties> = {
+  red: { background: '#EF4444', boxShadow: '0 0 8px rgba(239,68,68,0.3)' },
+  amber: { background: '#F59E0B', boxShadow: '0 0 8px rgba(245,158,11,0.3)' },
+  teal: { background: '#14B8A6', boxShadow: '0 0 8px rgba(20,184,166,0.3)' },
 }
 
 export function ChallengeSection({
@@ -22,31 +23,94 @@ export function ChallengeSection({
   headline = 'The Challenge',
   subtitle,
   challenges,
+  overlineColor = '#64748B',
 }: ChallengeSectionProps): React.ReactElement {
   return (
-    <section className="bg-white py-20 md:py-[100px]">
-      <div className="max-w-[1100px] mx-auto px-4 md:px-16">
-        <div data-animate className="text-center mb-14">
-          {overline && (
-            <span className="block text-xs font-bold uppercase tracking-[3px] text-slate-500 mb-3">{overline}</span>
-          )}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight">{headline}</h2>
-          {subtitle && <p className="text-[15px] text-slate-600 mt-3 max-w-2xl mx-auto leading-[1.7]">{subtitle}</p>}
-        </div>
+    <section style={{ padding: '100px 64px', background: '#FFFFFF' }}>
+      <div data-animate style={{ textAlign: 'center', marginBottom: 56 }}>
+        {overline && (
+          <span
+            style={{
+              display: 'block',
+              fontSize: 12,
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: 3,
+              color: overlineColor,
+              marginBottom: 12,
+            }}
+          >
+            {overline}
+          </span>
+        )}
+        <h2
+          style={{
+            fontSize: 36,
+            fontWeight: 800,
+            letterSpacing: -1,
+            color: '#0A1628',
+            textAlign: 'center',
+          }}
+        >
+          {headline}
+        </h2>
+        {subtitle && (
+          <p
+            style={{
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: '#475569',
+              marginTop: 12,
+              maxWidth: 672,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            {subtitle}
+          </p>
+        )}
+      </div>
 
-        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {challenges.map((challenge) => (
+      <div
+        data-animate-stagger
+        className="grid grid-cols-1 md:grid-cols-2"
+        style={{ gap: 24, maxWidth: 1100, margin: '0 auto' }}
+      >
+        {challenges.map((challenge) => (
+          <div
+            key={challenge.title}
+            data-animate
+            style={{
+              background: '#F8FAFC',
+              border: '1px solid #E2E8F0',
+              borderRadius: 16,
+              padding: 32,
+            }}
+          >
             <div
-              key={challenge.title}
-              data-animate
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8"
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: '50%',
+                marginBottom: 16,
+                ...indicatorStyles[challenge.indicator ?? 'red'],
+              }}
+            />
+            <h3
+              style={{
+                fontSize: 20,
+                fontWeight: 700,
+                color: '#0A1628',
+                marginBottom: 10,
+              }}
             >
-              <div className={`w-2.5 h-2.5 rounded-full mb-4 ${indicatorStyles[challenge.indicator ?? 'red']}`} />
-              <h3 className="text-xl font-bold text-navy-900 mb-2.5">{challenge.title}</h3>
-              <p className="text-[15px] leading-[1.7] text-slate-600">{challenge.description}</p>
-            </div>
-          ))}
-        </div>
+              {challenge.title}
+            </h3>
+            <p style={{ fontSize: 15, lineHeight: 1.7, color: '#475569' }}>
+              {challenge.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )

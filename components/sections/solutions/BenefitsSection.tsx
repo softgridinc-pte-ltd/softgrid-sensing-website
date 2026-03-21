@@ -8,6 +8,7 @@ interface BenefitsSectionProps {
   headline?: string
   subtitle?: string
   benefits: Benefit[]
+  overlineColor?: string
 }
 
 export function BenefitsSection({
@@ -15,28 +16,85 @@ export function BenefitsSection({
   headline,
   subtitle,
   benefits,
+  overlineColor = '#64748B',
 }: BenefitsSectionProps): React.ReactElement {
   return (
-    <section className="bg-slate-50 py-16 md:py-20">
-      <div className="max-w-[1100px] mx-auto px-4 md:px-16">
-        <div data-animate className="text-center mb-10">
-          <span className="block text-xs font-bold uppercase tracking-[2px] text-cyan-600 mb-3">{overline}</span>
-          {headline && <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight">{headline}</h2>}
-          {subtitle && <p className="text-[15px] text-slate-600 mt-3 max-w-2xl mx-auto leading-[1.7]">{subtitle}</p>}
-        </div>
+    <section style={{ padding: '80px 64px', background: '#F8FAFC' }}>
+      <div data-animate style={{ textAlign: 'center', marginBottom: 56 }}>
+        <span
+          style={{
+            display: 'block',
+            fontSize: 12,
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: 3,
+            color: overlineColor,
+            marginBottom: 12,
+          }}
+        >
+          {overline}
+        </span>
+        {headline && (
+          <h2
+            style={{
+              fontSize: 36,
+              fontWeight: 800,
+              letterSpacing: -1,
+              color: '#0A1628',
+              textAlign: 'center',
+            }}
+          >
+            {headline}
+          </h2>
+        )}
+        {subtitle && (
+          <p
+            style={{
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: '#475569',
+              marginTop: 12,
+              maxWidth: 672,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            {subtitle}
+          </p>
+        )}
+      </div>
 
-        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.title}
-              data-animate
-              className="bg-white border border-slate-200 rounded-2xl p-8"
+      <div
+        data-animate-stagger
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        style={{ gap: 24, maxWidth: 1100, margin: '0 auto' }}
+      >
+        {benefits.map((benefit) => (
+          <div
+            key={benefit.title}
+            data-animate
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #E2E8F0',
+              borderRadius: 16,
+              padding: 32,
+            }}
+          >
+            <h3
+              style={{
+                fontSize: 17,
+                fontWeight: 700,
+                color: '#0A1628',
+                marginBottom: 6,
+              }}
             >
-              <h3 className="text-[17px] font-bold text-navy-900 mb-1.5">{benefit.title}</h3>
-              <p className="text-sm leading-[1.7] text-slate-600">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
+              {benefit.title}
+            </h3>
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: '#475569' }}>
+              {benefit.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )
