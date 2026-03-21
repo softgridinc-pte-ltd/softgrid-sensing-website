@@ -2,6 +2,7 @@ import { PlatformPhilosophySection } from '@/components/sections/platform/Platfo
 import { PlatformEnginesSection } from '@/components/sections/platform/PlatformEnginesSection'
 import { PlatformCredentialsSection } from '@/components/sections/platform/PlatformCredentialsSection'
 import { ProductSeriesSection } from '@/components/sections/products/ProductSeriesSection'
+import { CTASection } from '@/components/sections/CTASection'
 import { Button } from '@/components/ui/Button'
 
 import type { Metadata } from 'next'
@@ -50,34 +51,10 @@ export default function PlatformPage(): React.ReactElement {
       <PlatformCredentialsSection />
 
       {/* What Runs on AFOS */}
-      <section className="bg-navy-900 pt-16 md:pt-24">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center mb-[-2rem]" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            What Runs on AFOS
-          </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Four product series &mdash; all powered by the same platform core.
-          </p>
-        </div>
-      </section>
       <ProductSeriesSection />
 
       {/* CTA */}
-      <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            See the Platform in Action
-          </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            Book a demo to see how AFOS connects your facility operations end-to-end.
-          </p>
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
-            Book a Demo
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </>
   )
 }

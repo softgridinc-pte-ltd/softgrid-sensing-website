@@ -1,47 +1,17 @@
 import { Clock, Microscope, Award, Shield, Cloud, Activity, Plug } from 'lucide-react'
 
-interface Credential {
-  icon: React.ReactNode
-  label: string
-  detail: string
-}
+const highlights = [
+  { value: '8 Years', label: 'R&D in Singapore', icon: <Clock className="w-5 h-5 text-cyan-500" /> },
+  { value: '10,000+', label: 'Assets Monitored', icon: <Activity className="w-5 h-5 text-cyan-500" /> },
+  { value: 'BCA', label: 'RM&D Certified', icon: <Award className="w-5 h-5 text-cyan-500" /> },
+]
 
-const credentials: Credential[] = [
-  {
-    icon: <Clock className="w-5 h-5 text-cyan-500" />,
-    label: '8 Years of R&D',
-    detail: 'Building facility technology in Singapore since 2017',
-  },
-  {
-    icon: <Microscope className="w-5 h-5 text-cyan-500" />,
-    label: 'A*STAR & SIMTech',
-    detail: 'Joint research partnerships for predictive AI',
-  },
-  {
-    icon: <Award className="w-5 h-5 text-cyan-500" />,
-    label: 'NRF Grant Awarded',
-    detail: 'Cities of Tomorrow national research award',
-  },
-  {
-    icon: <Shield className="w-5 h-5 text-cyan-500" />,
-    label: 'IM8 & IEC 62443',
-    detail: 'Security compliance for government and enterprise',
-  },
-  {
-    icon: <Cloud className="w-5 h-5 text-cyan-500" />,
-    label: 'AWS & Azure Native',
-    detail: 'Cloud-native deployment on major providers',
-  },
-  {
-    icon: <Activity className="w-5 h-5 text-cyan-500" />,
-    label: '10,000+ Assets',
-    detail: 'Monitored across Singapore at national scale',
-  },
-  {
-    icon: <Plug className="w-5 h-5 text-cyan-500" />,
-    label: 'Open Standards',
-    detail: 'BACnet, Modbus, MQTT, OPC-UA, REST APIs',
-  },
+const badges = [
+  { icon: <Microscope className="w-4 h-4 text-cyan-400" />, label: 'A*STAR & SIMTech' },
+  { icon: <Award className="w-4 h-4 text-cyan-400" />, label: 'NRF Grant Awarded' },
+  { icon: <Shield className="w-4 h-4 text-cyan-400" />, label: 'IM8 & IEC 62443' },
+  { icon: <Cloud className="w-4 h-4 text-cyan-400" />, label: 'AWS & Azure Native' },
+  { icon: <Plug className="w-4 h-4 text-cyan-400" />, label: 'Open Standards' },
 ]
 
 export function PlatformCredentialsSection(): React.ReactElement {
@@ -57,18 +27,31 @@ export function PlatformCredentialsSection(): React.ReactElement {
           </p>
         </div>
 
-        <div data-animate-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {credentials.map((cred) => (
-            <div
-              key={cred.label}
-              data-animate
-              className="bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-cyan-500/50"
-            >
-              <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                {cred.icon}
+        {/* Stat strip — key metrics */}
+        <div
+          data-animate
+          className="flex flex-col sm:flex-row items-stretch justify-center divide-y sm:divide-y-0 sm:divide-x divide-navy-700/50 bg-navy-900/50 border border-navy-700 rounded-xl mb-10"
+        >
+          {highlights.map((stat) => (
+            <div key={stat.label} className="flex-1 px-6 py-6 text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                {stat.icon}
+                <p className="text-2xl md:text-3xl font-bold text-cyan-400">{stat.value}</p>
               </div>
-              <h3 className="text-white font-semibold mb-1">{cred.label}</h3>
-              <p className="text-slate-400 text-sm">{cred.detail}</p>
+              <p className="text-slate-400 text-sm uppercase tracking-wider">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Badge row — partnerships & compliance */}
+        <div data-animate className="flex flex-wrap items-center justify-center gap-3">
+          {badges.map((badge) => (
+            <div
+              key={badge.label}
+              className="inline-flex items-center gap-2 bg-navy-900/50 border border-navy-700 rounded-full px-4 py-2 hover:border-cyan-500/30 transition-colors duration-200"
+            >
+              {badge.icon}
+              <span className="text-slate-300 text-sm font-medium">{badge.label}</span>
             </div>
           ))}
         </div>
