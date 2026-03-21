@@ -18,7 +18,7 @@
 
 | Segment | Who They Are | What They Care About |
 |---------|--------------|---------------------|
-| Lift Companies | Companies that maintain elevators | BCA compliance, reduce maintenance cost, less manpower |
+| Lift Companies | Companies that maintain lift | BCA compliance, reduce maintenance cost, less manpower |
 | Managing Agents | Property management companies | Operational efficiency, unified system, work orders |
 | Town Councils | Public housing management | Reliable monitoring, compliance, proven track record |
 | Building Owners | Private building owners | Cost reduction, asset lifecycle, ESG compliance |
@@ -40,7 +40,7 @@
 ### Three-Layer Messaging
 
 **Layer 1 — Atmosphere (Hero)**
-> "The AI-Driven Platform for Facility Operations"
+> "The AI-Driven Facility Operating System"
 
 Creates first impression. Big, confident statement about what we are.
 
@@ -58,7 +58,7 @@ Addresses competitive positioning. We have real products, real customers, real s
 
 | Page | Primary Message |
 |------|-----------------|
-| Home | We are THE AI-powered platform for facility operations |
+| Home | We are THE AI-driven platform for facility operations |
 | Solutions | Here's how we solve YOUR specific problem |
 | Products | These are real products you can buy/deploy |
 | Case Studies | Here's proof it works at scale |
@@ -75,7 +75,7 @@ These elements should be prominently featured:
 | 8 years in Singapore | Home, About |
 | BCA certified | Home, Solutions (Lift), About |
 | HDB partnership | Home, Case Studies |
-| NRF S$2.1M grant | About (R&D section) |
+| NRF grant | About (R&D section) |
 | A*STAR/SIMTech collaboration | About (R&D section) |
 | Client logos | Home, About |
 
@@ -99,11 +99,11 @@ These elements should be prominently featured:
 
 | Attribute | Description |
 |-----------|-------------|
-| **Confident** | We know what we're doing (8 years, 10,000 lifts) |
+| **Confident** | We know what we're doing |
 | **Professional** | Enterprise-grade, not startup-casual |
 | **Clear** | Technical but accessible |
 | **Forward-looking** | AI-driven, platform thinking |
-| **Grounded** | Real products, real customers, not vaporware |
+| **Grounded** | Real products, real customers |
 
 ### Example Tone
 
