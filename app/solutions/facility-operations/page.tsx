@@ -4,7 +4,7 @@ import { ApproachSection } from '@/components/sections/solutions/ApproachSection
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
 import { CaseStudyPreview } from '@/components/sections/solutions/CaseStudyPreview'
-import { Button } from '@/components/ui/Button'
+import { CTASection } from '@/components/sections/CTASection'
 
 import type { Metadata } from 'next'
 
@@ -17,46 +17,51 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Manual Everything',
+    indicator: 'amber' as const,
     description:
-      "Work orders on paper or Excel, schedules in people's heads, coordination over WhatsApp.",
+      "Work orders on paper or Excel. Maintenance schedules in someone's head. Contractor coordination via WhatsApp. Knowledge locked in senior staff who are about to retire.",
   },
   {
     title: 'No Visibility',
+    indicator: 'amber' as const,
     description:
-      "Can't see real-time status of any asset across your portfolio. Problems surface as complaints.",
+      "You manage dozens of buildings but can't see the real-time status of any asset. Problems surface as tenant complaints, not as early warnings.",
   },
   {
     title: 'Compliance Overhead',
+    indicator: 'amber' as const,
     description:
-      'BCA requirements, SLA documentation, and audit trails manually compiled every reporting cycle.',
+      'BCA requirements, SLA documentation, audit trails — all manually compiled. Every audit is a fire drill.',
   },
   {
     title: 'Knowledge Loss',
+    indicator: 'amber' as const,
     description:
-      'When experienced technicians leave, their knowledge walks out the door with them.',
+      'When experienced technicians leave, their knowledge walks out the door. Junior staff are left guessing.',
   },
 ]
 
 const steps = [
   {
-    title: 'Digital Work Orders',
+    title: 'Digital Work Orders (IRIS)',
     description:
-      'Every work order created, assigned, tracked, and closed digitally with complete audit trail and SLA countdown.',
+      'Every work order is created, assigned, tracked, and closed digitally. Full lifecycle with audit trail. SLA countdown built in.',
   },
   {
-    title: 'AI Knowledge Base',
+    title: 'AI Knowledge Base (Athena)',
     description:
-      'Equipment manuals, SOPs, compliance docs, and fault history indexed and queryable in plain English via Athena.',
+      'Your equipment manuals, SOPs, compliance docs, and historical fault data — all indexed and queryable in plain English. New technicians get answers in seconds, not hours.',
   },
   {
-    title: 'Voice AI Service Desk',
+    title: 'Voice AI Service Desk (Nova)',
     description:
-      'Incoming facility calls answered, logged, categorized, and routed by Nova — 24/7, no additional staff.',
+      'Incoming facility calls are answered, logged, categorized, and routed by AI. 24/7 coverage without additional headcount.',
   },
   {
-    title: 'Connected Monitoring',
+    title: 'Connected Monitoring (Optional)',
     description:
-      'Optionally plug in AFOS Fusion products to close the loop — fault \u2192 work order \u2192 dispatch \u2192 resolution \u2192 AI feedback.',
+      'Plug in AFOS Fusion products and the loop closes: equipment fault → auto work order → dispatch → resolution → data back to AI.',
+    badge: 'Closes the Loop',
   },
 ]
 
@@ -64,9 +69,9 @@ const products = [
   { product: 'IRIS', series: 'AFOS Orches', role: 'Core CMMS platform' },
   { product: 'Athena', series: 'AFOS Cortex', role: 'AI knowledge base' },
   { product: 'Nova', series: 'AFOS Orches', role: 'Voice AI service desk' },
-  { product: 'LiftProf', series: 'AFOS Orches', role: 'Technician mobile app (optional)' },
-  { product: 'LTMS / RM&D', series: 'AFOS Fusion', role: 'Connected monitoring (optional)' },
-  { product: 'Cloud BMS', series: 'AFOS Fusion', role: 'Building monitoring (optional)' },
+  { product: 'LiftProf', series: 'AFOS Orches', role: 'Technician mobile app', optional: true },
+  { product: 'LTMS / RM&D', series: 'AFOS Fusion', role: 'Connected monitoring', optional: true },
+  { product: 'Cloud BMS', series: 'AFOS Fusion', role: 'Building monitoring', optional: true },
 ]
 
 const benefits = [
@@ -80,7 +85,7 @@ const benefits = [
   },
   {
     title: '24/7 Service Desk',
-    description: 'Nova handles calls around the clock without additional staff.',
+    description: 'Nova handles calls around the clock — no additional staff needed.',
   },
   {
     title: 'Compliance Automated',
@@ -88,7 +93,7 @@ const benefits = [
   },
   {
     title: 'Scalable',
-    description: 'Manage 10 buildings or 100 — same platform, same workflows.',
+    description: 'Manage 10 buildings or 100 — same platform, same process.',
   },
 ]
 
@@ -101,36 +106,39 @@ export default function FacilityOperationsPage(): React.ReactElement {
         subheadline="AI-powered work orders, asset management, knowledge at your fingertips, and a voice AI that never sleeps — everything a modern managing agent needs."
       />
 
-      <ChallengeSection challenges={challenges} />
+      <ChallengeSection
+        overline="The Challenge"
+        headline="What's Holding You Back"
+        subtitle="Managing agents face compounding operational challenges that paper-based processes can't solve."
+        challenges={challenges}
+      />
 
-      <ApproachSection steps={steps} />
+      <ApproachSection
+        overline="The Softgrid Approach"
+        headline="Four Steps to Digital Operations"
+        subtitle="A systematic transformation path — from digital work orders to a fully connected, AI-augmented facility management platform."
+        steps={steps}
+      />
 
-      <ProductsInvolvedSection products={products} />
+      <ProductsInvolvedSection
+        overline="Products That Power This Solution"
+        headline="Products Involved"
+        products={products}
+      />
 
-      <BenefitsSection benefits={benefits} />
+      <BenefitsSection
+        overline="Why It Matters"
+        headline="Key Benefits"
+        benefits={benefits}
+      />
 
       <CaseStudyPreview
         label="In Production"
-        headline="Deployed with CPG FM"
-        description="Digitizing facility operations for Singapore's properties with IRIS and Athena."
+        headline="Deployed with CPG FM — Digitizing Facility Operations for Singapore's Properties"
         href="/contact"
       />
 
-      {/* CTA */}
-      <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Digitize Your Facility Operations?
-          </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            See how IRIS, Athena, and Nova can modernize your facility management workflows.
-          </p>
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
-            Contact Us
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </>
   )
 }

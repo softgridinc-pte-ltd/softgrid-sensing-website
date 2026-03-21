@@ -4,7 +4,7 @@ import { ApproachSection } from '@/components/sections/solutions/ApproachSection
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
 import { CaseStudyPreview } from '@/components/sections/solutions/CaseStudyPreview'
-import { Button } from '@/components/ui/Button'
+import { CTASection } from '@/components/sections/CTASection'
 
 import type { Metadata } from 'next'
 
@@ -17,23 +17,27 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Regulatory Pressure',
+    indicator: 'red' as const,
     description:
-      'BCA Code of Practice now requires Remote Monitoring & Diagnostics for lifts. Compliance is no longer optional.',
+      "BCA's Code of Practice now requires Remote Monitoring & Diagnostics for lifts. Compliance isn't optional — it's a requirement. And it's expanding to escalators.",
   },
   {
     title: 'Aging Equipment, Scarce Manpower',
+    indicator: 'amber' as const,
     description:
-      "Singapore's lift fleet is aging while qualified technicians are increasingly hard to find.",
+      "Singapore's lift fleet is aging. Technicians are retiring. Traditional monthly inspections can't keep up — and they miss early-stage faults that lead to costly breakdowns.",
   },
   {
     title: 'Reactive, Not Predictive',
+    indicator: 'red' as const,
     description:
-      'Most operators still fix after breaking — costing 3-5x more than predictive intervention.',
+      'Most operators still fix lifts after they break. By then, the cost is 3-5x higher, passengers are stranded, and complaints pile up.',
   },
   {
     title: 'Siloed Monitoring',
+    indicator: 'amber' as const,
     description:
-      'OEM systems only monitor their own brand. No unified view across your fleet.',
+      "OEM systems only monitor their own brand. If you manage a mixed fleet — Mitsubishi, Toshiba, IFE, others — you're stuck with multiple systems and no unified view.",
   },
 ]
 
@@ -41,29 +45,29 @@ const steps = [
   {
     title: 'Hardware Layer',
     description:
-      'Non-intrusive IoT devices installed on lifts (LMD, LBB) and escalators (EMD) — no modification to existing equipment.',
+      'Non-intrusive IoT devices (LMD + LBB for lifts, EMD for escalators) install without modifying the controller or voiding warranties. Edge processing ensures operation even during internet outages. 4G/LTE secure tunnel connectivity.',
   },
   {
     title: 'Monitoring Layer',
     description:
-      'LTMS for public sector and RM&D for private sector provide brand-agnostic, real-time monitoring across your entire fleet.',
+      'LTMS (public sector) and RM&D (private sector) provide real-time status monitoring, alert management, and compliance reporting. Brand-agnostic — supports any lift maker.',
   },
   {
     title: 'AI Layer',
     description:
-      'Vibration-based fault prediction with >85% accuracy. Per-trip health profiling and >95% escalator passenger behavior detection.',
+      'Vibration analysis and ML models predict faults with >83% accuracy. Per-trip health profiling builds a lifetime performance record for every asset. Computer vision monitors escalator passenger behavior with >95% detection accuracy.',
   },
   {
     title: 'Workflow Layer',
     description:
-      'Alert \u2192 work order \u2192 dispatch \u2192 resolution \u2192 verification \u2192 auto-generated reports \u2192 AI feedback loop.',
+      'Alert → auto-generated work order → dispatched to nearest technician via LiftProf mobile app → resolution verified → service report auto-generated → data fed back to AI. Closed loop.',
   },
 ]
 
 const products = [
   { product: 'LTMS', series: 'AFOS Fusion', role: 'Public sector lift monitoring' },
   { product: 'RM&D', series: 'AFOS Fusion', role: 'Private sector lift monitoring & BCA compliance' },
-  { product: 'Escalator Monitoring', series: 'AFOS Fusion', role: 'Escalator vibration + vision monitoring' },
+  { product: 'Escalator Monitoring [TBD]', series: 'AFOS Fusion', role: 'Escalator vibration + vision monitoring' },
   { product: 'LiftProf', series: 'AFOS Orches', role: 'Technician mobile field service' },
   { product: 'Athena', series: 'AFOS Cortex', role: 'AI knowledge base for diagnostics' },
   { product: 'LMD Series', series: 'AFOS Sense', role: 'Lift monitoring device' },
@@ -107,13 +111,25 @@ export default function VerticalTransportPage(): React.ReactElement {
         subheadline="BCA-certified remote monitoring, AI-driven fault prediction, and automated compliance — for every lift and escalator in your portfolio."
       />
 
-      <ChallengeSection challenges={challenges} />
+      <ChallengeSection
+        headline="The Challenge"
+        challenges={challenges}
+      />
 
-      <ApproachSection steps={steps} />
+      <ApproachSection
+        headline="The Softgrid Approach"
+        steps={steps}
+      />
 
-      <ProductsInvolvedSection products={products} />
+      <ProductsInvolvedSection
+        overline="Products That Power This Solution"
+        products={products}
+      />
 
-      <BenefitsSection benefits={benefits} />
+      <BenefitsSection
+        overline="Results You Can Measure"
+        benefits={benefits}
+      />
 
       <CaseStudyPreview
         label="Proven at National Scale"
@@ -122,21 +138,7 @@ export default function VerticalTransportPage(): React.ReactElement {
         href="/case-studies/hdb"
       />
 
-      {/* CTA */}
-      <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Modernize Your Vertical Transport Operations?
-          </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            See how our BCA-certified platform can transform your lift and escalator management.
-          </p>
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
-            Contact Us
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </>
   )
 }

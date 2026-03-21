@@ -4,7 +4,7 @@ import { ApproachSection } from '@/components/sections/solutions/ApproachSection
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
 import { CaseStudyPreview } from '@/components/sections/solutions/CaseStudyPreview'
-import { Button } from '@/components/ui/Button'
+import { CTASection } from '@/components/sections/CTASection'
 
 import type { Metadata } from 'next'
 
@@ -17,23 +17,27 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Scale Beyond Reach',
+    indicator: 'red' as const,
     description:
-      'Assets measured in square kilometers, not meters. Manual surveys are expensive, slow, and infrequent.',
+      "You manage assets measured in square kilometers, not square meters. Manual surveys are expensive, infrequent, and can't keep up with the pace of change.",
   },
   {
     title: 'Slow Detection',
+    indicator: 'amber' as const,
     description:
-      'Quarterly surveys miss encroachment, illegal clearing, and structural changes. Weeks pass before detection.',
+      'By the time a quarterly aerial survey spots encroachment, illegal clearing, or structural degradation, weeks or months have already passed. Early intervention is impossible.',
   },
   {
     title: 'Disconnected Data',
+    indicator: 'red' as const,
     description:
-      "Environmental monitoring data in GIS systems doesn't connect to operational workflows or alerts.",
+      "Environmental monitoring data sits in GIS systems that don't connect to operational workflows. An alert doesn't automatically trigger an investigation or a report.",
   },
   {
     title: 'Compliance Pressure',
+    indicator: 'amber' as const,
     description:
-      'Environmental regulations demand continuous monitoring and automated reporting — not annual surveys.',
+      'Environmental regulations increasingly demand continuous monitoring and automated reporting — not annual snapshots.',
   },
 ]
 
@@ -41,22 +45,22 @@ const steps = [
   {
     title: 'Automated Acquisition',
     description:
-      'Satellite imagery acquired automatically at configurable intervals — monthly, weekly, or on-demand.',
+      'Satellite imagery acquired automatically at configurable intervals — monthly, weekly, or on-demand. No manual procurement, no waiting for flyovers.',
   },
   {
     title: 'AI Classification',
     description:
-      'CNN-based models classify land cover types and detect changes with high spatial accuracy.',
+      'CNN-based models classify land cover types (vegetation, built environment, water) and detect changes between monitoring cycles — with high classification accuracy.',
   },
   {
     title: 'Alert & Action',
     description:
-      'Changes exceeding configured thresholds trigger alerts through the AFOS Workflow engine.',
+      'Changes that exceed thresholds trigger alerts through the same AFOS Workflow engine used for building maintenance. An alert for coastline erosion follows the same path as an alert for a lift fault — detection → classification → notification → action → resolution.',
   },
   {
     title: 'Automated Reporting',
     description:
-      'Decision-ready reports with historical trends, change maps, and statistical summaries.',
+      'Decision-ready reports generated automatically with historical trends, change maps, and statistical summaries. No manual GIS processing.',
   },
 ]
 
@@ -73,7 +77,7 @@ const benefits = [
   },
   {
     title: 'Zero Manual Processing',
-    description: 'End-to-end automated from satellite acquisition to final report.',
+    description: 'End-to-end automated from satellite to report.',
   },
   {
     title: 'Early Detection',
@@ -81,11 +85,11 @@ const benefits = [
   },
   {
     title: 'Platform Integration',
-    description: 'Same dashboard, workflow engine, and data layer as facility operations.',
+    description: 'Same dashboard, same workflow engine, same data layer as your facility operations.',
   },
   {
     title: 'Scalable',
-    description: 'Monitor a single site or an entire country on the same platform.',
+    description: 'Monitor a single site or an entire country — same platform.',
   },
 ]
 
@@ -98,36 +102,34 @@ export default function InfrastructureEnvironmentalPage(): React.ReactElement {
         subheadline="Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure — the same platform, at planetary scale."
       />
 
-      <ChallengeSection challenges={challenges} />
+      <ChallengeSection
+        headline="The Challenge"
+        challenges={challenges}
+      />
 
-      <ApproachSection steps={steps} />
+      <ApproachSection
+        headline="The Softgrid Approach"
+        steps={steps}
+      />
 
-      <ProductsInvolvedSection products={products} />
+      <ProductsInvolvedSection
+        overline="Products That Power This Solution"
+        products={products}
+      />
 
-      <BenefitsSection benefits={benefits} />
+      <BenefitsSection
+        overline="Results You Can Measure"
+        benefits={benefits}
+      />
 
       <CaseStudyPreview
         label="Proven at National Scale"
-        headline="Monthly Forest Cover Monitoring for NParks"
-        description="Automated satellite-based monitoring of 26 ecological areas across Singapore — fully automated, zero manual processing."
+        headline="Monthly Forest Cover Monitoring Across Singapore for NParks"
+        description="Automated satellite-based monitoring of 26 ecological areas at 4.76m resolution — fully automated, zero manual processing."
         href="/contact"
       />
 
-      {/* CTA */}
-      <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Monitor at Scale?
-          </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            See how satellite-based AI monitoring can transform your environmental and infrastructure operations.
-          </p>
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
-            Contact Us
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </>
   )
 }

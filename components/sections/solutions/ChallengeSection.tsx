@@ -1,39 +1,49 @@
 interface Challenge {
   title: string
   description: string
+  indicator?: 'red' | 'amber' | 'teal'
 }
 
 interface ChallengeSectionProps {
-  title?: string
+  overline?: string
+  headline?: string
   subtitle?: string
   challenges: Challenge[]
 }
 
+const indicatorStyles: Record<string, string> = {
+  red: 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.3)]',
+  amber: 'bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.3)]',
+  teal: 'bg-teal-500 shadow-[0_0_8px_rgba(20,184,166,0.3)]',
+}
+
 export function ChallengeSection({
-  title = 'The Challenge',
+  overline,
+  headline = 'The Challenge',
   subtitle,
   challenges,
 }: ChallengeSectionProps): React.ReactElement {
   return (
-    <section className="bg-navy-800 py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div data-animate className="text-center mb-12">
-          <span className="text-xs font-bold uppercase tracking-[3px] text-slate-500">{title}</span>
-          {subtitle && <p className="text-lg text-slate-400 mt-3 max-w-2xl mx-auto">{subtitle}</p>}
+    <section className="bg-white py-20 md:py-[100px]">
+      <div className="max-w-[1100px] mx-auto px-4 md:px-16">
+        <div data-animate className="text-center mb-14">
+          {overline && (
+            <span className="block text-xs font-bold uppercase tracking-[3px] text-slate-500 mb-3">{overline}</span>
+          )}
+          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight">{headline}</h2>
+          {subtitle && <p className="text-[15px] text-slate-600 mt-3 max-w-2xl mx-auto leading-[1.7]">{subtitle}</p>}
         </div>
 
         <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {challenges.map((challenge, i) => (
+          {challenges.map((challenge) => (
             <div
               key={challenge.title}
               data-animate
-              className="bg-navy-900 border border-navy-700 rounded-xl p-6 hover:border-red-900/30"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-8"
             >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-2 h-2 rounded-full bg-red-500/60 mt-2 flex-shrink-0" />
-                <h3 className="text-white font-semibold">{challenge.title}</h3>
-              </div>
-              <p className="text-slate-400 text-sm leading-relaxed ml-5">{challenge.description}</p>
+              <div className={`w-2.5 h-2.5 rounded-full mb-4 ${indicatorStyles[challenge.indicator ?? 'red']}`} />
+              <h3 className="text-xl font-bold text-navy-900 mb-2.5">{challenge.title}</h3>
+              <p className="text-[15px] leading-[1.7] text-slate-600">{challenge.description}</p>
             </div>
           ))}
         </div>

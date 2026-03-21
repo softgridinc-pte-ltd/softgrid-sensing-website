@@ -7,7 +7,7 @@ interface SolutionCard {
   audience: string
   icon: React.ReactNode
   href: string
-  featured?: boolean
+  accentColor: string
 }
 
 const solutions: SolutionCard[] = [
@@ -16,83 +16,62 @@ const solutions: SolutionCard[] = [
     description:
       'BCA-certified monitoring and predictive maintenance for lifts and escalators. From real-time status to AI-driven fault prediction — proven on 10,000+ assets.',
     audience: 'For lift companies, Town Councils & transport authorities',
-    icon: <Activity className="w-6 h-6 text-cyan-500" />,
+    icon: <Activity className="w-6 h-6 text-cyan-600" />,
     href: '/solutions/vertical-transport',
-    featured: true,
+    accentColor: 'bg-cyan-500',
   },
   {
     title: 'Smart Building Management',
     description:
       'Unified, brand-agnostic monitoring and control for all your building systems. One dashboard for HVAC, energy, fire, lighting — regardless of BMS vendor.',
     audience: 'For building owners & facility managers',
-    icon: <Building2 className="w-6 h-6 text-cyan-500" />,
+    icon: <Building2 className="w-6 h-6 text-cyan-600" />,
     href: '/solutions/building-management',
+    accentColor: 'bg-teal-500',
   },
   {
     title: 'Smart Facility Operations',
     description:
       'Transform your operations from paper-based and reactive to digital and predictive. AI-powered work orders, asset management, and knowledge at your fingertips.',
     audience: 'For managing agents & property management companies',
-    icon: <LayoutGrid className="w-6 h-6 text-cyan-500" />,
+    icon: <LayoutGrid className="w-6 h-6 text-cyan-600" />,
     href: '/solutions/facility-operations',
+    accentColor: 'bg-amber-500',
   },
   {
     title: 'Infrastructure & Environmental',
     description:
       'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure — the same platform, at planetary scale.',
     audience: 'For government agencies & large-scale asset operators',
-    icon: <Satellite className="w-6 h-6 text-cyan-500" />,
+    icon: <Satellite className="w-6 h-6 text-cyan-600" />,
     href: '/solutions/infrastructure-environmental',
+    accentColor: 'bg-emerald-500',
   },
 ]
 
-function SolutionCardItem({ card }: { card: SolutionCard }): React.ReactElement {
-  return (
-    <div
-      className={`group bg-navy-800 border rounded-xl p-8 hover:scale-[1.02] ${
-        card.featured
-          ? 'border-cyan-500/30 shadow-[inset_4px_0_0_0_rgba(0,180,216,0.5)] glow-cyan'
-          : 'border-navy-700 hover:border-cyan-500/50'
-      }`}
-    >
-      <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">
-        {card.icon}
-      </div>
-
-      <h3 className="text-xl font-semibold text-white mb-3">{card.title}</h3>
-
-      <p className="text-slate-400 leading-relaxed mb-4">{card.description}</p>
-
-      <p className="text-sm text-cyan-400 italic mb-6">{card.audience}</p>
-
-      <Link
-        href={card.href}
-        className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 font-medium transition-colors duration-200"
-      >
-        Learn More
-        <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
-      </Link>
-    </div>
-  )
-}
-
 export function SolutionCardsSection(): React.ReactElement {
-  const featuredCard = solutions[0]
-  const otherCards = solutions.slice(1)
-
   return (
-    <section className="bg-navy-800 py-16 md:py-24">
+    <section className="bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        {/* Featured card — full width */}
-        <div data-animate className="mb-8">
-          <SolutionCardItem card={featuredCard} />
-        </div>
-
-        {/* 3-card grid */}
-        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {otherCards.map((card) => (
-            <div key={card.title} data-animate>
-              <SolutionCardItem card={card} />
+        <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {solutions.map((card) => (
+            <div key={card.title} data-animate className="group bg-white border border-slate-200 rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              {/* Top accent bar */}
+              <div className={`h-1 ${card.accentColor}`} />
+              <div className="p-8">
+                <div className="w-12 h-12 bg-cyan-50 border border-cyan-100 rounded-lg flex items-center justify-center mb-5">
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-navy-900 mb-3">{card.title}</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">{card.description}</p>
+                <p className="text-sm text-slate-500 italic mb-6">{card.audience}</p>
+                <Link
+                  href={card.href}
+                  className="inline-flex items-center gap-1 text-cyan-600 hover:text-cyan-700 font-medium transition-colors duration-200"
+                >
+                  Learn More <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                </Link>
+              </div>
             </div>
           ))}
         </div>

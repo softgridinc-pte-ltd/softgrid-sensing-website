@@ -1,5 +1,5 @@
 import { SolutionCardsSection } from '@/components/sections/solutions/SolutionCardsSection'
-import { Button } from '@/components/ui/Button'
+import { CTASection } from '@/components/sections/CTASection'
 
 import type { Metadata } from 'next'
 
@@ -19,7 +19,6 @@ export default function SolutionsPage(): React.ReactElement {
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[160px]"
           style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.1) 0%, transparent 70%)' }}
         />
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
           <div className="flex items-center gap-3.5 justify-center mb-8">
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
@@ -34,25 +33,9 @@ export default function SolutionsPage(): React.ReactElement {
         </div>
       </section>
 
-      {/* Solution Cards */}
       <SolutionCardsSection />
 
-      {/* CTA */}
-      <section className="bg-navy-900 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Not Sure Which Solution Fits?
-          </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            Our team can help you identify the right approach for your operations.
-          </p>
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
-            Contact Us
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </>
   )
 }

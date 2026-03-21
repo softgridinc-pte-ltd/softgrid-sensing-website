@@ -3,7 +3,7 @@ import { ChallengeSection } from '@/components/sections/solutions/ChallengeSecti
 import { ApproachSection } from '@/components/sections/solutions/ApproachSection'
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
-import { Button } from '@/components/ui/Button'
+import { CTASection } from '@/components/sections/CTASection'
 
 import type { Metadata } from 'next'
 
@@ -16,23 +16,27 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Multi-Vendor Fragmentation',
+    indicator: 'teal' as const,
     description:
-      'Tridium for HVAC, separate system for lighting, another for fire alarm — each with its own dashboard and login.',
+      'Your building has Tridium for HVAC, another system for lighting, a third for fire alarm. Each has its own dashboard, its own data silo, its own login. No unified view of building health.',
   },
   {
     title: 'Energy Blind Spots',
+    indicator: 'teal' as const,
     description:
-      'Green Mark 2021 and energy improvement regulations require data trapped in fragmented systems.',
+      "Without integrated monitoring, energy waste goes undetected. Green Mark 2021 and the upcoming Mandatory Energy Improvement regime demand data you can't easily get from fragmented systems.",
   },
   {
     title: 'Reactive Operations',
+    indicator: 'teal' as const,
     description:
-      'Equipment failures discovered when tenants complain, not when sensors detect.',
+      'Equipment failures are discovered when tenants complain. By then, comfort is degraded, costs escalate, and SLAs are breached.',
   },
   {
     title: 'Compliance Burden',
+    indicator: 'teal' as const,
     description:
-      'Green Mark, energy audits, and ESG reporting require manual data collection from disconnected systems.',
+      'Green Mark, energy audits, ESG reporting — all require data that sits in multiple disconnected systems. Manual compilation is expensive and error-prone.',
   },
 ]
 
@@ -40,22 +44,22 @@ const steps = [
   {
     title: 'Integration Layer',
     description:
-      'Cloud BMS connects to your existing controllers (Tridium, Midea) via BACnet and Modbus — no rip-and-replace.',
+      'Cloud BMS connects to your existing BMS controllers (Tridium, Midea, and others) via BACnet and Modbus. No rip-and-replace. Your existing investment is preserved — we add intelligence on top.',
   },
   {
     title: 'Unified Monitoring',
     description:
-      'One dashboard for HVAC, lighting, energy, fire alarm, lifts, escalators, gensets, FCU, AHU, and chillers.',
+      'One dashboard for HVAC, lighting, energy, fire alarm, lifts, escalators, gensets, FCU, AHU, chillers. Bi-directional MQTT control with guaranteed message delivery (QoS Level 2).',
   },
   {
     title: 'Operations Management',
     description:
-      'IRIS integrates with Cloud BMS for closed-loop maintenance — from fault detection to work order to resolution.',
+      'IRIS integrates with Cloud BMS for closed-loop maintenance: equipment fault detected → work order auto-generated → technician dispatched → resolution verified.',
   },
   {
     title: 'Intelligence Layer',
     description:
-      'AI analytics identify energy waste patterns. Athena answers building questions. ESG data collection automated.',
+      'AI analytics identify energy waste patterns. Athena answers questions about building procedures. ESG data collection runs automatically in the background.',
   },
 ]
 
@@ -69,23 +73,23 @@ const products = [
 const benefits = [
   {
     title: 'Brand-Agnostic',
-    description: 'Works with any BMS — Tridium, Midea, Schneider, Honeywell.',
+    description: 'Works with any BMS: Tridium, Midea, Schneider, Honeywell — no lock-in.',
   },
   {
     title: 'Energy Optimization',
-    description: 'Identify waste patterns, optimize schedules, reduce utility costs.',
+    description: 'Identify waste patterns, optimize operations, reduce utility costs.',
   },
   {
     title: 'Green Mark Ready',
-    description: 'Automated data collection for Green Mark 2021, energy audits, and ESG reports.',
+    description: 'Automated data collection for Green Mark, energy audits, ESG reports.',
   },
   {
     title: 'Single Pane of Glass',
-    description: 'One dashboard, one alert stream, one data layer for every building system.',
+    description: 'One dashboard, one alert stream, one data layer for the entire building.',
   },
   {
     title: 'Closed-Loop Maintenance',
-    description: 'From fault detection to resolution — automated and tracked.',
+    description: 'From fault detection to resolution — automated, tracked, reported.',
   },
 ]
 
@@ -98,29 +102,35 @@ export default function BuildingManagementPage(): React.ReactElement {
         subheadline="Brand-agnostic building monitoring, energy optimization, and automated operations — regardless of what BMS you have installed."
       />
 
-      <ChallengeSection challenges={challenges} />
+      <ChallengeSection
+        overline="The Challenge"
+        headline="Why Building Management Falls Short"
+        subtitle="Multi-vendor buildings create fragmented operations, energy blind spots, and compliance headaches."
+        challenges={challenges}
+      />
 
-      <ApproachSection steps={steps} />
+      <ApproachSection
+        overline="Our Approach"
+        headline="How Softgrid Unifies Your Building"
+        subtitle="A layered approach that preserves your existing investment and adds intelligence on top."
+        steps={steps}
+      />
 
-      <ProductsInvolvedSection products={products} />
+      <ProductsInvolvedSection
+        overline="Products Involved"
+        headline="What Powers This Solution"
+        subtitle="Four products from the AFOS platform, working together."
+        products={products}
+      />
 
-      <BenefitsSection benefits={benefits} />
+      <BenefitsSection
+        overline="Key Benefits"
+        headline="What You Get"
+        subtitle="Measurable outcomes for building owners and facility managers."
+        benefits={benefits}
+      />
 
-      {/* CTA */}
-      <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10" data-animate>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Unify Your Building Operations?
-          </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            See how Cloud BMS can bring every building system into a single platform.
-          </p>
-          <Button href="/contact" variant="primary" className="min-w-[160px]">
-            Contact Us
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </>
   )
 }
