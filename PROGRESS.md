@@ -40,7 +40,7 @@
 
 **Utilities:**
 
-- [x] `hooks/useInView.ts` - IntersectionObserver hook for scroll animations
+- [x] `hooks/useInView.ts` - IntersectionObserver hook (legacy — home page now uses `data-animate` system via `ScrollAnimator.tsx`)
 
 **Build status:** Passing (static export to `/out`)
 **Lint status:** No warnings or errors
@@ -74,5 +74,5 @@ Replaced the React hook-based animation system (`useScrollRevealGroup`) with a g
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
 - `scripts/` directory excluded from tsconfig to avoid Playwright type errors
 - Design system fonts: Outfit (headings), DM Sans (body) — loaded via `next/font/google`
-- All page sections use Server Components except those needing interactivity (Header, StatBlock, Shift/Platform/Solutions/TrustedBy sections use `useInView` hook)
+- Home page scroll animations use global `data-animate` system (see `ScrollAnimator.tsx`). Other pages (platform, solutions, about, case-studies, products) may still use `useInView` / `useScrollRevealGroup` hooks until migrated.
 - Scroll animations: Use global `data-animate` system (see ScrollAnimator.tsx), not React hooks. The `useScrollRevealGroup` approach was replaced because it observes the container (all children animate at once) rather than individual elements.

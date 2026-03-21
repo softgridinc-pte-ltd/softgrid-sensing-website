@@ -112,9 +112,3 @@ Natural language query, knowledge retrieval, and decision support. Can be embedd
 **Role in the loop:** Memory and feedback. Stores all operational data, feeds data back to Connect Engine for ingestion, and provides training data to Intelligence Engine — making the entire system smarter over time.
 
 ---
-
-## Open Questions
-
-1. **ThingsBoard (TB)**: The diagram shows "TB & AWS IoT" — confirm this refers to ThingsBoard?
-2. **Azure IoT Hub**: The earlier design spec mentioned Azure support, but the diagram only shows "TB & AWS IoT" — has Azure been removed?
-3. **Home page visual**: Should the home page use the simplified version (Sense → Predict → Act → Learn) or the four-engine closed loop directly?

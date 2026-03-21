@@ -54,6 +54,8 @@
 
 ## Home Page Structure
 
+> For visual treatment (backgrounds, colors, spacing), see `docs/04-design-system.md`.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                              HEADER                                     │
@@ -62,6 +64,11 @@
 │                         HERO SECTION                                    │
 │         "The AI-Driven Platform for Facility Operations"              │
 │                    [Contact Us]  [Learn More]                          │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│                      KEY NUMBERS (Stats)                                │
+│   10,000+ assets   |   85%+ accuracy   |   8 years   |   BCA certified  │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
@@ -77,17 +84,12 @@
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
-│                      KEY NUMBERS                                        │
-│   10,000+ assets   |   85%+ accuracy   |   8 years   |   BCA certified  │
-│                                                                         │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
 │                     SOLUTIONS PREVIEW                                   │
 │   [Vertical Transport]  [Building Mgmt]  [Facility Ops]  [Infrastructure]  │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
-│                     TRUSTED BY                                          │
+│                     ECOSYSTEM                                           │
 │       [HDB] [BCA] [Chevalier] [Midea] [NParks] [A*STAR] [NRF]           │
 │                                                                         │
 ├─────────────────────────────────────────────────────────────────────────┤

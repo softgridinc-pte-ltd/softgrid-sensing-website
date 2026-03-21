@@ -113,6 +113,19 @@ Loaded via `next/font/google` in root layout. All `h1-h6` get `font-heading` via
 | H2 | `text-3xl md:text-4xl font-bold text-white` |
 | Subtitle | `text-lg text-white/80` |
 
+### Type Scale
+
+| Element | Class | Size | Weight |
+|---------|-------|------|--------|
+| H1 (hero) | `text-4xl md:text-5xl lg:text-6xl` | 36/48/60px | font-bold |
+| H1 (home hero) | `text-4xl sm:text-5xl md:text-6xl lg:text-7xl` | 36/48/60/72px | font-bold |
+| H2 (section) | `text-3xl md:text-4xl` | 30/36px | font-bold |
+| H3 (card title) | `text-lg` or `text-xl` | 18/20px | font-semibold |
+| Body | `text-base` | 16px | font-normal |
+| Body Large | `text-lg` | 18px | font-normal |
+| Small | `text-sm` | 14px | font-normal |
+| Label | `text-xs uppercase tracking-[0.2em]` | 12px | font-semibold |
+
 ---
 
 ## Section Backgrounds & Rhythm
@@ -122,11 +135,11 @@ Loaded via `next/font/google` in root layout. All `h1-h6` get `font-heading` via
 | # | Section | Background | Theme |
 |---|---------|-----------|-------|
 | 1 | Hero | `navy-900` + overlays | Dark |
-| 2 | The Shift | `white` | **Light** |
-| 3 | Platform at a Glance | `navy-900` | Dark |
-| 4 | Stats | `navy-800` | Dark |
+| 2 | Stats | `navy-800` | Dark |
+| 3 | The Shift | `white` | **Light** |
+| 4 | Platform at a Glance | `navy-900` | Dark |
 | 5 | Solutions | `slate-50` (#f8fafc) | **Light** |
-| 6 | Ecosystem / Logos | `white` | **Light** |
+| 6 | Ecosystem | `navy-900` | Dark |
 | 7 | Closing CTA | `cyan-500` (#00b4d8) | **Cyan** |
 
 ### Rules
@@ -181,6 +194,18 @@ transition-all duration-300
 | Dark sections | `bg-cyan-500/10` | `border-cyan-500/20` | `text-cyan-500` |
 | Light sections | `bg-cyan-50` | `border-cyan-100` | `text-cyan-600` |
 
+```tsx
+{/* Dark sections */}
+<div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center">
+  <Icon className="w-6 h-6 text-cyan-500" />
+</div>
+
+{/* Light sections */}
+<div className="w-12 h-12 bg-cyan-50 border border-cyan-100 rounded-lg flex items-center justify-center">
+  <Icon className="w-6 h-6 text-cyan-600" />
+</div>
+```
+
 ### Section Header
 
 Accepts `colorScheme` prop (`'dark'` | `'light'`):
@@ -196,7 +221,8 @@ Accepts `colorScheme` prop (`'dark'` | `'light'`):
 | Section padding (vertical) | `py-16 md:py-24` | 64px / 96px |
 | Section padding (horizontal) | `px-4 md:px-8` | 16px / 32px |
 | Content max-width | `max-w-7xl mx-auto` | 1280px |
-| Narrow content | `max-w-3xl mx-auto` | 768px |
+| Medium content | `max-w-5xl mx-auto` | 1024px (platform diagram) |
+| Narrow content | `max-w-3xl mx-auto` | 768px (CTA, text-heavy) |
 | Section header → content gap | `mb-12 md:mb-16` | 48px / 64px |
 | Card padding | `p-6 md:p-8` | 24px / 32px |
 | Card gap | `gap-6` | 24px |
@@ -218,41 +244,61 @@ background-size: 80px 80px;
 
 Use with `opacity-30` and radial mask for hero backgrounds.
 
-### Glow Effects
+### CTA Section
 
-| Class | Value | Use |
-|-------|-------|-----|
-| `glow-cyan` | `0 0 50px rgba(0,180,216,0.15)` | Subtle element glow |
-| `glow-cyan-strong` | `0 0 80px rgba(0,180,216,0.25)` | Strong element glow |
-| Button hover glow | `0 0 32px rgba(0,180,216,0.4)` | Primary button hover |
-
-### CTA Section Background
-
+```tsx
+<section className="bg-cyan-500 py-20 md:py-28 relative overflow-hidden">
+  {/* Radial gradient overlay for depth */}
+  <div className="absolute inset-0" style={{
+    background: 'radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)'
+  }} />
+  <div className="max-w-3xl mx-auto px-4 md:px-8 text-center relative z-10">
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">...</h2>
+    <p className="text-lg text-white/80 mb-10">...</p>
+    <Button variant="white">...</Button>
+  </div>
+</section>
 ```
-bg-cyan-500 with overlay:
-radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)
-```
+
+### CSS Utilities (from globals.css)
+
+| Class | Effect |
+|-------|--------|
+| `grid-pattern` | 80px grid lines (use with `opacity-30`) |
+| `grid-pattern-masked` | Grid with radial mask (hero backgrounds) |
+| `glow-cyan` | `box-shadow: 0 0 50px rgba(0,180,216,0.15)` |
+| `glow-cyan-strong` | `box-shadow: 0 0 80px rgba(0,180,216,0.25)` |
+| `text-gradient` | Gradient text from cyan-400 to cyan-500 |
+| `animate-pulse-slow` | Slow 4s pulse (badge dots) |
 
 ---
 
 ## Scroll Animations
 
-### Presets
+### System: `data-animate` (Global)
 
-| Name | Hidden State | Visible State | Use For |
-|------|-------------|--------------|---------|
-| `fade-up` | `opacity-0 translate-y-[60px]` | `opacity-100 translate-y-0` | Default, card grids, stacks |
-| `fade-left` | `opacity-0 -translate-x-[40px]` | `opacity-100 translate-x-0` | Left column in comparisons |
-| `fade-right` | `opacity-0 translate-x-[40px]` | `opacity-100 translate-x-0` | Right column in comparisons |
-| `scale-up` | `opacity-0 scale-95` | `opacity-100 scale-100` | Stat numbers, badges |
-| `fade-in` | `opacity-0` | `opacity-100` | Logo rows, wide content |
+Scroll animations use a global attribute-based system. Add `data-animate` to any element; `ScrollAnimator.tsx` (mounted in root layout) observes all such elements via `IntersectionObserver` and adds `.animated` class on intersect.
+
+### Animation Effect
+
+| State | CSS |
+|-------|-----|
+| Hidden (default) | `opacity: 0; transform: translateY(60px)` |
+| Visible (`.animated`) | `opacity: 1; transform: translateY(0)` |
+
+### Staggering
+
+Add `data-animate-stagger` to a parent container. Its direct children with `data-animate` receive auto-assigned `transitionDelay` (i × 100ms).
 
 ### Timing
-- Duration: `600ms` for scroll reveal
+- Duration: `600ms`
 - Easing: `ease-out`
-- Stagger: `100ms` between items (cards), `80ms` (small items)
+- Stagger: `100ms` between items (auto-assigned)
 - All animations respect `prefers-reduced-motion: reduce`
+
+### Legacy
+
+The old hook-based system (`useScrollRevealGroup`, `ScrollRevealItem`, `scrollAnimations.ts` presets) still exists for pages not yet migrated. New pages should use `data-animate`.
 
 ---
 
@@ -261,7 +307,7 @@ radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)
 **Library**: Lucide React
 - Outline style (not filled)
 - Size: `w-5 h-5` inline, `w-6 h-6` standalone, `w-8 h-8` feature cards
-- Color: `text-cyan-500` on dark bg, `text-cyan-500` on light bg (consistent)
+- Color: `text-cyan-500` on dark bg, `text-cyan-600` on light bg
 
 ---
 
@@ -295,4 +341,40 @@ Primary viewing context: desktop (office environment).
 - Don't place two identical backgrounds adjacent
 - Don't use generic stock photos
 - Don't use purple gradients or floating particles
-- Don't use Inter or Roboto for headings (use Plus Jakarta Sans)
+- Don't use Inter or Roboto for headings (use Outfit)
+
+---
+
+## File Organization
+
+```
+app/
+  [page]/page.tsx              — Server Component, metadata + layout
+
+components/
+  layout/Header.tsx            — 'use client' (navigation state)
+  layout/Footer.tsx            — Server Component
+  ui/Button.tsx                — colorScheme-aware button
+  ui/Card.tsx                  — colorScheme-aware card
+  ui/SectionHeader.tsx         — colorScheme-aware section heading
+  ui/StatBlock.tsx             — 'use client' (animated counter)
+  ui/ScrollAnimator.tsx        — 'use client' (global data-animate observer, mounted in layout)
+  ui/ScrollRevealItem.tsx      — 'use client' (legacy, used by unmigrated pages)
+  sections/[page]/             — Page-specific section components
+
+hooks/
+  useInView.ts                 — Intersection Observer (legacy, used by unmigrated pages)
+  useScrollRevealGroup.ts      — Grouped stagger reveal (legacy, superseded by data-animate)
+
+lib/
+  scrollAnimations.ts          — Animation preset definitions (legacy)
+```
+
+### `'use client'` Boundary
+
+Push it as far down as possible. Only add when component uses:
+- `useInView`, `useState`, `useEffect`, `useRef`
+- Event handlers, browser APIs
+- `usePathname` (Header)
+
+Pages themselves are always Server Components.

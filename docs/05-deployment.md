@@ -40,18 +40,15 @@ npx create-next-app@latest softgrid-website --typescript --tailwind --eslint --a
 
 ### 1.2 Configure for Static Export
 
-Edit `next.config.ts`:
+Edit `next.config.mjs` (ESM format required for Next.js 14.2.x):
 
-```typescript
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: "export",
   images: {
     unoptimized: true,
   },
-  // If deploying to GitHub Pages with custom domain, basePath is not needed
-  // basePath: '',
 };
 
 export default nextConfig;

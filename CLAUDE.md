@@ -27,6 +27,7 @@ A customized `frontend-design` skill at `.claude/skills/frontend-design/SKILL.md
 | File | Purpose |
 |------|---------|
 | `PROGRESS.md` | Current phase, session logs, project status |
+| `docs/04-design-system.md` | Colors, typography, components, spacing, animations |
 | `.claude/rules/session-protocol.md` | Session workflow and verification rules |
 | `.claude/rules/coding-style.md` | TypeScript, React, Next.js coding patterns |
 | `.claude/rules/git-workflow.md` | Commit conventions |
