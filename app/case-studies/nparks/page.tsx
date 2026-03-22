@@ -672,7 +672,8 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                 </div>
               </div>
               <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
-                Learn more →
+                Learn more
+                <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </Link>
             <Link
@@ -708,7 +709,8 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                 </div>
               </div>
               <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
-                Learn more →
+                Learn more
+                <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </Link>
             <Link
@@ -744,7 +746,8 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                 </div>
               </div>
               <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
-                Read case study →
+                Read case study
+                <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
             </Link>
           </div>
