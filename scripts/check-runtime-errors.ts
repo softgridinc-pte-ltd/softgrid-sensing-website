@@ -38,9 +38,9 @@ async function checkRuntimeErrors() {
     console.log("\n========== RUNTIME CHECK RESULTS ==========\n");
 
     if (errors.length === 0) {
-      console.log("✅ No runtime errors detected!\n");
+      console.log("[PASS] No runtime errors detected!\n");
     } else {
-      console.log(`❌ Found ${errors.length} error(s):\n`);
+      console.log(`[FAIL] Found ${errors.length} error(s):\n`);
       errors.forEach((err, i) => {
         console.log(`Error ${i + 1}:`);
         console.log(err);
@@ -49,7 +49,7 @@ async function checkRuntimeErrors() {
     }
 
     if (warnings.length > 0) {
-      console.log(`\n⚠️  Found ${warnings.length} warning(s):\n`);
+      console.log(`\n[WARN] Found ${warnings.length} warning(s):\n`);
       warnings.forEach((warn, i) => {
         console.log(`Warning ${i + 1}: ${warn}`);
       });

@@ -134,6 +134,14 @@ try {
 }
 ```
 
+## No Emoji (P0)
+
+**Emoji are strictly prohibited** in all code, documentation, comments, console output, and any file in the repository. Use text labels or SVG icons instead. This applies everywhere — no exceptions.
+
+- Console output: use `[PASS]`, `[FAIL]`, `[WARN]` instead of checkmarks or warning signs
+- UI icons: use SVG icons (inline or from Lucide React), never emoji characters
+- Documentation: use `**Do:**` / `**Don't:**` instead of emoji markers
+
 ## Sensitive Data
 
 **Never include monetary values** (grant amounts, revenue, contract values, pricing) in code or docs. Use descriptive labels instead (e.g., "NRF Grant Awarded" not "S$2.1M NRF Grant"). Percentages for outcomes (e.g., "50% cost reduction", "85% accuracy") are acceptable — they describe performance, not financial data.
@@ -151,3 +159,4 @@ Before marking work complete:
 - [ ] No hardcoded values
 - [ ] No mutation (immutable patterns used)
 - [ ] No sensitive financial data (monetary values, grant amounts, pricing)
+- [ ] No emoji anywhere (code, docs, console output, comments)

@@ -107,9 +107,9 @@ These elements should be prominently featured:
 
 ### Example Tone
 
-❌ "We leverage cutting-edge AI paradigms to synergize operational efficiencies"
+**Don't:** "We leverage cutting-edge AI paradigms to synergize operational efficiencies"
 
-✅ "Our AI predicts equipment failures before they happen, reducing maintenance costs by up to 50%"
+**Do:** "Our AI predicts equipment failures before they happen, reducing maintenance costs by up to 50%"
 
 ## Language
 
