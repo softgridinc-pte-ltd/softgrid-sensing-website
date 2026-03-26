@@ -6,7 +6,15 @@ Softgrid Sensing is a Singapore-based IoT + AI company repositioning as an **AI-
 
 ## Tech Stack
 
-Next.js (App Router) + TypeScript + Tailwind CSS → GitHub Pages (static export)
+| Component | Technology                                                        |
+| --------- | ----------------------------------------------------------------- |
+| Framework | Next.js (App Router) + TypeScript                                 |
+| Styling   | Tailwind CSS                                                      |
+| Content   | Markdown files in Git                                             |
+| Images    | Git repo (small) + AWS S3 (large files)                           |
+| Hosting   | GitHub Pages                                                      |
+| Domain    | softgridsensing.com (DNS at Siteground, pointing to GitHub Pages) |
+| SSL       | Automatic via GitHub Pages (Let's Encrypt)    
 
 ## Commands
 
