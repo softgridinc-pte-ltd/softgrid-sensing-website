@@ -56,6 +56,21 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500;
   }
 
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(31, 153, 197, 0.3) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(31, 153, 197, 0.3);
+    border-radius: 3px;
+  }
+
   /* Subtle dot pattern for light sections */
   .dot-pattern {
     background-image: radial-gradient(circle, #cbd5e1 0.8px, transparent 0.8px);
