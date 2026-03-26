@@ -1,3 +1,4 @@
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function HdbCaseStudyPage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Case Studies', href: '/case-studies' }, { label: 'HDB' }]} />
       {/* Hero */}
       <section
         style={{
@@ -30,7 +32,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
             bottom: 0,
             left: 0,
             background:
-              'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)',
+              'radial-gradient(ellipse at 70% 50%, rgba(31,153,197,0.08) 0%, transparent 50%)',
           }}
         />
         {/* Grid texture */}
@@ -43,7 +45,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
             bottom: 0,
             left: 0,
             backgroundImage:
-              'linear-gradient(rgba(0,180,216,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.03) 1px, transparent 1px)',
+              'linear-gradient(rgba(31,153,197,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(31,153,197,0.03) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
             maskImage:
               'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
@@ -59,7 +61,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               fontWeight: 700,
               textTransform: 'uppercase' as const,
               letterSpacing: 3,
-              color: '#00b4d8',
+              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -70,7 +72,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               style={{
                 width: 32,
                 height: 1,
-                background: 'linear-gradient(90deg, transparent, #00b4d8)',
+                background: 'linear-gradient(90deg, transparent, #1F99C5)',
                 display: 'inline-block',
               }}
             />
@@ -139,7 +141,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               >
                 {item.value}
                 {item.hasCyan && (
-                  <span style={{ color: '#00b4d8' }}>{item.suffix}</span>
+                  <span style={{ color: '#1F99C5' }}>{item.suffix}</span>
                 )}
               </div>
               <div
@@ -163,7 +165,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                     width: 1,
                     height: 64,
                     background:
-                      'linear-gradient(180deg, transparent, rgba(0,180,216,0.25), transparent)',
+                      'linear-gradient(180deg, transparent, rgba(31,153,197,0.25), transparent)',
                   }}
                 />
               )}
@@ -280,8 +282,8 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                   height: 48,
                   minWidth: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -341,8 +343,8 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                   height: 48,
                   minWidth: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -401,8 +403,8 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                   height: 48,
                   minWidth: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -495,7 +497,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                     width: 8,
                     height: 8,
                     borderRadius: '50%',
-                    background: '#00b4d8',
+                    background: '#1F99C5',
                   }}
                 />
                 <strong style={{ color: '#0A1628', fontWeight: 600 }}>{item.bold}</strong>
@@ -644,7 +646,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               fontFamily: 'Georgia, serif',
               fontSize: 120,
               lineHeight: 1,
-              color: '#00b4d8',
+              color: '#1F99C5',
               opacity: 0.3,
               position: 'absolute' as const,
               top: -40,
@@ -711,7 +713,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 2,
-                  color: '#0077b6',
+                  color: '#197EA3',
                   marginBottom: 12,
                 }}
               >
@@ -733,7 +735,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: '#00b4d8',
+                color: '#1F99C5',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
@@ -778,7 +780,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 2,
-                  color: '#0077b6',
+                  color: '#197EA3',
                   marginBottom: 12,
                 }}
               >
@@ -800,7 +802,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: '#00b4d8',
+                color: '#1F99C5',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
@@ -845,7 +847,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 2,
-                  color: '#0077b6',
+                  color: '#197EA3',
                   marginBottom: 12,
                 }}
               >
@@ -867,7 +869,7 @@ export default function HdbCaseStudyPage(): React.ReactElement {
               style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: '#00b4d8',
+                color: '#1F99C5',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,

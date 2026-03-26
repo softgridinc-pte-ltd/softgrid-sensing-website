@@ -17,12 +17,12 @@ export default function SolutionsPage(): React.ReactElement {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[160px]"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.1) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(31,153,197,0.1) 0%, transparent 70%)' }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
           <div className="flex items-center gap-3.5 justify-center mb-8">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent to-cyan-400" />
-            <span className="text-cyan-400 text-xs font-bold uppercase tracking-[3px]">Solutions</span>
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-400" />
+            <span className="text-primary-400 text-xs font-bold uppercase tracking-[3px]">Solutions</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-3xl mx-auto leading-tight">
             Solutions Built for How You Operate
@@ -49,7 +49,7 @@ export default function SolutionsPage(): React.ReactElement {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 50%)',
             pointerEvents: 'none',
           }}
         />

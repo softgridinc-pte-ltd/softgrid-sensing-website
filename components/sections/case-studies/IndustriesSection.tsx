@@ -1,12 +1,12 @@
 import { Building2, Landmark, Wrench, TreePine, Building, HardHat } from 'lucide-react'
 
 const industries = [
-  { icon: <Building2 className="w-8 h-8 text-cyan-500" />, label: 'Public Housing' },
-  { icon: <Landmark className="w-8 h-8 text-cyan-500" />, label: 'Commercial Buildings' },
-  { icon: <Wrench className="w-8 h-8 text-cyan-500" />, label: 'Lift Companies' },
-  { icon: <TreePine className="w-8 h-8 text-cyan-500" />, label: 'Tourism & Attractions' },
-  { icon: <Building className="w-8 h-8 text-cyan-500" />, label: 'Government Agencies' },
-  { icon: <HardHat className="w-8 h-8 text-cyan-500" />, label: 'Infrastructure' },
+  { icon: <Building2 className="w-8 h-8 text-primary-500" />, label: 'Public Housing' },
+  { icon: <Landmark className="w-8 h-8 text-primary-500" />, label: 'Commercial Buildings' },
+  { icon: <Wrench className="w-8 h-8 text-primary-500" />, label: 'Lift Companies' },
+  { icon: <TreePine className="w-8 h-8 text-primary-500" />, label: 'Tourism & Attractions' },
+  { icon: <Building className="w-8 h-8 text-primary-500" />, label: 'Government Agencies' },
+  { icon: <HardHat className="w-8 h-8 text-primary-500" />, label: 'Infrastructure' },
 ]
 
 export function IndustriesSection(): React.ReactElement {

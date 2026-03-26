@@ -12,10 +12,10 @@ interface Engine {
 }
 
 const engines: Engine[] = [
-  { icon: <Radio className="w-5 h-5 text-cyan-500" />, name: 'Connect', role: 'The nervous system' },
-  { icon: <BrainCircuit className="w-5 h-5 text-cyan-500" />, name: 'Intelligence', role: 'The brain' },
-  { icon: <Workflow className="w-5 h-5 text-cyan-500" />, name: 'Workflow', role: 'The hands & feet' },
-  { icon: <Database className="w-5 h-5 text-cyan-500" />, name: 'Data', role: 'The memory' },
+  { icon: <Radio className="w-5 h-5 text-primary-500" />, name: 'Connect', role: 'The nervous system' },
+  { icon: <BrainCircuit className="w-5 h-5 text-primary-500" />, name: 'Intelligence', role: 'The brain' },
+  { icon: <Workflow className="w-5 h-5 text-primary-500" />, name: 'Workflow', role: 'The hands & feet' },
+  { icon: <Database className="w-5 h-5 text-primary-500" />, name: 'Data', role: 'The memory' },
 ]
 
 export function PlatformSection(): React.ReactElement {
@@ -76,14 +76,14 @@ export function PlatformSection(): React.ReactElement {
           {/* Layer 2: Platform (the core — most prominent) */}
           <div
             data-animate
-            className="border border-cyan-500/20 bg-navy-800 px-6 py-8 md:px-8 md:py-10 relative"
+            className="border border-primary-500/20 bg-navy-800 px-6 py-8 md:px-8 md:py-10 relative"
           >
             {/* Subtle glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/[0.03] via-cyan-500/[0.06] to-cyan-500/[0.03] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-500/[0.03] via-primary-500/[0.06] to-primary-500/[0.03] pointer-events-none" />
 
             <div className="relative z-10">
               <div className="mb-6">
-                <span className="text-xs font-bold uppercase tracking-[3px] text-cyan-400">Platform</span>
+                <span className="text-xs font-bold uppercase tracking-[3px] text-primary-400">Platform</span>
                 <p className="text-sm text-slate-400 mt-1">Cross-cutting engines. One closed loop.</p>
               </div>
 
@@ -92,7 +92,7 @@ export function PlatformSection(): React.ReactElement {
                 <div className="grid grid-cols-[1fr_auto_1fr] grid-rows-[auto_auto_auto] gap-x-6 gap-y-3 max-w-xl mx-auto">
                   {/* Row 1: Connect → Intelligence */}
                   <div className="flex items-center gap-3 bg-navy-900/80 rounded-lg px-4 py-3 border border-navy-700">
-                    <div className="w-8 h-8 bg-cyan-500/10 border border-cyan-500/20 rounded-md flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-primary-500/10 border border-primary-500/20 rounded-md flex items-center justify-center flex-shrink-0">
                       {engines[0].icon}
                     </div>
                     <div>
@@ -101,10 +101,10 @@ export function PlatformSection(): React.ReactElement {
                     </div>
                   </div>
                   <div className="flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-cyan-500/60" />
+                    <ArrowRight className="w-4 h-4 text-primary-500/60" />
                   </div>
                   <div className="flex items-center gap-3 bg-navy-900/80 rounded-lg px-4 py-3 border border-navy-700">
-                    <div className="w-8 h-8 bg-cyan-500/10 border border-cyan-500/20 rounded-md flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-primary-500/10 border border-primary-500/20 rounded-md flex items-center justify-center flex-shrink-0">
                       {engines[1].icon}
                     </div>
                     <div>
@@ -115,16 +115,16 @@ export function PlatformSection(): React.ReactElement {
 
                   {/* Row 2: Arrows — up on left, down on right */}
                   <div className="flex justify-center">
-                    <ArrowDown className="w-4 h-4 text-cyan-500/60 rotate-180" />
+                    <ArrowDown className="w-4 h-4 text-primary-500/60 rotate-180" />
                   </div>
                   <div />
                   <div className="flex justify-center">
-                    <ArrowDown className="w-4 h-4 text-cyan-500/60" />
+                    <ArrowDown className="w-4 h-4 text-primary-500/60" />
                   </div>
 
                   {/* Row 3: Data ← Workflow */}
                   <div className="flex items-center gap-3 bg-navy-900/80 rounded-lg px-4 py-3 border border-navy-700">
-                    <div className="w-8 h-8 bg-cyan-500/10 border border-cyan-500/20 rounded-md flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-primary-500/10 border border-primary-500/20 rounded-md flex items-center justify-center flex-shrink-0">
                       {engines[3].icon}
                     </div>
                     <div>
@@ -133,10 +133,10 @@ export function PlatformSection(): React.ReactElement {
                     </div>
                   </div>
                   <div className="flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-cyan-500/60 rotate-180" />
+                    <ArrowRight className="w-4 h-4 text-primary-500/60 rotate-180" />
                   </div>
                   <div className="flex items-center gap-3 bg-navy-900/80 rounded-lg px-4 py-3 border border-navy-700">
-                    <div className="w-8 h-8 bg-cyan-500/10 border border-cyan-500/20 rounded-md flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-primary-500/10 border border-primary-500/20 rounded-md flex items-center justify-center flex-shrink-0">
                       {engines[2].icon}
                     </div>
                     <div>
@@ -151,7 +151,7 @@ export function PlatformSection(): React.ReactElement {
               <div className="grid grid-cols-2 gap-3 md:hidden">
                 {engines.map((engine) => (
                   <div key={engine.name} className="flex items-center gap-2.5 bg-navy-900/80 rounded-lg px-3 py-3 border border-navy-700">
-                    <div className="w-7 h-7 bg-cyan-500/10 border border-cyan-500/20 rounded-md flex items-center justify-center flex-shrink-0">
+                    <div className="w-7 h-7 bg-primary-500/10 border border-primary-500/20 rounded-md flex items-center justify-center flex-shrink-0">
                       {engine.icon}
                     </div>
                     <div>

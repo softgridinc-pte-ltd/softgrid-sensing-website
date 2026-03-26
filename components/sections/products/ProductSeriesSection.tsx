@@ -22,10 +22,10 @@ const productSeries: ProductSeries[] = [
     products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }],
     href: '/products/sense',
     iconPath: <><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></>,
-    iconBg: 'rgba(0,180,216,0.12)',
-    iconBorder: 'rgba(0,180,216,0.2)',
-    iconStroke: '#00b4d8',
-    linkColor: '#00b4d8',
+    iconBg: 'rgba(31,153,197,0.12)',
+    iconBorder: 'rgba(31,153,197,0.2)',
+    iconStroke: '#1F99C5',
+    linkColor: '#1F99C5',
     cardStyle: 'dark',
   },
   {
@@ -35,10 +35,10 @@ const productSeries: ProductSeries[] = [
     products: [{ name: 'LTMS' }, { name: 'RM&D' }, { name: 'Cloud BMS' }, { name: 'Fusion RSA' }, { name: 'Escalator Monitoring [TBD]', tbd: true }],
     href: '/products/fusion',
     iconPath: <><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></>,
-    iconBg: 'rgba(0,180,216,0.15)',
-    iconBorder: 'rgba(0,180,216,0.25)',
-    iconStroke: '#90e0ef',
-    linkColor: '#90e0ef',
+    iconBg: 'rgba(31,153,197,0.15)',
+    iconBorder: 'rgba(31,153,197,0.25)',
+    iconStroke: '#6CBBD9',
+    linkColor: '#6CBBD9',
     cardStyle: 'dark',
   },
   {
@@ -61,10 +61,10 @@ const productSeries: ProductSeries[] = [
     products: [{ name: 'Athena' }, { name: 'Digital Twin' }, { name: 'AI Analytics [TBD]', tbd: true }, { name: 'ESG Reporting [TBD]', tbd: true }],
     href: '/products/cortex',
     iconPath: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></>,
-    iconBg: 'rgba(144,224,239,0.08)',
-    iconBorder: 'rgba(144,224,239,0.15)',
-    iconStroke: '#90e0ef',
-    linkColor: '#90e0ef',
+    iconBg: 'rgba(108,187,217,0.08)',
+    iconBorder: 'rgba(108,187,217,0.15)',
+    iconStroke: '#6CBBD9',
+    linkColor: '#6CBBD9',
     cardStyle: 'dark-alt',
   },
 ]
@@ -85,7 +85,7 @@ export function ProductSeriesSection(): React.ReactElement {
     <section style={{ padding: '120px 64px', background: '#FFFFFF' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div data-animate style={{ textAlign: 'center', maxWidth: 600, margin: '0 auto 72px' }}>
-          <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 3, color: '#00b4d8', marginBottom: 16 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 3, color: '#1F99C5', marginBottom: 16 }}>
             Product Series
           </div>
           <h2 style={{ fontSize: 44, fontWeight: 700, letterSpacing: -1.5, color: '#0A1628', lineHeight: 1.15 }}>

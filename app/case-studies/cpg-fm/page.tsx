@@ -1,3 +1,4 @@
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function CpgFmCaseStudyPage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Case Studies', href: '/case-studies' }, { label: 'CPG FM' }]} />
       {/* Hero */}
       <section
         style={{
@@ -39,7 +41,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
             height: 400,
             borderRadius: '50%',
             background:
-              'radial-gradient(ellipse at center, rgba(0,180,216,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse at center, rgba(31,153,197,0.12) 0%, transparent 70%)',
             filter: 'blur(80px)',
           }}
         />
@@ -56,7 +58,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
               style={{
                 width: 32,
                 height: 1,
-                background: 'linear-gradient(90deg, transparent, #00b4d8)',
+                background: 'linear-gradient(90deg, transparent, #1F99C5)',
               }}
             />
             <span
@@ -65,7 +67,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: 3,
-                color: '#00b4d8',
+                color: '#1F99C5',
               }}
             >
               Facility Operations
@@ -113,7 +115,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
           data-animate
         >
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 60, fontWeight: 300, color: '#00b4d8' }}>
+            <div style={{ fontSize: 60, fontWeight: 300, color: '#1F99C5' }}>
               IRIS
             </div>
             <div
@@ -133,11 +135,11 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
               width: 1,
               height: 64,
               background:
-                'linear-gradient(to bottom, transparent, #00b4d8, transparent)',
+                'linear-gradient(to bottom, transparent, #1F99C5, transparent)',
             }}
           />
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 60, fontWeight: 300, color: '#00b4d8' }}>
+            <div style={{ fontSize: 60, fontWeight: 300, color: '#1F99C5' }}>
               Athena
             </div>
             <div
@@ -157,7 +159,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
               width: 1,
               height: 64,
               background:
-                'linear-gradient(to bottom, transparent, #00b4d8, transparent)',
+                'linear-gradient(to bottom, transparent, #1F99C5, transparent)',
             }}
           />
           <div style={{ textAlign: 'center' }}>
@@ -181,7 +183,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
               width: 1,
               height: 64,
               background:
-                'linear-gradient(to bottom, transparent, #00b4d8, transparent)',
+                'linear-gradient(to bottom, transparent, #1F99C5, transparent)',
             }}
           />
           <div style={{ textAlign: 'center' }}>
@@ -316,8 +318,8 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   width: 48,
                   height: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -325,7 +327,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   fontSize: 20,
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
               </div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
@@ -353,8 +355,8 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   width: 48,
                   height: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -362,7 +364,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   fontSize: 20,
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
               </div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
@@ -390,8 +392,8 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   width: 48,
                   height: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -590,7 +592,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
             style={{
               fontFamily: 'Georgia, serif',
               fontSize: 120,
-              color: '#00b4d8',
+              color: '#1F99C5',
               opacity: 0.3,
               lineHeight: 0.8,
               display: 'block',
@@ -657,7 +659,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: 2,
-                    color: '#0077b6',
+                    color: '#197EA3',
                     marginBottom: 12,
                   }}
                 >
@@ -669,7 +671,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   Smart Facility Operations
                 </div>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1F99C5' }}>
                 Learn more
                 <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
@@ -694,7 +696,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: 2,
-                    color: '#0077b6',
+                    color: '#197EA3',
                     marginBottom: 12,
                   }}
                 >
@@ -706,7 +708,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   IRIS / Athena
                 </div>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1F99C5' }}>
                 Learn more
                 <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
@@ -731,7 +733,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: 2,
-                    color: '#0077b6',
+                    color: '#197EA3',
                     marginBottom: 12,
                   }}
                 >
@@ -743,7 +745,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   NParks Forest Monitoring
                 </div>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1F99C5' }}>
                 Read case study
                 <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>

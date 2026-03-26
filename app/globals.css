@@ -23,37 +23,44 @@
   }
 
   ::selection {
-    @apply bg-cyan-500/30 text-white;
+    @apply bg-primary-500/30 text-white;
   }
 }
 
 @layer utilities {
   .grid-pattern {
     background-image:
-      linear-gradient(rgba(0, 180, 216, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 180, 216, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(31, 153, 197, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 153, 197, 0.04) 1px, transparent 1px);
     background-size: 80px 80px;
   }
 
   .grid-pattern-masked {
     background-image:
-      linear-gradient(rgba(0, 180, 216, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 180, 216, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(31, 153, 197, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 153, 197, 0.04) 1px, transparent 1px);
     background-size: 80px 80px;
     mask-image: radial-gradient(ellipse at 60% 50%, black 20%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse at 60% 50%, black 20%, transparent 70%);
   }
 
-  .glow-cyan {
-    box-shadow: 0 0 50px rgba(0, 180, 216, 0.15);
+  .glow-primary {
+    box-shadow: 0 0 50px rgba(31, 153, 197, 0.15);
   }
 
-  .glow-cyan-strong {
-    box-shadow: 0 0 80px rgba(0, 180, 216, 0.25);
+  .glow-primary-strong {
+    box-shadow: 0 0 80px rgba(31, 153, 197, 0.25);
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-cyan-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500;
+  }
+
+  /* Subtle dot pattern for light sections */
+  .dot-pattern {
+    background-image: radial-gradient(circle, #cbd5e1 0.8px, transparent 0.8px);
+    background-size: 32px 32px;
+    opacity: 0.25;
   }
 }
 
@@ -69,10 +76,10 @@
 
 @keyframes hero-node-pulse {
   0%, 100% {
-    filter: drop-shadow(0 0 3px rgba(0, 180, 216, 0.2));
+    filter: drop-shadow(0 0 3px rgba(31, 153, 197, 0.2));
   }
   50% {
-    filter: drop-shadow(0 0 10px rgba(0, 180, 216, 0.5));
+    filter: drop-shadow(0 0 10px rgba(31, 153, 197, 0.5));
   }
 }
 
@@ -126,10 +133,10 @@
 /* Timeline dot pulse */
 @keyframes timeline-dot-pulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.4);
+    box-shadow: 0 0 0 0 rgba(31, 153, 197, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 4px rgba(0, 180, 216, 0);
+    box-shadow: 0 0 0 4px rgba(31, 153, 197, 0);
   }
 }
 
@@ -137,7 +144,7 @@
   animation: timeline-dot-pulse 3s ease-in-out infinite;
 }
 
-/* Scroll-triggered animations — mirrors design ref [data-animate] pattern */
+/* Scroll-triggered animations — default: slide up */
 [data-animate] {
   opacity: 0;
   transform: translateY(60px);
@@ -147,6 +154,53 @@
 [data-animate].animated {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Variant: fade only (no movement) */
+[data-animate="fade"] {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.6s ease-out;
+}
+
+[data-animate="fade"].animated {
+  opacity: 1;
+}
+
+/* Variant: slide from left */
+[data-animate="slide-left"] {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate="slide-left"].animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Variant: slide from right */
+[data-animate="slide-right"] {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate="slide-right"].animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Variant: scale in */
+[data-animate="scale"] {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-animate="scale"].animated {
+  opacity: 1;
+  transform: scale(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -160,7 +214,11 @@
     transform: none !important;
   }
 
-  [data-animate] {
+  [data-animate],
+  [data-animate="fade"],
+  [data-animate="slide-left"],
+  [data-animate="slide-right"],
+  [data-animate="scale"] {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

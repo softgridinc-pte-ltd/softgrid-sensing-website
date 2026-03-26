@@ -21,7 +21,7 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)',
+          background: 'radial-gradient(ellipse at 70% 50%, rgba(31,153,197,0.08) 0%, transparent 50%)',
           pointerEvents: 'none',
         }}
       />
@@ -30,7 +30,7 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'linear-gradient(rgba(0,180,216,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.03) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(31,153,197,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(31,153,197,0.03) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
           WebkitMaskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
           maskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
@@ -52,7 +52,7 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
             style={{
               width: 32,
               height: 1,
-              background: 'linear-gradient(90deg, transparent, #00b4d8)',
+              background: 'linear-gradient(90deg, transparent, #1F99C5)',
             }}
           />
           <span
@@ -61,7 +61,7 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: 3,
-              color: '#00b4d8',
+              color: '#1F99C5',
             }}
           >
             {overline}
@@ -97,7 +97,7 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
           href="/contact"
           style={{
             display: 'inline-block',
-            background: '#00b4d8',
+            background: '#1F99C5',
             color: '#FFFFFF',
             padding: '16px 36px',
             borderRadius: 6,

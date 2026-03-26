@@ -14,7 +14,7 @@ export function SectionHeader({
   className = '',
 }: SectionHeaderProps): React.ReactElement {
   const titleColor = colorScheme === 'light' ? 'text-navy-900' : 'text-white'
-  const subtitleColor = colorScheme === 'light' ? 'text-navy-600' : 'text-cyan-400'
+  const subtitleColor = colorScheme === 'light' ? 'text-navy-600' : 'text-primary-400'
 
   return (
     <div className={`mb-12 md:mb-16 ${centered ? 'text-center' : ''} ${className}`}>

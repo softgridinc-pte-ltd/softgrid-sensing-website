@@ -101,7 +101,7 @@ export function NetworkMesh(): React.ReactElement {
               y1={from.y}
               x2={to.x}
               y2={to.y}
-              stroke="#00b4d8"
+              stroke="#1F99C5"
               strokeWidth="0.5"
               opacity="0.12"
               strokeDasharray="4 8"
@@ -140,7 +140,7 @@ export function NetworkMesh(): React.ReactElement {
                 cx={node.x}
                 cy={node.y}
                 r={NODE_GLOW_RADIUS_MIN}
-                fill="#00b4d8"
+                fill="#1F99C5"
                 opacity="0.08"
               >
                 <animate

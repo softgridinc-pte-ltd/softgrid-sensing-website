@@ -16,28 +16,28 @@ interface Solution {
 
 const solutions: Solution[] = [
   {
-    icon: <Activity className="w-6 h-6 text-cyan-600" />,
+    icon: <Activity className="w-6 h-6 text-primary-600" />,
     title: 'Smart Vertical Transport',
     description:
       'BCA-certified monitoring and predictive maintenance for lifts and escalators. Proven on 10,000+ assets.',
     href: '/solutions/vertical-transport',
   },
   {
-    icon: <Building2 className="w-6 h-6 text-cyan-600" />,
+    icon: <Building2 className="w-6 h-6 text-primary-600" />,
     title: 'Smart Building Management',
     description:
       'Unified, brand-agnostic monitoring and control for all your building systems \u2014 regardless of BMS vendor.',
     href: '/solutions/building-management',
   },
   {
-    icon: <LayoutGrid className="w-6 h-6 text-cyan-600" />,
+    icon: <LayoutGrid className="w-6 h-6 text-primary-600" />,
     title: 'Smart Facility Operations',
     description:
       'AI-powered work orders, asset management, and knowledge base for managing agents and property companies.',
     href: '/solutions/facility-operations',
   },
   {
-    icon: <Satellite className="w-6 h-6 text-cyan-600" />,
+    icon: <Satellite className="w-6 h-6 text-primary-600" />,
     title: 'Infrastructure & Environmental',
     description:
       'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure.',
@@ -47,8 +47,10 @@ const solutions: Solution[] = [
 
 export function SolutionsSection(): React.ReactElement {
   return (
-    <section className="bg-slate-50 py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section className="bg-slate-50 py-16 md:py-24 relative overflow-hidden">
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 dot-pattern" />
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div data-animate>
           <SectionHeader
             title="Solutions for Every Domain"
@@ -61,11 +63,11 @@ export function SolutionsSection(): React.ReactElement {
           {solutions.map((solution) => (
             <div
               key={solution.title}
-              data-animate
+              data-animate="scale"
               className="h-full"
             >
               <Card colorScheme="light" className="p-6 md:p-8 h-full flex flex-col">
-                <div className="w-12 h-12 bg-cyan-50 border border-cyan-100 rounded-lg flex items-center justify-center mb-5">
+                <div className="w-12 h-12 bg-primary-50 border border-primary-100 rounded-lg flex items-center justify-center mb-5">
                   {solution.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-navy-900 mb-3">

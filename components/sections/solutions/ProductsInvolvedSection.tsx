@@ -13,7 +13,7 @@ interface ProductsInvolvedSectionProps {
 }
 
 function getSeriesBadgeStyle(series: string): React.CSSProperties {
-  if (series.includes('Fusion')) return { background: '#eafbfd', color: '#0077b6', border: '1px solid #b8ecf4' }
+  if (series.includes('Fusion')) return { background: '#EBF5FA', color: '#197EA3', border: '1px solid #A5D5E9' }
   if (series.includes('Orches')) return { background: '#FFF7ED', color: '#C2410C', border: '1px solid #FED7AA' }
   if (series.includes('Cortex')) return { background: '#F5F3FF', color: '#7C3AED', border: '1px solid #DDD6FE' }
   if (series.includes('Sense')) return { background: '#F8FAFC', color: '#475569', border: '1px solid #E2E8F0' }

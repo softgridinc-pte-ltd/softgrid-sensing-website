@@ -77,6 +77,8 @@ const shiftData: ShiftRow[] = [
 export function ShiftSection(): React.ReactElement {
   return (
     <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      {/* Subtle dot pattern for visual interest */}
+      <div className="absolute inset-0 dot-pattern" />
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div data-animate className="text-center mb-14 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-5">
@@ -98,7 +100,7 @@ export function ShiftSection(): React.ReactElement {
             </div>
             <div className="w-10" />
             <div className="text-center">
-              <span className="text-base font-bold uppercase tracking-wider text-cyan-600">
+              <span className="text-base font-bold uppercase tracking-wider text-primary-600">
                 The Softgrid Way
               </span>
             </div>
@@ -121,13 +123,13 @@ export function ShiftSection(): React.ReactElement {
                 {/* Arrow */}
                 <div className="hidden md:flex items-center justify-center w-10">
                   <div className="relative flex items-center justify-center shift-arrow" style={{ animationDelay: `${i * 200}ms` }}>
-                    <ArrowRight className="w-6 h-6 text-cyan-600 relative" strokeWidth={2.5} />
+                    <ArrowRight className="w-6 h-6 text-primary-600 relative" strokeWidth={2.5} />
                   </div>
                 </div>
 
                 {/* Modern */}
-                <div className="flex items-center gap-4 bg-cyan-50 rounded-lg px-5 py-5 border-l-2 border-cyan-600 transition-colors duration-300 hover:bg-cyan-100">
-                  <div className="text-cyan-600 shrink-0">{row.modern.icon}</div>
+                <div className="flex items-center gap-4 bg-primary-50 rounded-lg px-5 py-5 border-l-2 border-primary-600 transition-colors duration-300 hover:bg-primary-100">
+                  <div className="text-primary-600 shrink-0">{row.modern.icon}</div>
                   <span className="text-navy-900 text-base font-medium">{row.modern.text}</span>
                 </div>
               </div>

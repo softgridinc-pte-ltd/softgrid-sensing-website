@@ -19,8 +19,8 @@ export function ApproachSection({
   headline = 'Our Approach',
   subtitle,
   steps,
-  accentColor = '#00b4d8',
-  lineColor = '#b8ecf4',
+  accentColor = '#1F99C5',
+  lineColor = '#A5D5E9',
   overlineColor = '#64748B',
 }: ApproachSectionProps): React.ReactElement {
   return (

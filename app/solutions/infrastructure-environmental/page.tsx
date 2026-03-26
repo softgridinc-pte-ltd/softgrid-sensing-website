@@ -4,6 +4,7 @@ import { ApproachSection } from '@/components/sections/solutions/ApproachSection
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
 import { CaseStudyPreview } from '@/components/sections/solutions/CaseStudyPreview'
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -96,6 +97,7 @@ const benefits = [
 export default function InfrastructureEnvironmentalPage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: 'Infrastructure & Environmental' }]} />
       <SolutionHero
         overline="Infrastructure & Environmental Monitoring"
         headline="Monitor What You Can't Touch"
@@ -133,7 +135,7 @@ export default function InfrastructureEnvironmentalPage(): React.ReactElement {
       <section
         style={{
           padding: '100px 64px',
-          background: '#00b4d8',
+          background: '#1F99C5',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',

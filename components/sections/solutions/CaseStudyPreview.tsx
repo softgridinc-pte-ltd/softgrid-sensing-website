@@ -30,7 +30,7 @@ export function CaseStudyPreview({
           position: 'absolute',
           inset: 0,
           pointerEvents: 'none',
-          background: 'radial-gradient(ellipse at 30% 50%, rgba(0,180,216,0.06) 0%, transparent 50%)',
+          background: 'radial-gradient(ellipse at 30% 50%, rgba(31,153,197,0.06) 0%, transparent 50%)',
         }}
       />
 
@@ -55,7 +55,7 @@ export function CaseStudyPreview({
             style={{
               width: 32,
               height: 1,
-              background: 'linear-gradient(90deg, transparent, #00b4d8)',
+              background: 'linear-gradient(90deg, transparent, #1F99C5)',
             }}
           />
           <span
@@ -64,7 +64,7 @@ export function CaseStudyPreview({
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: 3,
-              color: '#00b4d8',
+              color: '#1F99C5',
             }}
           >
             {label}

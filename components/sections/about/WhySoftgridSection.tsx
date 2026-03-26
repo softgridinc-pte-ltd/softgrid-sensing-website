@@ -11,25 +11,25 @@ interface Pillar {
 
 const pillars: Pillar[] = [
   {
-    icon: <ShieldCheck className="w-6 h-6 text-cyan-500" />,
+    icon: <ShieldCheck className="w-6 h-6 text-primary-500" />,
     title: 'Battle-Tested Reliability',
     description:
       'Deployed on over 10,000 public assets. Trusted by HDB for Singapore\u2019s public housing.',
   },
   {
-    icon: <Cpu className="w-6 h-6 text-cyan-500" />,
+    icon: <Cpu className="w-6 h-6 text-primary-500" />,
     title: 'Deep Tech Advantage',
     description:
       'Proprietary AI and real-time digital twin engines. Not generic white-label software.',
   },
   {
-    icon: <Link2 className="w-6 h-6 text-cyan-500" />,
+    icon: <Link2 className="w-6 h-6 text-primary-500" />,
     title: 'End-to-End Integrity',
     description:
       'Complete control from hardware sensors to the technician\u2019s mobile app. Seamless integration.',
   },
   {
-    icon: <FileCheck2 className="w-6 h-6 text-cyan-500" />,
+    icon: <FileCheck2 className="w-6 h-6 text-primary-500" />,
     title: 'Regulatory Alignment',
     description:
       'Purpose-built for BCA\u2019s Smart FM and RM&D compliance requirements.',
@@ -51,7 +51,7 @@ export function WhySoftgridSection(): React.ReactElement {
               data-animate
             >
               <Card className="p-8 h-full">
-                <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-5">
+                <div className="w-12 h-12 bg-primary-500/10 border border-primary-500/20 rounded-lg flex items-center justify-center mb-5">
                   {pillar.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-3">{pillar.title}</h3>

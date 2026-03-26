@@ -54,11 +54,11 @@ export function EcosystemSection({ variant = 'darker' }: EcosystemSectionProps):
 
   const bgClass = isLight ? 'bg-white' : variant === 'dark' ? 'bg-navy-800' : 'bg-navy-900'
   const headingColor = isLight ? 'text-navy-900' : 'text-white'
-  const subtitleColor = isLight ? 'text-navy-600' : 'text-cyan-400'
-  const labelColor = isLight ? 'text-cyan-600' : 'text-cyan-400'
+  const subtitleColor = isLight ? 'text-navy-600' : 'text-primary-400'
+  const labelColor = isLight ? 'text-primary-600' : 'text-primary-400'
   const cardClass = isLight
     ? 'bg-white border border-slate-200 rounded-lg px-6 py-5 flex items-center justify-center shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 w-40 h-24 md:w-44 md:h-26'
-    : 'bg-white border border-gray-200/10 rounded-lg px-6 py-5 flex items-center justify-center shadow-md shadow-black/10 hover:shadow-xl hover:shadow-cyan-500/10 hover:scale-105 transition-all duration-300 w-40 h-24 md:w-44 md:h-26'
+    : 'bg-white border border-gray-200/10 rounded-lg px-6 py-5 flex items-center justify-center shadow-md shadow-black/10 hover:shadow-xl hover:shadow-primary-500/10 hover:scale-105 transition-all duration-300 w-40 h-24 md:w-44 md:h-26'
 
   return (
     <section className={`${bgClass} py-16 md:py-24`}>

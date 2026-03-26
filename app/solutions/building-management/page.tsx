@@ -3,6 +3,7 @@ import { ChallengeSection } from '@/components/sections/solutions/ChallengeSecti
 import { ApproachSection } from '@/components/sections/solutions/ApproachSection'
 import { ProductsInvolvedSection } from '@/components/sections/solutions/ProductsInvolvedSection'
 import { BenefitsSection } from '@/components/sections/solutions/BenefitsSection'
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -96,6 +97,7 @@ const benefits = [
 export default function BuildingManagementPage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: 'Smart Building Management' }]} />
       <SolutionHero
         overline="Smart Building Management"
         headline="One Dashboard for Every System in Your Building"
@@ -134,7 +136,7 @@ export default function BuildingManagementPage(): React.ReactElement {
       <section
         style={{
           padding: '100px 64px',
-          background: '#00b4d8',
+          background: '#1F99C5',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',

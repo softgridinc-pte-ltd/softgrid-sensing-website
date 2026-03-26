@@ -76,12 +76,12 @@ const caseStudies: CaseStudy[] = [
 
 function CaseStudyCard({ study }: { study: CaseStudy }): React.ReactElement {
   return (
-    <div className="group bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-cyan-500/30">
+    <div className="group bg-navy-800 border border-navy-700 rounded-xl p-8 hover:border-primary-500/30">
       <div className="space-y-5">
         {/* Client + industry */}
         <div className="flex flex-wrap items-center gap-3">
           <span className="text-sm font-semibold text-white">{study.client}</span>
-          <span className="bg-cyan-500/10 text-cyan-400 text-xs rounded-full px-3 py-1">
+          <span className="bg-primary-500/10 text-primary-400 text-xs rounded-full px-3 py-1">
             {study.industry}
           </span>
         </div>
@@ -98,7 +98,7 @@ function CaseStudyCard({ study }: { study: CaseStudy }): React.ReactElement {
         <div className="flex flex-wrap gap-6 pt-2">
           {study.stats.map((stat) => (
             <div key={stat.label}>
-              <div className="text-2xl font-bold text-cyan-500">{stat.value}</div>
+              <div className="text-2xl font-bold text-primary-500">{stat.value}</div>
               <div className="text-xs text-slate-400 mt-0.5">{stat.label}</div>
             </div>
           ))}
@@ -120,7 +120,7 @@ function CaseStudyCard({ study }: { study: CaseStudy }): React.ReactElement {
         {/* CTA */}
         <Link
           href={study.href}
-          className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 font-medium transition-colors duration-200"
+          className="inline-flex items-center gap-1 text-primary-400 hover:text-primary-300 font-medium transition-colors duration-200"
         >
           Read Case Study
           <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>

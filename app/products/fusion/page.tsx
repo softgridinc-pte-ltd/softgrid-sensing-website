@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 
 import type { Metadata } from 'next'
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function FusionPage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Products', href: '/products' }, { label: 'AFOS Fusion' }]} />
       {/* SERIES HERO */}
       <section
         style={{
@@ -28,7 +30,7 @@ export default function FusionPage(): React.ReactElement {
             right: 0,
             bottom: 0,
             left: 0,
-            background: 'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse at 70% 50%, rgba(31,153,197,0.08) 0%, transparent 50%)',
           }}
         />
         {/* Grid texture */}
@@ -39,7 +41,7 @@ export default function FusionPage(): React.ReactElement {
             right: 0,
             bottom: 0,
             left: 0,
-            backgroundImage: 'linear-gradient(rgba(0,180,216,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.03) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(31,153,197,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(31,153,197,0.03) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
             maskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
             WebkitMaskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
@@ -53,7 +55,7 @@ export default function FusionPage(): React.ReactElement {
               fontWeight: 700,
               textTransform: 'uppercase' as const,
               letterSpacing: 3,
-              color: '#00b4d8',
+              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -64,7 +66,7 @@ export default function FusionPage(): React.ReactElement {
               style={{
                 width: 32,
                 height: 1,
-                background: 'linear-gradient(90deg, transparent, #00b4d8)',
+                background: 'linear-gradient(90deg, transparent, #1F99C5)',
                 display: 'inline-block',
               }}
             />
@@ -123,14 +125,14 @@ export default function FusionPage(): React.ReactElement {
                   width: 44,
                   height: 44,
                   borderRadius: 12,
-                  background: '#d5f3f9',
-                  border: '1px solid #b8ecf4',
+                  background: '#D2EAF4',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <line x1="9" y1="3" x2="9" y2="21" />
                 </svg>
@@ -142,7 +144,7 @@ export default function FusionPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 LTMS
@@ -219,7 +221,7 @@ export default function FusionPage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'inline-block',
                     }}
                   />
@@ -247,13 +249,13 @@ export default function FusionPage(): React.ReactElement {
                 alignItems: 'center',
                 gap: 6,
                 padding: '6px 14px',
-                background: 'rgba(0,180,216,0.08)',
-                border: '1px solid rgba(0,180,216,0.15)',
+                background: 'rgba(31,153,197,0.08)',
+                border: '1px solid rgba(31,153,197,0.15)',
                 borderRadius: 100,
                 fontFamily: 'var(--font-display)',
                 fontSize: 12,
                 fontWeight: 600,
-                color: '#0077b6',
+                color: '#197EA3',
                 marginTop: 20,
               }}
             >
@@ -270,7 +272,7 @@ export default function FusionPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -280,7 +282,7 @@ export default function FusionPage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -314,14 +316,14 @@ export default function FusionPage(): React.ReactElement {
                   width: 44,
                   height: 44,
                   borderRadius: 12,
-                  background: '#d5f3f9',
-                  border: '1px solid #b8ecf4',
+                  background: '#D2EAF4',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                 </svg>
               </div>
@@ -332,7 +334,7 @@ export default function FusionPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 RM&amp;D
@@ -408,7 +410,7 @@ export default function FusionPage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'inline-block',
                     }}
                   />
@@ -436,13 +438,13 @@ export default function FusionPage(): React.ReactElement {
                 alignItems: 'center',
                 gap: 6,
                 padding: '6px 14px',
-                background: 'rgba(0,180,216,0.08)',
-                border: '1px solid rgba(0,180,216,0.15)',
+                background: 'rgba(31,153,197,0.08)',
+                border: '1px solid rgba(31,153,197,0.15)',
                 borderRadius: 100,
                 fontFamily: 'var(--font-display)',
                 fontSize: 12,
                 fontWeight: 600,
-                color: '#0077b6',
+                color: '#197EA3',
                 marginTop: 20,
               }}
             >
@@ -460,7 +462,7 @@ export default function FusionPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -470,7 +472,7 @@ export default function FusionPage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -504,14 +506,14 @@ export default function FusionPage(): React.ReactElement {
                   width: 44,
                   height: 44,
                   borderRadius: 12,
-                  background: '#d5f3f9',
-                  border: '1px solid #b8ecf4',
+                  background: '#D2EAF4',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
@@ -523,7 +525,7 @@ export default function FusionPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 Cloud BMS
@@ -598,7 +600,7 @@ export default function FusionPage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'inline-block',
                     }}
                   />
@@ -631,7 +633,7 @@ export default function FusionPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -641,7 +643,7 @@ export default function FusionPage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -676,13 +678,13 @@ export default function FusionPage(): React.ReactElement {
                   height: 44,
                   borderRadius: 12,
                   background: 'linear-gradient(135deg, #0c1e3a, #0a2847)',
-                  border: '1px solid rgba(0,180,216,0.25)',
+                  border: '1px solid rgba(31,153,197,0.25)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#90e0ef', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#6CBBD9', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <circle cx="12" cy="12" r="10" />
                   <path d="M2 12h20" />
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -695,7 +697,7 @@ export default function FusionPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 Fusion RSA
@@ -772,7 +774,7 @@ export default function FusionPage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'inline-block',
                     }}
                   />
@@ -800,17 +802,17 @@ export default function FusionPage(): React.ReactElement {
                 alignItems: 'center',
                 gap: 6,
                 padding: '6px 14px',
-                background: 'rgba(0,180,216,0.06)',
-                border: '1px solid rgba(0,180,216,0.12)',
+                background: 'rgba(31,153,197,0.06)',
+                border: '1px solid rgba(31,153,197,0.12)',
                 borderRadius: 100,
                 fontFamily: 'var(--font-display)',
                 fontSize: 12,
                 fontWeight: 600,
-                color: '#0077b6',
+                color: '#197EA3',
                 marginTop: 20,
               }}
             >
-              <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, stroke: '#0077b6', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+              <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, stroke: '#197EA3', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                 <circle cx="12" cy="12" r="10" />
                 <path d="M2 12h20" />
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -829,7 +831,7 @@ export default function FusionPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.15)',
+              border: '1px solid rgba(31,153,197,0.15)',
             }}
           >
             <div
@@ -839,14 +841,14 @@ export default function FusionPage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 14,
-                color: '#90e0ef',
+                color: '#6CBBD9',
                 textAlign: 'center',
                 position: 'relative',
                 zIndex: 1,
@@ -862,7 +864,7 @@ export default function FusionPage(): React.ReactElement {
                 width: 200,
                 height: 200,
                 borderRadius: '50%',
-                border: '1px dashed rgba(0,180,216,0.15)',
+                border: '1px dashed rgba(31,153,197,0.15)',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%,-50%) rotate(25deg)',
@@ -874,7 +876,7 @@ export default function FusionPage(): React.ReactElement {
                 width: 280,
                 height: 140,
                 borderRadius: '50%',
-                border: '1px dashed rgba(0,180,216,0.08)',
+                border: '1px dashed rgba(31,153,197,0.08)',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%,-50%) rotate(-15deg)',
@@ -898,14 +900,14 @@ export default function FusionPage(): React.ReactElement {
                   width: 44,
                   height: 44,
                   borderRadius: 12,
-                  background: '#d5f3f9',
-                  border: '1px solid #b8ecf4',
+                  background: '#D2EAF4',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <polyline points="4 17 10 11 4 5" />
                   <line x1="12" y1="19" x2="20" y2="19" />
                 </svg>
@@ -917,7 +919,7 @@ export default function FusionPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 Escalator Monitoring [TBD]
@@ -992,7 +994,7 @@ export default function FusionPage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'inline-block',
                     }}
                   />
@@ -1026,7 +1028,7 @@ export default function FusionPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -1036,7 +1038,7 @@ export default function FusionPage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -1060,7 +1062,7 @@ export default function FusionPage(): React.ReactElement {
       <section
         style={{
           padding: '100px 64px',
-          background: '#00b4d8',
+          background: '#1F99C5',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',

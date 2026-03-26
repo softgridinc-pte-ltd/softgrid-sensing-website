@@ -27,7 +27,7 @@ export function JourneySection(): React.ReactElement {
       <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
         <div data-animate className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Journey</h2>
-          <p className="text-lg text-cyan-400 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-400 max-w-2xl mx-auto">
             From lift monitoring startup to full-stack facility operating system.
           </p>
         </div>
@@ -35,9 +35,9 @@ export function JourneySection(): React.ReactElement {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/60 via-cyan-500/30 to-cyan-500/10" />
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/60 via-primary-500/30 to-primary-500/10" />
           {/* Line glow */}
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400/40 via-cyan-400/15 to-transparent blur-[2px]" />
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-primary-400/40 via-primary-400/15 to-transparent blur-[2px]" />
 
           <div data-animate-stagger className="space-y-8 md:space-y-12">
             {milestones.map((milestone, i) => {
@@ -52,11 +52,11 @@ export function JourneySection(): React.ReactElement {
                   {/* Mobile layout */}
                   <div className="md:hidden flex items-start gap-4 pl-0">
                     {/* Dot */}
-                    <div className="relative z-10 flex-shrink-0 w-8 h-8 bg-navy-900 border-2 border-cyan-500/60 rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(0,180,216,0.25)]">
-                      <div className="w-2.5 h-2.5 bg-cyan-400 rounded-full timeline-dot" />
+                    <div className="relative z-10 flex-shrink-0 w-8 h-8 bg-navy-900 border-2 border-primary-500/60 rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(31,153,197,0.25)]">
+                      <div className="w-2.5 h-2.5 bg-primary-400 rounded-full timeline-dot" />
                     </div>
                     <div className="pt-1">
-                      <span className="text-cyan-400 font-semibold text-sm">{milestone.year}</span>
+                      <span className="text-primary-400 font-semibold text-sm">{milestone.year}</span>
                       <p className="text-slate-300 text-sm mt-0.5">{milestone.title}</p>
                     </div>
                   </div>
@@ -66,7 +66,7 @@ export function JourneySection(): React.ReactElement {
                     {isLeft ? (
                       <>
                         <div className="text-right pr-8">
-                          <span className="text-cyan-400 font-semibold">{milestone.year}</span>
+                          <span className="text-primary-400 font-semibold">{milestone.year}</span>
                           <p className="text-slate-300 mt-1">{milestone.title}</p>
                         </div>
                         <div className="pl-8" />
@@ -75,15 +75,15 @@ export function JourneySection(): React.ReactElement {
                       <>
                         <div className="pr-8" />
                         <div className="pl-8">
-                          <span className="text-cyan-400 font-semibold">{milestone.year}</span>
+                          <span className="text-primary-400 font-semibold">{milestone.year}</span>
                           <p className="text-slate-300 mt-1">{milestone.title}</p>
                         </div>
                       </>
                     )}
 
                     {/* Center dot */}
-                    <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-navy-900 border-2 border-cyan-500/60 rounded-full flex items-center justify-center shadow-[0_0_12px_rgba(0,180,216,0.3)]">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full timeline-dot" />
+                    <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-navy-900 border-2 border-primary-500/60 rounded-full flex items-center justify-center shadow-[0_0_12px_rgba(31,153,197,0.3)]">
+                      <div className="w-2 h-2 bg-primary-400 rounded-full timeline-dot" />
                     </div>
                   </div>
                 </div>

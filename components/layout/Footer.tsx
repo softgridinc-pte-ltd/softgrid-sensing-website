@@ -50,7 +50,7 @@ export function Footer(): React.ReactElement {
                 height={36}
               />
               <span className="text-white font-heading font-semibold text-lg">
-                SOFTGRID<span className="text-cyan-500"> SENSING</span>
+                SOFTGRID<span className="text-primary-500"> SENSING</span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
@@ -62,7 +62,7 @@ export function Footer(): React.ReactElement {
               <p>
                 <a
                   href="mailto:info@softgridsensing.com"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-primary-400 transition-colors"
                 >
                   info@softgridsensing.com
                 </a>
@@ -81,7 +81,7 @@ export function Footer(): React.ReactElement {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-slate-400 text-sm hover:text-cyan-400 transition-colors duration-200"
+                      className="text-slate-400 text-sm hover:text-primary-400 transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -94,15 +94,18 @@ export function Footer(): React.ReactElement {
 
         {/* Bottom bar */}
         <div className="border-t border-navy-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-xs">
-            &copy; {new Date().getFullYear()} Softgrid Sensing Pte. Ltd. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4 text-slate-400 text-xs">
+            <p>&copy; {new Date().getFullYear()} Softgrid Sensing Pte. Ltd. All rights reserved.</p>
+            <span className="hidden md:inline text-navy-700">|</span>
+            <Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Use</Link>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="https://www.linkedin.com/company/softgrid-sensing"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-400 hover:text-primary-400 transition-colors"
               aria-label="LinkedIn"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -111,7 +114,7 @@ export function Footer(): React.ReactElement {
             </a>
             <a
               href="mailto:info@softgridsensing.com"
-              className="text-slate-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-400 hover:text-primary-400 transition-colors"
               aria-label="Email"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

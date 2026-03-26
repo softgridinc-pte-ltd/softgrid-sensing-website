@@ -69,7 +69,7 @@ function validateForm(data: FormData): FormErrors {
 }
 
 const inputStyles =
-  'w-full bg-navy-800 border border-navy-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 outline-none transition-all duration-200 focus:border-cyan-500/50 focus:shadow-[0_0_12px_rgba(0,180,216,0.08)]'
+  'w-full bg-navy-800 border border-navy-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 outline-none transition-all duration-200 focus:border-primary-500/50 focus:shadow-[0_0_12px_rgba(31,153,197,0.08)]'
 
 const labelStyles = 'block text-sm font-medium text-slate-300 mb-1.5'
 
@@ -143,8 +143,8 @@ export function ContactForm(): React.ReactElement {
 
   if (status === 'success') {
     return (
-      <div className="bg-navy-800 border border-cyan-500/30 rounded-xl p-10 text-center">
-        <CheckCircle2 className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+      <div className="bg-navy-800 border border-primary-500/30 rounded-xl p-10 text-center">
+        <CheckCircle2 className="w-12 h-12 text-primary-400 mx-auto mb-4" />
         <h3 className="text-xl font-semibold text-white mb-2">Message Sent</h3>
         <p className="text-slate-400 mb-6">
           Thank you for reaching out. We&apos;ll get back to you within 1&ndash;2 business days.
@@ -152,7 +152,7 @@ export function ContactForm(): React.ReactElement {
         <button
           type="button"
           onClick={handleReset}
-          className="text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+          className="text-primary-400 hover:text-primary-300 font-medium text-sm transition-colors"
         >
           Send Another Message
         </button>
@@ -166,7 +166,7 @@ export function ContactForm(): React.ReactElement {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className={labelStyles}>
-            Name <span className="text-cyan-500">*</span>
+            Name <span className="text-primary-500">*</span>
           </label>
           <input
             id="name"
@@ -184,7 +184,7 @@ export function ContactForm(): React.ReactElement {
 
         <div>
           <label htmlFor="email" className={labelStyles}>
-            Email <span className="text-cyan-500">*</span>
+            Email <span className="text-primary-500">*</span>
           </label>
           <input
             id="email"
@@ -205,7 +205,7 @@ export function ContactForm(): React.ReactElement {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="company" className={labelStyles}>
-            Company <span className="text-cyan-500">*</span>
+            Company <span className="text-primary-500">*</span>
           </label>
           <input
             id="company"
@@ -239,7 +239,7 @@ export function ContactForm(): React.ReactElement {
       {/* Interest */}
       <div>
         <label htmlFor="interest" className={labelStyles}>
-          Area of Interest <span className="text-cyan-500">*</span>
+          Area of Interest <span className="text-primary-500">*</span>
         </label>
         <select
           id="interest"
@@ -265,7 +265,7 @@ export function ContactForm(): React.ReactElement {
       {/* Message */}
       <div>
         <label htmlFor="message" className={labelStyles}>
-          Message <span className="text-cyan-500">*</span>
+          Message <span className="text-primary-500">*</span>
         </label>
         <textarea
           id="message"
@@ -295,7 +295,7 @@ export function ContactForm(): React.ReactElement {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="bg-cyan-500 hover:bg-cyan-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] inline-flex items-center gap-2"
+        className="bg-primary-500 hover:bg-primary-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] inline-flex items-center gap-2"
       >
         {status === 'submitting' ? (
           <>

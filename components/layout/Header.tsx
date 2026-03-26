@@ -99,7 +99,7 @@ export function Header(): React.ReactElement {
             className="transition-transform duration-200 group-hover:scale-105"
           />
           <span className="text-white font-heading font-semibold text-lg hidden sm:block">
-            SOFTGRID<span className="text-cyan-500"> SENSING</span>
+            SOFTGRID<span className="text-primary-500"> SENSING</span>
           </span>
         </Link>
 
@@ -116,8 +116,8 @@ export function Header(): React.ReactElement {
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md inline-flex items-center gap-1 ${
                   isActive(item.href)
-                    ? 'text-cyan-400'
-                    : 'text-slate-100 hover:text-cyan-400'
+                    ? 'text-primary-400'
+                    : 'text-slate-100 hover:text-primary-400'
                 }`}
               >
                 {item.label}
@@ -127,14 +127,18 @@ export function Header(): React.ReactElement {
               </Link>
 
               {/* Desktop Dropdown */}
-              {item.children && openDropdown === item.label && (
-                <div className="absolute top-full left-0 pt-1">
+              {item.children && (
+                <div className={`absolute top-full left-0 pt-1 transition-all duration-150 ease-out ${
+                  openDropdown === item.label
+                    ? 'opacity-100 translate-y-0 pointer-events-auto'
+                    : 'opacity-0 -translate-y-1 pointer-events-none'
+                }`}>
                   <div className="bg-navy-800 border border-navy-700 rounded-lg py-2 min-w-[280px] shadow-xl">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2.5 text-sm text-slate-100 hover:text-cyan-400 hover:bg-navy-700/50 transition-colors"
+                        className="block px-4 py-2.5 text-sm text-slate-100 hover:text-primary-400 hover:bg-navy-700/50 transition-colors"
                       >
                         {child.label}
                       </Link>
@@ -151,7 +155,7 @@ export function Header(): React.ReactElement {
           <div
             className={`flex items-center rounded-lg overflow-hidden transition-all duration-350 ease-out ${
               searchOpen
-                ? 'w-72 bg-navy-800 border border-cyan-500/30 shadow-[0_0_12px_rgba(0,180,216,0.1)] px-2 py-0.5'
+                ? 'w-72 bg-navy-800 border border-primary-500/30 shadow-[0_0_12px_rgba(31,153,197,0.1)] px-2 py-0.5'
                 : 'w-9 bg-transparent border border-transparent px-0 py-0'
             }`}
           >
@@ -168,7 +172,7 @@ export function Header(): React.ReactElement {
               className={`flex-shrink-0 p-2 rounded-md transition-all duration-300 ${
                 searchOpen
                   ? 'text-slate-400 hover:text-white'
-                  : 'text-slate-100 hover:text-cyan-400 hover:scale-105'
+                  : 'text-slate-100 hover:text-primary-400 hover:scale-105'
               }`}
               aria-label={searchOpen ? 'Close search' : 'Search'}
             >
@@ -202,7 +206,7 @@ export function Header(): React.ReactElement {
         {/* Mobile Hamburger */}
         <button
           type="button"
-          className="lg:hidden text-slate-100 hover:text-cyan-400 transition-colors p-2"
+          className="lg:hidden text-slate-100 hover:text-primary-400 transition-colors p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
@@ -220,8 +224,8 @@ export function Header(): React.ReactElement {
                   href={item.href}
                   className={`block px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
                     isActive(item.href)
-                      ? 'text-cyan-400 bg-navy-800'
-                      : 'text-slate-100 hover:text-cyan-400 hover:bg-navy-800'
+                      ? 'text-primary-400 bg-navy-800'
+                      : 'text-slate-100 hover:text-primary-400 hover:bg-navy-800'
                   }`}
                   onClick={() => {
                     if (!item.children) setMobileMenuOpen(false)
@@ -235,7 +239,7 @@ export function Header(): React.ReactElement {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-3 py-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                        className="block px-3 py-2 text-sm text-slate-400 hover:text-primary-400 transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {child.label}

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 
 import type { Metadata } from 'next'
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function NparksCaseStudyPage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Case Studies', href: '/case-studies' }, { label: 'NParks' }]} />
       {/* Hero */}
       <section
         style={{
@@ -39,7 +41,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
             height: 400,
             borderRadius: '50%',
             background:
-              'radial-gradient(ellipse at center, rgba(0,180,216,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse at center, rgba(31,153,197,0.12) 0%, transparent 70%)',
             filter: 'blur(80px)',
           }}
         />
@@ -56,7 +58,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
               style={{
                 width: 32,
                 height: 1,
-                background: 'linear-gradient(90deg, transparent, #00b4d8)',
+                background: 'linear-gradient(90deg, transparent, #1F99C5)',
               }}
             />
             <span
@@ -65,7 +67,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: 3,
-                color: '#00b4d8',
+                color: '#1F99C5',
               }}
             >
               Infrastructure &amp; Environmental
@@ -133,12 +135,12 @@ export default function NparksCaseStudyPage(): React.ReactElement {
               width: 1,
               height: 64,
               background:
-                'linear-gradient(to bottom, transparent, #00b4d8, transparent)',
+                'linear-gradient(to bottom, transparent, #1F99C5, transparent)',
             }}
           />
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 60, fontWeight: 300, color: 'white' }}>
-              4<span style={{ color: '#00b4d8' }}>.</span>76m
+              4<span style={{ color: '#1F99C5' }}>.</span>76m
             </div>
             <div
               style={{
@@ -157,11 +159,11 @@ export default function NparksCaseStudyPage(): React.ReactElement {
               width: 1,
               height: 64,
               background:
-                'linear-gradient(to bottom, transparent, #00b4d8, transparent)',
+                'linear-gradient(to bottom, transparent, #1F99C5, transparent)',
             }}
           />
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 60, fontWeight: 300, color: '#00b4d8' }}>
+            <div style={{ fontSize: 60, fontWeight: 300, color: '#1F99C5' }}>
               Monthly
             </div>
             <div
@@ -181,7 +183,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
               width: 1,
               height: 64,
               background:
-                'linear-gradient(to bottom, transparent, #00b4d8, transparent)',
+                'linear-gradient(to bottom, transparent, #1F99C5, transparent)',
             }}
           />
           <div style={{ textAlign: 'center' }}>
@@ -317,8 +319,8 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   width: 48,
                   height: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -354,8 +356,8 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   width: 48,
                   height: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -363,7 +365,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   fontSize: 20,
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
               </div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
@@ -391,8 +393,8 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   width: 48,
                   height: 48,
                   borderRadius: 12,
-                  background: '#eafbfd',
-                  border: '1px solid #b8ecf4',
+                  background: '#EBF5FA',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -400,7 +402,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   fontSize: 20,
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
               </div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
@@ -591,7 +593,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
             style={{
               fontFamily: 'Georgia, serif',
               fontSize: 120,
-              color: '#00b4d8',
+              color: '#1F99C5',
               opacity: 0.3,
               lineHeight: 0.8,
               display: 'block',
@@ -659,7 +661,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: 2,
-                    color: '#0077b6',
+                    color: '#197EA3',
                     marginBottom: 12,
                   }}
                 >
@@ -671,7 +673,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   Infrastructure &amp; Environmental
                 </div>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1F99C5' }}>
                 Learn more
                 <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
@@ -696,7 +698,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: 2,
-                    color: '#0077b6',
+                    color: '#197EA3',
                     marginBottom: 12,
                   }}
                 >
@@ -708,7 +710,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   Fusion RSA
                 </div>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1F99C5' }}>
                 Learn more
                 <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>
@@ -733,7 +735,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: 2,
-                    color: '#0077b6',
+                    color: '#197EA3',
                     marginBottom: 12,
                   }}
                 >
@@ -745,7 +747,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   CPG FM — AI Facility Management
                 </div>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1F99C5' }}>
                 Read case study
                 <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </div>

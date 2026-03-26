@@ -17,9 +17,9 @@ const solutions: SolutionCard[] = [
     description: 'BCA-certified monitoring and predictive maintenance for lifts and escalators. From real-time status to AI-driven fault prediction — proven on 10,000+ assets.',
     audience: 'For lift companies, Town Councils, and transport authorities',
     href: '/solutions/vertical-transport',
-    accentColor: '#00b4d8',
-    iconBg: '#d5f3f9',
-    iconStroke: '#0077b6',
+    accentColor: '#1F99C5',
+    iconBg: '#D2EAF4',
+    iconStroke: '#197EA3',
     iconPath: <><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><polyline points="8 12 12 8 16 12"/></>,
   },
   {
@@ -117,7 +117,7 @@ export function SolutionCardsSection(): React.ReactElement {
               {card.description}
             </div>
 
-            <span style={{ fontSize: 14, fontWeight: 600, color: '#00b4d8', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <span style={{ fontSize: 14, fontWeight: 600, color: '#1F99C5', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               Learn More
               <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'currentColor', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }} className="transition-transform duration-200 group-hover:translate-x-1">
                 <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>

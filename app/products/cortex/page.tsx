@@ -1,3 +1,4 @@
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function CortexPage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Products', href: '/products' }, { label: 'AFOS Cortex' }]} />
       {/* SERIES HERO */}
       <section
         style={{
@@ -29,7 +31,7 @@ export default function CortexPage(): React.ReactElement {
             bottom: 0,
             left: 0,
             background:
-              'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)',
+              'radial-gradient(ellipse at 70% 50%, rgba(31,153,197,0.08) 0%, transparent 50%)',
           }}
         />
         {/* Grid texture overlay */}
@@ -41,7 +43,7 @@ export default function CortexPage(): React.ReactElement {
             bottom: 0,
             left: 0,
             backgroundImage:
-              'linear-gradient(rgba(0,180,216,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.03) 1px, transparent 1px)',
+              'linear-gradient(rgba(31,153,197,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(31,153,197,0.03) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
             maskImage:
               'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
@@ -60,7 +62,7 @@ export default function CortexPage(): React.ReactElement {
               fontWeight: 700,
               textTransform: 'uppercase' as const,
               letterSpacing: 3,
-              color: '#00b4d8',
+              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -71,7 +73,7 @@ export default function CortexPage(): React.ReactElement {
               style={{
                 width: 32,
                 height: 1,
-                background: 'linear-gradient(90deg, transparent, #00b4d8)',
+                background: 'linear-gradient(90deg, transparent, #1F99C5)',
                 display: 'block',
               }}
             />
@@ -132,7 +134,7 @@ export default function CortexPage(): React.ReactElement {
                   height: 44,
                   borderRadius: 12,
                   background: '#111D35',
-                  border: '1px solid rgba(144,224,239,0.2)',
+                  border: '1px solid rgba(108,187,217,0.2)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -143,7 +145,7 @@ export default function CortexPage(): React.ReactElement {
                   style={{
                     width: 22,
                     height: 22,
-                    stroke: '#90e0ef',
+                    stroke: '#6CBBD9',
                     strokeWidth: 1.8,
                     fill: 'none',
                     strokeLinecap: 'round',
@@ -162,7 +164,7 @@ export default function CortexPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 Athena
@@ -250,7 +252,7 @@ export default function CortexPage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'block',
                     }}
                   />
@@ -289,7 +291,7 @@ export default function CortexPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -300,7 +302,7 @@ export default function CortexPage(): React.ReactElement {
                 bottom: 0,
                 left: 0,
                 background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -346,7 +348,7 @@ export default function CortexPage(): React.ReactElement {
                   height: 44,
                   borderRadius: 12,
                   background: '#111D35',
-                  border: '1px solid rgba(144,224,239,0.2)',
+                  border: '1px solid rgba(108,187,217,0.2)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -357,7 +359,7 @@ export default function CortexPage(): React.ReactElement {
                   style={{
                     width: 22,
                     height: 22,
-                    stroke: '#90e0ef',
+                    stroke: '#6CBBD9',
                     strokeWidth: 1.8,
                     fill: 'none',
                     strokeLinecap: 'round',
@@ -376,7 +378,7 @@ export default function CortexPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 Digital Twin Platform
@@ -466,7 +468,7 @@ export default function CortexPage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'block',
                     }}
                   />
@@ -506,7 +508,7 @@ export default function CortexPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -517,7 +519,7 @@ export default function CortexPage(): React.ReactElement {
                 bottom: 0,
                 left: 0,
                 background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -557,7 +559,7 @@ export default function CortexPage(): React.ReactElement {
                   height: 44,
                   borderRadius: 12,
                   background: '#111D35',
-                  border: '1px solid rgba(144,224,239,0.2)',
+                  border: '1px solid rgba(108,187,217,0.2)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -568,7 +570,7 @@ export default function CortexPage(): React.ReactElement {
                   style={{
                     width: 22,
                     height: 22,
-                    stroke: '#90e0ef',
+                    stroke: '#6CBBD9',
                     strokeWidth: 1.8,
                     fill: 'none',
                     strokeLinecap: 'round',
@@ -585,7 +587,7 @@ export default function CortexPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 AI Predictive Analytics [TBD]
@@ -750,7 +752,7 @@ export default function CortexPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -761,7 +763,7 @@ export default function CortexPage(): React.ReactElement {
                 bottom: 0,
                 left: 0,
                 background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -805,7 +807,7 @@ export default function CortexPage(): React.ReactElement {
                   height: 44,
                   borderRadius: 12,
                   background: '#111D35',
-                  border: '1px solid rgba(144,224,239,0.2)',
+                  border: '1px solid rgba(108,187,217,0.2)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -816,7 +818,7 @@ export default function CortexPage(): React.ReactElement {
                   style={{
                     width: 22,
                     height: 22,
-                    stroke: '#90e0ef',
+                    stroke: '#6CBBD9',
                     strokeWidth: 1.8,
                     fill: 'none',
                     strokeLinecap: 'round',
@@ -837,7 +839,7 @@ export default function CortexPage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 ESG &amp; Compliance Reporting [TBD]
@@ -936,7 +938,7 @@ export default function CortexPage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -947,7 +949,7 @@ export default function CortexPage(): React.ReactElement {
                 bottom: 0,
                 left: 0,
                 background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -987,7 +989,7 @@ export default function CortexPage(): React.ReactElement {
             bottom: 0,
             left: 0,
             background:
-              'radial-gradient(ellipse at 30% 50%, rgba(0,180,216,0.06) 0%, transparent 50%)',
+              'radial-gradient(ellipse at 30% 50%, rgba(31,153,197,0.06) 0%, transparent 50%)',
           }}
         />
         <div
@@ -1005,7 +1007,7 @@ export default function CortexPage(): React.ReactElement {
               display: 'block',
               width: 48,
               height: 2,
-              background: '#00b4d8',
+              background: '#1F99C5',
               margin: '0 auto 32px',
             }}
           />
@@ -1042,7 +1044,7 @@ export default function CortexPage(): React.ReactElement {
       <section
         style={{
           padding: '100px 64px',
-          background: '#00b4d8',
+          background: '#1F99C5',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',

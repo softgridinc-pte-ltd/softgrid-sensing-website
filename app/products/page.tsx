@@ -38,7 +38,7 @@ export default function ProductsPage(): React.ReactElement {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse at 50% 30%, rgba(0,180,216,0.10) 0%, transparent 50%), radial-gradient(ellipse at 20% 70%, rgba(0,119,182,0.06) 0%, transparent 40%), radial-gradient(ellipse at 80% 60%, rgba(144,224,239,0.04) 0%, transparent 35%)',
+            background: 'radial-gradient(ellipse at 50% 30%, rgba(31,153,197,0.10) 0%, transparent 50%), radial-gradient(ellipse at 20% 70%, rgba(25,126,163,0.06) 0%, transparent 40%), radial-gradient(ellipse at 80% 60%, rgba(108,187,217,0.04) 0%, transparent 35%)',
             pointerEvents: 'none',
           }}
         />
@@ -47,7 +47,7 @@ export default function ProductsPage(): React.ReactElement {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(31,153,197,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(31,153,197,0.04) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
             WebkitMaskImage: 'radial-gradient(ellipse at 50% 40%, black 20%, transparent 70%)',
             maskImage: 'radial-gradient(ellipse at 50% 40%, black 20%, transparent 70%)',
@@ -56,13 +56,13 @@ export default function ProductsPage(): React.ReactElement {
         />
         <div data-animate style={{ position: 'relative', zIndex: 2, maxWidth: 760, margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
-            <div style={{ width: 40, height: 1, background: 'linear-gradient(90deg, transparent, #00b4d8)' }} />
-            <span style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 3, color: '#00b4d8' }}>Product Portfolio</span>
-            <div style={{ width: 40, height: 1, background: 'linear-gradient(90deg, #00b4d8, transparent)' }} />
+            <div style={{ width: 40, height: 1, background: 'linear-gradient(90deg, transparent, #1F99C5)' }} />
+            <span style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 3, color: '#1F99C5' }}>Product Portfolio</span>
+            <div style={{ width: 40, height: 1, background: 'linear-gradient(90deg, #1F99C5, transparent)' }} />
           </div>
           <h1 style={{ fontSize: 56, fontWeight: 800, letterSpacing: -2.5, lineHeight: 1.1, color: '#FFFFFF', marginBottom: 24 }}>
             End-to-End Products.<br />Built In-House.{' '}
-            <span style={{ background: 'linear-gradient(135deg, #00b4d8, #90e0ef)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span style={{ background: 'linear-gradient(135deg, #1F99C5, #6CBBD9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               Powered by AFOS.
             </span>
           </h1>
@@ -111,7 +111,7 @@ export default function ProductsPage(): React.ReactElement {
       <section
         style={{
           padding: '100px 64px',
-          background: '#00b4d8',
+          background: '#1F99C5',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',
@@ -121,7 +121,7 @@ export default function ProductsPage(): React.ReactElement {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(0,119,182,0.3) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(25,126,163,0.3) 0%, transparent 50%)',
             pointerEvents: 'none',
           }}
         />

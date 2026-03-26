@@ -14,12 +14,12 @@ function getCardStyles(colorScheme: ColorScheme, hover: boolean): string {
 
   if (colorScheme === 'light') {
     return `${base} bg-white border border-slate-200 ${
-      hover ? 'hover:-translate-y-1 hover:shadow-lg' : ''
+      hover ? 'hover:-translate-y-1 hover:shadow-lg hover:border-primary-200' : ''
     }`
   }
 
   return `${base} bg-navy-800 border border-navy-700 ${
-    hover ? 'hover:-translate-y-2 hover:shadow-[0_8px_32px_rgba(0,180,216,0.12)]' : ''
+    hover ? 'hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(31,153,197,0.12)] hover:border-primary-500/30' : ''
   }`
 }
 
@@ -52,7 +52,7 @@ export function FeatureCard({
   className = '',
 }: FeatureCardProps): React.ReactElement {
   const isLight = colorScheme === 'light'
-  const iconBg = isLight ? 'bg-cyan-50 border-cyan-100' : 'bg-cyan-500/10 border-cyan-500/20'
+  const iconBg = isLight ? 'bg-primary-50 border-primary-100' : 'bg-primary-500/10 border-primary-500/20'
   const titleColor = isLight ? 'text-navy-900' : 'text-white'
   const descColor = isLight ? 'text-slate-600' : 'text-slate-400'
 

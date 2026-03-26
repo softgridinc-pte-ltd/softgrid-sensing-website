@@ -18,14 +18,14 @@ export default function ContactPage(): React.ReactElement {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[160px]"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(0,180,216,0.1) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(31,153,197,0.1) 0%, transparent 70%)' }}
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-cyan-400 max-w-xl mx-auto">
+          <p className="text-lg text-primary-400 max-w-xl mx-auto">
             Whether you&apos;re exploring solutions or ready to deploy&mdash;we&apos;d love to hear from you.
           </p>
         </div>

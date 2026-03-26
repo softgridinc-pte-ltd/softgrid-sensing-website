@@ -1,3 +1,4 @@
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function SensePage(): React.ReactElement {
   return (
     <>
+      <Breadcrumb items={[{ label: 'Products', href: '/products' }, { label: 'AFOS Sense' }]} />
       {/* SERIES HERO */}
       <section
         style={{
@@ -28,7 +30,7 @@ export default function SensePage(): React.ReactElement {
             right: 0,
             bottom: 0,
             left: 0,
-            background: 'radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse at 70% 50%, rgba(31,153,197,0.08) 0%, transparent 50%)',
           }}
         />
         {/* Grid texture */}
@@ -39,7 +41,7 @@ export default function SensePage(): React.ReactElement {
             right: 0,
             bottom: 0,
             left: 0,
-            backgroundImage: 'linear-gradient(rgba(0,180,216,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.03) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(31,153,197,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(31,153,197,0.03) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
             maskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
             WebkitMaskImage: 'radial-gradient(ellipse at 60% 50%, black 30%, transparent 80%)',
@@ -53,7 +55,7 @@ export default function SensePage(): React.ReactElement {
               fontWeight: 700,
               textTransform: 'uppercase' as const,
               letterSpacing: 3,
-              color: '#00b4d8',
+              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -64,7 +66,7 @@ export default function SensePage(): React.ReactElement {
               style={{
                 width: 32,
                 height: 1,
-                background: 'linear-gradient(90deg, transparent, #00b4d8)',
+                background: 'linear-gradient(90deg, transparent, #1F99C5)',
                 display: 'inline-block',
               }}
             />
@@ -123,14 +125,14 @@ export default function SensePage(): React.ReactElement {
                   width: 44,
                   height: 44,
                   borderRadius: 12,
-                  background: '#d5f3f9',
-                  border: '1px solid #b8ecf4',
+                  background: '#D2EAF4',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <rect x="4" y="2" width="16" height="20" rx="2" />
                   <line x1="8" y1="6" x2="16" y2="6" />
                   <line x1="8" y1="10" x2="16" y2="10" />
@@ -144,7 +146,7 @@ export default function SensePage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 LMD Series
@@ -206,7 +208,7 @@ export default function SensePage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'inline-block',
                     }}
                   />
@@ -231,7 +233,7 @@ export default function SensePage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -241,7 +243,7 @@ export default function SensePage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -275,14 +277,14 @@ export default function SensePage(): React.ReactElement {
                   width: 44,
                   height: 44,
                   borderRadius: 12,
-                  background: '#d5f3f9',
-                  border: '1px solid #b8ecf4',
+                  background: '#D2EAF4',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <rect x="2" y="3" width="20" height="14" rx="2" />
                   <line x1="8" y1="21" x2="16" y2="21" />
                   <line x1="12" y1="17" x2="12" y2="21" />
@@ -295,7 +297,7 @@ export default function SensePage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 LBB Series
@@ -357,7 +359,7 @@ export default function SensePage(): React.ReactElement {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: '#00b4d8',
+                      background: '#1F99C5',
                       display: 'inline-block',
                     }}
                   />
@@ -381,13 +383,13 @@ export default function SensePage(): React.ReactElement {
                 alignItems: 'center',
                 gap: 6,
                 padding: '6px 14px',
-                background: 'rgba(0,180,216,0.08)',
-                border: '1px solid rgba(0,180,216,0.15)',
+                background: 'rgba(31,153,197,0.08)',
+                border: '1px solid rgba(31,153,197,0.15)',
                 borderRadius: 100,
                 fontFamily: 'var(--font-display)',
                 fontSize: 12,
                 fontWeight: 600,
-                color: '#0077b6',
+                color: '#197EA3',
                 marginTop: 20,
               }}
             >
@@ -405,7 +407,7 @@ export default function SensePage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -415,7 +417,7 @@ export default function SensePage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -449,14 +451,14 @@ export default function SensePage(): React.ReactElement {
                   width: 44,
                   height: 44,
                   borderRadius: 12,
-                  background: '#d5f3f9',
-                  border: '1px solid #b8ecf4',
+                  background: '#D2EAF4',
+                  border: '1px solid #A5D5E9',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#0077b6', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
                   <polyline points="4 17 10 11 4 5" />
                   <line x1="12" y1="19" x2="20" y2="19" />
                 </svg>
@@ -468,7 +470,7 @@ export default function SensePage(): React.ReactElement {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: 1.5,
-                  color: '#0077b6',
+                  color: '#197EA3',
                 }}
               >
                 EMD
@@ -596,7 +598,7 @@ export default function SensePage(): React.ReactElement {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid rgba(0,180,216,0.1)',
+              border: '1px solid rgba(31,153,197,0.1)',
             }}
           >
             <div
@@ -606,7 +608,7 @@ export default function SensePage(): React.ReactElement {
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.06) 0%, transparent 60%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
             <div
@@ -650,7 +652,7 @@ export default function SensePage(): React.ReactElement {
       <section
         style={{
           padding: '100px 64px',
-          background: '#00b4d8',
+          background: '#1F99C5',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',
