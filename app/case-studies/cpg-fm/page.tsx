@@ -207,7 +207,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
 
       {/* Background */}
       <section style={{ background: '#FFFFFF', padding: '80px 64px' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 32,
@@ -274,7 +274,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
 
       {/* Solution */}
       <section style={{ background: '#F8FAFC', padding: '80px 64px' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 32,
@@ -401,7 +401,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
                   fontSize: 20,
                 }}
               >
-                🔗
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F99C5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
               </div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
@@ -420,7 +420,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
 
       {/* Results */}
       <section style={{ background: '#FFFFFF', padding: '80px 64px' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 32,
@@ -619,7 +619,7 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
 
       {/* Related */}
       <section style={{ padding: 64, background: '#FFFFFF' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 24,

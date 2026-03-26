@@ -207,7 +207,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
 
       {/* Background */}
       <section style={{ background: '#FFFFFF', padding: '80px 64px' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 32,
@@ -275,7 +275,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
 
       {/* Solution */}
       <section style={{ background: '#F8FAFC', padding: '80px 64px' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 32,
@@ -328,7 +328,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
                   fontSize: 20,
                 }}
               >
-                🛰
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F99C5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M3.6 9h16.8M3.6 15h16.8" /><path d="M12 3a9 9 0 0 1 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9z" /><path d="m8 2 1.5 2M16 2l-1.5 2M8 22l1.5-2M16 22l-1.5-2" /></svg>
               </div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
@@ -421,7 +421,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
 
       {/* Results */}
       <section style={{ background: '#FFFFFF', padding: '80px 64px' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 32,
@@ -621,7 +621,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
 
       {/* Related */}
       <section style={{ padding: 64, background: '#FFFFFF' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }} data-animate>
+        <div style={{ maxWidth: 880 }} data-animate>
           <h2
             style={{
               fontSize: 24,
