@@ -15,6 +15,7 @@ out
 next-env.d.ts
 *.tsbuildinfo
 *.local
+__pycache__/
 
 # Editor directories and files
 .vscode/*
@@ -31,9 +32,6 @@ next-env.d.ts
 .env
 .env.local
 *.local
-
-# Prisma generated client
-prisma/generated/
 
 # Test artifacts
 playwright-report/
