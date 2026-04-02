@@ -55,7 +55,6 @@ export default function FusionPage(): React.ReactElement {
               fontWeight: 700,
               textTransform: 'uppercase' as const,
               letterSpacing: 3.5,
-              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -64,20 +63,30 @@ export default function FusionPage(): React.ReactElement {
           >
             <span
               style={{
-                width: 32,
-                height: 1,
-                background: 'linear-gradient(90deg, transparent, #1F99C5)',
+                width: 40,
+                height: 2,
+                background: 'linear-gradient(90deg, transparent, #6CBBD9, #22D3EE)',
+                borderRadius: 1,
                 display: 'inline-block',
               }}
             />
-            AFOS Fusion
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #6CBBD9, #22D3EE)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 24px rgba(34, 211, 238, 0.3)',
+              }}
+            >
+              AFOS Fusion
+            </span>
           </div>
           <div
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 13,
-              fontWeight: 500,
-              color: '#22D3EE',
+              fontWeight: 700,
+              color: '#B0BEC9',
               letterSpacing: 1,
               marginBottom: 12,
               textTransform: 'uppercase' as const,
@@ -102,7 +111,7 @@ export default function FusionPage(): React.ReactElement {
             style={{
               fontSize: 18,
               lineHeight: 1.7,
-              color: '#94A3B8',
+              color: '#B0BEC9',
               maxWidth: 580,
             }}
           >
@@ -185,7 +194,7 @@ export default function FusionPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -231,15 +240,15 @@ export default function FusionPage(): React.ReactElement {
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>LMD6000</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Per lift per month</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Scale</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Scale</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>10,000+ lifts deployment-ready</div>
               </div>
             </div>
@@ -375,7 +384,7 @@ export default function FusionPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -420,15 +429,15 @@ export default function FusionPage(): React.ReactElement {
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>LMDC + LBB300</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Per lift/month (HW lease + SaaS)</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Traction</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Traction</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Chevalier (200+ lifts)</div>
               </div>
             </div>
@@ -566,7 +575,7 @@ export default function FusionPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -610,15 +619,15 @@ export default function FusionPage(): React.ReactElement {
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Third-party BMS controllers</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Per building / per asset/month</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Traction</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Traction</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>HDB commercial buildings</div>
               </div>
             </div>
@@ -738,7 +747,7 @@ export default function FusionPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -784,15 +793,15 @@ export default function FusionPage(): React.ReactElement {
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Data Source</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Data Source</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Satellite imagery (not physical sensors)</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Per area per month</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Traction</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Traction</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>NParks — 26 ecological areas</div>
               </div>
             </div>
@@ -960,7 +969,7 @@ export default function FusionPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -1004,15 +1013,15 @@ export default function FusionPage(): React.ReactElement {
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Hardware</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>EMD + Edge VA + 2-4 cameras</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Reference</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Reference</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Guangzhou Metro Lines 18 &amp; 7</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Status</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Status</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Demonstrated to LTA. Deployment-ready.</div>
               </div>
             </div>

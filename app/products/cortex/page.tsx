@@ -62,7 +62,6 @@ export default function CortexPage(): React.ReactElement {
               fontWeight: 700,
               textTransform: 'uppercase' as const,
               letterSpacing: 3.5,
-              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -71,20 +70,30 @@ export default function CortexPage(): React.ReactElement {
           >
             <span
               style={{
-                width: 32,
-                height: 1,
-                background: 'linear-gradient(90deg, transparent, #1F99C5)',
+                width: 40,
+                height: 2,
+                background: 'linear-gradient(90deg, transparent, #6CBBD9, #22D3EE)',
+                borderRadius: 1,
                 display: 'inline-block',
               }}
             />
-            AFOS Cortex
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #6CBBD9, #22D3EE)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 24px rgba(34, 211, 238, 0.3)',
+              }}
+            >
+              AFOS Cortex
+            </span>
           </div>
           <div
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 13,
-              fontWeight: 500,
-              color: '#22D3EE',
+              fontWeight: 700,
+              color: '#B0BEC9',
               letterSpacing: 1,
               marginBottom: 12,
               textTransform: 'uppercase' as const,
@@ -109,7 +118,7 @@ export default function CortexPage(): React.ReactElement {
             style={{
               fontSize: 18,
               lineHeight: 1.7,
-              color: '#94A3B8',
+              color: '#B0BEC9',
               maxWidth: 580,
             }}
           >
@@ -219,7 +228,7 @@ export default function CortexPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -269,7 +278,7 @@ export default function CortexPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase' as const,
                     letterSpacing: 1,
-                    color: '#94A3B8',
+                    color: '#B0BEC9',
                     marginBottom: 4,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
@@ -434,7 +443,7 @@ export default function CortexPage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -485,7 +494,7 @@ export default function CortexPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase' as const,
                     letterSpacing: 1,
-                    color: '#94A3B8',
+                    color: '#B0BEC9',
                     marginBottom: 4,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
@@ -693,7 +702,7 @@ export default function CortexPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase' as const,
                     letterSpacing: 1,
-                    color: '#94A3B8',
+                    color: '#B0BEC9',
                     marginBottom: 4,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
@@ -711,7 +720,7 @@ export default function CortexPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase' as const,
                     letterSpacing: 1,
-                    color: '#94A3B8',
+                    color: '#B0BEC9',
                     marginBottom: 4,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
@@ -896,7 +905,7 @@ export default function CortexPage(): React.ReactElement {
                     fontWeight: 700,
                     textTransform: 'uppercase' as const,
                     letterSpacing: 1,
-                    color: '#94A3B8',
+                    color: '#B0BEC9',
                     marginBottom: 4,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
@@ -1028,7 +1037,7 @@ export default function CortexPage(): React.ReactElement {
             style={{
               fontSize: 17,
               lineHeight: 1.8,
-              color: '#94A3B8',
+              color: '#B0BEC9',
             }}
           >
             AFOS Cortex products don&#39;t just stand alone — they enhance every

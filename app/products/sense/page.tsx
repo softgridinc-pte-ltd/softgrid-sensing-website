@@ -55,7 +55,6 @@ export default function SensePage(): React.ReactElement {
               fontWeight: 700,
               textTransform: 'uppercase' as const,
               letterSpacing: 3.5,
-              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -64,20 +63,30 @@ export default function SensePage(): React.ReactElement {
           >
             <span
               style={{
-                width: 32,
-                height: 1,
-                background: 'linear-gradient(90deg, transparent, #1F99C5)',
+                width: 40,
+                height: 2,
+                background: 'linear-gradient(90deg, transparent, #6CBBD9, #22D3EE)',
+                borderRadius: 1,
                 display: 'inline-block',
               }}
             />
-            AFOS Sense
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #6CBBD9, #22D3EE)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 24px rgba(34, 211, 238, 0.3)',
+              }}
+            >
+              AFOS Sense
+            </span>
           </div>
           <div
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 13,
-              fontWeight: 500,
-              color: '#22D3EE',
+              fontWeight: 700,
+              color: '#B0BEC9',
               letterSpacing: 1,
               marginBottom: 12,
               textTransform: 'uppercase' as const,
@@ -102,7 +111,7 @@ export default function SensePage(): React.ReactElement {
             style={{
               fontSize: 18,
               lineHeight: 1.7,
-              color: '#94A3B8',
+              color: '#B0BEC9',
               maxWidth: 580,
             }}
           >
@@ -175,7 +184,7 @@ export default function SensePage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -218,7 +227,7 @@ export default function SensePage(): React.ReactElement {
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Deployment</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Deployment</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>4,000+ LMD6000 (HDB) + 200+ LMDC (Chevalier)</div>
               </div>
             </div>
@@ -326,7 +335,7 @@ export default function SensePage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -369,11 +378,11 @@ export default function SensePage(): React.ReactElement {
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Variants</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Variants</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>LBB300 (commercialized), LBB400 (under development)</div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Deployment</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Deployment</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>200+ units with Chevalier</div>
               </div>
             </div>
@@ -499,7 +508,7 @@ export default function SensePage(): React.ReactElement {
                 fontWeight: 700,
                 textTransform: 'uppercase' as const,
                 letterSpacing: 1.5,
-                color: '#94A3B8',
+                color: '#B0BEC9',
                 marginBottom: 14,
               }}
             >
@@ -583,7 +592,7 @@ export default function SensePage(): React.ReactElement {
             </p>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#94A3B8', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Status</div>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Status</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Demonstrated to LTA. Deployment-ready.</div>
               </div>
             </div>
