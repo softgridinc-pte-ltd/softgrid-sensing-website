@@ -4,13 +4,23 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown, Search } from 'lucide-react'
+import { Menu, X, ChevronDown, Search, Cpu, Activity, Settings, Brain, ArrowUpDown, Building2, Wrench, Leaf } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+
+import type { LucideIcon } from 'lucide-react'
+
+interface NavChild {
+  label: string
+  href: string
+  subtitle?: string
+  description?: string
+  icon?: LucideIcon
+}
 
 interface NavItem {
   label: string
   href: string
-  children?: { label: string; href: string }[]
+  children?: NavChild[]
 }
 
 const navigation: NavItem[] = [
@@ -19,20 +29,64 @@ const navigation: NavItem[] = [
     label: 'Solutions',
     href: '/solutions',
     children: [
-      { label: 'Smart Vertical Transport', href: '/solutions/vertical-transport' },
-      { label: 'Smart Building Management', href: '/solutions/building-management' },
-      { label: 'Smart Facility Operations', href: '/solutions/facility-operations' },
-      { label: 'Infrastructure & Environmental', href: '/solutions/infrastructure-environmental' },
+      {
+        label: 'Smart Vertical Transport',
+        description: 'Lift monitoring, diagnostics, and compliance',
+        icon: ArrowUpDown,
+        href: '/solutions/vertical-transport',
+      },
+      {
+        label: 'Smart Building Management',
+        description: 'Centralized building systems oversight',
+        icon: Building2,
+        href: '/solutions/building-management',
+      },
+      {
+        label: 'Smart Facility Operations',
+        description: 'Digital work orders and maintenance',
+        icon: Wrench,
+        href: '/solutions/facility-operations',
+      },
+      {
+        label: 'Infrastructure & Environmental',
+        description: 'Remote sensing and environmental analytics',
+        icon: Leaf,
+        href: '/solutions/infrastructure-environmental',
+      },
     ],
   },
   {
     label: 'Products',
     href: '/products',
     children: [
-      { label: 'AFOS Sense', href: '/products/sense' },
-      { label: 'AFOS Fusion', href: '/products/fusion' },
-      { label: 'AFOS Orches', href: '/products/orches' },
-      { label: 'AFOS Cortex', href: '/products/cortex' },
+      {
+        label: 'Edge Devices',
+        subtitle: 'AFOS Sense',
+        description: 'IoT sensors and edge acquisition hardware',
+        icon: Cpu,
+        href: '/products/sense',
+      },
+      {
+        label: 'Monitoring & Diagnostics',
+        subtitle: 'AFOS Fusion',
+        description: 'Real-time monitoring and fault detection',
+        icon: Activity,
+        href: '/products/fusion',
+      },
+      {
+        label: 'Operations & Maintenance',
+        subtitle: 'AFOS Orches',
+        description: 'Work order and maintenance management',
+        icon: Settings,
+        href: '/products/orches',
+      },
+      {
+        label: 'Data & Intelligence',
+        subtitle: 'AFOS Cortex',
+        description: 'AI analytics and digital twins',
+        icon: Brain,
+        href: '/products/cortex',
+      },
     ],
   },
   { label: 'Case Studies', href: '/case-studies' },
@@ -128,21 +182,38 @@ export function Header(): React.ReactElement {
 
               {/* Desktop Dropdown */}
               {item.children && (
-                <div className={`absolute top-full left-0 pt-1 transition-all duration-150 ease-out ${
+                <div className={`absolute top-full left-0 pt-2 transition-all duration-150 ease-out ${
                   openDropdown === item.label
                     ? 'opacity-100 translate-y-0 pointer-events-auto'
                     : 'opacity-0 -translate-y-1 pointer-events-none'
                 }`}>
-                  <div className="bg-navy-800 border border-navy-700 rounded-lg py-2 min-w-[280px] shadow-xl">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-4 py-2.5 text-sm text-slate-100 hover:text-primary-400 hover:bg-navy-700/50 transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                  <div className="bg-navy-800 border border-navy-700 rounded-xl p-2 whitespace-nowrap shadow-xl shadow-navy-950/50">
+                    {item.children.map((child) => {
+                      const Icon = child.icon
+                      return (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="group/item flex items-start gap-3.5 px-3 py-3 rounded-lg border-l-2 border-transparent hover:border-primary-500 hover:bg-primary-500/8 hover:translate-x-0.5 transition-all duration-200"
+                        >
+                          {Icon && (
+                            <div className="w-9 h-9 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-primary-500/20 group-hover/item:border-primary-500/40 group-hover/item:shadow-[0_0_12px_rgba(31,153,197,0.15)] transition-all duration-200">
+                              <Icon className="w-4.5 h-4.5 text-primary-400 group-hover/item:text-primary-300 transition-colors duration-200" />
+                            </div>
+                          )}
+                          <div className="min-w-0">
+                            <div className="text-sm font-medium text-slate-300 group-hover/item:text-white transition-colors">
+                              {child.label}{child.subtitle ? ` (${child.subtitle})` : ''}
+                            </div>
+                            {child.description && (
+                              <p className="text-xs text-slate-400 mt-0.5 group-hover/item:text-slate-200 transition-colors">
+                                {child.description}
+                              </p>
+                            )}
+                          </div>
+                        </Link>
+                      )
+                    })}
                   </div>
                 </div>
               )}
@@ -242,7 +313,7 @@ export function Header(): React.ReactElement {
                         className="block px-3 py-2 text-sm text-slate-400 hover:text-primary-400 transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        {child.label}
+                        {child.subtitle ? `${child.label} (${child.subtitle})` : child.label}
                       </Link>
                     ))}
                   </div>
