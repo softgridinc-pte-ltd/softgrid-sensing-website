@@ -127,6 +127,24 @@ Replaced the React hook-based animation system (`useScrollRevealGroup`) with a g
 
 **Build status:** Passing (static export to `/out`)
 
+### Session — Case Study Review & Overview Redesign (2026-03-27)
+
+**Fixed detail page issues + redesigned overview page layout**
+
+Bug fixes on detail pages:
+- [x] Replaced emoji with SVG icons
+- [x] Standardized alignment: removed `margin: 0 auto` from CPG FM and NParks content containers to match HDB/Chevalier left-aligned pattern
+
+Overview page redesign — "magazine editorial" layout replacing uniform card grid:
+- [x] `FeaturedCaseStudy.tsx` — HDB gets a dramatic 2-column hero section with decorative dot matrix (6x8 grid)
+- [x] `CaseStudyRunway.tsx` — 3 secondary case studies in landscape cards with colored left border accents (primary/amber/slate), horizontally scrollable on mobile, 3-column grid on desktop
+- [x] `ImpactStrip.tsx` — aggregate proof-of-scale stats (replaces generic IndustriesSection icon row)
+- [x] `data/caseStudies.ts` — shared case study data extracted with accentColor, heroStat, featured fields
+- [x] Added `scrollbar-thin` CSS utility to `globals.css` for mobile horizontal scroll
+- [x] Refined CTA copy: "Ready to See Similar Results?"
+
+**Build status:** Passing (static export to `/out`)
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
