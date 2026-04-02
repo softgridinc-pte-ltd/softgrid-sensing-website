@@ -47,8 +47,16 @@ export function FeaturedCaseStudy(): React.ReactElement {
           <div data-animate="slide-left">
             {/* Overline */}
             <div className="flex items-center gap-3.5 mb-8">
-              <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-400" />
-              <span className="text-primary-400 text-xs font-bold uppercase tracking-[3px]">
+              <span className="w-10 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#6CBBD9] to-[#22D3EE]" />
+              <span
+                className="font-heading text-sm font-bold uppercase tracking-[3.5px]"
+                style={{
+                  background: 'linear-gradient(90deg, #6CBBD9, #22D3EE)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  textShadow: '0 0 24px rgba(34, 211, 238, 0.3)',
+                }}
+              >
                 Featured Case Study
               </span>
             </div>
