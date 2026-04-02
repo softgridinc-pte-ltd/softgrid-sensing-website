@@ -36,3 +36,4 @@ __pycache__/
 # Test artifacts
 playwright-report/
 test-results/
+.playwright-mcp/
