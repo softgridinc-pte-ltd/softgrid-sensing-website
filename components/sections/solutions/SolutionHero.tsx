@@ -57,10 +57,11 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
           />
           <span
             style={{
-              fontSize: 12,
+              fontFamily: 'var(--font-display)',
+              fontSize: 14,
               fontWeight: 700,
               textTransform: 'uppercase',
-              letterSpacing: 3,
+              letterSpacing: 3.5,
               color: '#1F99C5',
             }}
           >
