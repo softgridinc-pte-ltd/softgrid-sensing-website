@@ -51,10 +51,10 @@ export default function SensePage(): React.ReactElement {
           <div
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: 700,
               textTransform: 'uppercase' as const,
-              letterSpacing: 3,
+              letterSpacing: 3.5,
               color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
@@ -77,7 +77,7 @@ export default function SensePage(): React.ReactElement {
               fontFamily: 'var(--font-display)',
               fontSize: 13,
               fontWeight: 500,
-              color: '#94A3B8',
+              color: '#22D3EE',
               letterSpacing: 1,
               marginBottom: 12,
               textTransform: 'uppercase' as const,

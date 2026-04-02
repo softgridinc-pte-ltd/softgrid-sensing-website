@@ -57,11 +57,11 @@ export default function CortexPage(): React.ReactElement {
         >
           <div
             style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: 12,
+              fontFamily: 'var(--font-display)',
+              fontSize: 14,
               fontWeight: 700,
               textTransform: 'uppercase' as const,
-              letterSpacing: 3,
+              letterSpacing: 3.5,
               color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
@@ -74,19 +74,20 @@ export default function CortexPage(): React.ReactElement {
                 width: 32,
                 height: 1,
                 background: 'linear-gradient(90deg, transparent, #1F99C5)',
-                display: 'block',
+                display: 'inline-block',
               }}
             />
             AFOS Cortex
           </div>
           <div
             style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: 'var(--font-display)',
               fontSize: 13,
               fontWeight: 500,
-              color: '#94A3B8',
+              color: '#22D3EE',
               letterSpacing: 1,
               marginBottom: 12,
+              textTransform: 'uppercase' as const,
             }}
           >
             Data &amp; Intelligence

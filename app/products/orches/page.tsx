@@ -55,12 +55,12 @@ export default function OrchesPage(): React.ReactElement {
         >
           <div
             style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: 12,
+              fontFamily: 'var(--font-display)',
+              fontSize: 14,
               fontWeight: 700,
               textTransform: 'uppercase' as const,
-              letterSpacing: 3,
-              color: '#2DD4BF',
+              letterSpacing: 3.5,
+              color: '#1F99C5',
               marginBottom: 20,
               display: 'flex',
               alignItems: 'center',
@@ -71,20 +71,21 @@ export default function OrchesPage(): React.ReactElement {
               style={{
                 width: 32,
                 height: 1,
-                background: 'linear-gradient(90deg, transparent, #2DD4BF)',
-                display: 'block',
+                background: 'linear-gradient(90deg, transparent, #1F99C5)',
+                display: 'inline-block',
               }}
             />
             AFOS Orches
           </div>
           <div
             style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: 'var(--font-display)',
               fontSize: 13,
               fontWeight: 500,
-              color: '#94A3B8',
+              color: '#22D3EE',
               letterSpacing: 1,
               marginBottom: 12,
+              textTransform: 'uppercase' as const,
             }}
           >
             Operations &amp; Maintenance
