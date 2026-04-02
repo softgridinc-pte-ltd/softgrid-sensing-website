@@ -11,6 +11,7 @@ interface ProductSeries {
   iconBorder: string
   iconStroke: string
   linkColor: string
+  subtitleColor: string
   cardStyle: 'dark' | 'light' | 'dark-alt'
 }
 
@@ -26,6 +27,7 @@ const productSeries: ProductSeries[] = [
     iconBorder: 'rgba(31,153,197,0.2)',
     iconStroke: '#1F99C5',
     linkColor: '#1F99C5',
+    subtitleColor: '#8BD0E8',
     cardStyle: 'dark',
   },
   {
@@ -39,6 +41,7 @@ const productSeries: ProductSeries[] = [
     iconBorder: 'rgba(31,153,197,0.25)',
     iconStroke: '#6CBBD9',
     linkColor: '#6CBBD9',
+    subtitleColor: '#8BD0E8',
     cardStyle: 'dark',
   },
   {
@@ -52,6 +55,7 @@ const productSeries: ProductSeries[] = [
     iconBorder: 'rgba(13,148,136,0.25)',
     iconStroke: '#2DD4BF',
     linkColor: '#2DD4BF',
+    subtitleColor: '#8BD0E8',
     cardStyle: 'dark',
   },
   {
@@ -65,6 +69,7 @@ const productSeries: ProductSeries[] = [
     iconBorder: 'rgba(108,187,217,0.15)',
     iconStroke: '#6CBBD9',
     linkColor: '#6CBBD9',
+    subtitleColor: '#8BD0E8',
     cardStyle: 'dark-alt',
   },
 ]
@@ -138,7 +143,19 @@ export function ProductSeriesSection(): React.ReactElement {
                   <div style={{ fontSize: 26, fontWeight: 700, color: colors.title, marginBottom: 14, letterSpacing: -0.3 }}>
                     {series.name}
                   </div>
-                  <div style={{ fontSize: 13, fontWeight: 500, textTransform: 'uppercase', letterSpacing: 1.5, color: colors.subtitle, marginBottom: 6, marginTop: -8 }}>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: 2,
+                    color: series.subtitleColor,
+                    borderLeft: `3px solid ${series.subtitleColor}`,
+                    paddingLeft: 10,
+                    marginBottom: 10,
+                    marginTop: -4,
+                  }}>
                     {series.subtitle}
                   </div>
                   <div style={{ fontSize: 16, lineHeight: 1.7, color: colors.desc, marginBottom: 22, maxWidth: 700 }}>
