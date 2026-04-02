@@ -1,6 +1,16 @@
 {
   "permissions": {
-    "allow": ["Bash", "Read", "Bash(*)", "Write(**)", "WebSearch", "WebFetch"],
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Bash(*)",
+      "Write(**)",
+      "WebSearch",
+      "WebFetch",
+      "mcp__playwright__*",
+      "mcp__figma__*"
+    ],
     "deny": ["Bash(rm *)", "Bash(rm)", "Bash(unlink *)", "Bash(rmdir *)"]
   }
 }
