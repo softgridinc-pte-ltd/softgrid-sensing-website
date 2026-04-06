@@ -8,7 +8,38 @@ interface Product {
   tags: string
 }
 
-const industries = ['Vertical Transport', 'Buildings', 'Facilities', 'Infrastructure', 'Environmental']
+interface Industry {
+  label: string
+  icon: string // SVG path d-attr (24x24 viewBox)
+}
+
+const industries: Industry[] = [
+  {
+    label: 'Vertical Transport',
+    // Elevator: outer rect + center divider + up/down arrows
+    icon: 'M5 3h14v18H5z M12 3v18 M8.5 9l1.5-2 1.5 2 M14 15l1.5 2 1.5-2',
+  },
+  {
+    label: 'Buildings',
+    // Two buildings with windows
+    icon: 'M4 21V7l5-3v17 M9 21V11l6-3v13 M15 21V13l5 2v6 M4 21h17 M6 9h1 M6 13h1 M6 17h1 M11 13h1 M11 17h1',
+  },
+  {
+    label: 'Facilities',
+    // Factory silhouette
+    icon: 'M3 21v-9l5 3v-3l5 3v-3l5 3v-3l3 2v7z M3 21h18 M7 17h2 M12 17h2 M17 17h2',
+  },
+  {
+    label: 'Energy & Utilities',
+    // Lightning bolt + power
+    icon: 'M13 2L4 14h7l-1 8 9-12h-7l1-8z',
+  },
+  {
+    label: 'Environmental',
+    // Leaf
+    icon: 'M5 19c0-8 6-14 15-14-1 9-7 14-15 14z M5 19c2-5 6-8 11-10',
+  },
+]
 
 const products: Product[] = [
   {
@@ -44,7 +75,7 @@ const COL_X = [0, 1, 2, 3].map((i) => PAD + i * (CARD_W + CARD_GAP))
 
 // Y rhythm — generous breathing room between layers
 const Y_INDUSTRIES = 0
-const H_INDUSTRIES = 84
+const H_INDUSTRIES = 100
 const Y_AI = Y_INDUSTRIES + H_INDUSTRIES + 28 // 112
 const H_AI = 76
 const Y_PRODUCTS = Y_AI + H_AI + 32 // 220
@@ -107,32 +138,53 @@ export function AfosArchitectureSvg(): ReactElement {
       {/* ───── Industries strip ───── */}
       <g>
         <rect x="0" y={Y_INDUSTRIES} width={W} height={H_INDUSTRIES} rx="14" fill="url(#industryGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" />
-        <text x={PAD} y={Y_INDUSTRIES + 34} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
-          INDUSTRIES
+        <text x={PAD} y={Y_INDUSTRIES + 42} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
+          MULTIPLE DOMAINS
         </text>
-        <text x={PAD} y={Y_INDUSTRIES + 56} fill="#cbd5e1" fontSize="12">
+        <text x={PAD} y={Y_INDUSTRIES + 64} fill="#cbd5e1" fontSize="12">
           Where AFOS operates
         </text>
-        {industries.map((label, i) => {
-          const chipW = 148
-          const gap = 14
-          const total = industries.length * chipW + (industries.length - 1) * gap
+        {(() => {
+          const itemW = 130
+          const gap = 16
+          const total = industries.length * itemW + (industries.length - 1) * gap
           const startX = W - PAD - total
-          const x = startX + i * (chipW + gap)
-          const y = Y_INDUSTRIES + (H_INDUSTRIES - 34) / 2
-          return (
-            <g key={label}>
-              <rect x={x} y={y} width={chipW} height="34" rx="17" fill="#0c2444" stroke="#22d3ee" strokeOpacity="0.3" strokeWidth="1.75" />
-              <text x={x + chipW / 2} y={y + 22} fill="#e2e8f0" fontSize="12" textAnchor="middle">
-                {label}
-              </text>
-            </g>
-          )
-        })}
+          return industries.map((ind, i) => {
+            const x = startX + i * (itemW + gap)
+            const iconX = x + (itemW - 24) / 2
+            const iconY = Y_INDUSTRIES + 24
+            return (
+              <g key={ind.label}>
+                <g transform={`translate(${iconX}, ${iconY})`}>
+                  <path
+                    d={ind.icon}
+                    fill="none"
+                    stroke="#22d3ee"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </g>
+                <text
+                  x={x + itemW / 2}
+                  y={Y_INDUSTRIES + 72}
+                  fill="#e2e8f0"
+                  fontSize="12"
+                  fontWeight="500"
+                  textAnchor="middle"
+                >
+                  {ind.label}
+                </text>
+              </g>
+            )
+          })
+        })()}
       </g>
 
       {/* connector */}
-      <line x1={W / 2} y1={Y_INDUSTRIES + H_INDUSTRIES} x2={W / 2} y2={Y_AI} stroke="#22d3ee" strokeOpacity="0.45" strokeWidth="1.5" strokeDasharray="3 4" />
+      <line x1={W / 2} y1={Y_INDUSTRIES + H_INDUSTRIES} x2={W / 2} y2={Y_AI} stroke="#22d3ee" strokeOpacity="0.85" strokeWidth="2.25" strokeDasharray="5 6">
+        <animate attributeName="stroke-dashoffset" from="0" to="22" dur="1.2s" repeatCount="indefinite" />
+      </line>
 
       {/* ───── AI banner ───── */}
       <g>
@@ -150,7 +202,9 @@ export function AfosArchitectureSvg(): ReactElement {
       </g>
 
       {/* connector */}
-      <line x1={W / 2} y1={Y_AI + H_AI} x2={W / 2} y2={Y_PRODUCTS} stroke="#22d3ee" strokeOpacity="0.45" strokeWidth="1.5" strokeDasharray="3 4" />
+      <line x1={W / 2} y1={Y_AI + H_AI} x2={W / 2} y2={Y_PRODUCTS} stroke="#22d3ee" strokeOpacity="0.85" strokeWidth="2.25" strokeDasharray="5 6">
+        <animate attributeName="stroke-dashoffset" from="0" to="22" dur="1.2s" repeatCount="indefinite" />
+      </line>
 
       {/* ───── Core Products container ───── */}
       <rect x="0" y={Y_PRODUCTS} width={W} height={H_PRODUCTS} rx="14" fill="url(#platGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" />
@@ -186,8 +240,8 @@ export function AfosArchitectureSvg(): ReactElement {
         )
       })}
 
-      {/* connectors — products → platform */}
-      {COL_X.map((x) => (
+      {/* connectors — products → platform (animated data flow) */}
+      {COL_X.map((x, i) => (
         <line
           key={x}
           x1={x + CARD_W / 2}
@@ -195,10 +249,19 @@ export function AfosArchitectureSvg(): ReactElement {
           x2={x + CARD_W / 2}
           y2={Y_PLATFORM}
           stroke="#22d3ee"
-          strokeOpacity="0.45"
-          strokeWidth="1.5"
-          strokeDasharray="3 4"
-        />
+          strokeOpacity="0.85"
+          strokeWidth="2.25"
+          strokeDasharray="5 6"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="0"
+            to="22"
+            dur="1.2s"
+            begin={`${i * 0.15}s`}
+            repeatCount="indefinite"
+          />
+        </line>
       ))}
 
       {/* ───── Core Platform ───── */}
