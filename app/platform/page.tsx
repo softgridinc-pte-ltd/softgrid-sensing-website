@@ -3,6 +3,7 @@ import { PlatformEnginesSection } from '@/components/sections/platform/PlatformE
 import { PlatformCredentialsSection } from '@/components/sections/platform/PlatformCredentialsSection'
 import { ProductSeriesSection } from '@/components/sections/products/ProductSeriesSection'
 import { CTASection } from '@/components/sections/CTASection'
+import { PlatformFlow } from '@/components/sections/hero/PlatformFlow'
 import { Button } from '@/components/ui/Button'
 
 import type { Metadata } from 'next'
@@ -17,14 +18,19 @@ export default function PlatformPage(): React.ReactElement {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[160px]"
           style={{ background: 'radial-gradient(ellipse at center, rgba(31,153,197,0.1) 0%, transparent 70%)' }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
+        {/* Platform flow — Sense -> Predict -> Act -> Learn */}
+        <div className="hidden md:block">
+          <PlatformFlow />
+        </div>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 text-center -mt-12">
           <div className="flex items-center gap-3.5 justify-center mb-8">
             <span className="w-10 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#6CBBD9] to-[#22D3EE]" />
             <span
