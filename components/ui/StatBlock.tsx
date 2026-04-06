@@ -67,12 +67,12 @@ export function StatBlock({
   return (
     <div ref={ref} className="text-center">
       <div className="relative inline-block">
-        <div className="absolute inset-0 blur-[20px] bg-primary-500/10 rounded-full" />
-        <div className="relative text-5xl md:text-6xl font-bold text-primary-400 mb-3 font-heading">
+        <div className="absolute inset-0 blur-[20px] bg-cyan-300/10 rounded-full" />
+        <div className="relative text-5xl md:text-6xl font-bold text-cyan-300 mb-3 font-heading drop-shadow-[0_0_12px_rgba(34,211,238,0.20)]">
           {displayValue}
         </div>
       </div>
-      <div className="text-slate-400 text-sm uppercase tracking-[0.15em] font-medium">
+      <div className="text-slate-200 text-sm uppercase tracking-[0.15em] font-medium">
         {label}
       </div>
     </div>
