@@ -33,9 +33,9 @@ export function PlatformSection(): React.ReactElement {
           {/* Outer glow halo */}
           <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-cyan-500/35 opacity-80 blur-2xl" />
           {/* Gradient border (using padding trick) */}
-          <div className="relative rounded-2xl bg-gradient-to-br from-cyan-400/80 via-cyan-500/30 to-blue-500/60 p-[1.5px] shadow-[0_0_160px_-15px_rgba(34,211,238,0.7)]">
+          <div className="relative rounded-2xl bg-gradient-to-br from-cyan-400/80 via-cyan-500/30 to-cyan-600/60 p-[1.5px] shadow-[0_0_160px_-15px_rgba(34,211,238,0.7)]">
             {/* Inner card */}
-            <div className="rounded-[14px] bg-[#0a1628] p-6 md:p-10 ring-1 ring-inset ring-white/5">
+            <div className="rounded-[14px] bg-gradient-to-b from-[#143d6b] to-[#0c2950] p-6 md:p-10 ring-1 ring-inset ring-white/5">
               <AfosArchitectureSvg />
             </div>
           </div>

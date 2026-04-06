@@ -72,8 +72,8 @@ export function AfosArchitectureSvg(): ReactElement {
     >
       <defs>
         <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0f2547" />
-          <stop offset="100%" stopColor="#081830" />
+          <stop offset="0%" stopColor="#155278" />
+          <stop offset="100%" stopColor="#0e3f60" />
         </linearGradient>
         <linearGradient id="aiGrad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#0e7490" stopOpacity="0.9" />
@@ -83,6 +83,17 @@ export function AfosArchitectureSvg(): ReactElement {
         <linearGradient id="platGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#0c2444" />
           <stop offset="100%" stopColor="#050f1f" />
+        </linearGradient>
+        {/* Core Platform — deeper navy + teal foundation */}
+        <linearGradient id="platformLayerGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#0c2a3e" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#04141e" stopOpacity="0.95" />
+        </linearGradient>
+        {/* Infrastructure — darker teal horizontal accent */}
+        <linearGradient id="infraGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#082f49" />
+          <stop offset="50%" stopColor="#0c4a6e" />
+          <stop offset="100%" stopColor="#082f49" />
         </linearGradient>
         <linearGradient id="industryGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#0a1a33" />
@@ -95,7 +106,7 @@ export function AfosArchitectureSvg(): ReactElement {
 
       {/* ───── Industries strip ───── */}
       <g>
-        <rect x="0" y={Y_INDUSTRIES} width={W} height={H_INDUSTRIES} rx="14" fill="url(#industryGrad)" stroke="#22d3ee" strokeOpacity="0.25" />
+        <rect x="0" y={Y_INDUSTRIES} width={W} height={H_INDUSTRIES} rx="14" fill="url(#industryGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" />
         <text x={PAD} y={Y_INDUSTRIES + 34} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
           INDUSTRIES
         </text>
@@ -111,7 +122,7 @@ export function AfosArchitectureSvg(): ReactElement {
           const y = Y_INDUSTRIES + (H_INDUSTRIES - 34) / 2
           return (
             <g key={label}>
-              <rect x={x} y={y} width={chipW} height="34" rx="17" fill="#0c2444" stroke="#22d3ee" strokeOpacity="0.3" />
+              <rect x={x} y={y} width={chipW} height="34" rx="17" fill="#0c2444" stroke="#22d3ee" strokeOpacity="0.3" strokeWidth="1.75" />
               <text x={x + chipW / 2} y={y + 22} fill="#e2e8f0" fontSize="12" textAnchor="middle">
                 {label}
               </text>
@@ -125,15 +136,15 @@ export function AfosArchitectureSvg(): ReactElement {
 
       {/* ───── AI banner ───── */}
       <g>
-        <rect x="0" y={Y_AI} width={W} height={H_AI} rx="14" fill="url(#aiGrad)" stroke="#22d3ee" strokeOpacity="0.4" />
-        <rect x={PAD} y={Y_AI + 22} width="42" height="28" rx="6" fill="#22d3ee" />
-        <text x={PAD + 21} y={Y_AI + 41} fill="#022c33" fontSize="13" fontWeight="800" textAnchor="middle" letterSpacing="1">
+        <rect x="0" y={Y_AI} width={W} height={H_AI} rx="14" fill="url(#aiGrad)" stroke="#22d3ee" strokeOpacity="0.4" strokeWidth="1.75" />
+        <rect x={240} y={Y_AI + 22} width="42" height="28" rx="6" fill="#22d3ee" />
+        <text x={261} y={Y_AI + 41} fill="#022c33" fontSize="13" fontWeight="800" textAnchor="middle" letterSpacing="1">
           AI
         </text>
-        <text x={PAD + 60} y={Y_AI + 32} fill="#ffffff" fontSize="14" fontWeight="700">
+        <text x={300} y={Y_AI + 32} fill="#ffffff" fontSize="14" fontWeight="700">
           Ready-to-use AI engine interface
         </text>
-        <text x={PAD + 60} y={Y_AI + 52} fill="#cffafe" fontSize="12">
+        <text x={300} y={Y_AI + 52} fill="#cffafe" fontSize="12">
           Faster data synthesis, decision support and workflow automation across every product.
         </text>
       </g>
@@ -142,7 +153,7 @@ export function AfosArchitectureSvg(): ReactElement {
       <line x1={W / 2} y1={Y_AI + H_AI} x2={W / 2} y2={Y_PRODUCTS} stroke="#22d3ee" strokeOpacity="0.45" strokeWidth="1.5" strokeDasharray="3 4" />
 
       {/* ───── Core Products container ───── */}
-      <rect x="0" y={Y_PRODUCTS} width={W} height={H_PRODUCTS} rx="14" fill="url(#platGrad)" stroke="#22d3ee" strokeOpacity="0.25" />
+      <rect x="0" y={Y_PRODUCTS} width={W} height={H_PRODUCTS} rx="14" fill="url(#platGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" />
       <text x={PAD} y={Y_PRODUCTS + 30} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
         CORE PRODUCTS
       </text>
@@ -157,7 +168,7 @@ export function AfosArchitectureSvg(): ReactElement {
         const h = H_CARDS
         return (
           <g key={p.name} filter="url(#cardShadow)">
-            <rect x={x} y={y} width={CARD_W} height={h} rx="12" fill="url(#cardGrad)" stroke="#22d3ee" strokeOpacity="0.4" />
+            <rect x={x} y={y} width={CARD_W} height={h} rx="12" fill="url(#cardGrad)" stroke="#22d3ee" strokeOpacity="0.4" strokeWidth="1.75" />
             <text x={x + 22} y={y + 38} fill="#ffffff" fontSize="20" fontWeight="700">
               {p.name}
             </text>
@@ -192,11 +203,11 @@ export function AfosArchitectureSvg(): ReactElement {
 
       {/* ───── Core Platform ───── */}
       <g>
-        <rect x="0" y={Y_PLATFORM} width={W} height={H_PLATFORM} rx="14" fill="url(#platGrad)" stroke="#22d3ee" strokeOpacity="0.3" />
+        <rect x="0" y={Y_PLATFORM} width={W} height={H_PLATFORM} rx="14" fill="url(#platformLayerGrad)" stroke="#22d3ee" strokeOpacity="0.4" strokeWidth="1.75" />
         <text x={PAD} y={Y_PLATFORM + 32} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
           CORE PLATFORM
         </text>
-        <text x={W - PAD} y={Y_PLATFORM + 32} fill="#cbd5e1" fontSize="12" textAnchor="end">
+        <text x={W - PAD} y={Y_PLATFORM + 32} fill="#a5f3fc" fontSize="12" textAnchor="end">
           Cross-cutting engines. One closed loop.
         </text>
 
@@ -206,9 +217,9 @@ export function AfosArchitectureSvg(): ReactElement {
           const h = H_ENGINES
           return (
             <g key={e}>
-              <rect x={x} y={y} width={CARD_W} height={h} rx="10" fill="#0a1a33" stroke="#22d3ee" strokeOpacity="0.4" />
+              <rect x={x} y={y} width={CARD_W} height={h} rx="10" fill="#0c3a55" fillOpacity="0.9" stroke="#22d3ee" strokeOpacity="0.5" strokeWidth="1.75" />
               <circle cx={x + 24} cy={y + h / 2} r="5" fill="#22d3ee" />
-              <circle cx={x + 24} cy={y + h / 2} r="9" fill="none" stroke="#22d3ee" strokeOpacity="0.4" />
+              <circle cx={x + 24} cy={y + h / 2} r="9" fill="none" stroke="#22d3ee" strokeOpacity="0.5" strokeWidth="1.75" />
               <text x={x + 44} y={y + h / 2 + 5} fill="#ffffff" fontSize="14" fontWeight="600">
                 {e}
               </text>
@@ -216,8 +227,8 @@ export function AfosArchitectureSvg(): ReactElement {
           )
         })}
 
-        <rect x={PAD} y={Y_INFRA} width={W - 2 * PAD} height={H_INFRA} rx="8" fill="#06122a" stroke="#22d3ee" strokeOpacity="0.25" />
-        <text x={W / 2} y={Y_INFRA + 21} fill="#cbd5e1" fontSize="12" textAnchor="middle" letterSpacing="0.5">
+        <rect x={PAD} y={Y_INFRA} width={W - 2 * PAD} height={H_INFRA} rx="8" fill="url(#infraGrad)" stroke="#22d3ee" strokeOpacity="0.5" strokeWidth="1.75" />
+        <text x={W / 2} y={Y_INFRA + 21} fill="#ffffff" fontSize="12" fontWeight="600" textAnchor="middle" letterSpacing="1">
           INFRASTRUCTURE  ·  HYBRID CLOUD  ·  ON-PREMISE
         </text>
       </g>
