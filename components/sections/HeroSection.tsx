@@ -29,7 +29,7 @@ const slides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/background/bg15.jpg',
+    image: '/images/background/bg14.jpg',
     headline: 'Predictive Maintenance, Zero Downtime',
     description:
       'Detect equipment failures before they happen. Reduce maintenance costs and extend asset lifespans with AI-driven insights.',
