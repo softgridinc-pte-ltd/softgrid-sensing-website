@@ -1,9 +1,6 @@
-'use client'
-
-import Image from 'next/image'
-import Link from 'next/link'
-import { Activity, Building2, LayoutGrid, Satellite, ArrowRight } from 'lucide-react'
+import { Activity, Building2, LayoutGrid, Satellite } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { ImageCard } from '@/components/ui/ImageCard'
 
 import type { ReactNode } from 'react'
 
@@ -18,7 +15,7 @@ interface Solution {
 
 const solutions: Solution[] = [
   {
-    icon: <Activity className="w-4 h-4" />,
+    icon: <Activity className="h-4 w-4" />,
     kicker: 'Vertical Transport',
     title: 'Smart Vertical Transport',
     description:
@@ -27,7 +24,7 @@ const solutions: Solution[] = [
     image: '/images/background/bg16.jpg',
   },
   {
-    icon: <Building2 className="w-4 h-4" />,
+    icon: <Building2 className="h-4 w-4" />,
     kicker: 'Building Management',
     title: 'Smart Building Management',
     description:
@@ -36,7 +33,7 @@ const solutions: Solution[] = [
     image: '/images/background/bg6.jpg',
   },
   {
-    icon: <LayoutGrid className="w-4 h-4" />,
+    icon: <LayoutGrid className="h-4 w-4" />,
     kicker: 'Facility Operations',
     title: 'Smart Facility Operations',
     description:
@@ -45,7 +42,7 @@ const solutions: Solution[] = [
     image: '/images/background/bg11.jpg',
   },
   {
-    icon: <Satellite className="w-4 h-4" />,
+    icon: <Satellite className="h-4 w-4" />,
     kicker: 'Infrastructure',
     title: 'Infrastructure & Environmental',
     description:
@@ -69,53 +66,17 @@ export function SolutionsSection(): React.ReactElement {
         </div>
 
         <div data-animate-stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          {solutions.map((solution) => (
-            <Link
-              key={solution.title}
-              href={solution.href}
-              data-animate="scale"
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl"
-            >
-              {/* Image area */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-200">
-                <Image
-                  src={solution.image}
-                  alt={solution.title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                {/* Bottom legibility gradient */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/40 to-transparent" />
-              </div>
-
-              {/* Body */}
-              <div className="flex flex-1 flex-col p-7 md:p-9">
-                {/* Kicker */}
-                <div className="mb-4 flex items-center gap-2 text-primary-600">
-                  {solution.icon}
-                  <span className="text-sm font-semibold uppercase tracking-wider">
-                    {solution.kicker}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="mb-4 text-2xl font-semibold leading-snug text-navy-900 transition-colors group-hover:text-primary-700">
-                  {solution.title}
-                </h3>
-
-                {/* Description */}
-                <p className="flex-1 text-base leading-relaxed text-slate-600">
-                  {solution.description}
-                </p>
-
-                {/* Learn more link */}
-                <div className="mt-6 inline-flex items-center gap-2 text-base font-semibold text-primary-600">
-                  Learn more
-                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
-              </div>
-            </Link>
+          {solutions.map((s) => (
+            <div key={s.title} data-animate="scale" className="h-full">
+              <ImageCard
+                image={s.image}
+                kicker={s.kicker}
+                title={s.title}
+                description={s.description}
+                href={s.href}
+                icon={s.icon}
+              />
+            </div>
           ))}
         </div>
       </div>

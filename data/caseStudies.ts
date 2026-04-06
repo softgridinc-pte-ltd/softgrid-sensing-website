@@ -13,6 +13,7 @@ export interface CaseStudy {
   href: string
   accentColor: 'primary' | 'amber' | 'slate'
   heroStat: Stat
+  image: string
   featured?: boolean
 }
 
@@ -32,6 +33,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/hdb',
     accentColor: 'primary',
     heroStat: { value: '10,000+', label: 'Lifts Monitored' },
+    image: '/images/background/bg4.jpg',
     featured: true,
   },
   {
@@ -49,6 +51,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/chevalier',
     accentColor: 'primary',
     heroStat: { value: 'BCA', label: 'Sandbox Certified' },
+    image: '/images/background/bg3.jpg',
   },
   {
     client: 'CPG FM',
@@ -65,6 +68,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/cpg-fm',
     accentColor: 'amber',
     heroStat: { value: 'IRIS + Athena', label: 'AI-Powered Operations' },
+    image: '/images/background/bg7.jpg',
   },
   {
     client: 'National Parks Board (NParks)',
@@ -81,6 +85,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/nparks',
     accentColor: 'slate',
     heroStat: { value: '26', label: 'Ecological Areas Tracked' },
+    image: '/images/background/bg2.jpg',
   },
 ]
 
