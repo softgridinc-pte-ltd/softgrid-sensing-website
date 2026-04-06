@@ -19,7 +19,7 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    image: '/images/background/bg2.jpg',
+    image: '/images/background/bg1.png',
     headline: 'AI-Powered Facility Intelligence',
     description:
       'Transform building operations with predictive analytics and real-time monitoring across your entire facility portfolio.',
