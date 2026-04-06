@@ -198,7 +198,7 @@ export function Header(): React.ReactElement {
                         >
                           {Icon && (
                             <div className="w-9 h-9 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-primary-500/20 group-hover/item:border-primary-500/40 group-hover/item:shadow-[0_0_12px_rgba(31,153,197,0.15)] transition-all duration-200">
-                              <Icon className="w-4.5 h-4.5 text-primary-400 group-hover/item:text-primary-300 transition-colors duration-200" />
+                              <Icon className="w-4.5 h-4.5 text-primary-200 group-hover/item:text-primary-100 transition-colors duration-200" />
                             </div>
                           )}
                           <div className="min-w-0">
