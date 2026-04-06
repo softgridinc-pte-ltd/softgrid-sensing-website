@@ -102,6 +102,7 @@ export default function InfrastructureEnvironmentalPage(): React.ReactElement {
         overline="Infrastructure & Environmental Monitoring"
         headline="Monitor What You Can't Touch"
         subheadline="Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure — the same platform, at planetary scale."
+        image="/images/background/bg2.jpg"
       />
 
       <ChallengeSection

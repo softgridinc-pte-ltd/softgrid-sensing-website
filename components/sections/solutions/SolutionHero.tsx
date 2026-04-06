@@ -1,12 +1,14 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface SolutionHeroProps {
   overline: string
   headline: string
   subheadline: string
+  image?: string
 }
 
-export function SolutionHero({ overline, headline, subheadline }: SolutionHeroProps): React.ReactElement {
+export function SolutionHero({ overline, headline, subheadline, image }: SolutionHeroProps): React.ReactElement {
   return (
     <section
       style={{
@@ -16,6 +18,26 @@ export function SolutionHero({ overline, headline, subheadline }: SolutionHeroPr
         overflow: 'hidden',
       }}
     >
+      {image && (
+        <>
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: 'cover', opacity: 0.28 }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(180deg, rgba(10,22,40,0.85) 0%, rgba(22,37,68,0.78) 100%)',
+              pointerEvents: 'none',
+            }}
+          />
+        </>
+      )}
       {/* Radial glow overlay */}
       <div
         style={{
