@@ -113,12 +113,14 @@ export default function InfrastructureEnvironmentalPage(): React.ReactElement {
       />
 
       <ProductsInvolvedSection
-        overline="Products That Power This Solution"
+        overline="What Sees the Planet"
+        headline="Satellites, Pipelines, and Models"
         products={products}
       />
 
       <BenefitsSection
-        overline="Results You Can Measure"
+        overline="Planetary-Scale Outcomes"
+        headline="Monitor What You Couldn't Reach Before"
         benefits={benefits}
       />
 

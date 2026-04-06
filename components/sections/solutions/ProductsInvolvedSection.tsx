@@ -46,16 +46,23 @@ export function ProductsInvolvedSection({
 }: ProductsInvolvedSectionProps): React.ReactElement {
   return (
     <section style={{ padding: '80px 64px', background: '#FFFFFF' }}>
-      <div data-animate style={{ textAlign: 'center', marginBottom: 40 }}>
+      <div
+        data-animate
+        style={{
+          maxWidth: 1100,
+          margin: '0 auto 48px',
+          textAlign: 'left',
+        }}
+      >
         <span
           style={{
             display: 'block',
             fontSize: 12,
             fontWeight: 700,
             textTransform: 'uppercase',
-            letterSpacing: 2,
-            color: '#64748B',
-            marginBottom: 12,
+            letterSpacing: 3,
+            color: '#1F99C5',
+            marginBottom: 16,
           }}
         >
           {overline}
@@ -64,10 +71,12 @@ export function ProductsInvolvedSection({
           <h2
             style={{
               fontSize: 36,
-              fontWeight: 800,
-              letterSpacing: -1,
+              fontWeight: 700,
+              letterSpacing: -0.8,
+              lineHeight: 1.15,
               color: '#0A1628',
-              textAlign: 'center',
+              maxWidth: 720,
+              margin: 0,
             }}
           >
             {headline}
@@ -76,13 +85,11 @@ export function ProductsInvolvedSection({
         {subtitle && (
           <p
             style={{
-              fontSize: 15,
-              lineHeight: 1.7,
+              fontSize: 17,
+              lineHeight: 1.8,
               color: '#475569',
-              marginTop: 12,
-              maxWidth: 672,
-              marginLeft: 'auto',
-              marginRight: 'auto',
+              marginTop: 20,
+              maxWidth: 640,
             }}
           >
             {subtitle}

@@ -125,12 +125,14 @@ export default function VerticalTransportPage(): React.ReactElement {
       />
 
       <ProductsInvolvedSection
-        overline="Products That Power This Solution"
+        overline="Products Involved"
+        headline="Hardware, Cloud, and AI — Working as One"
         products={products}
       />
 
       <BenefitsSection
         overline="Results You Can Measure"
+        headline="Compliant, Predictive, Proven"
         benefits={benefits}
       />
 

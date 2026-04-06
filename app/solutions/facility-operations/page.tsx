@@ -121,14 +121,14 @@ export default function FacilityOperationsPage(): React.ReactElement {
       />
 
       <ProductsInvolvedSection
-        overline="Products That Power This Solution"
-        headline="Products Involved"
+        overline="Inside the Solution"
+        headline="From Work Orders to Voice AI"
         products={products}
       />
 
       <BenefitsSection
         overline="Why It Matters"
-        headline="Key Benefits"
+        headline="Modern Facility Management — Actually Modern"
         benefits={benefits}
       />
 

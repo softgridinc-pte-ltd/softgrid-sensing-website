@@ -117,15 +117,15 @@ export default function BuildingManagementPage(): React.ReactElement {
       />
 
       <ProductsInvolvedSection
-        overline="Products Involved"
-        headline="What Powers This Solution"
-        subtitle="Four products from the AFOS platform, working together."
+        overline="What Runs This Solution"
+        headline="An Open Stack for Every Brand"
+        subtitle="Four products from the AFOS platform, working together — vendor-agnostic by design."
         products={products}
       />
 
       <BenefitsSection
-        overline="Key Benefits"
-        headline="What You Get"
+        overline="What You Get"
+        headline="One Dashboard. Real Energy Savings."
         subtitle="Measurable outcomes for building owners and facility managers."
         benefits={benefits}
       />
