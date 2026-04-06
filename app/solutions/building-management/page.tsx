@@ -17,25 +17,21 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Multi-Vendor Fragmentation',
-    indicator: 'teal' as const,
     description:
       'Your building has Tridium for HVAC, another system for lighting, a third for fire alarm. Each has its own dashboard, its own data silo, its own login. No unified view of building health.',
   },
   {
     title: 'Energy Blind Spots',
-    indicator: 'teal' as const,
     description:
       "Without integrated monitoring, energy waste goes undetected. Green Mark 2021 and the upcoming Mandatory Energy Improvement regime demand data you can't easily get from fragmented systems.",
   },
   {
     title: 'Reactive Operations',
-    indicator: 'teal' as const,
     description:
       'Equipment failures are discovered when tenants complain. By then, comfort is degraded, costs escalate, and SLAs are breached.',
   },
   {
     title: 'Compliance Burden',
-    indicator: 'teal' as const,
     description:
       'Green Mark, energy audits, ESG reporting — all require data that sits in multiple disconnected systems. Manual compilation is expensive and error-prone.',
   },
@@ -117,6 +113,7 @@ export default function BuildingManagementPage(): React.ReactElement {
         headline="How Softgrid Unifies Your Building"
         subtitle="A layered approach that preserves your existing investment and adds intelligence on top."
         steps={steps}
+        accentColor="#0D9488"
       />
 
       <ProductsInvolvedSection

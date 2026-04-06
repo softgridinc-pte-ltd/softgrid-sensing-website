@@ -10,8 +10,6 @@ interface ApproachSectionProps {
   subtitle?: string
   steps: ApproachStep[]
   accentColor?: string
-  lineColor?: string
-  overlineColor?: string
 }
 
 export function ApproachSection({
@@ -20,104 +18,75 @@ export function ApproachSection({
   subtitle,
   steps,
   accentColor = '#1F99C5',
-  lineColor = '#A5D5E9',
-  overlineColor = '#64748B',
 }: ApproachSectionProps): React.ReactElement {
   return (
-    <section style={{ padding: '100px 64px', background: '#F8FAFC' }}>
-      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+    <section className="bg-white py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 md:px-12">
         {/* Header */}
-        <div data-animate style={{ textAlign: 'center', marginBottom: 56 }}>
+        <div data-animate className="mb-14 max-w-3xl">
           {overline && (
-            <div style={{ fontWeight: 700, fontSize: 12, textTransform: 'uppercase', letterSpacing: 3, color: overlineColor, marginBottom: 12 }}>
+            <div
+              className="mb-4 text-xs font-bold uppercase tracking-[3px]"
+              style={{ color: accentColor }}
+            >
               {overline}
             </div>
           )}
-          <h2 style={{ fontSize: 36, fontWeight: 800, letterSpacing: -1, color: '#0A1628', lineHeight: 1.2 }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-navy-900">
             {headline}
           </h2>
           {subtitle && (
-            <p style={{ fontSize: 15, lineHeight: 1.7, color: '#475569', marginTop: 12, maxWidth: 640, marginLeft: 'auto', marginRight: 'auto' }}>
+            <p className="mt-5 max-w-2xl text-base md:text-[17px] leading-[1.8] text-slate-600">
               {subtitle}
             </p>
           )}
         </div>
 
-        {/* Approach flow */}
-        <div data-animate style={{ maxWidth: 800, margin: '0 auto', position: 'relative' }}>
-          {steps.map((step, i) => (
-            <div
-              key={step.title}
-              style={{
-                display: 'flex',
-                gap: 32,
-                alignItems: 'stretch',
-                position: 'relative',
-                paddingBottom: i < steps.length - 1 ? 48 : 0,
-              }}
-            >
-              {/* Left: number + connector line */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
-                <div
-                  style={{
-                    width: 52,
-                    height: 52,
-                    borderRadius: '50%',
-                    background: accentColor,
-                    color: '#FFFFFF',
-                    fontSize: 20,
-                    fontWeight: 800,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  {i + 1}
-                </div>
-                {i < steps.length - 1 && (
+        {/* Steps */}
+        <div data-animate className="relative mx-auto max-w-3xl">
+          {steps.map((step, i) => {
+            const isLast = i === steps.length - 1
+            return (
+              <div
+                key={step.title}
+                className={`relative grid grid-cols-[56px_1fr] gap-6 ${isLast ? '' : 'pb-12'}`}
+              >
+                {/* Number + connector line */}
+                <div className="relative flex flex-col items-center">
                   <div
-                    style={{
-                      width: 2,
-                      flexGrow: 1,
-                      background: lineColor,
-                      marginTop: 8,
-                      minHeight: 48,
-                    }}
-                  />
-                )}
-              </div>
-
-              {/* Right: content */}
-              <div style={{ paddingTop: 6 }}>
-                <div style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>
-                  {step.title}
-                </div>
-                <p style={{ fontSize: 15, lineHeight: 1.8, color: '#475569', margin: 0 }}>
-                  {step.description}
-                </p>
-                {step.badge && (
-                  <div
-                    style={{
-                      display: 'inline-block',
-                      marginTop: 12,
-                      fontSize: 11,
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: 2,
-                      color: '#92400E',
-                      background: '#FEF3C7',
-                      border: '1px solid #FDE68A',
-                      borderRadius: 100,
-                      padding: '4px 14px',
-                    }}
+                    className="z-10 flex h-14 w-14 items-center justify-center rounded-full text-xl font-bold text-white shadow-md"
+                    style={{ backgroundColor: accentColor }}
                   >
-                    {step.badge}
+                    {i + 1}
                   </div>
-                )}
+                  {!isLast && (
+                    <div
+                      className="absolute left-1/2 top-14 -translate-x-1/2 h-[calc(100%-3.5rem)] w-px opacity-30"
+                      style={{ backgroundColor: accentColor }}
+                    />
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="pt-2">
+                  <h3 className="mb-3 text-xl font-bold text-navy-900">{step.title}</h3>
+                  <p className="text-base leading-[1.8] text-slate-600">{step.description}</p>
+                  {step.badge && (
+                    <span
+                      className="mt-4 inline-flex items-center rounded-full border px-3.5 py-1 text-[11px] font-bold uppercase tracking-[2px]"
+                      style={{
+                        borderColor: `${accentColor}55`,
+                        backgroundColor: `${accentColor}14`,
+                        color: accentColor,
+                      }}
+                    >
+                      {step.badge}
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

@@ -18,25 +18,21 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Manual Everything',
-    indicator: 'amber' as const,
     description:
       "Work orders on paper or Excel. Maintenance schedules in someone's head. Contractor coordination via WhatsApp. Knowledge locked in senior staff who are about to retire.",
   },
   {
     title: 'No Visibility',
-    indicator: 'amber' as const,
     description:
       "You manage dozens of buildings but can't see the real-time status of any asset. Problems surface as tenant complaints, not as early warnings.",
   },
   {
     title: 'Compliance Overhead',
-    indicator: 'amber' as const,
     description:
       'BCA requirements, SLA documentation, audit trails — all manually compiled. Every audit is a fire drill.',
   },
   {
     title: 'Knowledge Loss',
-    indicator: 'amber' as const,
     description:
       'When experienced technicians leave, their knowledge walks out the door. Junior staff are left guessing.',
   },
@@ -114,7 +110,6 @@ export default function FacilityOperationsPage(): React.ReactElement {
         headline="What&apos;s Holding You Back"
         subtitle="Managing agents face compounding operational challenges that paper-based processes can't solve."
         challenges={challenges}
-        overlineColor="#D97706"
       />
 
       <ApproachSection
@@ -123,8 +118,6 @@ export default function FacilityOperationsPage(): React.ReactElement {
         subtitle="A systematic transformation path — from digital work orders to a fully connected, AI-augmented facility management platform."
         steps={steps}
         accentColor="#D97706"
-        lineColor="linear-gradient(180deg, #D97706 0%, rgba(217,119,6,0.15) 100%)"
-        overlineColor="#D97706"
       />
 
       <ProductsInvolvedSection
@@ -137,7 +130,6 @@ export default function FacilityOperationsPage(): React.ReactElement {
         overline="Why It Matters"
         headline="Key Benefits"
         benefits={benefits}
-        overlineColor="#D97706"
       />
 
       <CaseStudyPreview

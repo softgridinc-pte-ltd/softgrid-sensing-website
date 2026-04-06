@@ -18,25 +18,21 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Scale Beyond Reach',
-    indicator: 'red' as const,
     description:
       "You manage assets measured in square kilometers, not square meters. Manual surveys are expensive, infrequent, and can't keep up with the pace of change.",
   },
   {
     title: 'Slow Detection',
-    indicator: 'amber' as const,
     description:
       'By the time a quarterly aerial survey spots encroachment, illegal clearing, or structural degradation, weeks or months have already passed. Early intervention is impossible.',
   },
   {
     title: 'Disconnected Data',
-    indicator: 'red' as const,
     description:
       "Environmental monitoring data sits in GIS systems that don't connect to operational workflows. An alert doesn't automatically trigger an investigation or a report.",
   },
   {
     title: 'Compliance Pressure',
-    indicator: 'amber' as const,
     description:
       'Environmental regulations increasingly demand continuous monitoring and automated reporting — not annual snapshots.',
   },
@@ -113,6 +109,7 @@ export default function InfrastructureEnvironmentalPage(): React.ReactElement {
       <ApproachSection
         headline="The Softgrid Approach"
         steps={steps}
+        accentColor="#059669"
       />
 
       <ProductsInvolvedSection

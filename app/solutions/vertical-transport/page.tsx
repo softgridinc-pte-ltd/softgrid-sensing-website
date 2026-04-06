@@ -18,25 +18,21 @@ export const metadata: Metadata = {
 const challenges = [
   {
     title: 'Regulatory Pressure',
-    indicator: 'red' as const,
     description:
       "BCA's Code of Practice now requires Remote Monitoring & Diagnostics for lifts. Compliance isn't optional — it's a requirement. And it's expanding to escalators.",
   },
   {
     title: 'Aging Equipment, Scarce Manpower',
-    indicator: 'amber' as const,
     description:
       "Singapore's lift fleet is aging. Technicians are retiring. Traditional monthly inspections can't keep up — and they miss early-stage faults that lead to costly breakdowns.",
   },
   {
     title: 'Reactive, Not Predictive',
-    indicator: 'red' as const,
     description:
       'Most operators still fix lifts after they break. By then, the cost is 3-5x higher, passengers are stranded, and complaints pile up.',
   },
   {
     title: 'Siloed Monitoring',
-    indicator: 'amber' as const,
     description:
       "OEM systems only monitor their own brand. If you manage a mixed fleet — Mitsubishi, Toshiba, IFE, others — you're stuck with multiple systems and no unified view.",
   },
@@ -125,6 +121,7 @@ export default function VerticalTransportPage(): React.ReactElement {
       <ApproachSection
         headline="The Softgrid Approach"
         steps={steps}
+        accentColor="#1F99C5"
       />
 
       <ProductsInvolvedSection
