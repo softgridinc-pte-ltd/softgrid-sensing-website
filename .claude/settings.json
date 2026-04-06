@@ -10,7 +10,6 @@
       "WebFetch",
       "mcp__playwright__*",
       "mcp__figma__*"
-    ],
-    "deny": ["Bash(rm *)", "Bash(rm)", "Bash(unlink *)", "Bash(rmdir *)"]
+    ]
   }
 }
