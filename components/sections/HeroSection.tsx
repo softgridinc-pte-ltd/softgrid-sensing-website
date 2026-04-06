@@ -29,7 +29,7 @@ const slides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/background/bg5.jpg',
+    image: '/images/background/bg14.jpg',
     headline: 'Predictive Maintenance, Zero Downtime',
     description:
       'Detect equipment failures before they happen. Reduce maintenance costs and extend asset lifespans with AI-driven insights.',
@@ -48,7 +48,7 @@ const slides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/background/bg14.jpg',
+    image: '/images/background/bg5.jpg',
     headline: 'Smarter Buildings Start Here',
     description:
       'Join leading facility operators across Asia who trust Softgrid to optimize energy, comfort, and operational efficiency.',
