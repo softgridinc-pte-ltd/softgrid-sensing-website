@@ -1,5 +1,6 @@
-import { Activity, Building2, LayoutGrid, Satellite } from 'lucide-react'
-import { ImageCard } from '@/components/ui/ImageCard'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Activity, Building2, LayoutGrid, Satellite, ArrowRight } from 'lucide-react'
 
 import type { ReactNode } from 'react'
 
@@ -53,24 +54,51 @@ const solutions: SolutionCard[] = [
 
 export function SolutionCardsSection(): React.ReactElement {
   return (
-    <section className="bg-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div
-          data-animate-stagger
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
-        >
-          {solutions.map((s) => (
-            <div key={s.title} data-animate="scale" className="h-full">
-              <ImageCard
-                image={s.image}
-                kicker={s.kicker}
-                title={s.title}
-                description={s.description}
+    <section className="bg-white pb-20 md:pb-28">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="space-y-16 md:space-y-24" data-animate-stagger>
+          {solutions.map((s, i) => {
+            const imageRight = i % 2 === 0
+            return (
+              <Link
+                key={s.title}
                 href={s.href}
-                icon={s.icon}
-              />
-            </div>
-          ))}
+                data-animate
+                className={`group grid items-center gap-8 lg:gap-16 lg:grid-cols-2 ${
+                  imageRight ? '' : 'lg:[&>div:first-child]:order-2'
+                }`}
+              >
+                {/* Text */}
+                <div>
+                  <div className="mb-4 flex items-center gap-2 text-primary-600">
+                    {s.icon}
+                    <span className="text-xs font-bold uppercase tracking-[2px]">{s.kicker}</span>
+                  </div>
+                  <h3 className="mb-5 text-3xl md:text-4xl font-bold leading-tight tracking-tight text-navy-900 transition-colors group-hover:text-primary-700">
+                    {s.title}
+                  </h3>
+                  <p className="mb-7 text-base md:text-[17px] leading-[1.8] text-slate-600">
+                    {s.description}
+                  </p>
+                  <div className="inline-flex items-center gap-2 text-base font-semibold text-primary-600">
+                    Learn more
+                    <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>

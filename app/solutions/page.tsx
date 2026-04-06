@@ -1,5 +1,12 @@
-import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
+
+import { SolutionsHero } from '@/components/sections/solutions/SolutionsHero'
+import { SolutionsIntro } from '@/components/sections/solutions/SolutionsIntro'
+import { SolutionsNarrative } from '@/components/sections/solutions/SolutionsNarrative'
+import { OutcomesSection } from '@/components/sections/solutions/OutcomesSection'
 import { SolutionCardsSection } from '@/components/sections/solutions/SolutionCardsSection'
+import { RealWorldImpact } from '@/components/sections/solutions/RealWorldImpact'
+import { CapabilitiesGrid } from '@/components/sections/solutions/CapabilitiesGrid'
 
 import type { Metadata } from 'next'
 
@@ -12,69 +19,50 @@ export const metadata: Metadata = {
 export default function SolutionsPage(): React.ReactElement {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[160px]"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(31,153,197,0.1) 0%, transparent 70%)' }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <div className="flex items-center gap-3.5 justify-center mb-8">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-400" />
-            <span className="text-primary-400 text-xs font-bold uppercase tracking-[3px]">Solutions</span>
+      <SolutionsHero />
+
+      <SolutionsIntro />
+
+      <SolutionsNarrative />
+
+      <OutcomesSection />
+
+      <section className="bg-white pt-20 md:pt-28 pb-4">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <div className="mb-10 max-w-2xl" data-animate>
+            <div className="mb-4 text-xs font-bold uppercase tracking-[3px] text-primary-600">
+              Solutions Across Domains
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-navy-900">
+              Pick the entry point that fits your operation
+            </h2>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-3xl mx-auto leading-tight">
-            Solutions Built for How You Operate
-          </h1>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Whether you manage lifts, buildings, or entire facility portfolios &mdash; we have a proven solution that fits your needs.
-          </p>
         </div>
       </section>
-
       <SolutionCardsSection />
 
-      {/* Not Sure CTA */}
-      <section
-        style={{
-          padding: '80px 64px',
-          background: '#0A1628',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
+      <RealWorldImpact />
+
+      <CapabilitiesGrid />
+
+      {/* Closing CTA */}
+      <section className="relative overflow-hidden bg-navy-900 py-20 md:py-24">
         <div
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 50%)',
-            pointerEvents: 'none',
+            background: 'radial-gradient(ellipse at center, rgba(31,153,197,0.14) 0%, transparent 70%)',
           }}
         />
-        <div data-animate style={{ position: 'relative', zIndex: 1, maxWidth: 600, margin: '0 auto' }}>
-          <h2 style={{ fontSize: 36, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, letterSpacing: -1 }}>
-            Not Sure Which Solution Fits?
+        <div className="relative mx-auto max-w-3xl px-6 md:px-12 text-center" data-animate>
+          <h2 className="mb-5 text-3xl md:text-4xl font-bold text-white">
+            Not Sure Where to Start?
           </h2>
-          <p style={{ fontSize: 17, lineHeight: 1.7, color: '#94A3B8', marginBottom: 36 }}>
-            Talk to our team. We&apos;ll help you identify the right starting point &mdash; and show you how the platform grows with you.
+          <p className="mb-10 text-lg leading-relaxed text-slate-300">
+            Talk to our team. We&apos;ll help you identify the right starting point — and show you how the platform grows with you.
           </p>
-          <Link
-            href="/contact"
-            style={{
-              display: 'inline-block',
-              background: '#FFFFFF',
-              color: '#0A1628',
-              padding: '16px 40px',
-              borderRadius: 6,
-              fontSize: 16,
-              fontWeight: 600,
-              textDecoration: 'none',
-            }}
-          >
+          <Button href="/contact" variant="primary" colorScheme="dark" className="min-w-[160px]">
             Contact Us
-          </Link>
+          </Button>
         </div>
       </section>
     </>
