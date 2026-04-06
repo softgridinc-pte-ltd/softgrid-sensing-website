@@ -76,95 +76,29 @@ const shiftData: ShiftRow[] = [
 
 export function ShiftSection(): React.ReactElement {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden bg-slate-100">
-      {/* Layer 1: Diagonal gradient wash — directional shift feel */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-white to-primary-50/40" />
-
-      {/* Layer 2: Decorative blob-mesh backdrop — edge-faded */}
-      <ShiftBackdrop />
-
-      {/* Layer 3: Dot-pattern texture — repeating dots, edge-faded */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          maskImage:
-            'radial-gradient(ellipse 95% 85% at 50% 50%, black 45%, transparent 100%)',
-          WebkitMaskImage:
-            'radial-gradient(ellipse 95% 85% at 50% 50%, black 45%, transparent 100%)',
-        }}
-      >
-        <div className="absolute inset-0 dot-pattern" style={{ opacity: 0.2 }} />
-      </div>
-
-      {/* Layer 4: Directional diagonal stripes — modern (right) side only */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 h-full w-1/2"
-        style={{
-          maskImage:
-            'linear-gradient(to right, transparent 0%, black 55%, black 92%, transparent 100%)',
-          WebkitMaskImage:
-            'linear-gradient(to right, transparent 0%, black 55%, black 92%, transparent 100%)',
-        }}
-      >
+    <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-sky-50 via-white to-sky-50">
+      {/* Decorative backdrop */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        {/* Subtle grid texture, faded at edges */}
         <div
           className="absolute inset-0"
           style={{
-            maskImage:
-              'linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%)',
-            WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%)',
+            backgroundImage:
+              'linear-gradient(to right, rgb(31 153 197 / 0.10) 1px, transparent 1px), linear-gradient(to bottom, rgb(31 153 197 / 0.10) 1px, transparent 1px)',
+            backgroundSize: '56px 56px',
+            maskImage: 'radial-gradient(ellipse at center, black 45%, transparent 80%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, black 45%, transparent 80%)',
           }}
-        >
-          <svg
-            className="absolute inset-0 w-full h-full"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <pattern
-                id="shift-diagonal-stripes"
-                width="24"
-                height="24"
-                patternUnits="userSpaceOnUse"
-                patternTransform="rotate(45)"
-              >
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="0"
-                  y2="24"
-                  stroke="rgba(31, 153, 197, 0.12)"
-                  strokeWidth="1"
-                />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#shift-diagonal-stripes)" />
-          </svg>
-        </div>
+        />
+        {/* Primary aura over the "modern" column */}
+        <div className="absolute top-1/4 right-[6%] w-[680px] h-[680px] rounded-full bg-primary-400/40 blur-3xl" />
+        {/* Cyan aura on the left */}
+        <div className="absolute bottom-1/4 left-[6%] w-[560px] h-[560px] rounded-full bg-cyan-300/35 blur-3xl" />
+        {/* Center highlight */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/60 blur-3xl" />
       </div>
 
-      {/* Layer 5a: Muted slate glow — anchors the traditional (left) side */}
-      <div className="pointer-events-none absolute top-1/2 -left-24 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-slate-400/10 blur-[120px]" />
-
-      {/* Layer 5b: Primary accent glow — energizes the modern (right) side */}
-      <div className="pointer-events-none absolute top-1/2 -right-24 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary-500/10 blur-[140px]" />
-
-      {/* Layer 6: Calibration cross marks — industrial precision accents */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <CalibMark className="absolute top-[7%] left-[3%]" />
-        <CalibMark className="absolute top-[7%] right-[3%]" />
-        <CalibMark className="absolute bottom-[7%] left-[3%]" />
-        <CalibMark className="absolute bottom-[7%] right-[3%]" />
-        <CalibMark className="absolute top-1/2 left-[2%] -translate-y-1/2" />
-        <CalibMark className="absolute top-1/2 right-[2%] -translate-y-1/2" />
-      </div>
-
-      {/* Layer 7: Hairline dividers for clean handoff to dark sections */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300/60 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300/60 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <div data-animate className="text-center mb-14 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-5">
             The Shift
@@ -200,7 +134,7 @@ export function ShiftSection(): React.ReactElement {
                 className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-5 items-center"
               >
                 {/* Traditional */}
-                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.04)] transition-all duration-300 hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_20px_rgba(15,23,42,0.08)] hover:-translate-y-0.5">
+                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-slate-200/70 shadow-[0_2px_6px_rgba(15,23,42,0.06),0_12px_28px_rgba(15,23,42,0.10)] transition-all duration-300 hover:shadow-[0_4px_10px_rgba(15,23,42,0.08),0_18px_36px_rgba(15,23,42,0.14)] hover:-translate-y-1">
                   <div className="text-slate-400 shrink-0">{row.traditional.icon}</div>
                   <span className="text-slate-600 text-base">{row.traditional.text}</span>
                 </div>
@@ -213,7 +147,7 @@ export function ShiftSection(): React.ReactElement {
                 </div>
 
                 {/* Modern */}
-                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-slate-200/60 border-l-[3px] border-l-primary-500 shadow-[0_1px_3px_rgba(31,153,197,0.08),0_8px_24px_rgba(31,153,197,0.12)] transition-all duration-300 hover:shadow-[0_2px_6px_rgba(31,153,197,0.14),0_14px_32px_rgba(31,153,197,0.18)] hover:-translate-y-0.5">
+                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-slate-200/60 border-l-[3px] border-l-primary-500 shadow-[0_3px_8px_rgba(31,153,197,0.14),0_16px_36px_rgba(31,153,197,0.20)] transition-all duration-300 hover:shadow-[0_6px_14px_rgba(31,153,197,0.22),0_22px_48px_rgba(31,153,197,0.28)] hover:-translate-y-1">
                   <div className="text-primary-600 shrink-0">{row.modern.icon}</div>
                   <span className="text-navy-900 text-base font-medium">{row.modern.text}</span>
                 </div>
@@ -226,72 +160,3 @@ export function ShiftSection(): React.ReactElement {
   )
 }
 
-/**
- * Decorative "Soft Blob Mesh" backdrop.
- *
- * Large blurred color blobs — muted slate on the traditional (left) side,
- * vibrant primary on the modern (right) side. No shapes, no outlines — the
- * color itself is the pattern. Wrapped in a radial mask so the pattern fades
- * cleanly at the section edges.
- */
-function ShiftBackdrop(): React.ReactElement {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0"
-      style={{
-        maskImage:
-          'radial-gradient(ellipse 100% 90% at 50% 50%, black 40%, transparent 100%)',
-        WebkitMaskImage:
-          'radial-gradient(ellipse 100% 90% at 50% 50%, black 40%, transparent 100%)',
-      }}
-    >
-      {/* Slate blob — top-left (traditional anchor) */}
-      <div className="absolute -top-20 -left-24 w-[700px] h-[520px] rounded-full bg-slate-400/15 blur-[130px]" />
-      {/* Primary-300 — mid */}
-      <div className="absolute top-1/3 left-1/4 w-[520px] h-[520px] rounded-full bg-primary-300/25 blur-[130px]" />
-      {/* Primary-400 — top-right */}
-      <div className="absolute -top-10 right-1/4 w-[620px] h-[520px] rounded-full bg-primary-400/25 blur-[130px]" />
-      {/* Primary-500 — bottom-right (modern anchor, strongest) */}
-      <div className="absolute -bottom-24 -right-20 w-[800px] h-[620px] rounded-full bg-primary-500/25 blur-[140px]" />
-      {/* Small accent — bottom-center */}
-      <div className="absolute bottom-0 left-1/3 w-[420px] h-[420px] rounded-full bg-primary-300/20 blur-[110px]" />
-    </div>
-  )
-}
-
-/**
- * Industrial calibration cross — small SVG plus mark used as a precision-detail
- * accent in the section background. Stroke is intentionally muted so it reads
- * as a draft/blueprint mark rather than UI.
- */
-function CalibMark({ className }: { className?: string }): React.ReactElement {
-  return (
-    <svg
-      className={className}
-      width="12"
-      height="12"
-      viewBox="-6 -6 12 12"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <line
-        x1="-5"
-        y1="0"
-        x2="5"
-        y2="0"
-        stroke="rgba(100, 116, 139, 0.35)"
-        strokeWidth="1"
-        strokeLinecap="round"
-      />
-      <line
-        x1="0"
-        y1="-5"
-        x2="0"
-        y2="5"
-        stroke="rgba(100, 116, 139, 0.35)"
-        strokeWidth="1"
-        strokeLinecap="round"
-      />
-    </svg>
-  )
-}
