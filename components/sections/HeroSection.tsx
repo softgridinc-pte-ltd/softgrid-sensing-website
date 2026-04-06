@@ -19,7 +19,7 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    image: '/images/background/bg1.png',
+    image: '/images/background/bg1.jpg',
     headline: 'AI-Powered Facility Intelligence',
     description:
       'Transform building operations with predictive analytics and real-time monitoring across your entire facility portfolio.',
@@ -29,7 +29,7 @@ const slides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/background/bg14.jpg',
+    image: '/images/background/bg15.jpg',
     headline: 'Predictive Maintenance, Zero Downtime',
     description:
       'Detect equipment failures before they happen. Reduce maintenance costs and extend asset lifespans with AI-driven insights.',
