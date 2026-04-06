@@ -137,7 +137,7 @@ export function AfosArchitectureSvg(): ReactElement {
 
       {/* ───── Industries strip ───── */}
       <g>
-        <rect x="0" y={Y_INDUSTRIES} width={W} height={H_INDUSTRIES} rx="14" fill="url(#industryGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" />
+        <rect x="0" y={Y_INDUSTRIES} width={W} height={H_INDUSTRIES} rx="14" fill="url(#industryGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" strokeDasharray="6 4"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" /></rect>
         <text x={PAD} y={Y_INDUSTRIES + 42} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
           MULTIPLE DOMAINS
         </text>
@@ -188,7 +188,7 @@ export function AfosArchitectureSvg(): ReactElement {
 
       {/* ───── AI banner ───── */}
       <g>
-        <rect x="0" y={Y_AI} width={W} height={H_AI} rx="14" fill="url(#aiGrad)" stroke="#22d3ee" strokeOpacity="0.4" strokeWidth="1.75" />
+        <rect x="0" y={Y_AI} width={W} height={H_AI} rx="14" fill="url(#aiGrad)" stroke="#22d3ee" strokeOpacity="0.4" strokeWidth="1.75" strokeDasharray="6 4"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" /></rect>
         <rect x={240} y={Y_AI + 22} width="42" height="28" rx="6" fill="#22d3ee" />
         <text x={261} y={Y_AI + 41} fill="#022c33" fontSize="13" fontWeight="800" textAnchor="middle" letterSpacing="1">
           AI
@@ -207,7 +207,7 @@ export function AfosArchitectureSvg(): ReactElement {
       </line>
 
       {/* ───── Core Products container ───── */}
-      <rect x="0" y={Y_PRODUCTS} width={W} height={H_PRODUCTS} rx="14" fill="url(#platGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" />
+      <rect x="0" y={Y_PRODUCTS} width={W} height={H_PRODUCTS} rx="14" fill="url(#platGrad)" stroke="#22d3ee" strokeOpacity="0.25" strokeWidth="1.75" strokeDasharray="6 4"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" /></rect>
       <text x={PAD} y={Y_PRODUCTS + 30} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
         CORE PRODUCTS
       </text>
@@ -266,7 +266,7 @@ export function AfosArchitectureSvg(): ReactElement {
 
       {/* ───── Core Platform ───── */}
       <g>
-        <rect x="0" y={Y_PLATFORM} width={W} height={H_PLATFORM} rx="14" fill="url(#platformLayerGrad)" stroke="#22d3ee" strokeOpacity="0.4" strokeWidth="1.75" />
+        <rect x="0" y={Y_PLATFORM} width={W} height={H_PLATFORM} rx="14" fill="url(#platformLayerGrad)" stroke="#22d3ee" strokeOpacity="0.4" strokeWidth="1.75" strokeDasharray="6 4"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" /></rect>
         <text x={PAD} y={Y_PLATFORM + 32} fill="#22d3ee" fontSize="11" fontWeight="700" letterSpacing="3">
           CORE PLATFORM
         </text>
@@ -298,7 +298,7 @@ export function AfosArchitectureSvg(): ReactElement {
 
       {/* ───── Caption ───── */}
       <line x1="0" y1={Y_CAPTION_LINE} x2={W} y2={Y_CAPTION_LINE} stroke="#22d3ee" strokeOpacity="0.2" strokeDasharray="5 5" />
-      <text x={W / 2} y={Y_CAPTION} fill="#94a3b8" fontSize="12" textAnchor="middle" letterSpacing="3">
+      <text x={W / 2} y={Y_CAPTION} fill="#22d3ee" fontSize="12" fontWeight="600" textAnchor="middle" letterSpacing="3">
         ONE PLATFORM  ·  MODULAR PRODUCTS  ·  TAILORED SOLUTIONS
       </text>
     </svg>

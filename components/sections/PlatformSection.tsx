@@ -5,7 +5,7 @@ import { AfosArchitectureSvg } from '@/components/sections/platform/AfosArchitec
 
 export function PlatformSection(): React.ReactElement {
   return (
-    <section id="platform" className="relative overflow-hidden py-16 md:py-24 bg-[#020617]">
+    <section id="platform" className="relative overflow-hidden py-16 md:py-24 bg-navy-800">
       {/* Dot pattern overlay */}
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -43,7 +43,7 @@ export function PlatformSection(): React.ReactElement {
 
         {/* CTA */}
         <div data-animate className="text-center mt-12">
-          <Button href="/platform" variant="ghost">
+          <Button href="/platform" variant="ghost" className="!text-white hover:!text-cyan-300">
             Explore the Platform &rarr;
           </Button>
         </div>
