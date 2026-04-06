@@ -25,11 +25,11 @@ const shiftData: ShiftRow[] = [
   {
     traditional: {
       icon: <Wrench className="w-6 h-6" />,
-      text: 'Reactive maintenance\u2014fix when broken',
+      text: 'Reactive maintenance \u2014 fix when broken',
     },
     modern: {
       icon: <Zap className="w-6 h-6" />,
-      text: 'Predictive maintenance\u2014know before it fails',
+      text: 'Predictive maintenance \u2014 know before it fails',
     },
   },
   {
@@ -113,7 +113,7 @@ export function ShiftSection(): React.ReactElement {
           {/* Column headers */}
           <div data-animate className="grid grid-cols-[1fr_auto_1fr] gap-5 mb-8">
             <div className="text-center">
-              <span className="text-base font-semibold uppercase tracking-wider text-slate-400">
+              <span className="text-base font-semibold uppercase tracking-wider text-slate-500">
                 Traditional Approach
               </span>
             </div>
@@ -134,7 +134,7 @@ export function ShiftSection(): React.ReactElement {
                 className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-5 items-center"
               >
                 {/* Traditional */}
-                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-slate-200/70 shadow-[0_2px_6px_rgba(15,23,42,0.06),0_12px_28px_rgba(15,23,42,0.10)] transition-all duration-300 hover:shadow-[0_4px_10px_rgba(15,23,42,0.08),0_18px_36px_rgba(15,23,42,0.14)] hover:-translate-y-1">
+                <div className="flex items-center gap-4 bg-slate-100 rounded-lg px-5 py-5 border border-slate-300/70 shadow-[0_2px_6px_rgba(15,23,42,0.06),0_12px_28px_rgba(15,23,42,0.10)] transition-all duration-300 hover:shadow-[0_4px_10px_rgba(15,23,42,0.08),0_18px_36px_rgba(15,23,42,0.14)] hover:-translate-y-1">
                   <div className="text-slate-400 shrink-0">{row.traditional.icon}</div>
                   <span className="text-slate-600 text-base">{row.traditional.text}</span>
                 </div>
