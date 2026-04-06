@@ -79,6 +79,20 @@
   }
 }
 
+/* Hero carousel — subtle Ken Burns zoom on active slide */
+@keyframes hero-slide-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+.hero-slide-zoom {
+  animation: hero-slide-zoom 7s ease-out forwards;
+}
+
 /* Hero visual effect animations */
 @keyframes hero-glow-breathe {
   0%, 100% {
@@ -219,6 +233,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-slide-zoom,
   .hero-glow,
   .hero-node,
   .shift-arrow,
