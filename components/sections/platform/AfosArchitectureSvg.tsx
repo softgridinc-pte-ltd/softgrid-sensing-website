@@ -43,7 +43,7 @@ const industries: Industry[] = [
 
 const products: Product[] = [
   {
-    name: 'Sensing',
+    name: 'Sense',
     body: ['Edge device management with', 'IoT sensors and non-intrusive', 'edge intelligence.'],
     tags: 'LMD  ·  LBB  ·  EMD',
   },
