@@ -76,26 +76,27 @@ const shiftData: ShiftRow[] = [
 
 export function ShiftSection(): React.ReactElement {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-sky-50 via-white to-sky-50">
-      {/* Decorative backdrop */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        {/* Subtle grid texture, faded at edges */}
+    <section className="relative overflow-hidden py-16 md:py-24">
+      {/* Two-tone split background with grids anchored to the seam */}
+      <div aria-hidden className="absolute inset-0 flex">
         <div
-          className="absolute inset-0"
+          className="w-1/2 bg-[#DEE3EA]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgb(31 153 197 / 0.10) 1px, transparent 1px), linear-gradient(to bottom, rgb(31 153 197 / 0.10) 1px, transparent 1px)',
+              'linear-gradient(to right, rgba(15,23,42,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.07) 1px, transparent 1px)',
             backgroundSize: '56px 56px',
-            maskImage: 'radial-gradient(ellipse at center, black 45%, transparent 80%)',
-            WebkitMaskImage: 'radial-gradient(ellipse at center, black 45%, transparent 80%)',
+            backgroundPosition: 'right top',
           }}
         />
-        {/* Primary aura over the "modern" column */}
-        <div className="absolute top-1/4 right-[6%] w-[680px] h-[680px] rounded-full bg-primary-400/40 blur-3xl" />
-        {/* Cyan aura on the left */}
-        <div className="absolute bottom-1/4 left-[6%] w-[560px] h-[560px] rounded-full bg-cyan-300/35 blur-3xl" />
-        {/* Center highlight */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/60 blur-3xl" />
+        <div
+          className="w-1/2 bg-[#CCE6F0]"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, rgba(15,23,42,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.07) 1px, transparent 1px)',
+            backgroundSize: '56px 56px',
+            backgroundPosition: 'left top',
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
@@ -103,7 +104,7 @@ export function ShiftSection(): React.ReactElement {
           <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-5">
             The Shift
           </h2>
-          <p className="text-xl text-navy-600 max-w-2xl mx-auto">
+          <p className="text-xl text-navy-700 max-w-2xl mx-auto">
             Facility operations are changing. Are you ready?
           </p>
         </div>
@@ -119,7 +120,7 @@ export function ShiftSection(): React.ReactElement {
             </div>
             <div className="w-10" />
             <div className="text-center">
-              <span className="text-base font-bold uppercase tracking-wider text-primary-600">
+              <span className="text-base font-bold uppercase tracking-wider text-primary-700">
                 The Next Era
               </span>
             </div>
@@ -134,7 +135,7 @@ export function ShiftSection(): React.ReactElement {
                 className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-5 items-center"
               >
                 {/* Traditional */}
-                <div className="flex items-center gap-4 bg-slate-100 rounded-lg px-5 py-5 border border-slate-300/70 shadow-[0_2px_6px_rgba(15,23,42,0.06),0_12px_28px_rgba(15,23,42,0.10)] transition-all duration-300 hover:shadow-[0_4px_10px_rgba(15,23,42,0.08),0_18px_36px_rgba(15,23,42,0.14)] hover:-translate-y-1">
+                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-slate-200 shadow-[0_2px_6px_rgba(15,23,42,0.04),0_10px_24px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1">
                   <div className="text-slate-400 shrink-0">{row.traditional.icon}</div>
                   <span className="text-slate-600 text-base">{row.traditional.text}</span>
                 </div>
@@ -147,7 +148,7 @@ export function ShiftSection(): React.ReactElement {
                 </div>
 
                 {/* Modern */}
-                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-slate-200/60 border-l-[3px] border-l-primary-500 shadow-[0_3px_8px_rgba(31,153,197,0.14),0_16px_36px_rgba(31,153,197,0.20)] transition-all duration-300 hover:shadow-[0_6px_14px_rgba(31,153,197,0.22),0_22px_48px_rgba(31,153,197,0.28)] hover:-translate-y-1">
+                <div className="flex items-center gap-4 bg-white rounded-lg px-5 py-5 border border-primary-200 border-l-[3px] border-l-primary-500 shadow-[0_3px_8px_rgba(31,153,197,0.10),0_14px_32px_rgba(31,153,197,0.14)] transition-all duration-300 hover:shadow-[0_6px_14px_rgba(31,153,197,0.18),0_20px_44px_rgba(31,153,197,0.22)] hover:-translate-y-1">
                   <div className="text-primary-600 shrink-0">{row.modern.icon}</div>
                   <span className="text-navy-900 text-base font-medium">{row.modern.text}</span>
                 </div>
