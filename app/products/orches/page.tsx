@@ -343,7 +343,10 @@ export default function OrchesPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img src="/images/products/CMP.png" alt="IRIS dashboard" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              [IRIS DASHBOARD SCREENSHOT]
+              <br />
+              <br />
+              Work order lifecycle, asset registry
             </div>
           </div>
         </div>
@@ -552,7 +555,10 @@ export default function OrchesPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img src="/images/products/L2-1.png" alt="LiftProf mobile app" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: 24 }} />
+              [LIFTPROF MOBILE APP]
+              <br />
+              <br />
+              Task view, dispatch, service report
             </div>
           </div>
         </div>
@@ -753,7 +759,10 @@ export default function OrchesPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img src="/images/products/L2-2.png" alt="Nova voice AI" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: 24 }} />
+              [NOVA VOICE AI CONCEPT]
+              <br />
+              <br />
+              Voice interface visualization
             </div>
           </div>
         </div>

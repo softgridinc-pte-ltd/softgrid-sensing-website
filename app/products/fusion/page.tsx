@@ -294,11 +294,19 @@ export default function FusionPage(): React.ReactElement {
                 background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
-            <img
-              src="/images/products/RMD.png"
-              alt="LTMS dashboard"
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}
-            />
+            <div
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 14,
+                color: '#64748B',
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1.6,
+              }}
+            >
+              [LTMS DASHBOARD SCREENSHOT]<br /><br />Multi-organization lift monitoring<br />dashboard with real-time status
+            </div>
           </div>
         </div>
       </section>
@@ -647,11 +655,19 @@ export default function FusionPage(): React.ReactElement {
                 background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
-            <img
-              src="/images/products/BMS.png"
-              alt="Cloud BMS dashboard"
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}
-            />
+            <div
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 14,
+                color: '#64748B',
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1.6,
+              }}
+            >
+              [CLOUD BMS DASHBOARD]<br /><br />Unified building systems view:<br />HVAC, lighting, energy, lifts
+            </div>
           </div>
         </div>
       </section>
@@ -848,11 +864,7 @@ export default function FusionPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img
-                src="/images/products/Nparks1.png"
-                alt="Satellite imagery — change detection"
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-              />
+              [SATELLITE IMAGERY]<br /><br />Before/after change detection<br />visualization — forest cover analysis
             </div>
             {/* Decorative orbital rings */}
             <div
@@ -1049,11 +1061,7 @@ export default function FusionPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img
-                src="/images/products/TMS.png"
-                alt="Escalator monitoring diagram"
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-              />
+              [ESCALATOR MONITORING DIAGRAM]<br /><br />Sensor placement schematic +<br />computer vision overlay
             </div>
           </div>
         </div>

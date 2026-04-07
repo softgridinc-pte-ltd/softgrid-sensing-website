@@ -326,7 +326,12 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img src="/images/products/Fusion%20Core.png" alt="Athena query interface" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              [ATHENA QUERY INTERFACE]
+              <br />
+              <br />
+              Natural language question
+              <br />
+              and answer
             </div>
           </div>
         </div>
@@ -538,7 +543,12 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img src="/images/products/Nparks2.png" alt="Digital twin visualization" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              [DIGITAL TWIN VISUALIZATION]
+              <br />
+              <br />
+              3D building with live
+              <br />
+              data overlay
             </div>
           </div>
         </div>
@@ -777,7 +787,10 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img src="/images/products/Nparks3.png" alt="AI prediction visualization" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              [AI PREDICTION VISUALIZATION]
+              <br />
+              <br />
+              Anomaly detection chart
             </div>
           </div>
         </div>
@@ -960,7 +973,10 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              <img src="/images/products/Nparks4.png" alt="Compliance report sample" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              [COMPLIANCE REPORT SAMPLE]
+              <br />
+              <br />
+              Mockup of automated report
             </div>
           </div>
         </div>
