@@ -39,7 +39,7 @@ const series: Series[] = [
       'Non-intrusive sensors that install without modifying controllers or voiding warranties. Edge processing keeps assets monitored even during connectivity outages, and 4G/LTE secure tunnels stream data back the moment the link is restored. Hardware-as-a-Service — not hardware-for-sale.',
     products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }],
     href: '/products/sense',
-    image: '/images/background/bg6.jpg',
+    image: '/images/background/bg7.jpg',
     icon: <Cpu className="h-7 w-7" strokeWidth={1.6} />,
   },
   {
@@ -57,7 +57,7 @@ const series: Series[] = [
       { name: 'Escalator Monitoring [TBD]', tbd: true },
     ],
     href: '/products/fusion',
-    image: '/images/background/bg3.jpg',
+    image: '/images/background/bg15.jpg',
     icon: <Activity className="h-7 w-7" strokeWidth={1.6} />,
   },
   {
@@ -69,7 +69,7 @@ const series: Series[] = [
       'The workflow engine that closes the loop. Work orders, field service, asset records, and an AI voice service desk — all stitched into a single lifecycle from detection to dispatch to verified resolution. Built for managing agents who run real estate at scale.',
     products: [{ name: 'IRIS' }, { name: 'LiftProf' }, { name: 'Nova' }],
     href: '/products/orches',
-    image: '/images/background/bg7.jpg',
+    image: '/images/background/bg13.jpg',
     icon: <Wrench className="h-7 w-7" strokeWidth={1.6} />,
   },
   {
@@ -86,7 +86,7 @@ const series: Series[] = [
       { name: 'ESG Reporting [TBD]', tbd: true },
     ],
     href: '/products/cortex',
-    image: '/images/background/bg15.jpg',
+    image: '/images/background/bg6.jpg',
     icon: <Brain className="h-7 w-7" strokeWidth={1.6} />,
   },
 ]

@@ -326,12 +326,7 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              [ATHENA QUERY INTERFACE]
-              <br />
-              <br />
-              Natural language question
-              <br />
-              and answer
+              <img src="/images/products/Fusion%20Core.png" alt="Athena query interface" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </div>
@@ -543,12 +538,7 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              [DIGITAL TWIN VISUALIZATION]
-              <br />
-              <br />
-              3D building with live
-              <br />
-              data overlay
+              <img src="/images/products/Nparks2.png" alt="Digital twin visualization" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </div>
@@ -787,10 +777,7 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              [AI PREDICTION VISUALIZATION]
-              <br />
-              <br />
-              Anomaly detection chart
+              <img src="/images/products/Nparks3.png" alt="AI prediction visualization" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </div>
@@ -973,10 +960,7 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.6,
               }}
             >
-              [COMPLIANCE REPORT SAMPLE]
-              <br />
-              <br />
-              Mockup of automated report
+              <img src="/images/products/Nparks4.png" alt="Compliance report sample" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </div>

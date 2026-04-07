@@ -255,19 +255,11 @@ export default function SensePage(): React.ReactElement {
                 background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [LMD DEVICE PHOTOS]<br /><br />LMD6000 and LMDC<br />standalone + installed
-            </div>
+            <img
+              src="/images/products/L1.png"
+              alt="LMD device"
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: 24, zIndex: 1 }}
+            />
           </div>
         </div>
       </section>
@@ -429,19 +421,11 @@ export default function SensePage(): React.ReactElement {
                 background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [LBB DEVICE PHOTO]<br /><br />Installed on cartop<br />and standalone
-            </div>
+            <img
+              src="/images/products/L3-1.png"
+              alt="LBB device"
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: 24, zIndex: 1 }}
+            />
           </div>
         </div>
       </section>
@@ -620,19 +604,11 @@ export default function SensePage(): React.ReactElement {
                 background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
               }}
             />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [EMD DEVICE PHOTO/RENDER]<br /><br />Device + sensor<br />placement diagram
-            </div>
+            <img
+              src="/images/products/L4.png"
+              alt="EMD device"
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: 24, zIndex: 1 }}
+            />
           </div>
         </div>
       </section>
