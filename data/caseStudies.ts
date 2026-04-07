@@ -34,7 +34,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/hdb',
     accentColor: 'primary',
     heroStat: { value: '10,000+', label: 'Lifts Monitored' },
-    image: '/images/background/bg4.jpg',
+    image: '/images/background/bg5.jpg',
     logo: '/images/logos/HDB.png',
     featured: true,
   },
