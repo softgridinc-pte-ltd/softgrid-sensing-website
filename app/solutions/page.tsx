@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/Button'
 import { SolutionsHero } from '@/components/sections/solutions/SolutionsHero'
 import { SolutionsIntro } from '@/components/sections/solutions/SolutionsIntro'
 import { SolutionsNarrative } from '@/components/sections/solutions/SolutionsNarrative'
-import { OutcomesSection } from '@/components/sections/solutions/OutcomesSection'
 import { SolutionCardsSection } from '@/components/sections/solutions/SolutionCardsSection'
 import { RealWorldImpact } from '@/components/sections/solutions/RealWorldImpact'
 import { CapabilitiesGrid } from '@/components/sections/solutions/CapabilitiesGrid'
@@ -24,8 +23,6 @@ export default function SolutionsPage(): React.ReactElement {
       <SolutionsIntro />
 
       <SolutionsNarrative />
-
-      <OutcomesSection />
 
       <section className="bg-white pt-20 md:pt-28 pb-4">
         <div className="mx-auto max-w-7xl px-6 md:px-12">

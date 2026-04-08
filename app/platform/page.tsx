@@ -1,6 +1,6 @@
 import { PlatformPhilosophySection } from '@/components/sections/platform/PlatformPhilosophySection'
 import { PlatformEnginesSection } from '@/components/sections/platform/PlatformEnginesSection'
-import { PlatformCredentialsSection } from '@/components/sections/platform/PlatformCredentialsSection'
+import { PlatformOutcomesSection } from '@/components/sections/platform/PlatformOutcomesSection'
 import { ProductSeriesSection } from '@/components/sections/products/ProductSeriesSection'
 import { CTASection } from '@/components/sections/CTASection'
 import { PlatformFlow } from '@/components/sections/hero/PlatformFlow'
@@ -63,8 +63,8 @@ export default function PlatformPage(): React.ReactElement {
       {/* Four Engines */}
       <PlatformEnginesSection />
 
-      {/* Technology Credentials */}
-      <PlatformCredentialsSection />
+      {/* Outcomes / Key Advantages */}
+      <PlatformOutcomesSection />
 
       {/* What Runs on AFOS */}
       <ProductSeriesSection />
