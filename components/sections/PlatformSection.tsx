@@ -23,9 +23,9 @@ export function PlatformSection(): React.ReactElement {
     <section id="platform" className="relative overflow-hidden py-20 md:py-28 bg-navy-800">
       {/* Dot pattern overlay */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-40"
+        className="pointer-events-none absolute inset-0 opacity-60"
         style={{
-          backgroundImage: 'radial-gradient(#1e3a5f 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#264163 1.1px, transparent 1.1px)',
           backgroundSize: '24px 24px',
         }}
       />
