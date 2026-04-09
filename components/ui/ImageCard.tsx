@@ -1,11 +1,14 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 import type { ReactNode } from 'react'
 
 interface ImageCardProps {
-  image: string
+  image: string | string[]
   kicker: string
   title: string
   description: string
@@ -25,6 +28,17 @@ export function ImageCard({
   ctaLabel = 'Learn more',
   footerStat,
 }: ImageCardProps): React.ReactElement {
+  const images = Array.isArray(image) ? image : [image]
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (images.length < 2) return
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length)
+    }, 4000)
+    return () => clearInterval(id)
+  }, [images.length])
+
   return (
     <Link
       href={href}
@@ -32,13 +46,18 @@ export function ImageCard({
     >
       {/* Image area */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-200">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
+        {images.map((src, i) => (
+          <Image
+            key={src}
+            src={src}
+            alt={title}
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+            className={`object-cover transition-all duration-1000 ease-out group-hover:scale-105 ${
+              i === index ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/40 to-transparent" />
       </div>
 
