@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Activity, Building2, LayoutGrid, Satellite, ArrowRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 import type { ReactNode } from 'react'
 
@@ -10,7 +13,7 @@ interface SolutionCard {
   title: string
   description: string
   href: string
-  image: string
+  image: string[]
 }
 
 const solutions: SolutionCard[] = [
@@ -21,7 +24,7 @@ const solutions: SolutionCard[] = [
     description:
       'BCA-certified monitoring and predictive maintenance for lifts and escalators. From real-time status to AI-driven fault prediction — proven on 10,000+ assets.',
     href: '/solutions/vertical-transport',
-    image: '/images/background/bg3.jpg',
+    image: ['/images/background/bg8.png', '/images/background/bg9.png', '/images/background/bg4.jpg'],
   },
   {
     icon: <Building2 className="h-4 w-4" />,
@@ -30,7 +33,7 @@ const solutions: SolutionCard[] = [
     description:
       'Unified, brand-agnostic monitoring and control for all your building systems. One dashboard for HVAC, energy, fire, and lighting — regardless of BMS vendor.',
     href: '/solutions/building-management',
-    image: '/images/background/bg15.jpg',
+    image: ['/images/background/bg17.jpg', '/images/background/bg18.jpg', '/images/background/bg19.jpg'],
   },
   {
     icon: <LayoutGrid className="h-4 w-4" />,
@@ -39,7 +42,7 @@ const solutions: SolutionCard[] = [
     description:
       'Transform your operations from paper-based and reactive to digital and predictive. AI-powered work orders, asset management, and knowledge at your fingertips.',
     href: '/solutions/facility-operations',
-    image: '/images/background/bg7.jpg',
+    image: ['/images/background/bg20.jpg', '/images/background/bg21.jpg', '/images/background/bg22.jpg'],
   },
   {
     icon: <Satellite className="h-4 w-4" />,
@@ -48,9 +51,34 @@ const solutions: SolutionCard[] = [
     description:
       'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure — the same platform, at planetary scale.',
     href: '/solutions/infrastructure-environmental',
-    image: '/images/background/bg2.jpg',
+    image: ['/images/background/bg23.jpg', '/images/background/bg24.jpg', '/images/background/bg25.jpg'],
   },
 ]
+
+function CardImageCarousel({ images, alt }: { images: string[]; alt: string }): React.ReactElement {
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    if (images.length < 2) return
+    const id = setInterval(() => setIndex((i) => (i + 1) % images.length), 4000)
+    return () => clearInterval(id)
+  }, [images.length])
+  return (
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
+      {images.map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt={alt}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className={`object-cover transition-all duration-1000 ease-out group-hover:scale-105 ${
+            i === index ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      ))}
+    </div>
+  )
+}
 
 export function SolutionCardsSection(): React.ReactElement {
   return (
@@ -87,15 +115,7 @@ export function SolutionCardsSection(): React.ReactElement {
                 </div>
 
                 {/* Image */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
-                  <Image
-                    src={s.image}
-                    alt={s.title}
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
+                <CardImageCarousel images={s.image} alt={s.title} />
               </Link>
             )
           })}

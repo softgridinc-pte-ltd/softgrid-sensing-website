@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 interface SolutionHeroProps {
@@ -8,7 +7,7 @@ interface SolutionHeroProps {
   image?: string
 }
 
-export function SolutionHero({ overline, headline, subheadline, image }: SolutionHeroProps): React.ReactElement {
+export function SolutionHero({ overline, headline, subheadline }: SolutionHeroProps): React.ReactElement {
   return (
     <section
       style={{
@@ -18,26 +17,6 @@ export function SolutionHero({ overline, headline, subheadline, image }: Solutio
         overflow: 'hidden',
       }}
     >
-      {image && (
-        <>
-          <Image
-            src={image}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: 'cover', opacity: 0.28 }}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(180deg, rgba(10,22,40,0.85) 0%, rgba(22,37,68,0.78) 100%)',
-              pointerEvents: 'none',
-            }}
-          />
-        </>
-      )}
       {/* Radial glow overlay */}
       <div
         style={{
@@ -62,31 +41,9 @@ export function SolutionHero({ overline, headline, subheadline, image }: Solutio
 
       <div data-animate style={{ position: 'relative', zIndex: 1, maxWidth: 720 }}>
         {/* Overline with gradient line */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 12,
-            marginBottom: 20,
-          }}
-        >
-          <div
-            style={{
-              width: 32,
-              height: 1,
-              background: 'linear-gradient(90deg, transparent, #1F99C5)',
-            }}
-          />
-          <span
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 14,
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: 3.5,
-              color: '#1F99C5',
-            }}
-          >
+        <div className="mb-6 flex items-center gap-3.5">
+          <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-300" />
+          <span className="text-primary-300 text-sm font-bold uppercase tracking-[3px]">
             {overline}
           </span>
         </div>
