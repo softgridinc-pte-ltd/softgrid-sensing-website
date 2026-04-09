@@ -15,9 +15,11 @@ export function SolutionsHero(): React.ReactElement {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <div className="max-w-3xl" data-animate>
-          <div className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[3px] text-primary-400">
-            <span className="inline-block h-px w-10 bg-gradient-to-r from-transparent to-primary-400" />
-            Solutions
+          <div className="mb-6 flex items-center gap-3.5">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-300" />
+            <span className="text-primary-300 text-sm font-bold uppercase tracking-[3px]">
+              Solutions
+            </span>
           </div>
           <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-white">
             Solutions Built for How You Operate

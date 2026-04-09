@@ -48,9 +48,11 @@ export function CaseStudyHero({
             </div>
           )}
           <div>
-            <div className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[3px] text-primary-400">
-              <span className="inline-block h-px w-8 bg-gradient-to-r from-transparent to-primary-400" />
-              {overline}
+            <div className="mb-6 flex items-center gap-3.5">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-300" />
+              <span className="text-primary-300 text-sm font-bold uppercase tracking-[3px]">
+                {overline}
+              </span>
             </div>
             <h1 className="mb-5 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.1] tracking-tight text-white">
               {headline}

@@ -24,17 +24,9 @@ export default function AboutPage(): React.ReactElement {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <div className="flex items-center gap-3.5 justify-center mb-8">
-            <span className="w-10 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#6CBBD9] to-[#22D3EE]" />
-            <span
-              className="font-heading text-sm font-bold uppercase tracking-[3.5px]"
-              style={{
-                background: 'linear-gradient(90deg, #6CBBD9, #22D3EE)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 24px rgba(34, 211, 238, 0.3)',
-              }}
-            >
+          <div className="flex items-center gap-3.5 justify-center mb-6">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-300" />
+            <span className="text-primary-300 text-sm font-bold uppercase tracking-[3px]">
               About Us
             </span>
           </div>
