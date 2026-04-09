@@ -32,8 +32,8 @@ export function PlatformSection(): React.ReactElement {
       {/* Cyan aurora glow behind diagram */}
       <div className="pointer-events-none absolute right-0 top-1/2 h-[600px] w-[800px] -translate-y-1/2 translate-x-1/4 rounded-full bg-cyan-500/12 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-[5fr_7fr] lg:gap-16">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-20">
           {/* Left: copy */}
           <div data-animate>
             <div className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[3px] text-primary-400">
@@ -65,23 +65,16 @@ export function PlatformSection(): React.ReactElement {
               ))}
             </ul>
 
-            <div className="flex justify-center">
+            <div className="flex">
               <Button href="/platform" variant="ghost" className="!text-white hover:!text-cyan-300">
                 Explore the Platform &rarr;
               </Button>
             </div>
           </div>
 
-          {/* Right: foundation diagram in glowing card */}
+          {/* Right: foundation diagram */}
           <div data-animate className="relative">
-            {/* Outer glow halo */}
-            <div className="pointer-events-none absolute -inset-2 rounded-3xl bg-cyan-500/20 opacity-70 blur-xl" />
-            {/* Gradient border */}
-            <div className="relative rounded-2xl bg-gradient-to-br from-cyan-400/80 via-cyan-500/30 to-cyan-600/60 p-[1.5px] shadow-[0_0_80px_-20px_rgba(34,211,238,0.5)]">
-              <div className="rounded-[14px] bg-gradient-to-b from-[#143d6b] to-[#0c2950] p-5 md:p-7 ring-1 ring-inset ring-white/5">
-                <FoundationDiagram />
-              </div>
-            </div>
+            <FoundationDiagram />
           </div>
         </div>
       </div>
