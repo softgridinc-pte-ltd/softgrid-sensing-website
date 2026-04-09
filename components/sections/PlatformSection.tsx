@@ -51,31 +51,38 @@ export function PlatformSection(): React.ReactElement {
               AFOS is an AI-driven Facility Operating System — one base that runs underneath every Softgrid product, composed freely into the solution each customer, industry, and site actually needs.
             </p>
 
-            <ul className="mb-10 space-y-5">
+            <ul className="relative space-y-7 pl-9">
+              {/* Vertical axis line — centered on x = 12px from ul left edge */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-cyan-400/70 via-cyan-500/40 to-cyan-600/20"
+              />
               {pillars.map((p) => (
-                <li key={p.title} className="flex gap-4">
-                  <span className="mt-2 inline-block h-px w-6 flex-shrink-0 bg-primary-400" aria-hidden />
-                  <div>
-                    <div className="mb-1 text-sm font-bold uppercase tracking-[1.5px] text-white">
-                      {p.title}
-                    </div>
-                    <div className="text-[15px] leading-[1.7] text-slate-400">{p.body}</div>
+                <li key={p.title} className="relative">
+                  {/* Dot anchor — 10px square, centered on the axis line */}
+                  <span
+                    aria-hidden
+                    className="absolute top-[8px] left-[-29px] inline-block h-[10px] w-[10px] rounded-full bg-cyan-400 shadow-[0_0_0_4px_rgba(34,211,238,0.15),0_0_12px_rgba(34,211,238,0.6)]"
+                  />
+                  <div className="mb-1 text-sm font-bold uppercase tracking-[1.5px] text-white">
+                    {p.title}
                   </div>
+                  <div className="text-[15px] leading-[1.7] text-slate-400">{p.body}</div>
                 </li>
               ))}
             </ul>
-
-            <div className="flex">
-              <Button href="/platform" variant="ghost" className="!text-white hover:!text-cyan-300">
-                Explore the Platform &rarr;
-              </Button>
-            </div>
           </div>
 
           {/* Right: foundation diagram */}
           <div data-animate className="relative">
             <FoundationDiagram />
           </div>
+        </div>
+
+        <div className="mt-14 flex justify-center">
+          <Button href="/platform" variant="ghost" className="!text-white hover:!text-cyan-300">
+            Explore the Platform &rarr;
+          </Button>
         </div>
       </div>
     </section>
