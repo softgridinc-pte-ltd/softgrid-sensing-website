@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Cpu, Activity, Wrench, Brain, ArrowRight } from 'lucide-react'
+import { Cpu, MonitorDot, Workflow, ArrowRight } from 'lucide-react'
+import { CortexIcon } from '@/components/icons/CortexIcon'
 
 import { Button } from '@/components/ui/Button'
 
@@ -40,7 +41,7 @@ const series: Series[] = [
     products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }],
     href: '/products/sense',
     image: '/images/background/bg7.jpg',
-    icon: <Cpu className="h-7 w-7" strokeWidth={1.6} />,
+    icon: <Cpu className="h-7 w-7" strokeWidth={1.6} aria-hidden />,
   },
   {
     id: 'fusion',
@@ -58,7 +59,7 @@ const series: Series[] = [
     ],
     href: '/products/fusion',
     image: '/images/background/bg15.jpg',
-    icon: <Activity className="h-7 w-7" strokeWidth={1.6} />,
+    icon: <MonitorDot className="h-7 w-7" strokeWidth={1.6} />,
   },
   {
     id: 'orches',
@@ -70,7 +71,7 @@ const series: Series[] = [
     products: [{ name: 'IRIS' }, { name: 'LiftProf' }, { name: 'Nova' }],
     href: '/products/orches',
     image: '/images/background/bg13.jpg',
-    icon: <Wrench className="h-7 w-7" strokeWidth={1.6} />,
+    icon: <Workflow className="h-7 w-7" strokeWidth={1.6} />,
   },
   {
     id: 'cortex',
@@ -87,7 +88,7 @@ const series: Series[] = [
     ],
     href: '/products/cortex',
     image: '/images/background/bg6.jpg',
-    icon: <Brain className="h-7 w-7" strokeWidth={1.6} />,
+    icon: <CortexIcon size={28} strokeWidth={1.6} />,
   },
 ]
 
@@ -106,16 +107,7 @@ export default function ProductsPage(): React.ReactElement {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden py-28 md:py-40">
-        <Image
-          src="/images/background/bg5.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="absolute inset-0 object-cover opacity-35"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-950/90 via-navy-900/85 to-navy-800/80" />
+      <section className="relative overflow-hidden bg-navy-900 py-28 md:py-40">
         <div
           className="absolute inset-0"
           style={{

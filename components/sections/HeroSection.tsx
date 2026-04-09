@@ -134,8 +134,7 @@ export function HeroSection(): React.ReactElement {
       ))}
 
       {/* Gradient overlays for text readability */}
-      <div className="absolute inset-0 z-[2] bg-gradient-to-r from-navy-950/90 via-navy-900/60 to-navy-900/15" />
-      <div className="absolute inset-0 z-[2] bg-gradient-to-t from-navy-950/80 via-transparent to-navy-950/30" />
+      <div className="absolute inset-0 z-[2] bg-gradient-to-r from-navy-950/90 via-navy-900/50 to-transparent" />
 
       {/* Content */}
       <div className="relative z-[3] h-full flex items-center">

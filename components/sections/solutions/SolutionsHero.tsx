@@ -1,20 +1,8 @@
-import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 
 export function SolutionsHero(): React.ReactElement {
   return (
-    <section className="relative overflow-hidden py-28 md:py-40">
-      {/* Background image */}
-      <Image
-        src="/images/background/bg14.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="absolute inset-0 object-cover opacity-35"
-      />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-950/90 via-navy-900/85 to-navy-800/80" />
+    <section className="relative overflow-hidden bg-navy-900 py-28 md:py-40">
       {/* Radial cyan glow */}
       <div
         className="absolute inset-0"
