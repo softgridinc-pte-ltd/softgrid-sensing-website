@@ -36,9 +36,9 @@ export function PlatformSection(): React.ReactElement {
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-20">
           {/* Left: copy */}
           <div data-animate>
-            <div className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[3px] text-primary-400">
-              <span className="inline-block h-px w-10 bg-gradient-to-r from-transparent to-primary-400" />
-              The Platform
+            <div className="mb-5 flex items-center gap-3 text-sm font-bold uppercase tracking-[3px] text-primary-300">
+              <span className="inline-block h-px w-10 bg-gradient-to-r from-transparent to-primary-300" />
+              The AFOS Platform
             </div>
             <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white">
               One Platform.
@@ -62,7 +62,7 @@ export function PlatformSection(): React.ReactElement {
                   {/* Dot anchor — 10px square, centered on the axis line */}
                   <span
                     aria-hidden
-                    className="absolute top-[8px] left-[-29px] inline-block h-[10px] w-[10px] rounded-full bg-cyan-400 shadow-[0_0_0_4px_rgba(34,211,238,0.15),0_0_12px_rgba(34,211,238,0.6)]"
+                    className="absolute top-[8px] left-[-29px] inline-block h-[10px] w-[10px] rounded-full bg-cyan-400 shadow-[0_0_0_3px_rgba(34,211,238,0.45),0_0_0_6px_#111D35,0_0_16px_rgba(34,211,238,0.5)]"
                   />
                   <div className="mb-1 text-sm font-bold uppercase tracking-[1.5px] text-white">
                     {p.title}

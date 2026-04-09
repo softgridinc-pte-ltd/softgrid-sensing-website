@@ -143,8 +143,8 @@ export function HeroSection(): React.ReactElement {
           <div className="max-w-2xl">
             {/* Overline */}
             <div className="flex items-center gap-3.5 mb-6">
-              <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-400" />
-              <span className="text-primary-400 text-xs font-bold uppercase tracking-[3px]">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-300" />
+              <span className="text-primary-300 text-sm font-bold uppercase tracking-[3px]">
                 AI-Driven Facility Operating System
               </span>
             </div>
