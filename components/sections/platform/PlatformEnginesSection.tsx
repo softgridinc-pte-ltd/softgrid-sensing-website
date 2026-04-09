@@ -55,7 +55,7 @@ const ladder = [
   {
     label: 'New AI Adoption',
     title: 'AFOS',
-    height: 'min-h-80',
+    height: 'min-h-[28rem]',
     bg: 'bg-gradient-to-b from-primary-500/30 to-primary-700/40 border-primary-400/60 shadow-[0_0_60px_-10px_rgba(31,153,197,0.55)]',
     text: 'text-white',
     bullets: [
@@ -72,7 +72,7 @@ const ladder = [
 
 export function PlatformEnginesSection(): React.ReactElement {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-20 md:py-28">
+    <section className="relative overflow-hidden bg-navy-900 pt-20 md:pt-28 pb-8 md:pb-12">
       <div className="absolute inset-0 grid-pattern opacity-30" />
       <div
         className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full blur-[160px]"
@@ -177,14 +177,14 @@ export function PlatformEnginesSection(): React.ReactElement {
                   className={`group relative rounded-2xl border ${stage.bg} ${stage.height} flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1`}
                 >
                   {stage.highlight && (
-                    <div className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary-300/40 bg-primary-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-[2px] text-primary-200">
+                    <div className="mt-6 mb-3 -translate-y-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary-300/40 bg-primary-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-[2px] text-primary-200">
                       <Sparkles className="h-3 w-3" />
                       AI-Driven
                     </div>
                   )}
-                  <div className={`text-2xl md:text-3xl font-extrabold italic ${stage.text} mb-2`}>{stage.title}</div>
-                  <div className="mb-5 text-[11px] font-bold uppercase tracking-[2px] text-slate-500">{stage.label}</div>
-                  <ul className={`space-y-1.5 text-sm leading-relaxed ${stage.text}`}>
+                  <div className={`${stage.highlight ? 'text-2xl md:text-3xl font-extrabold' : 'text-xl md:text-2xl font-semibold'} italic ${stage.text} mb-2`}>{stage.title}</div>
+                  <div className="mb-5 text-[11px] font-bold uppercase tracking-[2px] text-slate-300">{stage.label}</div>
+                  <ul className={`flex-1 flex flex-col justify-center space-y-2.5 py-4 text-sm leading-relaxed ${stage.text}`}>
                     {stage.bullets.map((b) => (
                       <li key={b}>{b}</li>
                     ))}

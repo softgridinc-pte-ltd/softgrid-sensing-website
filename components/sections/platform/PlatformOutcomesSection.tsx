@@ -78,7 +78,7 @@ const outcomes: Outcome[] = [
 
 export function PlatformOutcomesSection(): React.ReactElement {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-20 md:py-28">
+    <section className="relative overflow-hidden bg-navy-900 pt-8 md:pt-12 pb-20 md:pb-28">
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[160px]"
@@ -88,7 +88,7 @@ export function PlatformOutcomesSection(): React.ReactElement {
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
         <div data-animate className="mb-16 max-w-3xl">
           <div className="mb-4 text-xs font-bold uppercase tracking-[3px] text-primary-400">The Outcomes</div>
-          <h2 className="mb-6 text-3xl md:text-5xl font-bold tracking-tight text-white">
+          <h2 className="mb-6 text-3xl md:text-4xl font-bold tracking-tight text-white">
             Measurable Impact.
           </h2>
           <p className="text-lg leading-[1.8] text-slate-300">
