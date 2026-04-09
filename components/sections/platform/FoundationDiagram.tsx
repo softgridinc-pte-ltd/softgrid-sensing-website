@@ -3,14 +3,18 @@
 import { useEffect, useRef, useState } from 'react'
 
 const PC = ['#00C9A7', '#4FA3E0', '#F0A500', '#A78BFA']
+// Derived from app/solutions/*/page.tsx productsInvolved
+// Product index: 0=Sense, 1=Fusion, 2=Orches, 3=Cortex
 const SOL_MAP: number[][] = [
-  [1, 2],
-  [0, 1, 3],
-  [0, 3],
-  [2, 3],
+  [0, 1, 2, 3], // Vertical Transport: LMD/LBB/EMD + LTMS/RM&D + LiftProf + Athena
+  [1, 2, 3],    // Building Mgmt: Cloud BMS + IRIS + Athena/Digital Twin
+  [1, 2, 3],    // Facility Ops: IRIS/Nova/LiftProf + Athena (+ Fusion optional)
+  [1, 3],       // Infra & Env: Fusion RSA + Athena/Digital Twin
 ]
 
 const SOLUTIONS = ['Vertical Transport', 'Building Mgmt', 'Facility Ops', 'Infra & Env']
+
+const PSUB = ['#5BE8C8', '#8FC8F0', '#FFC04D', '#C9B6FF']
 
 const PRODUCTS: { name: string; sub: string; color: string; icon: React.ReactNode }[] = [
   {
@@ -106,7 +110,7 @@ export function FoundationDiagram(): React.ReactElement {
   const solRefs = useRef<(HTMLDivElement | null)[]>([])
   const prodRefs = useRef<(HTMLDivElement | null)[]>([])
   const platRef = useRef<HTMLDivElement>(null)
-  const [hov, setHov] = useState<number | null>(null)
+  const [hov, setHov] = useState<{ kind: 'sol' | 'prod'; idx: number } | null>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
   const [paths, setPaths] = useState<PathInfo[]>([])
   const [dashes, setDashes] = useState<DashInfo[]>([])
@@ -188,8 +192,12 @@ export function FoundationDiagram(): React.ReactElement {
             />
           ))}
           {paths.map((p, i) => {
-            const op = hov === null ? 0.4 : hov === p.si ? 0.88 : 0.045
-            const sw = hov === p.si ? 2 : 1.5
+            const active =
+              hov !== null &&
+              ((hov.kind === 'sol' && hov.idx === p.si) ||
+                (hov.kind === 'prod' && hov.idx === p.pi))
+            const op = hov === null ? 0.4 : active ? 0.88 : 0.045
+            const sw = active ? 2 : 1.5
             return (
               <path
                 key={`p${i}`}
@@ -198,7 +206,7 @@ export function FoundationDiagram(): React.ReactElement {
                 stroke={p.color}
                 strokeWidth={sw}
                 strokeOpacity={op}
-                filter={hov === p.si ? `url(#fd-g${p.pi})` : undefined}
+                filter={active ? `url(#fd-g${p.pi})` : undefined}
                 style={{ transition: 'stroke-opacity .22s, stroke-width .22s' }}
               />
             )
@@ -211,19 +219,24 @@ export function FoundationDiagram(): React.ReactElement {
           <div className="lay-box">
             <div className="sec-lbl">SOLUTIONS FOR INDUSTRIES</div>
             <div className="sols">
-              {SOLUTIONS.map((s, i) => (
-                <div
-                  key={s}
-                  ref={(el) => {
-                    solRefs.current[i] = el
-                  }}
-                  className={`sol ${hov === i ? 'act' : ''}`}
-                  onMouseEnter={() => setHov(i)}
-                  onMouseLeave={() => setHov(null)}
-                >
-                  {s}
-                </div>
-              ))}
+              {SOLUTIONS.map((s, i) => {
+                const act =
+                  (hov?.kind === 'sol' && hov.idx === i) ||
+                  (hov?.kind === 'prod' && SOL_MAP[i].includes(hov.idx))
+                return (
+                  <div
+                    key={s}
+                    ref={(el) => {
+                      solRefs.current[i] = el
+                    }}
+                    className={`sol ${act ? 'act' : ''}`}
+                    onMouseEnter={() => setHov({ kind: 'sol', idx: i })}
+                    onMouseLeave={() => setHov(null)}
+                  >
+                    {s}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -235,7 +248,9 @@ export function FoundationDiagram(): React.ReactElement {
             <div className="sec-lbl">PRODUCT SUITES</div>
             <div className="prods">
               {PRODUCTS.map((p, pi) => {
-                const conn = hov !== null && SOL_MAP[hov].includes(pi)
+                const conn =
+                  (hov?.kind === 'sol' && SOL_MAP[hov.idx].includes(pi)) ||
+                  (hov?.kind === 'prod' && hov.idx === pi)
                 const c = p.color
                 const boxShadow = conn
                   ? `0 0 22px ${c}4a, inset 0 0 28px ${c}0c`
@@ -247,10 +262,13 @@ export function FoundationDiagram(): React.ReactElement {
                       prodRefs.current[pi] = el
                     }}
                     className="prod"
+                    onMouseEnter={() => setHov({ kind: 'prod', idx: pi })}
+                    onMouseLeave={() => setHov(null)}
                     style={{
                       border: `1px solid ${c}61`,
                       boxShadow,
                       transition: 'box-shadow .22s, border-color .22s',
+                      cursor: 'default',
                     }}
                   >
                     {p.icon}
@@ -258,7 +276,7 @@ export function FoundationDiagram(): React.ReactElement {
                       <div className="pname" style={{ color: conn ? '#f0f6ff' : '#c8d8f0' }}>
                         {p.name}
                       </div>
-                      <div className="psub" style={{ color: `${c}b8` }}>
+                      <div className="psub" style={{ color: PSUB[pi] }}>
                         {p.sub}
                       </div>
                     </div>
@@ -307,17 +325,15 @@ export function FoundationDiagram(): React.ReactElement {
         .arch-lbl {
           font-size: 10px;
           letter-spacing: 0.22em;
-          color: rgba(120, 150, 200, 0.5);
+          color: rgba(180, 200, 235, 0.85);
           font-weight: 600;
           margin-bottom: 22px;
         }
         .lay-sol {
-          width: 82%;
-          margin: 0 auto;
+          width: 100%;
         }
         .lay-prod {
-          width: 94%;
-          margin: 0 auto;
+          width: 100%;
         }
         .lay-plat {
           width: 100%;
@@ -345,8 +361,8 @@ export function FoundationDiagram(): React.ReactElement {
         .sec-lbl {
           font-size: 9px;
           letter-spacing: 0.18em;
-          color: rgba(120, 150, 200, 0.5);
-          font-weight: 600;
+          color: rgba(180, 200, 235, 0.85);
+          font-weight: 700;
           margin-bottom: 13px;
         }
         .gap {
@@ -361,15 +377,15 @@ export function FoundationDiagram(): React.ReactElement {
           flex-wrap: wrap;
         }
         .sol {
-          flex: 1 1 auto;
-          min-width: 96px;
+          flex: 1 1 0;
+          min-width: 0;
           padding: 9px 12px;
           background: rgba(14, 28, 65, 0.72);
           border: 1px solid rgba(50, 90, 180, 0.25);
           border-radius: 8px;
           font-size: 12.5px;
           font-weight: 500;
-          color: rgba(165, 190, 230, 0.78);
+          color: #dbe6f5;
           text-align: center;
           cursor: default;
           transition: all 0.2s ease;
@@ -419,8 +435,8 @@ export function FoundationDiagram(): React.ReactElement {
         .plat-found {
           font-size: 9px;
           letter-spacing: 0.15em;
-          color: rgba(75, 155, 255, 0.45);
-          font-weight: 500;
+          color: rgba(140, 185, 255, 0.9);
+          font-weight: 600;
         }
         .pmods {
           display: flex;
@@ -435,7 +451,7 @@ export function FoundationDiagram(): React.ReactElement {
           text-align: center;
           font-size: 12.5px;
           font-weight: 500;
-          color: rgba(165, 190, 230, 0.78);
+          color: #dbe6f5;
         }
         .flow {
           position: absolute;
