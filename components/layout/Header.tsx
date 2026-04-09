@@ -4,17 +4,18 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown, Search, Cpu, Activity, Settings, Brain, ArrowUpDown, Building2, Wrench, Leaf } from 'lucide-react'
+import { Menu, X, ChevronDown, Search, Cpu, MonitorDot, Workflow, ArrowUpDown, Building2, Wrench, Leaf } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { CortexIcon } from '@/components/icons/CortexIcon'
 
-import type { LucideIcon } from 'lucide-react'
+type NavIcon = React.ComponentType<{ className?: string }>
 
 interface NavChild {
   label: string
   href: string
   subtitle?: string
   description?: string
-  icon?: LucideIcon
+  icon?: NavIcon
 }
 
 interface NavItem {
@@ -70,21 +71,21 @@ const navigation: NavItem[] = [
         label: 'Monitoring & Diagnostics',
         subtitle: 'AFOS Fusion',
         description: 'Real-time monitoring and fault detection',
-        icon: Activity,
+        icon: MonitorDot,
         href: '/products/fusion',
       },
       {
         label: 'Operations & Maintenance',
         subtitle: 'AFOS Orches',
         description: 'Work order and maintenance management',
-        icon: Settings,
+        icon: Workflow,
         href: '/products/orches',
       },
       {
         label: 'Data & Intelligence',
         subtitle: 'AFOS Cortex',
         description: 'AI analytics and digital twins',
-        icon: Brain,
+        icon: CortexIcon,
         href: '/products/cortex',
       },
     ],

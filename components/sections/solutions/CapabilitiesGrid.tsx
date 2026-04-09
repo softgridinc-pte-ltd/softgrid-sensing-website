@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { ArrowRight, Cpu, Activity, Wrench, Brain } from 'lucide-react'
+import { ArrowRight, Cpu, MonitorDot, Workflow } from 'lucide-react'
+import { CortexIcon } from '@/components/icons/CortexIcon'
 
 import type { ReactNode } from 'react'
 
@@ -18,19 +19,19 @@ const capabilities: Capability[] = [
     href: '/products/sense',
   },
   {
-    icon: <Activity className="h-5 w-5" />,
+    icon: <MonitorDot className="h-5 w-5" />,
     title: 'Fusion',
     description: 'Real-time monitoring and predictive diagnostics across every connected asset.',
     href: '/products/fusion',
   },
   {
-    icon: <Wrench className="h-5 w-5" />,
+    icon: <Workflow className="h-5 w-5" />,
     title: 'Orches',
     description: 'Work orders, field service, and asset tracking — the operational lifecycle.',
     href: '/products/orches',
   },
   {
-    icon: <Brain className="h-5 w-5" />,
+    icon: <CortexIcon className="h-5 w-5" size="100%" />,
     title: 'Cortex',
     description: 'AI knowledge, digital twin, predictive analytics, and reporting.',
     href: '/products/cortex',

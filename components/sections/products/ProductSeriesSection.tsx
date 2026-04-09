@@ -1,4 +1,8 @@
 import Link from 'next/link'
+import { Cpu, MonitorDot, Workflow } from 'lucide-react'
+import { CortexIcon } from '@/components/icons/CortexIcon'
+
+type SeriesIcon = React.ComponentType<{ size?: number | string; color?: string; strokeWidth?: number | string; className?: string }>
 
 interface ProductSeries {
   name: string
@@ -6,7 +10,7 @@ interface ProductSeries {
   description: string
   products: { name: string; tbd?: boolean }[]
   href: string
-  iconPath: React.ReactNode
+  Icon: SeriesIcon
   iconBg: string
   iconBorder: string
   iconStroke: string
@@ -22,7 +26,7 @@ const productSeries: ProductSeries[] = [
     description: 'Industrial-grade IoT devices designed for non-intrusive installation, edge intelligence, and resilient operation. Hardware-as-a-Service, not hardware-for-sale.',
     products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }],
     href: '/products/sense',
-    iconPath: <><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></>,
+    Icon: Cpu,
     iconBg: 'rgba(31,153,197,0.12)',
     iconBorder: 'rgba(31,153,197,0.2)',
     iconStroke: '#1F99C5',
@@ -36,7 +40,7 @@ const productSeries: ProductSeries[] = [
     description: "From lift sensors to satellite imagery \u2014 see what's happening across all your assets, at any scale, before problems escalate.",
     products: [{ name: 'LTMS' }, { name: 'RM&D' }, { name: 'Cloud BMS' }, { name: 'Fusion RSA' }, { name: 'Escalator Monitoring [TBD]', tbd: true }],
     href: '/products/fusion',
-    iconPath: <><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></>,
+    Icon: MonitorDot,
     iconBg: 'rgba(31,153,197,0.15)',
     iconBorder: 'rgba(31,153,197,0.25)',
     iconStroke: '#6CBBD9',
@@ -50,7 +54,7 @@ const productSeries: ProductSeries[] = [
     description: 'Work order management, field service, asset tracking, and intelligent service desk. Manage the full lifecycle from detection to resolution.',
     products: [{ name: 'IRIS' }, { name: 'LiftProf' }, { name: 'Nova' }],
     href: '/products/orches',
-    iconPath: <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>,
+    Icon: Workflow,
     iconBg: 'rgba(13,148,136,0.15)',
     iconBorder: 'rgba(13,148,136,0.25)',
     iconStroke: '#2DD4BF',
@@ -64,7 +68,7 @@ const productSeries: ProductSeries[] = [
     description: 'AI knowledge base, digital twin visualization, predictive analytics, and compliance reporting. Turn your operational data into decisions and foresight.',
     products: [{ name: 'Athena' }, { name: 'Digital Twin' }, { name: 'AI Analytics [TBD]', tbd: true }, { name: 'ESG Reporting [TBD]', tbd: true }],
     href: '/products/cortex',
-    iconPath: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></>,
+    Icon: CortexIcon,
     iconBg: 'rgba(108,187,217,0.08)',
     iconBorder: 'rgba(108,187,217,0.15)',
     iconStroke: '#6CBBD9',
@@ -101,6 +105,7 @@ export function ProductSeriesSection(): React.ReactElement {
         <div data-animate-stagger style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           {productSeries.map((series) => {
             const colors = getTextColors(series.cardStyle)
+            const Icon = series.Icon
             return (
               <div
                 key={series.name}
@@ -133,9 +138,7 @@ export function ProductSeriesSection(): React.ReactElement {
                     border: `1px solid ${series.iconBorder}`,
                   }}
                 >
-                  <svg viewBox="0 0 24 24" style={{ width: 36, height: 36, stroke: series.iconStroke, strokeWidth: 1.6, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
-                    {series.iconPath}
-                  </svg>
+                  <Icon size={36} color={series.iconStroke} strokeWidth={1.6} />
                 </div>
 
                 {/* Content */}
