@@ -129,7 +129,7 @@ export default function CortexPage(): React.ReactElement {
         </div>
       </section>
 
-      {/* PRODUCT 1: ATHENA */}
+      {/* PRODUCT 1: AI PREDICTIVE ANALYTICS */}
       <section style={{ padding: '100px 64px', position: 'relative', background: '#FFFFFF' }}>
         <div
           className="grid grid-cols-1 md:grid-cols-2"
@@ -137,6 +137,229 @@ export default function CortexPage(): React.ReactElement {
           data-animate
         >
           <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  background: '#111D35',
+                  border: '1px solid rgba(108,187,217,0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  style={{
+                    width: 22,
+                    height: 22,
+                    stroke: '#6CBBD9',
+                    strokeWidth: 1.8,
+                    fill: 'none',
+                    strokeLinecap: 'round',
+                    strokeLinejoin: 'round',
+                  }}
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 700,
+                  textTransform: 'uppercase' as const,
+                  letterSpacing: 1.5,
+                  color: '#197EA3',
+                }}
+              >
+                AI Predictive Analytics
+              </div>
+            </div>
+            <h2
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 32,
+                fontWeight: 700,
+                letterSpacing: -1,
+                color: '#0A1628',
+                marginBottom: 8,
+                lineHeight: 1.2,
+              }}
+            >
+              AI Predictive Analytics
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 16,
+                fontWeight: 500,
+                color: '#64748B',
+                marginBottom: 24,
+                fontStyle: 'italic',
+              }}
+            >
+              ML models that predict equipment failures before they happen —
+              with &gt;83% accuracy
+            </p>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.8,
+                color: '#475569',
+                marginBottom: 28,
+              }}
+            >
+              Our predictive AI engine analyzes vibration, acceleration, and
+              temperature data from connected sensors to detect anomalies and
+              predict failures — weeks before they occur. Developed in
+              collaboration with A*STAR and SIMTech, these models use
+              unsupervised learning for anomaly detection and semi-supervised
+              soft clustering for multi-class fault prediction. Currently
+              powering predictions across our AFOS Fusion products, with less
+              than 25% customization effort required for new equipment types.
+            </p>
+            {/* Metrics display */}
+            <div style={{ display: 'flex', gap: 32, marginBottom: 28 }}>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: '#0A1628',
+                  }}
+                >
+                  &gt;83%
+                </div>
+                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
+                  Prediction accuracy
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: '#0A1628',
+                  }}
+                >
+                  &lt;25%
+                </div>
+                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
+                  Customization for new data models
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: '#0A1628',
+                  }}
+                >
+                  Self-training
+                </div>
+                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
+                  Capability
+                </div>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: 1,
+                    color: '#B0BEC9',
+                    marginBottom: 4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  R&amp;D Partners
+                </div>
+                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
+                  A*STAR, SIMTech
+                </div>
+              </div>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: 1,
+                    color: '#B0BEC9',
+                    marginBottom: 4,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  Status
+                </div>
+                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
+                  Deployed within RM&amp;D and LTMS.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              background: '#0A1628',
+              borderRadius: 24,
+              aspectRatio: '4/3',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              border: '1px solid rgba(31,153,197,0.1)',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                background:
+                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
+              }}
+            />
+            <div
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: 14,
+                color: '#64748B',
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1.6,
+              }}
+            >
+              [AI PREDICTION VISUALIZATION]
+              <br />
+              <br />
+              Anomaly detection chart
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCT 2: ATHENA (reversed) */}
+      <section style={{ padding: '100px 64px', position: 'relative', background: '#F8FAFC' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: 64, alignItems: 'start', maxWidth: 1200, margin: '0 auto', direction: 'rtl' }}
+          data-animate
+        >
+          <div style={{ direction: 'ltr' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
               <div
                 style={{
@@ -191,7 +414,7 @@ export default function CortexPage(): React.ReactElement {
                 lineHeight: 1.2,
               }}
             >
-              AI Knowledge Base
+              Enterprise AI Knowledge Base
             </h2>
             <p
               style={{
@@ -293,6 +516,7 @@ export default function CortexPage(): React.ReactElement {
           </div>
           <div
             style={{
+              direction: 'ltr',
               background: '#0A1628',
               borderRadius: 24,
               aspectRatio: '4/3',
@@ -337,20 +561,14 @@ export default function CortexPage(): React.ReactElement {
         </div>
       </section>
 
-      {/* PRODUCT 2: DIGITAL TWIN (reversed) */}
-      <section style={{ padding: '100px 64px', position: 'relative', background: '#F8FAFC' }}>
+      {/* PRODUCT 3: DIGITAL TWIN */}
+      <section style={{ padding: '100px 64px', position: 'relative', background: '#FFFFFF' }}>
         <div
           className="grid grid-cols-1 md:grid-cols-2"
-          style={{
-            gap: 64,
-            alignItems: 'start',
-            maxWidth: 1200,
-            margin: '0 auto',
-            direction: 'rtl',
-          }}
+          style={{ gap: 64, alignItems: 'start', maxWidth: 1200, margin: '0 auto' }}
           data-animate
         >
-          <div style={{ direction: 'ltr' }}>
+          <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
               <div
                 style={{
@@ -509,7 +727,6 @@ export default function CortexPage(): React.ReactElement {
           </div>
           <div
             style={{
-              direction: 'ltr',
               background: '#0A1628',
               borderRadius: 24,
               aspectRatio: '4/3',
@@ -549,248 +766,6 @@ export default function CortexPage(): React.ReactElement {
               3D building with live
               <br />
               data overlay
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCT 3: AI PREDICTIVE ANALYTICS */}
-      <section style={{ padding: '100px 64px', position: 'relative', background: '#FFFFFF' }}>
-        <div
-          className="grid grid-cols-1 md:grid-cols-2"
-          style={{ gap: 64, alignItems: 'start', maxWidth: 1200, margin: '0 auto' }}
-          data-animate
-        >
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
-              <div
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: 12,
-                  background: '#111D35',
-                  border: '1px solid rgba(108,187,217,0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  style={{
-                    width: 22,
-                    height: 22,
-                    stroke: '#6CBBD9',
-                    strokeWidth: 1.8,
-                    fill: 'none',
-                    strokeLinecap: 'round',
-                    strokeLinejoin: 'round',
-                  }}
-                >
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontSize: 14,
-                  fontWeight: 700,
-                  textTransform: 'uppercase' as const,
-                  letterSpacing: 1.5,
-                  color: '#197EA3',
-                }}
-              >
-                AI Predictive Analytics [TBD]
-              </div>
-            </div>
-            <h2
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 32,
-                fontWeight: 700,
-                letterSpacing: -1,
-                color: '#0A1628',
-                marginBottom: 8,
-                lineHeight: 1.2,
-              }}
-            >
-              AI Predictive Analytics
-            </h2>
-            <p
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 16,
-                fontWeight: 500,
-                color: '#64748B',
-                marginBottom: 24,
-                fontStyle: 'italic',
-              }}
-            >
-              ML models that predict equipment failures before they happen —
-              with &gt;83% accuracy
-            </p>
-            <p
-              style={{
-                fontSize: 16,
-                lineHeight: 1.8,
-                color: '#475569',
-                marginBottom: 28,
-              }}
-            >
-              Our predictive AI engine analyzes vibration, acceleration, and
-              temperature data from connected sensors to detect anomalies and
-              predict failures — weeks before they occur. Developed in
-              collaboration with A*STAR and SIMTech, these models use
-              unsupervised learning for anomaly detection and semi-supervised
-              soft clustering for multi-class fault prediction. Currently
-              powering predictions across our AFOS Fusion products, with less
-              than 25% customization effort required for new equipment types.
-            </p>
-            {/* Metrics display */}
-            <div style={{ display: 'flex', gap: 32, marginBottom: 28 }}>
-              <div style={{ textAlign: 'center' }}>
-                <div
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: 28,
-                    fontWeight: 800,
-                    color: '#0A1628',
-                  }}
-                >
-                  &gt;83%
-                </div>
-                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
-                  Prediction accuracy
-                </div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: 28,
-                    fontWeight: 800,
-                    color: '#0A1628',
-                  }}
-                >
-                  &lt;25%
-                </div>
-                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
-                  Customization for new data models
-                </div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: 28,
-                    fontWeight: 800,
-                    color: '#0A1628',
-                  }}
-                >
-                  Self-training
-                </div>
-                <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>
-                  Capability
-                </div>
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
-              <div>
-                <div
-                  style={{
-                    fontSize: 11,
-                    fontWeight: 700,
-                    textTransform: 'uppercase' as const,
-                    letterSpacing: 1,
-                    color: '#B0BEC9',
-                    marginBottom: 4,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}
-                >
-                  R&amp;D Partners
-                </div>
-                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
-                  A*STAR, SIMTech
-                </div>
-              </div>
-              <div>
-                <div
-                  style={{
-                    fontSize: 11,
-                    fontWeight: 700,
-                    textTransform: 'uppercase' as const,
-                    letterSpacing: 1,
-                    color: '#B0BEC9',
-                    marginBottom: 4,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}
-                >
-                  Status
-                </div>
-                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>
-                  Deployed within RM&amp;D and LTMS. Standalone packaging in
-                  evaluation.
-                </div>
-              </div>
-            </div>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                padding: '6px 14px',
-                background: '#F1F5F9',
-                border: '1px solid #E2E8F0',
-                borderRadius: 100,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 12,
-                fontWeight: 600,
-                color: '#64748B',
-                marginTop: 20,
-              }}
-            >
-              Standalone Packaging In Development
-            </div>
-          </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [AI PREDICTION VISUALIZATION]
-              <br />
-              <br />
-              Anomaly detection chart
             </div>
           </div>
         </div>

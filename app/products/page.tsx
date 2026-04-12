@@ -83,7 +83,7 @@ const series: Series[] = [
     products: [
       { name: 'Athena' },
       { name: 'Digital Twin' },
-      { name: 'AI Analytics [TBD]', tbd: true },
+      { name: 'AI Analytics' },
     ],
     href: '/products/cortex',
     image: '/images/background/bg6.jpg',
