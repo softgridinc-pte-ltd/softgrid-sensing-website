@@ -1,4 +1,6 @@
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
+import { BrowserFrame } from '@/components/ui/BrowserFrame'
+import { BrowserFrameCarousel } from '@/components/ui/BrowserFrameCarousel'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -514,49 +516,13 @@ export default function CortexPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              direction: 'ltr',
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
+          <div style={{ direction: 'ltr' }}>
+            <BrowserFrame
+              src="/images/products/Athenna/Athenna.png"
+              alt="Athena — Enterprise AI Knowledge Base chat interface"
+              url="iris.softgridsensing.com/athena"
+              reverse
             />
-            <div
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [ATHENA QUERY INTERFACE]
-              <br />
-              <br />
-              Natural language question
-              <br />
-              and answer
-            </div>
           </div>
         </div>
       </section>
@@ -725,49 +691,18 @@ export default function CortexPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [DIGITAL TWIN VISUALIZATION]
-              <br />
-              <br />
-              3D building with live
-              <br />
-              data overlay
-            </div>
-          </div>
+          <BrowserFrameCarousel
+            url="dt.softgridsensing.com"
+            large
+            images={[
+              { src: '/images/products/DTL1.png', alt: 'Digital Twin — Port IOC Distribution', label: 'Port Distribution' },
+              { src: '/images/products/DTL2-1.png', alt: 'Digital Twin — Urban Traffic Operations', label: 'Traffic Operations' },
+              { src: '/images/products/DTL2-2.png', alt: 'Digital Twin — Traffic Control', label: 'Traffic Control' },
+              { src: '/images/products/L4.png', alt: 'Digital Twin — Smart Parking IOC', label: 'Smart Parking' },
+              { src: '/images/products/DTL3-1.png', alt: 'Digital Twin — Terminal Operations', label: 'Terminal Operations' },
+              { src: '/images/products/DTL3-2.png', alt: 'Digital Twin — Yard Management', label: 'Yard Management' },
+            ]}
+          />
         </div>
       </section>
 

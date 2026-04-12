@@ -14,6 +14,7 @@ interface BrowserFrameCarouselProps {
   url?: string
   interval?: number
   variant?: 'browser' | 'mobile'
+  large?: boolean
 }
 
 export function BrowserFrameCarousel({
@@ -21,6 +22,7 @@ export function BrowserFrameCarousel({
   url,
   interval = 4000,
   variant = 'browser',
+  large = false,
 }: BrowserFrameCarouselProps): React.ReactElement {
   const [active, setActive] = useState(0)
   const count = images.length
@@ -34,8 +36,8 @@ export function BrowserFrameCarousel({
   }, [count, interval])
 
   const isMobile = variant === 'mobile'
-  const stageHeight = isMobile ? 620 : 420
-  const itemWidth = isMobile ? '38%' : '75%'
+  const stageHeight = isMobile ? 620 : large ? 520 : 420
+  const itemWidth = isMobile ? '38%' : large ? '90%' : '75%'
   const imgWidth = isMobile ? 440 : 1920
   const imgHeight = isMobile ? 956 : 1080
 
@@ -76,10 +78,10 @@ export function BrowserFrameCarousel({
             opacity = isActive ? 1 : 0.6 + 0.2 * ((Math.cos(angle) + 1) / 2)
             zIndex = Math.round(10 + Math.cos(angle) * 10)
           } else {
-            translateX = pos * 35
-            translateY = 0
+            translateX = pos * (large ? 25 : 35)
+            translateY = large ? (isActive ? 40 : -20 * absPos) : 0
             translateZ = isActive ? 0 : -120 * absPos
-            scale = isActive ? 1 : Math.max(0.55, 0.75 - absPos * 0.1)
+            scale = isActive ? 1 : Math.max(0.55, large ? 0.6 - absPos * 0.08 : 0.75 - absPos * 0.1)
             opacity = absPos > 1 ? 0.4 : isActive ? 1 : 0.7
             zIndex = count - absPos
           }
