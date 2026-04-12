@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoftGrid AFOS — Vibration-Fault Deep Correlation Analysis</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+       color: #333; background: #f5f5f5; line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; background: white;
+             box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+header { background: linear-gradient(135deg, #094E65, #0E6584);
+         color: white; padding: 40px 48px 32px; }
+header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+header .subtitle { font-size: 15px; opacity: 0.9; margin-bottom: 4px; }
+header .meta { font-size: 12px; opacity: 0.7; }
+.content { padding: 32px 48px; }
+h2 { color: #0E6584; border-bottom: 2px solid #0E6584; padding-bottom: 8px;
+     margin: 32px 0 16px; font-size: 18px; }
+h3 { color: #094E65; margin: 20px 0 10px; font-size: 15px; }
+p, li { margin: 8px 0; font-size: 14px; }
+ul { padding-left: 24px; }
+table { border-collapse: collapse; font-size: 13px; margin: 12px 0; width: 100%; }
+th, td { padding: 8px 12px; border: 1px solid #D5E5EC; }
+th { background: #0E6584; color: white; text-align: left; }
+tr:nth-child(even) { background: #f8f9fa; }
+.insight-box { background: #F7FAFB; border-left: 4px solid #0E6584;
+               padding: 16px 20px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+.verdict-green { background: #E8F5E9; border-left: 4px solid #2E8B57;
+                 padding: 12px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+.verdict-amber { background: #FFF8E1; border-left: 4px solid #D4940A;
+                 padding: 12px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+.verdict-red { background: #FFEBEE; border-left: 4px solid #C0392B;
+               padding: 12px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+details { margin: 10px 0; font-size: 13px; }
+details summary { cursor: pointer; color: #0E6584; font-size: 13px; }
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+               gap: 12px; margin: 16px 0; }
+.metric-card { background: #F7FAFB; border: 1px solid #D5E5EC; border-radius: 8px;
+               padding: 16px; text-align: center; }
+.metric-card .value { font-size: 28px; font-weight: 700; color: #094E65; }
+.metric-card .label { font-size: 12px; color: #666; margin-top: 4px; }
+.exec-table { border-collapse: collapse; width: 100%; }
+.exec-table th { background: #094E65; }
+.exec-table .signal { font-weight: 600; }
+.traffic-green { color: #2E8B57; font-weight: bold; }
+.traffic-amber { color: #D4940A; font-weight: bold; }
+.traffic-red { color: #C0392B; font-weight: bold; }
+footer { background: #f8f9fa; border-top: 1px solid #D5E5EC; padding: 24px 48px;
+         text-align: center; font-size: 12px; color: #666; }
+@media print { .container { box-shadow: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>SoftGrid AFOS — Vibration-Fault Deep Correlation Analysis</h1>
+    <div class="subtitle">E0269 Site: Multi-Lift Paired Analysis — Raw Accelerometer vs Database Faults</div>
+    <div class="meta">Generated: 12 March 2026, 12:16 SGT | Data: S3 accelerometer (100 Hz) + MySQL (errors, faults, work orders)</div>
+</header>
+<div class="content">
+
+    <h2>1. Executive Summary</h2>
+    <div class="metric-grid">
+        <div class="metric-card">
+            <div class="value">12</div>
+            <div class="label">Lifts analyzed</div>
+        </div>
+        <div class="metric-card">
+            <div class="value">914</div>
+            <div class="label">Total trips processed</div>
+        </div>
+        <div class="metric-card">
+            <div class="value">2 / 20</div>
+            <div class="label">Significant features (corrected)</div>
+        </div>
+        <div class="metric-card">
+            <div class="value">0.503</div>
+            <div class="label">Classification AUC (LOGO-CV)</div>
+        </div>
+    </div>
+
+    <div class="insight-box">
+        <p><strong>Core finding:</strong> 2 out of 20 vibration features show
+        statistically significant differences between normal and pre-fault periods
+        (Bonferroni-corrected p &lt; 0.05). The vibration signal is present but limited in discriminative power with current sample sizes.</p>
+    </div>
+
+    <h3>Top 5 Discriminative Vibration Features</h3>
+    <table class="exec-table">
+        <tr><th>Feature</th><th>Change (Pre-fault vs Normal)</th><th>Effect Size</th><th>p (corrected)</th><th>Verdict</th></tr>
+        <tr>
+            <td class="signal">Vertical Vibration (peak-peak mg)</td>
+            <td>+3.3%</td>
+            <td>Small (δ=0.154)</td>
+            <td>0.0062</td>
+            <td class="traffic-amber">Moderate signal</td>
+        </tr><tr>
+            <td class="signal">Trip Duration (s)</td>
+            <td>-0.5%</td>
+            <td>Negligible (δ=0.139)</td>
+            <td>0.0275</td>
+            <td class="traffic-amber">Moderate signal</td>
+        </tr><tr>
+            <td class="signal">Crest Factor</td>
+            <td>+3.5%</td>
+            <td>Negligible (δ=0.129)</td>
+            <td>0.0731</td>
+            <td class="traffic-red">Weak/NS</td>
+        </tr><tr>
+            <td class="signal">Lateral X RMS (m/s²)</td>
+            <td>+8.6%</td>
+            <td>Negligible (δ=0.126)</td>
+            <td>0.0921</td>
+            <td class="traffic-red">Weak/NS</td>
+        </tr><tr>
+            <td class="signal">Peak Jerk (m/s³)</td>
+            <td>+27.7%</td>
+            <td>Negligible (δ=0.121)</td>
+            <td>0.1435</td>
+            <td class="traffic-red">Weak/NS</td>
+        </tr>
+    </table>
+    
+    <h2>2. Feature Landscape</h2>
+    <div class="insight-box">
+        <p>All 20 vibration features compared across three period types:
+        <strong>Normal</strong> (months with no faults, low error rate),
+        <strong>Pre-Fault</strong> (7 days before a recorded fault), and
+        <strong>During-Fault</strong> (7 days from fault event). Sorted by significance.</p>
+    </div>
+
+    <table>
+        <tr><th>Feature</th><th>Mean (Normal)</th><th>Mean (Pre-Fault)</th><th>Mean (During)</th>
+        <th>Change</th><th>p-value</th><th>p (corrected)</th><th>Effect Size</th></tr>
+        <tr class="verdict-green">
+            <td>Vertical Vibration (peak-peak mg)</td>
+            <td>142.5856</td>
+            <td>147.2368</td>
+            <td>100.2877</td>
+            <td>+3.3%</td>
+            <td>0.0001</td>
+            <td>0.0062</td>
+            <td>Small</td>
+        </tr><tr class="verdict-amber">
+            <td>Trip Duration (s)</td>
+            <td>-1401.5071</td>
+            <td>-1407.8415</td>
+            <td>35.5724</td>
+            <td>-0.5%</td>
+            <td>0.0005</td>
+            <td>0.0275</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Crest Factor</td>
+            <td>3.3452</td>
+            <td>3.4613</td>
+            <td>4.2385</td>
+            <td>+3.5%</td>
+            <td>0.0012</td>
+            <td>0.0731</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Lateral X RMS (m/s²)</td>
+            <td>0.0260</td>
+            <td>0.0282</td>
+            <td>0.0189</td>
+            <td>+8.6%</td>
+            <td>0.0015</td>
+            <td>0.0921</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Peak Jerk (m/s³)</td>
+            <td>11.9809</td>
+            <td>15.2990</td>
+            <td>9.3173</td>
+            <td>+27.7%</td>
+            <td>0.0024</td>
+            <td>0.1435</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Z Kurtosis</td>
+            <td>4.1006</td>
+            <td>4.0021</td>
+            <td>10.8949</td>
+            <td>-2.4%</td>
+            <td>0.0066</td>
+            <td>0.3961</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Spectral Entropy</td>
+            <td>2.3508</td>
+            <td>2.5378</td>
+            <td>3.2708</td>
+            <td>+8.0%</td>
+            <td>0.0075</td>
+            <td>0.4490</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Lateral Magnitude RMS (m/s²)</td>
+            <td>0.0343</td>
+            <td>0.0366</td>
+            <td>0.0256</td>
+            <td>+6.7%</td>
+            <td>0.0088</td>
+            <td>0.5275</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Spectral Centroid (Hz)</td>
+            <td>4.3468</td>
+            <td>5.6097</td>
+            <td>9.3914</td>
+            <td>+29.1%</td>
+            <td>0.0134</td>
+            <td>0.8048</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>PSD 10–30 Hz (motor/gearbox)</td>
+            <td>0.0004</td>
+            <td>0.0005</td>
+            <td>0.0002</td>
+            <td>+34.7%</td>
+            <td>0.0135</td>
+            <td>0.8073</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Dominant Frequency (Hz)</td>
+            <td>0.3909</td>
+            <td>0.4038</td>
+            <td>6.6206</td>
+            <td>+3.3%</td>
+            <td>0.0152</td>
+            <td>0.9111</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Jerk RMS (m/s³)</td>
+            <td>2.0228</td>
+            <td>2.3756</td>
+            <td>1.4209</td>
+            <td>+17.4%</td>
+            <td>0.0165</td>
+            <td>0.9882</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Vertical RMS (m/s²)</td>
+            <td>0.2632</td>
+            <td>0.2544</td>
+            <td>0.1602</td>
+            <td>-3.3%</td>
+            <td>0.0322</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Lateral Y RMS (m/s²)</td>
+            <td>0.0221</td>
+            <td>0.0230</td>
+            <td>0.0166</td>
+            <td>+4.0%</td>
+            <td>0.0349</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>PSD 0–2 Hz (ride motion)</td>
+            <td>0.0113</td>
+            <td>0.0102</td>
+            <td>0.0048</td>
+            <td>-9.5%</td>
+            <td>0.0387</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>PSD 2–10 Hz (guide rail)</td>
+            <td>0.0004</td>
+            <td>0.0005</td>
+            <td>0.0003</td>
+            <td>+14.4%</td>
+            <td>0.0405</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Max Velocity (m/s)</td>
+            <td>1.5987</td>
+            <td>1.6389</td>
+            <td>1.3861</td>
+            <td>+2.5%</td>
+            <td>0.5873</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Z Skewness</td>
+            <td>-0.0147</td>
+            <td>0.0061</td>
+            <td>-0.2326</td>
+            <td>+141.6%</td>
+            <td>0.7074</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>PSD 30–50 Hz (brake/sheave)</td>
+            <td>0.0006</td>
+            <td>0.0009</td>
+            <td>0.0002</td>
+            <td>+44.6%</td>
+            <td>0.7432</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr><tr class="">
+            <td>Accel/Decel Asymmetry</td>
+            <td>1.0501</td>
+            <td>0.9894</td>
+            <td>1.0467</td>
+            <td>-5.8%</td>
+            <td>0.7980</td>
+            <td>1.0000</td>
+            <td>Negligible</td>
+        </tr>
+    </table>
+
+    <h3>Top 5 Features — Distribution Comparison</h3>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+<div id="chart_box_0" style="width:19%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_box_0');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Vertical Vibration (peak-peak mg)", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During Fault"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[119.5668, 143.005, 155.517, 158.6305, 182.0687], [131.0425, 149.17, 157.227, 161.255, 179.3825], [5.005, 49.8045, 98.755, 159.057, 172.607]], "itemStyle": {"borderWidth": 2}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_box_1" style="width:19%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_box_1');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Trip Duration (s)", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During Fault"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[-2.9318, 16.1321, 23.7547, 28.8413, 47.9051], [-3.3629, 17.8369, 25.1668, 31.9701, 53.1699], [17.1396, 27.6831, 33.6629, 37.7766, 52.9169]], "itemStyle": {"borderWidth": 2}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_box_2" style="width:19%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_box_2');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Crest Factor", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During Fault"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[1.9308, 2.3159, 2.7563, 3.6835, 5.7349], [1.9542, 2.5435, 2.9843, 3.8372, 5.7777], [2.4195, 2.8945, 3.3843, 4.2947, 6.3949]], "itemStyle": {"borderWidth": 2}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_box_3" style="width:19%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_box_3');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Lateral X RMS (m/s\u00b2)", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During Fault"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[0.0089, 0.0186, 0.0251, 0.0328, 0.0541], [0.0075, 0.0195, 0.0278, 0.0359, 0.0606], [0.0044, 0.0105, 0.0196, 0.0261, 0.0411]], "itemStyle": {"borderWidth": 2}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_box_4" style="width:19%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_box_4');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Peak Jerk (m/s\u00b3)", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During Fault"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[3.891, 6.5267, 8.9887, 12.5024, 21.4659], [2.0356, 6.7034, 10.1266, 15.2024, 27.9508], [1.3812, 5.5173, 9.4443, 11.7972, 21.2171]], "itemStyle": {"borderWidth": 2}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+</div>
+
+    <details><summary><strong>Technical Detail</strong></summary>
+    <p>Non-parametric tests used throughout: Kruskal-Wallis for 3-group, Mann-Whitney U for pairwise.
+    Effect size: Cliff's delta (|δ| &lt; 0.147 = negligible, &lt; 0.33 = small, &lt; 0.474 = medium, else large).
+    Multiple comparison correction: Bonferroni (p × 60).
+    </p></details>
+    
+    <h2>3. E0269L07 Longitudinal Deep Dive</h2>
+    <div class="insight-box">
+        <p>Monthly vibration features sampled from S3 accelerometer data, overlaid with database error counts.
+        Red dashed lines mark months with recorded faults.</p>
+    </div>
+
+    
+<div id="chart_l07_trend" style="width:100%;height:420px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_l07_trend');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "E0269L07: Monthly Vibration Trend vs Error Count", "textStyle": {"fontSize": 14}}, "tooltip": {"trigger": "axis"}, "legend": {"data": ["Vertical Vibration (mg)", "Jerk RMS (m/s\u00b3)", "Error Count"], "bottom": 0}, "xAxis": {"type": "category", "data": ["2023-09", "2023-11", "2024-01", "2024-03", "2024-05", "2024-07", "2024-09", "2024-11", "2025-01", "2025-03", "2025-05", "2025-07", "2025-09", "2025-11"], "axisLabel": {"rotate": 45}}, "yAxis": [{"type": "value", "name": "Vibration", "position": "left"}, {"type": "value", "name": "Error Count", "position": "right"}], "series": [{"name": "Vertical Vibration (mg)", "type": "line", "data": [152.52, 152.61, 153.52, 152.59, 154.74, 151.78, 152.83, 155.03, 153.74, 158.96, 21.48, 155.3, 158.94, 154.52], "yAxisIndex": 0, "lineStyle": {"color": "#0E6584", "width": 2}, "itemStyle": {"color": "#0E6584"}, "symbol": "circle", "symbolSize": 6, "markLine": {"symbol": "none", "data": [{"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-03", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-05", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-05", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-07", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-09", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-09", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-09", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-09", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-09", "lineStyle": {"color": "#C0392B", "type": "dashed"}}, {"xAxis": "2025-11", "lineStyle": {"color": "#C0392B", "type": "dashed"}}], "silent": true}}, {"name": "Jerk RMS (m/s\u00b3)", "type": "line", "data": [8.161, 9.687, 9.215, 1.17, 1.257, 1.129, 1.147, 1.206, 1.141, 1.39, 0.369, 1.146, 1.18, 1.129], "yAxisIndex": 0, "lineStyle": {"color": "#7B2D8E", "width": 2}, "itemStyle": {"color": "#7B2D8E"}, "symbol": "diamond", "symbolSize": 6}, {"name": "Error Count", "type": "bar", "data": [0, 0, 0, 243, 245, 33, 52, 21, 1, 14, 2, 17, 4, 3], "yAxisIndex": 1, "itemStyle": {"color": "#C0392B", "opacity": 0.3}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+
+    <div class="verdict-amber">
+        <strong>Correlation:</strong> <br>Spearman ρ (z_pp_mg vs error count) = 0.179 (p = 0.5408)<br>Spearman ρ (jerk_rms vs error count) = -0.283 (p = 0.3271)
+    </div>
+
+    <details><summary><strong>Technical Detail</strong></summary>
+    <p>Sampled 66 trips across 14 months. 3-5 trips per sampled date.
+    Vibration features averaged per month. Spearman rank correlation used (non-parametric).</p>
+    </details>
+    
+    <h2>4. Fleet-Level Patterns</h2>
+    <div class="insight-box">
+        <p>Average vibration features per lift correlated with total fault count.
+        Spearman rank correlation used (robust to outliers).</p>
+    </div>
+
+    <h3>4a. Vibration Feature vs Fault Count Correlation</h3>
+    <table>
+        <tr><th>Feature</th><th>Spearman ρ</th><th>p-value</th><th>n</th></tr>
+        <tr class="">
+            <td>Jerk RMS (m/s³)</td>
+            <td>0.545</td>
+            <td>0.0670</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Peak Jerk (m/s³)</td>
+            <td>0.545</td>
+            <td>0.0670</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>PSD 10–30 Hz (motor/gearbox)</td>
+            <td>0.499</td>
+            <td>0.0985</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Max Velocity (m/s)</td>
+            <td>0.418</td>
+            <td>0.1760</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Lateral Y RMS (m/s²)</td>
+            <td>0.394</td>
+            <td>0.2055</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Lateral Magnitude RMS (m/s²)</td>
+            <td>0.390</td>
+            <td>0.2099</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Accel/Decel Asymmetry</td>
+            <td>0.380</td>
+            <td>0.2236</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>PSD 2–10 Hz (guide rail)</td>
+            <td>0.341</td>
+            <td>0.2781</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Trip Duration (s)</td>
+            <td>-0.302</td>
+            <td>0.3396</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Lateral X RMS (m/s²)</td>
+            <td>0.271</td>
+            <td>0.3949</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>PSD 0–2 Hz (ride motion)</td>
+            <td>-0.193</td>
+            <td>0.5472</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Spectral Centroid (Hz)</td>
+            <td>0.172</td>
+            <td>0.5925</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Dominant Frequency (Hz)</td>
+            <td>0.165</td>
+            <td>0.6079</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Spectral Entropy</td>
+            <td>0.162</td>
+            <td>0.6156</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Z Kurtosis</td>
+            <td>0.116</td>
+            <td>0.7196</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Vertical RMS (m/s²)</td>
+            <td>0.109</td>
+            <td>0.7360</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>PSD 30–50 Hz (brake/sheave)</td>
+            <td>0.070</td>
+            <td>0.8281</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Z Skewness</td>
+            <td>-0.025</td>
+            <td>0.9395</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Crest Factor</td>
+            <td>-0.011</td>
+            <td>0.9741</td>
+            <td>12</td>
+        </tr><tr class="">
+            <td>Vertical Vibration (peak-peak mg)</td>
+            <td>-0.011</td>
+            <td>0.9741</td>
+            <td>12</td>
+        </tr>
+    </table>
+
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+<div id="chart_crosslift_0" style="width:32%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_crosslift_0');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Jerk RMS (m/s\u00b3) vs Faults (\u03c1=0.545)", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "value", "name": "Jerk RMS (m/s\u00b3)"}, "yAxis": {"type": "value", "name": "Fault Count"}, "series": [{"type": "scatter", "data": [[1.088, 95], [1.442, 124], [3.099, 101], [1.168, 78], [1.551, 112], [1.152, 93], [2.505, 131], [1.398, 101], [2.766, 96], [2.202, 96], [3.775, 122], [2.429, 124]], "symbolSize": 10, "itemStyle": {"color": "#0E6584", "opacity": 0.7}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_crosslift_1" style="width:32%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_crosslift_1');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Peak Jerk (m/s\u00b3) vs Faults (\u03c1=0.545)", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "value", "name": "Peak Jerk (m/s\u00b3)"}, "yAxis": {"type": "value", "name": "Fault Count"}, "series": [{"type": "scatter", "data": [[6.234, 95], [8.904, 124], [44.124, 101], [6.366, 78], [7.608, 112], [6.239, 93], [13.099, 131], [6.669, 101], [13.564, 96], [11.163, 96], [19.926, 122], [12.281, 124]], "symbolSize": 10, "itemStyle": {"color": "#0E6584", "opacity": 0.7}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_crosslift_2" style="width:32%;height:300px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_crosslift_2');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "PSD 10\u201330 Hz (motor/gearbox) vs Faults (\u03c1=0.499)", "textStyle": {"fontSize": 12}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "value", "name": "PSD 10\u201330 Hz (motor/"}, "yAxis": {"type": "value", "name": "Fault Count"}, "series": [{"type": "scatter", "data": [[0.0, 95], [0.0, 124], [0.001, 101], [0.0, 78], [0.0, 112], [0.0, 93], [0.001, 131], [0.0, 101], [0.001, 96], [0.0, 96], [0.001, 122], [0.001, 124]], "symbolSize": 10, "itemStyle": {"color": "#0E6584", "opacity": 0.7}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+</div>
+
+    <h3>4b. Single-Feature Classification Power (ROC-AUC)</h3>
+    <p>How well does each vibration feature alone distinguish high-fault from low-fault lifts?</p>
+    <table>
+        <tr><th>Feature</th><th>AUC</th></tr>
+        <tr class="verdict-green"><td>PSD 0–2 Hz (ride motion)</td><td>0.800</td></tr><tr class="verdict-green"><td>Spectral Entropy</td><td>0.714</td></tr><tr class="verdict-green"><td>Accel/Decel Asymmetry</td><td>0.714</td></tr><tr class="verdict-green"><td>Jerk RMS (m/s³)</td><td>0.714</td></tr><tr class="verdict-amber"><td>Vertical Vibration (peak-peak mg)</td><td>0.686</td></tr><tr class="verdict-amber"><td>Z Kurtosis</td><td>0.686</td></tr><tr class="verdict-amber"><td>Vertical RMS (m/s²)</td><td>0.686</td></tr><tr class="verdict-amber"><td>Spectral Centroid (Hz)</td><td>0.686</td></tr><tr class="verdict-amber"><td>Peak Jerk (m/s³)</td><td>0.686</td></tr><tr class="verdict-amber"><td>PSD 10–30 Hz (motor/gearbox)</td><td>0.657</td></tr>
+    </table>
+    
+    <h2>5. ML Classification Results</h2>
+    <div class="insight-box">
+        <p><strong>Task:</strong> Predict whether a trip is from a "pre-fault" period (7 days before fault)
+        vs a "normal" period, using only vibration features.<br>
+        <strong>Method:</strong> Gradient Boosting with Leave-One-Lift-Out cross-validation
+        (train on all lifts except one, predict on held-out lift).<br>
+        <strong>Dataset:</strong> 844 trips (421 pre-fault, 423 normal).</p>
+    </div>
+
+    <div class="verdict-red">
+        <strong>AUC = 0.503</strong> — Limited predictive power at the trip level with current data.
+    </div>
+
+    <table>
+        <tr><th>Metric</th><th>Pre-Fault Class</th></tr>
+        <tr><td>Precision</td><td>0.516</td></tr>
+        <tr><td>Recall</td><td>0.392</td></tr>
+        <tr><td>F1</td><td>0.445</td></tr>
+    </table>
+
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+<div id="chart_ml_roc" style="width:48%;height:380px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_ml_roc');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "ROC Curve \u2014 LOGO-CV (AUC = 0.503)", "textStyle": {"fontSize": 14}}, "tooltip": {"trigger": "item"}, "xAxis": {"type": "value", "name": "False Positive Rate", "min": 0, "max": 1}, "yAxis": {"type": "value", "name": "True Positive Rate", "min": 0, "max": 1}, "series": [{"type": "line", "data": [[0.0, 0.0], [0.0142, 0.0], [0.0165, 0.0024], [0.0402, 0.0095], [0.0426, 0.0119], [0.0544, 0.0214], [0.0615, 0.0238], [0.0638, 0.0309], [0.0638, 0.038], [0.0662, 0.0404], [0.0757, 0.0451], [0.0757, 0.0523], [0.0827, 0.057], [0.0851, 0.0594], [0.0875, 0.0618], [0.0969, 0.0665], [0.0993, 0.0736], [0.104, 0.0808], [0.1158, 0.0855], [0.1182, 0.095], [0.1206, 0.0974], [0.1253, 0.0998], [0.1348, 0.1021], [0.1442, 0.1045], [0.1489, 0.1093], [0.1513, 0.1116], [0.156, 0.1164], [0.1631, 0.1188], [0.1631, 0.133], [0.1655, 0.1354], [0.1726, 0.1401], [0.1749, 0.1425], [0.182, 0.1473], [0.1844, 0.1544], [0.1868, 0.1568], [0.1868, 0.1639], [0.1891, 0.1663], [0.1939, 0.1686], [0.1962, 0.171], [0.1986, 0.1734], [0.2033, 0.1781], [0.2057, 0.1805], [0.208, 0.19], [0.2104, 0.1948], [0.2128, 0.1971], [0.2199, 0.1995], [0.2246, 0.2043], [0.227, 0.2067], [0.2293, 0.2114], [0.2293, 0.228], [0.2388, 0.2328], [0.2435, 0.2375], [0.2482, 0.2399], [0.2506, 0.2447], [0.253, 0.2494], [0.2553, 0.2518], [0.2624, 0.2589], [0.2719, 0.2613], [0.2766, 0.2637], [0.279, 0.2732], [0.279, 0.2827], [0.2813, 0.285], [0.2837, 0.2898], [0.2979, 0.2993], [0.3002, 0.3064], [0.3026, 0.3112], [0.3097, 0.3135], [0.3144, 0.3159], [0.3168, 0.3183], [0.3191, 0.323], [0.3239, 0.3254], [0.3239, 0.3373], [0.3239, 0.3515], [0.3404, 0.3539], [0.3404, 0.3705], [0.3452, 0.3753], [0.3522, 0.3777], [0.3593, 0.38], [0.3664, 0.3848], [0.3664, 0.3967], [0.3688, 0.399], [0.3759, 0.4014], [0.3759, 0.4086], [0.3901, 0.4109], [0.3948, 0.4157], [0.3972, 0.4204], [0.3995, 0.4276], [0.4019, 0.4323], [0.4043, 0.4347], [0.4066, 0.4371], [0.4113, 0.4418], [0.4137, 0.4466], [0.4184, 0.4489], [0.4232, 0.4513], [0.4303, 0.4561], [0.435, 0.4608], [0.4374, 0.4632], [0.4397, 0.4656], [0.4421, 0.4679], [0.4515, 0.4703], [0.461, 0.4798], [0.4704, 0.4846], [0.4728, 0.4917], [0.4775, 0.4941], [0.487, 0.4988], [0.4965, 0.5059], [0.5012, 0.5083], [0.5083, 0.5154], [0.5083, 0.5226], [0.5248, 0.5226], [0.5272, 0.5249], [0.5343, 0.5297], [0.5343, 0.5392], [0.5366, 0.5416], [0.539, 0.5463], [0.5437, 0.5487], [0.5461, 0.5534], [0.5532, 0.5558], [0.5556, 0.5582], [0.5626, 0.5606], [0.5721, 0.5629], [0.5768, 0.5677], [0.5839, 0.5701], [0.5863, 0.5772], [0.5887, 0.5819], [0.5934, 0.5843], [0.5957, 0.5891], [0.5957, 0.5962], [0.6005, 0.5986], [0.6076, 0.6057], [0.6099, 0.6105], [0.6099, 0.6176], [0.6123, 0.62], [0.6147, 0.6223], [0.6217, 0.6247], [0.6241, 0.6295], [0.6288, 0.6318], [0.6312, 0.6342], [0.6336, 0.639], [0.6359, 0.6413], [0.6383, 0.658], [0.6407, 0.6627], [0.6407, 0.6722], [0.6501, 0.6817], [0.6501, 0.6912], [0.6596, 0.6936], [0.6667, 0.696], [0.669, 0.6983], [0.6714, 0.7007], [0.6761, 0.7031], [0.6809, 0.7126], [0.6856, 0.7173], [0.6927, 0.7197], [0.7021, 0.7197], [0.7069, 0.7221], [0.7092, 0.7245], [0.7139, 0.7268], [0.7187, 0.7316], [0.721, 0.734], [0.7258, 0.7387], [0.7329, 0.7435], [0.7329, 0.7506], [0.7352, 0.753], [0.7376, 0.7577], [0.7423, 0.7601], [0.7447, 0.7648], [0.7494, 0.7672], [0.7518, 0.7743], [0.7541, 0.7815], [0.7565, 0.7838], [0.7636, 0.791], [0.7707, 0.7933], [0.773, 0.7981], [0.7801, 0.8005], [0.7825, 0.8052], [0.7849, 0.81], [0.7896, 0.8124], [0.7943, 0.8171], [0.8014, 0.8195], [0.8038, 0.8242], [0.8061, 0.8266], [0.8085, 0.8314], [0.8109, 0.8337], [0.8156, 0.8361], [0.8203, 0.8385], [0.8227, 0.8409], [0.8298, 0.8432], [0.8298, 0.8527], [0.8322, 0.8575], [0.8392, 0.8622], [0.844, 0.8646], [0.8511, 0.867], [0.8558, 0.8694], [0.8582, 0.8717], [0.8605, 0.8741], [0.87, 0.8765], [0.8889, 0.8812], [0.8913, 0.8836], [0.896, 0.8907], [0.8983, 0.8955], [0.8983, 0.9026], [0.9031, 0.9074], [0.9054, 0.9121], [0.9078, 0.9145], [0.9102, 0.9169], [0.9125, 0.9192], [0.9196, 0.9216], [0.9243, 0.924], [0.9338, 0.9264], [0.9385, 0.9287], [0.9409, 0.9335], [0.9433, 0.9359], [0.9456, 0.943], [0.9527, 0.9477], [0.9551, 0.9501], [0.9574, 0.9549], [0.9645, 0.9596], [0.9669, 0.9667], [0.9716, 0.9691], [0.974, 0.9786], [0.9764, 0.9834], [0.9787, 0.9857], [0.9811, 0.9881], [0.9882, 0.9929], [0.9953, 1.0]], "showSymbol": false, "lineStyle": {"color": "#0E6584", "width": 2}}, {"type": "line", "data": [[0, 0], [1, 1]], "showSymbol": false, "lineStyle": {"color": "#999", "type": "dashed"}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_ml_imp" style="width:48%;height:380px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_ml_imp');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Feature Importance (Top 10)", "textStyle": {"fontSize": 14}}, "tooltip": {"trigger": "axis"}, "grid": {"left": "35%"}, "xAxis": {"type": "value", "name": "Importance"}, "yAxis": {"type": "category", "data": ["PSD 2\u201310 Hz (guide rail)", "Vertical RMS (m/s\u00b2)", "Z Kurtosis", "Jerk RMS (m/s\u00b3)", "Vertical Vibration (peak-", "Lateral Y RMS (m/s\u00b2)", "PSD 30\u201350 Hz (brake/sheav", "Trip Duration (s)", "Dominant Frequency (Hz)", "Max Velocity (m/s)"], "axisLabel": {"fontSize": 10}}, "series": [{"type": "bar", "data": [0.0507, 0.0519, 0.0549, 0.0581, 0.0584, 0.0606, 0.0653, 0.0659, 0.0774, 0.0829], "itemStyle": {"color": "#0E6584"}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+</div>
+
+    <details><summary><strong>Technical Detail</strong></summary>
+    <p>Model: GradientBoostingClassifier (n_estimators=100, max_depth=3, subsample=0.8).
+    CV: Leave-One-Group-Out by lift_id (prevents data leakage — no lift appears in both train and test).
+    Features: 20 vibration features per trip.</p>
+    </details>
+    
+    <h2>6. Frequency Domain Insights</h2>
+    <div class="insight-box">
+        <p>Frequency analysis reveals which mechanical components may be degrading.
+        Different frequency bands correspond to different lift subsystems:</p>
+        <ul style="font-size:13px;">
+            <li><strong>0–2 Hz:</strong> Normal ride motion (acceleration/deceleration)</li>
+            <li><strong>2–10 Hz:</strong> Guide rail irregularities, roller wear</li>
+            <li><strong>10–30 Hz:</strong> Motor, gearbox, drive system</li>
+            <li><strong>30–50 Hz:</strong> Brake, sheave, high-frequency mechanical</li>
+        </ul>
+    </div>
+
+    
+<div id="chart_psd_comparison" style="width:100%;height:380px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_psd_comparison');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "PSD Band Power by Period Type", "textStyle": {"fontSize": 14}}, "tooltip": {"trigger": "axis"}, "legend": {"data": ["Normal", "Pre-Fault", "During Fault"], "bottom": 0}, "xAxis": {"type": "category", "data": ["0\u20132 Hz (Ride)", "2\u201310 Hz (Guide)", "10\u201330 Hz (Motor)", "30\u201350 Hz (Brake)"]}, "yAxis": {"type": "value", "name": "Band Power"}, "series": [{"name": "Normal", "type": "bar", "data": [0.011279, 0.000394, 0.000378, 0.000639], "itemStyle": {"color": "#2E8B57"}}, {"name": "Pre-Fault", "type": "bar", "data": [0.010204, 0.00045, 0.00051, 0.000924], "itemStyle": {"color": "#D4940A"}}, {"name": "During Fault", "type": "bar", "data": [0.004798, 0.000298, 0.00022, 0.00021], "itemStyle": {"color": "#C0392B"}}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+
+    <h3>Spectral Shape Features</h3>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+<div id="chart_spec_0" style="width:32%;height:280px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_spec_0');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Dominant Frequency (Hz)", "textStyle": {"fontSize": 12}}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[0.3899, 0.3905, 0.3908, 0.3914, 0.392], [0.3897, 0.3905, 0.3908, 0.3912, 0.3923], [0.3899, 0.3903, 0.3907, 0.6837, 1.1237]]}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_spec_1" style="width:32%;height:280px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_spec_1');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Spectral Entropy", "textStyle": {"fontSize": 12}}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[1.1825, 1.5983, 2.3383, 2.8472, 4.7207], [1.1519, 1.7261, 2.4598, 3.0449, 5.023], [1.4287, 1.9749, 2.8711, 4.3562, 6.8177]]}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+
+<div id="chart_spec_2" style="width:32%;height:280px;margin:12px auto;"></div>
+<script>
+(function() {
+    var el = document.getElementById('chart_spec_2');
+    var chart = echarts.init(el);
+    var option = {"title": {"text": "Spectral Centroid (Hz)", "textStyle": {"fontSize": 12}}, "xAxis": {"type": "category", "data": ["Normal", "Pre-Fault", "During"]}, "yAxis": {"type": "value"}, "series": [{"type": "boxplot", "data": [[0.4916, 1.0173, 3.0569, 6.0265, 13.5403], [0.4992, 1.1655, 4.0118, 6.8013, 15.2549], [0.6847, 1.9678, 5.0145, 12.672, 28.7282]]}]};
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+    if (!window.__echartsInstances) window.__echartsInstances = [];
+    window.__echartsInstances.push(chart);
+})();
+</script>
+</div>
+    
+    <h2>7. Honest Assessment</h2>
+
+    <h3>What Vibration Tells Us That the Database Doesn't</h3>
+    <ul>
+        <li><strong>Direct physical measurement:</strong> Vibration is what the lift actually experiences,
+            not what the controller interprets. It can detect mechanical degradation before error codes trigger.</li>
+        <li><strong>Frequency decomposition:</strong> Different frequency bands map to specific components
+            (guide rails, motor, brakes), enabling targeted maintenance.</li>
+        <li><strong>Continuous monitoring:</strong> Every trip produces a vibration signature, vs sparse
+            error/fault events in the database.</li>
+    </ul>
+
+    <h3>What Vibration CANNOT Tell Us</h3>
+    <ul>
+        <li><strong>Electrical faults:</strong> Wiring, controller, or sensor issues may not manifest in vibration.</li>
+        <li><strong>Intermittent issues:</strong> A fault that occurs once every 1000 trips may not be captured
+            in a 10-trip sample.</li>
+        <li><strong>Causation:</strong> Elevated vibration before a fault is correlation, not proof of causation.
+            Both may share a common upstream cause.</li>
+    </ul>
+
+    <h3>Limitations of This Analysis</h3>
+    <ul>
+        <li><strong>Sample size:</strong> 12 lifts, 914 trips. Statistical power is limited
+            for detecting small effects.</li>
+        <li><strong>Period selection:</strong> "Normal" vs "pre-fault" is defined by database events.
+            If the database doesn't capture all faults, period labels may be noisy.</li>
+        <li><strong>S3 sampling:</strong> We sample 10-20 trips per period, not all trips.
+            Anomalous trips may be missed.</li>
+        <li><strong>Single site:</strong> Results are from E0269 only. Generalization to other sites/OEMs unknown.</li>
+        <li><strong>Door faults dominate:</strong> E0269's faults are primarily door-related.
+            Vibration may be more predictive for mechanical (non-door) faults, but we lack sufficient non-door fault data.</li>
+    </ul>
+
+    <h3>Required Data Volume for Production</h3>
+    <ul>
+        <li>Minimum: Daily vibration feature extraction (5 trips/day) per lift</li>
+        <li>Baseline period: 2+ months of normal operation to establish per-lift baseline</li>
+        <li>Recommended: 50+ lifts with 6+ months of continuous vibration + fault data for robust modeling</li>
+    </ul>
+    
+    <h2>8. Technical Appendix</h2>
+
+    <h3>Statistical Tests</h3>
+    <table>
+        <tr><th>Test</th><th>Purpose</th><th>Correction</th></tr>
+        <tr><td>Kruskal-Wallis H</td><td>3-group comparison (Normal/Pre-Fault/During)</td><td>Bonferroni × 20</td></tr>
+        <tr><td>Mann-Whitney U</td><td>Pairwise comparison</td><td>Bonferroni × 60</td></tr>
+        <tr><td>Cliff's delta</td><td>Non-parametric effect size</td><td>N/A</td></tr>
+        <tr><td>Spearman correlation</td><td>Feature vs fault count</td><td>N/A</td></tr>
+        <tr><td>ROC-AUC</td><td>Single-feature classification</td><td>N/A</td></tr>
+        <tr><td>LOGO-CV</td><td>Cross-validated ML classification</td><td>Leave-One-Lift-Out</td></tr>
+    </table>
+
+    <h3>Sample Sizes per Lift</h3>
+    <table>
+        <tr><th>Lift</th><th>Faults</th><th>Normal Trips</th><th>Pre-Fault Trips</th><th>During-Fault Trips</th></tr>
+        <tr>
+            <td>E0269L13</td><td>131</td>
+            <td>466</td><td>675</td>
+            <td>65</td>
+        </tr><tr>
+            <td>E0269L31</td><td>124</td>
+            <td>675</td><td>675</td>
+            <td>164</td>
+        </tr><tr>
+            <td>E0269L04</td><td>124</td>
+            <td>225</td><td>0</td>
+            <td>50</td>
+        </tr><tr>
+            <td>E0269L30</td><td>122</td>
+            <td>450</td><td>646</td>
+            <td>0</td>
+        </tr><tr>
+            <td>E0269L11</td><td>112</td>
+            <td>675</td><td>675</td>
+            <td>50</td>
+        </tr><tr>
+            <td>E0269L18</td><td>101</td>
+            <td>675</td><td>370</td>
+            <td>0</td>
+        </tr><tr>
+            <td>E0269L05</td><td>101</td>
+            <td>450</td><td>675</td>
+            <td>0</td>
+        </tr><tr>
+            <td>E0269L27</td><td>96</td>
+            <td>675</td><td>646</td>
+            <td>8</td>
+        </tr><tr>
+            <td>E0269L24</td><td>96</td>
+            <td>675</td><td>466</td>
+            <td>29</td>
+        </tr><tr>
+            <td>E0269L01</td><td>95</td>
+            <td>225</td><td>0</td>
+            <td>20</td>
+        </tr><tr>
+            <td>E0269L12</td><td>93</td>
+            <td>646</td><td>594</td>
+            <td>1</td>
+        </tr><tr>
+            <td>E0269L07</td><td>78</td>
+            <td>450</td><td>675</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+    <h3>Feature Extraction</h3>
+    <p>All features extracted from raw 3-axis accelerometer data at ~100 Hz.
+    Time-domain: 13 features (RMS, peak-peak, jerk, kurtosis, etc.).
+    Frequency-domain: 7 features (Welch PSD band powers, spectral entropy/centroid).
+    Code: <code>scripts/vibration_fault_correlation.py</code></p>
+    
+</div>
+<footer>
+    Powered by <strong>SoftGrid AFOS</strong> — AI-driven Facility Operating System<br>
+    <span style="font-size:11px;color:#aaa;">Data: S3 (lbb-simtech-raw) + RMS MySQL | Analysis: scipy, scikit-learn | Charts: ECharts</span>
+</footer>
+</div>
+<script>
+window.addEventListener('resize', function() {
+    if (window.__echartsInstances) {
+        window.__echartsInstances.forEach(function(c) { if (c && !c.isDisposed()) c.resize(); });
+    }
+});
+</script>
+</body>
+</html>

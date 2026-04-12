@@ -310,47 +310,11 @@ export default function CortexPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [AI PREDICTION VISUALIZATION]
-              <br />
-              <br />
-              Anomaly detection chart
-            </div>
-          </div>
+          <BrowserFrame
+            src="/images/products/Cortex/analytics-dashboard.png"
+            alt="AFOS Cortex — AI Predictive Analytics dashboard"
+            url="analytics.softgridsensing.com"
+          />
         </div>
       </section>
 

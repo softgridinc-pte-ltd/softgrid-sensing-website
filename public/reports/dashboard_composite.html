@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFOS Cortex — Predictive Analytics Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0A1628;
+  color: #B0BEC9;
+  overflow: hidden;
+  width: 1440px;
+  height: 1080px;
+}
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 18px 22px 14px;
+  gap: 12px;
+}
+.dash-header { display: flex; align-items: center; justify-content: space-between; }
+.dash-brand { display: flex; align-items: center; gap: 10px; }
+.dash-brand .logo { width: 28px; height: 28px; background: linear-gradient(135deg, #1F99C5, #6CBBD9); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.dash-brand .logo svg { width: 16px; height: 16px; }
+.dash-brand h1 { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+.dash-brand h1 span { color: #6CBBD9; font-weight: 400; margin-left: 6px; }
+.dash-nav { display: flex; gap: 4px; }
+.dash-nav .tab { padding: 5px 14px; font-size: 11px; font-weight: 600; color: #64748B; border-radius: 6px; }
+.dash-nav .tab.active { background: rgba(31,153,197,0.15); color: #6CBBD9; }
+.dash-meta { font-size: 10px; color: #475569; display: flex; align-items: center; gap: 12px; }
+.dash-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: #22C55E; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.kpi-card { background: linear-gradient(135deg, #111D35, #162544); border: 1px solid rgba(31,153,197,0.12); border-radius: 10px; padding: 12px 14px; }
+.kpi-card .label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #64748B; margin-bottom: 4px; }
+.kpi-card .value { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -1px; }
+.kpi-card .value.teal { color: #6CBBD9; }
+.kpi-card .value.green { color: #22C55E; }
+.kpi-card .value.amber { color: #F59E0B; }
+.kpi-card .value.red { color: #EF4444; }
+.kpi-card .change { font-size: 9px; margin-top: 3px; color: #64748B; }
+
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  min-height: 0;
+}
+.panel {
+  background: linear-gradient(135deg, #111D35, #162544);
+  border: 1px solid rgba(31,153,197,0.10);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.panel .ph { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; flex-shrink: 0; }
+.panel .pt { font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
+.panel .pb { font-size: 9px; padding: 3px 8px; background: rgba(31,153,197,0.15); color: #6CBBD9; border-radius: 4px; font-weight: 600; }
+.panel .pb.warn { background: rgba(245,158,11,0.15); color: #F59E0B; }
+.panel .pb.danger { background: rgba(239,68,68,0.15); color: #EF4444; }
+.panel-chart { flex: 1; min-height: 0; }
+
+/* Data table */
+.data-tbl { width: 100%; border-collapse: collapse; font-size: 10px; }
+.data-tbl th { text-align: left; padding: 6px 8px; color: #475569; font-weight: 600; font-size: 8px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid rgba(31,153,197,0.15); }
+.data-tbl td { padding: 5px 8px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #B0BEC9; font-size: 10px; }
+.data-tbl tr:hover { background: rgba(31,153,197,0.04); }
+.data-tbl .mono { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 9px; color: #64748B; }
+.risk-pill { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 8px; font-weight: 700; }
+.risk-pill.critical { background: rgba(239,68,68,0.15); color: #EF4444; }
+.risk-pill.warning { background: rgba(245,158,11,0.15); color: #F59E0B; }
+.risk-pill.moderate { background: rgba(108,187,217,0.15); color: #6CBBD9; }
+.risk-pill.low { background: rgba(34,197,94,0.12); color: #22C55E; }
+.trend-down { color: #EF4444; } .trend-up { color: #22C55E; } .trend-flat { color: #64748B; }
+
+/* Signal table */
+.signal-tbl { width: 100%; border-collapse: collapse; font-size: 10px; }
+.signal-tbl th { text-align: left; padding: 5px 6px; color: #475569; font-weight: 600; font-size: 8px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid rgba(31,153,197,0.1); }
+.signal-tbl td { padding: 5px 6px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #B0BEC9; }
+.sd { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.sd.g { background: #22C55E; } .sd.a { background: #F59E0B; } .sd.r { background: #EF4444; }
+.vd { font-weight: 600; font-size: 9px; }
+.vd.g { color: #22C55E; } .vd.a { color: #F59E0B; } .vd.r { color: #EF4444; }
+
+.bottom-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 4px; flex-shrink: 0; }
+.bottom-bar .info { font-size: 9px; color: #334155; }
+.bottom-bar .badges { display: flex; gap: 6px; }
+.bottom-bar .badge { font-size: 9px; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+.bottom-bar .badge.ok { background: rgba(34,197,94,0.12); color: #22C55E; }
+.bottom-bar .badge.inf { background: rgba(31,153,197,0.1); color: #6CBBD9; }
+</style>
+</head>
+<body>
+<div class="dashboard">
+  <div class="dash-header">
+    <div class="dash-brand">
+      <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h1>AFOS Cortex<span>Predictive Analytics</span></h1>
+    </div>
+    <div class="dash-nav">
+      <div class="tab">Fleet Overview</div>
+      <div class="tab active">Predictive Models</div>
+      <div class="tab">CBM Signals</div>
+      <div class="tab">Reports</div>
+    </div>
+    <div class="dash-meta"><span class="dot"></span><span>Live | 185 Lifts | Last updated 2 min ago</span></div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi-card"><div class="label">Fleet Size</div><div class="value teal">185</div><div class="change">Across 12 sites</div></div>
+    <div class="kpi-card"><div class="label">Prediction Accuracy</div><div class="value green">&gt;83%</div><div class="change">Validated on 2.8yr data</div></div>
+    <div class="kpi-card"><div class="label">Predicted At-Risk</div><div class="value amber">12</div><div class="change">Door failure within 30 days</div></div>
+    <div class="kpi-card"><div class="label">Critical Alerts</div><div class="value red">3</div><div class="change">Immediate action required</div></div>
+    <div class="kpi-card"><div class="label">Avg Lead Time</div><div class="value teal">21d</div><div class="change">Early warning before failure</div></div>
+  </div>
+
+  <div class="main-content">
+    <!-- Top-left: Predictive Health Score -->
+    <div class="panel">
+      <div class="ph">
+        <span class="pt">Predictive Health Score — E0269L07</span>
+        <span class="pb warn">Predicted Door Fault in 18 days</span>
+      </div>
+      <div class="panel-chart" id="chart_prediction"></div>
+    </div>
+
+    <!-- Top-right: Fleet Risk Bar -->
+    <div class="panel">
+      <div class="ph">
+        <span class="pt">Fleet Failure Probability (30-day)</span>
+        <span class="pb danger">12 lifts at risk</span>
+      </div>
+      <div class="panel-chart" id="chart_fleet_risk"></div>
+    </div>
+
+    <!-- Bottom-left: Predictive Maintenance Alert Table -->
+    <div class="panel">
+      <div class="ph">
+        <span class="pt">Predictive Maintenance Alerts</span>
+        <span class="pb">Last 30 days</span>
+      </div>
+      <div style="flex:1;overflow:auto;">
+        <table class="data-tbl">
+          <thead>
+            <tr>
+              <th>Lift ID</th>
+              <th>Site</th>
+              <th>Component</th>
+              <th>Predicted Failure</th>
+              <th>Confidence</th>
+              <th>Health Score</th>
+              <th>Trend</th>
+              <th>Risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">E0269L07</td>
+              <td>Bedok Food City</td>
+              <td>Door System</td>
+              <td>18 days</td>
+              <td>91%</td>
+              <td>52</td>
+              <td class="trend-down">-8.2/mo</td>
+              <td><span class="risk-pill critical">CRITICAL</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0269L03</td>
+              <td>Bedok Food City</td>
+              <td>Door Motor</td>
+              <td>24 days</td>
+              <td>87%</td>
+              <td>58</td>
+              <td class="trend-down">-5.4/mo</td>
+              <td><span class="risk-pill critical">CRITICAL</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0514L12</td>
+              <td>Tampines Hub</td>
+              <td>Drive Belt</td>
+              <td>31 days</td>
+              <td>82%</td>
+              <td>61</td>
+              <td class="trend-down">-4.1/mo</td>
+              <td><span class="risk-pill critical">CRITICAL</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0269L09</td>
+              <td>Bedok Food City</td>
+              <td>Door Sensor</td>
+              <td>38 days</td>
+              <td>78%</td>
+              <td>65</td>
+              <td class="trend-down">-3.6/mo</td>
+              <td><span class="risk-pill warning">WARNING</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0514L05</td>
+              <td>Tampines Hub</td>
+              <td>Brake Pad</td>
+              <td>42 days</td>
+              <td>74%</td>
+              <td>68</td>
+              <td class="trend-down">-2.8/mo</td>
+              <td><span class="risk-pill warning">WARNING</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0377L08</td>
+              <td>Jurong Point</td>
+              <td>Door Roller</td>
+              <td>51 days</td>
+              <td>69%</td>
+              <td>71</td>
+              <td class="trend-down">-2.1/mo</td>
+              <td><span class="risk-pill warning">WARNING</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0269L11</td>
+              <td>Bedok Food City</td>
+              <td>Controller</td>
+              <td>58 days</td>
+              <td>64%</td>
+              <td>74</td>
+              <td class="trend-down">-1.5/mo</td>
+              <td><span class="risk-pill moderate">MONITOR</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0514L02</td>
+              <td>Tampines Hub</td>
+              <td>Guide Shoe</td>
+              <td>65 days</td>
+              <td>58%</td>
+              <td>78</td>
+              <td class="trend-down">-1.2/mo</td>
+              <td><span class="risk-pill moderate">MONITOR</span></td>
+            </tr>
+            <tr>
+              <td class="mono">E0377L14</td>
+              <td>Jurong Point</td>
+              <td>Door Operator</td>
+              <td>72 days</td>
+              <td>52%</td>
+              <td>81</td>
+              <td class="trend-flat">-0.8/mo</td>
+              <td><span class="risk-pill low">LOW</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bottom-right: split gauge + signals -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="panel">
+        <div class="ph"><span class="pt">Model Confidence</span></div>
+        <div class="panel-chart" id="chart_gauge"></div>
+      </div>
+      <div class="panel">
+        <div class="ph"><span class="pt">CBM Signal Status</span></div>
+        <table class="signal-tbl">
+          <thead><tr><th>Signal</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Health score - fault risk</td><td><span class="sd g"></span><span class="vd g">Validated</span></td></tr>
+            <tr><td>Door reversal - work order</td><td><span class="sd a"></span><span class="vd a">Partial</span></td></tr>
+            <tr><td>Error rate - fault count</td><td><span class="sd g"></span><span class="vd g">r=0.714</span></td></tr>
+            <tr><td>Vibration anomaly - failure</td><td><span class="sd a"></span><span class="vd a">Testing</span></td></tr>
+            <tr><td>Changepoint - fault 90d</td><td><span class="sd r"></span><span class="vd r">Weak</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="info">SoftGrid AFOS Cortex v2.4 | 21,593 error records | 4,494 fault events | R&D: A*STAR, SIMTech</span>
+    <div class="badges">
+      <span class="badge ok">Models: Running</span>
+      <span class="badge inf">Self-training: Active</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// 1. Predictive Health Score (half-height, with forecast)
+(function() {
+  var el = document.getElementById('chart_prediction');
+  var chart = echarts.init(el);
+  var months = ['24-03','24-04','24-05','24-06','24-07','24-08','24-09','24-10','24-11','24-12',
+                '25-01','25-02','25-03','25-04','25-05','25-06','25-07','25-08','25-09','25-10',
+                '25-11','25-12','26-01','26-02','26-03','26-04','26-05','26-06'];
+  var actual = [82,34,38,58,72,68,65,64,60,55,62,66,64,66,70,68,65,64,67,66,70,63,58,56,52,null,null,null];
+  var predicted = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,60,57,53,47,41,35];
+  var upper = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,65,64,62,58,55,52];
+  var lower = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,55,50,44,36,27,18];
+  var doorRate = [378,572,348,144,66,109,77,77,115,176,78,54,50,41,31,39,34,51,47,47,33,36,61,44,34,null,null,null];
+
+  chart.setOption({
+    backgroundColor: 'transparent',
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['Health Score (Actual)','Health Score (Predicted)','Confidence Band','Door Reversal Rate'], top: 0, textStyle: { fontSize: 9, color: '#64748B' } },
+    grid: { left: '5%', right: '6%', top: 34, bottom: 24, containLabel: true },
+    xAxis: { type: 'category', data: months, boundaryGap: false, axisLabel: { fontSize: 8, color: '#475569', rotate: 30 }, axisLine: { lineStyle: { color: '#1e293b' } } },
+    yAxis: [
+      { type: 'value', name: 'Score', min: 0, max: 100, nameTextStyle: { color: '#64748B', fontSize: 8 }, splitLine: { lineStyle: { color: '#1e293b' } }, axisLabel: { color: '#64748B', fontSize: 8 } },
+      { type: 'value', name: 'Rev. Rate', position: 'right', nameTextStyle: { color: '#64748B', fontSize: 8 }, axisLabel: { color: '#64748B', fontSize: 8 }, splitLine: { show: false } }
+    ],
+    series: [
+      { name: 'Confidence Band', type: 'line', data: upper, lineStyle: { opacity: 0 }, areaStyle: { opacity: 0 }, symbol: 'none', stack: 'band', z: 1 },
+      { name: '', type: 'line', data: lower.map(function(v,i){ return v!==null?upper[i]-v:null; }), lineStyle: { opacity: 0 }, areaStyle: { color: 'rgba(239,68,68,0.12)' }, symbol: 'none', stack: 'band', z: 1 },
+      { name: 'Health Score (Actual)', type: 'line', data: actual, symbol: 'circle', symbolSize: 4, lineStyle: { color: '#22C55E', width: 2.5 }, itemStyle: { color: '#22C55E' }, areaStyle: { color: { type: 'linear', x:0,y:0,x2:0,y2:1, colorStops: [{offset:0,color:'rgba(34,197,94,0.12)'},{offset:1,color:'rgba(34,197,94,0)'}] } }, z: 3 },
+      { name: 'Health Score (Predicted)', type: 'line', data: predicted, symbol: 'diamond', symbolSize: 5, lineStyle: { color: '#EF4444', width: 2.5, type: 'dashed' }, itemStyle: { color: '#EF4444' }, z: 3 },
+      { name: 'Door Reversal Rate', type: 'bar', yAxisIndex: 1, data: doorRate, barWidth: '35%', itemStyle: { color: 'rgba(245,158,11,0.25)', borderRadius: [2,2,0,0] }, z: 0 },
+      { name: '', type: 'line', data: months.map(function(){ return 40; }), lineStyle: { color: '#EF4444', width: 1, type: 'dotted' }, symbol: 'none', z: 2,
+        markArea: { silent: true, data: [[{ yAxis: 0, itemStyle: { color: 'rgba(239,68,68,0.04)' } },{ yAxis: 40 }]] }
+      }
+    ],
+    graphic: [
+      { type: 'text', left: '76%', top: '60%', style: { text: 'FAILURE\nZONE', fill: 'rgba(239,68,68,0.35)', fontSize: 10, fontWeight: 700, lineHeight: 14 } },
+      { type: 'text', left: '78%', top: 22, style: { text: 'FORECAST', fill: 'rgba(239,68,68,0.5)', fontSize: 8, fontWeight: 600 } }
+    ]
+  });
+  window.addEventListener('resize', function(){ chart.resize(); });
+})();
+
+// 2. Fleet Risk horizontal bars
+(function() {
+  var el = document.getElementById('chart_fleet_risk');
+  var chart = echarts.init(el);
+  var lifts = ['E0269L07','E0269L03','E0514L12','E0269L09','E0514L05','E0377L08','E0269L11','E0514L02','E0377L14','E0377L03','E0514L09','E0269L05'];
+  var probs = [87,72,65,58,51,44,38,31,28,22,18,12];
+  chart.setOption({
+    backgroundColor: 'transparent',
+    tooltip: { trigger: 'axis', formatter: '{b}: {c}% failure probability' },
+    grid: { left: '18%', right: '10%', top: 6, bottom: 6, containLabel: false },
+    xAxis: { type: 'value', max: 100, splitLine: { lineStyle: { color: '#1e293b' } }, axisLabel: { color: '#475569', fontSize: 8 } },
+    yAxis: { type: 'category', data: lifts.reverse(), inverse: false, axisLabel: { color: '#B0BEC9', fontSize: 8, fontFamily: 'monospace' }, axisLine: { lineStyle: { color: '#1e293b' } } },
+    series: [{ type: 'bar', data: probs.reverse().map(function(v){ var c = v>60?'#EF4444':v>40?'#F59E0B':v>25?'#6CBBD9':'#22C55E'; return {value:v,itemStyle:{color:c,borderRadius:[0,3,3,0]}}; }), barWidth: '55%', label: { show: true, position: 'right', formatter: '{c}%', fontSize: 8, color: '#B0BEC9' } }]
+  });
+  window.addEventListener('resize', function(){ chart.resize(); });
+})();
+
+// 3. Model Confidence Gauge
+(function() {
+  var el = document.getElementById('chart_gauge');
+  var chart = echarts.init(el);
+  chart.setOption({
+    backgroundColor: 'transparent',
+    series: [{
+      type: 'gauge', center: ['50%','58%'], radius: '82%', startAngle: 200, endAngle: -20, min: 0, max: 100, splitNumber: 5,
+      axisLine: { lineStyle: { width: 12, color: [[0.4,'#EF4444'],[0.6,'#F59E0B'],[0.8,'#6CBBD9'],[1,'#22C55E']] } },
+      pointer: { length: '50%', width: 4, itemStyle: { color: '#fff' } },
+      axisTick: { distance: -14, length: 3, lineStyle: { color: '#475569', width: 1 } },
+      splitLine: { distance: -16, length: 6, lineStyle: { color: '#475569', width: 1 } },
+      axisLabel: { color: '#475569', fontSize: 7, distance: -24 },
+      detail: { valueAnimation: true, formatter: '{value}%', color: '#22C55E', fontSize: 20, fontWeight: 800, offsetCenter: [0,'40%'] },
+      title: { offsetCenter: [0,'62%'], fontSize: 8, color: '#64748B' },
+      data: [{ value: 83.4, name: 'Overall Accuracy' }]
+    }]
+  });
+  window.addEventListener('resize', function(){ chart.resize(); });
+})();
+</script>
+</body>
+</html>
