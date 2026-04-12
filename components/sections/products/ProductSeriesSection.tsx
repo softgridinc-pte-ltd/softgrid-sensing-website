@@ -66,7 +66,7 @@ const productSeries: ProductSeries[] = [
     name: 'AFOS Cortex',
     subtitle: 'Data & Intelligence',
     description: 'AI knowledge base, digital twin visualization, predictive analytics, and compliance reporting. Turn your operational data into decisions and foresight.',
-    products: [{ name: 'Athena' }, { name: 'Digital Twin' }, { name: 'AI Analytics [TBD]', tbd: true }, { name: 'ESG Reporting [TBD]', tbd: true }],
+    products: [{ name: 'Athena' }, { name: 'Digital Twin' }, { name: 'AI Analytics [TBD]', tbd: true }],
     href: '/products/cortex',
     Icon: CortexIcon,
     iconBg: 'rgba(108,187,217,0.08)',
