@@ -58,7 +58,7 @@ const series: Series[] = [
       { name: 'Escalator Monitoring [TBD]', tbd: true },
     ],
     href: '/products/fusion',
-    image: '/images/background/bg15.jpg',
+    image: '/images/products/Fusion.jpg',
     icon: <MonitorDot className="h-7 w-7" strokeWidth={1.6} />,
   },
   {
@@ -213,8 +213,8 @@ export default function ProductsPage(): React.ReactElement {
         return (
           <section key={s.id} id={s.id} className={`${bg} py-20 md:py-28 scroll-mt-24`}>
             <div className="mx-auto max-w-7xl px-6 md:px-12">
-              <div className={`grid items-center gap-12 lg:gap-20 lg:grid-cols-[5fr_7fr] ${reverse ? 'lg:[&>div:first-child]:order-2' : ''}`} data-animate>
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-200">
+              <div className={`grid items-center gap-12 lg:gap-20 ${reverse ? 'lg:grid-cols-[7fr_5fr]' : 'lg:grid-cols-[5fr_7fr]'}`} data-animate>
+                <div className={`group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-200 ${reverse ? 'lg:order-2' : ''}`}>
                   <Image
                     src={s.image}
                     alt={s.name}
