@@ -1,6 +1,5 @@
 import { FeaturedCaseStudy } from '@/components/sections/case-studies/FeaturedCaseStudy'
 import { CaseStudyRunway } from '@/components/sections/case-studies/CaseStudyRunway'
-import { ImpactStrip } from '@/components/sections/case-studies/ImpactStrip'
 import { Button } from '@/components/ui/Button'
 
 import type { Metadata } from 'next'
@@ -19,9 +18,6 @@ export default function CaseStudiesPage(): React.ReactElement {
 
       {/* Secondary Case Studies — horizontal runway */}
       <CaseStudyRunway />
-
-      {/* Impact at a glance */}
-      <ImpactStrip />
 
       {/* CTA */}
       <section className="bg-navy-800 py-16 md:py-24 relative overflow-hidden">
