@@ -5,7 +5,7 @@ import { StatBlock } from '@/components/ui/StatBlock'
 
 const stats = [
   { value: '10,000+', label: 'Lifts Monitored' },
-  { value: '>85%', label: 'Prediction Accuracy' },
+  { value: '>83%', label: 'Prediction Accuracy' },
   { value: '8+', label: 'Years in Singapore' },
   { value: 'NRF', label: 'Grant Awarded' },
   { value: '4,000+', label: 'HDB Blocks' },
