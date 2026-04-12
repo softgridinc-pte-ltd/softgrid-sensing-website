@@ -63,7 +63,7 @@ AFOS is a closed-loop Facility Operating System composed of four engines. The co
 
 ### Predictive AI (ML Models)
 ML models trained on sensor data (vibration, acceleration, temperature). Unsupervised learning for anomaly detection; semi-supervised soft clustering for multi-class fault prediction.
-- Target: >85% prediction accuracy
+- Target: >83% prediction accuracy
 - <25% customization for new data models
 - Developed in collaboration with A*STAR and SIMTech
 

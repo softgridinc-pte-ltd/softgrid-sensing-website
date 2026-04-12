@@ -88,7 +88,7 @@ Key hardware features:
 
 - Unsupervised learning for anomaly detection
 - Semi-supervised soft clustering for multi-class fault prediction
-- Target: 85% accuracy in fault prediction
+- Target: 83% accuracy in fault prediction
 - <25% customization effort for new data models
 
 ### Architecture
@@ -163,7 +163,7 @@ Key hardware features:
 | ------------------ | ------- | ---------------------------------------- |
 | Lifts Monitored    | 10,000+ | Across Singapore, HDB & private          |
 | Years in Singapore | 8       | Since 2017                               |
-| AI Accuracy        | 85%+    | Fault prediction (verify with tech team) |
+| AI Accuracy        | 83%+    | Fault prediction (verify with tech team) |
 | NRF Grant          | [redacted]  | Cities of Tomorrow programme             |
 | BCA Certified      | Yes     | RM&D solutions                           |
 | HDB Blocks         | 4,000+  | Blocks with lifts monitored              |

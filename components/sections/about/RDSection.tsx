@@ -31,7 +31,7 @@ const pillars: Pillar[] = [
 ]
 
 const stats = [
-  { value: '85%+', label: 'AI Accuracy' },
+  { value: '83%+', label: 'AI Accuracy' },
   { value: 'NRF', label: 'Grant Awarded' },
   { value: 'BCA', label: 'RM&D Certified' },
 ]
