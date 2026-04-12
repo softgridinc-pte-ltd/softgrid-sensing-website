@@ -40,7 +40,7 @@ export function BrowserFrameCarousel({
   const imgHeight = isMobile ? 956 : 1080
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className={`flex flex-col items-center gap-4 ${!isMobile ? 'pt-10' : ''}`}>
       {/* 3D carousel stage */}
       <div
         className="relative w-full"
@@ -65,10 +65,10 @@ export function BrowserFrameCarousel({
             // Use angle on ring to compute position
             const angle = (offset / count) * 2 * Math.PI
             // X: sin puts front=0, right=1, back=0, left=-1
-            translateX = Math.sin(angle) * 55
+            translateX = Math.sin(angle) * 90
             // Y: cos puts front=1(bottom), right=0, back=-1(top), left=0
             // Invert so front is bottom (positive Y = down in CSS)
-            translateY = Math.cos(angle) * 60
+            translateY = Math.cos(angle) * 90
             // Z depth: front closest, back furthest
             translateZ = Math.cos(angle) * 100 - 100
             // Front is largest
