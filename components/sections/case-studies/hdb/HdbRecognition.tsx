@@ -33,7 +33,7 @@ const logos = [
 export function HdbRecognition(): React.ReactElement {
   return (
     <section
-      className="py-14 md:py-20 relative overflow-hidden"
+      className="py-14 md:py-20 relative overflow-hidden border-y border-amber-200/80"
       style={{ backgroundColor: '#FFF5E6' }}
     >
 

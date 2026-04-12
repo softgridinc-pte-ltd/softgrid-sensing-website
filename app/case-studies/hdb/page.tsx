@@ -1,6 +1,5 @@
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
-import { HdbHero } from '@/components/sections/case-studies/hdb/HdbHero'
-import { HdbStakes } from '@/components/sections/case-studies/hdb/HdbStakes'
+import { HdbOverview } from '@/components/sections/case-studies/hdb/HdbOverview'
 import { HdbSolution } from '@/components/sections/case-studies/hdb/HdbSolution'
 import { HdbResults } from '@/components/sections/case-studies/hdb/HdbResults'
 import { HdbJourney } from '@/components/sections/case-studies/hdb/HdbJourney'
@@ -25,9 +24,9 @@ export default function HdbCaseStudyPage(): React.ReactElement {
   return (
     <>
       <Breadcrumb items={[{ label: 'Case Studies', href: '/case-studies' }, { label: 'HDB Smart Lift Intelligence' }]} />
-      <HdbHero />
+
+      <HdbOverview />
       <HdbRecognition />
-      <HdbStakes />
       <HdbSolution />
       <HdbResults />
       <HdbJourney />

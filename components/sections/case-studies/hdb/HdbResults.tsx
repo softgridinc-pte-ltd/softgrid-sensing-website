@@ -24,7 +24,7 @@ const results = [
 
 function DirectionArrow({ direction }: { direction: 'up' | 'down' }): React.ReactElement {
   return (
-    <span className={direction === 'down' ? 'text-emerald-400' : 'text-cyan-300'}>
+    <span className={direction === 'down' ? 'text-emerald-600' : 'text-primary-600'}>
       {direction === 'down' ? '\u2193' : '\u2191'}
     </span>
   )
@@ -32,25 +32,19 @@ function DirectionArrow({ direction }: { direction: 'up' | 'down' }): React.Reac
 
 export function HdbResults(): React.ReactElement {
   return (
-    <section className="bg-navy-900 py-14 md:py-20 relative overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div
-        className="absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 30%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-        }}
-      />
+    <section className="bg-white py-14 md:py-20 relative overflow-hidden">
+      <div className="absolute inset-0 dot-pattern opacity-40" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div data-animate className="mb-12 md:mb-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-400 mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 mb-4">
             What Changed
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4 leading-tight tracking-tight">
             The Results
           </h2>
-          <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl">
-            Results from BCA-validated field trials and post-deployment operational data.
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Results from validated field trials and post-deployment operational data.
           </p>
         </div>
 
@@ -60,16 +54,16 @@ export function HdbResults(): React.ReactElement {
             <div
               key={result.metric}
               data-animate="scale"
-              className="bg-navy-800 border border-navy-700 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-lg"
             >
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary-400 mb-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary-600 mb-4">
                 {result.metric}
               </p>
-              <div className="text-5xl md:text-6xl font-bold text-white mb-4 font-heading">
+              <div className="text-5xl md:text-6xl font-bold text-navy-900 mb-4 font-heading">
                 <DirectionArrow direction={result.direction} />{' '}
                 {result.value}
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-sm text-slate-700 leading-relaxed">
                 {result.explanation}
               </p>
             </div>
