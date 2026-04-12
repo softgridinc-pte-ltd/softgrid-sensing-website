@@ -434,6 +434,7 @@ export default function FusionPage(): React.ReactElement {
               src="/images/products/Fusion/RMD.png"
               alt="RM&D — Remote Monitoring & Diagnostics dashboard"
               url="rmd.softgridsensing.com"
+              reverse
             />
           </div>
         </div>
@@ -740,6 +741,7 @@ export default function FusionPage(): React.ReactElement {
               src="/images/products/Fusion/RSA.png"
               alt="Fusion RSA — Remote Sensing Analytics for forest cover change detection"
               url="rsa.softgridsensing.com"
+              reverse
             />
           </div>
         </div>
@@ -881,6 +883,7 @@ export default function FusionPage(): React.ReactElement {
               src="/images/products/Fusion/EMS.png"
               alt="Escalator Monitoring System — floor plan with sensor placement"
               url="ems.softgridsensing.com"
+              reverse
             />
           </div>
         </div>
