@@ -11,7 +11,7 @@ export function FeaturedCaseStudy(): React.ReactElement {
     <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
       {/* Background image */}
       <Image
-        src="/images/cases/hdb.jpg"
+        src="/images/cases/case10.jpg"
         alt=""
         fill
         priority

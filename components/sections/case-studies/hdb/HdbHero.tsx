@@ -15,7 +15,7 @@ export function HdbHero(): React.ReactElement {
     <section className="relative overflow-hidden pt-36 md:pt-44 pb-20 md:pb-28">
       {/* Background — LMD hardware photo */}
       <Image
-        src="/images/cases/hdb.jpg"
+        src="/images/cases/case10.jpg"
         alt=""
         fill
         priority
