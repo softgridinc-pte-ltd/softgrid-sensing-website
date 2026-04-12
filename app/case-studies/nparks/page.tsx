@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Satellite, BrainCircuit, Zap } from 'lucide-react'
 
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
@@ -74,18 +75,51 @@ export default function NparksCaseStudyPage(): React.ReactElement {
 
       <KeyNumbers items={keyNumbers} />
 
-      <ContentBlock title="Background" image="/images/background/bg9.jpg">
-        <p>
-          Singapore&apos;s National Parks Board (NParks) is responsible for monitoring and protecting the city-state&apos;s green cover — from nature reserves and parks to roadside trees and mangroves. Understanding changes in forest cover is critical for urban planning, conservation, and climate resilience.
-        </p>
-        <p>
-          Traditional monitoring relied on labor-intensive manual surveys and periodic aerial photography — expensive, slow, and unable to provide the monthly cadence required for timely intervention.
-        </p>
-        <h3 className="!mt-10 !mb-4 text-xl font-bold text-navy-900">The Challenge</h3>
-        <p>
-          NParks needed a system that could automatically monitor 26 ecological areas at high spatial resolution on a monthly basis — detecting changes in forest cover, identifying illegal clearing, and generating decision-ready reports without manual intervention.
-        </p>
-      </ContentBlock>
+      <section className="bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 md:px-12">
+          <div className="grid items-start gap-10 md:gap-16 lg:grid-cols-[1.2fr_1fr]" data-animate>
+            <div>
+              <h2 className="mb-8 text-3xl md:text-4xl font-bold leading-tight tracking-tight text-navy-900">
+                Background
+              </h2>
+              <div className="space-y-5 text-base md:text-[17px] leading-[1.8] text-slate-600">
+                <p>
+                  Singapore&apos;s National Parks Board (NParks) is responsible for monitoring and protecting the city-state&apos;s green cover — from nature reserves and parks to roadside trees and mangroves. Understanding changes in forest cover is critical for urban planning, conservation, and climate resilience.
+                </p>
+                <p>
+                  Traditional monitoring relied on labor-intensive manual surveys and periodic aerial photography — expensive, slow, and unable to provide the monthly cadence required for timely intervention.
+                </p>
+                <h3 className="!mt-10 !mb-4 text-xl font-bold text-navy-900">The Challenge</h3>
+                <p>
+                  NParks needed a system that could automatically monitor 26 ecological areas at high spatial resolution on a monthly basis — detecting changes in forest cover, identifying illegal clearing, and generating decision-ready reports without manual intervention.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="relative w-full overflow-hidden shadow-lg">
+                <Image
+                  src="/images/cases/case5.png"
+                  alt="NParks forest cover monitoring"
+                  width={800}
+                  height={600}
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="relative w-full overflow-hidden shadow-lg">
+                <Image
+                  src="/images/cases/case6.png"
+                  alt="NParks forest cover analysis"
+                  width={800}
+                  height={600}
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <ContentBlock title="What We Deployed" background="slate">
         <p>
