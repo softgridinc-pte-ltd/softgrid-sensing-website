@@ -24,10 +24,11 @@ export const caseStudies: CaseStudy[] = [
     industry: 'Public Housing',
     headline: 'Monitoring 10,000+ Lifts Across Singapore\u2019s Public Housing',
     summary:
-      'Softgrid deployed its Lift Telemonitoring System across HDB estates, enabling 24/7 remote monitoring of over 10,000 lifts — replacing legacy phone-line systems with smart IoT acquisition.',
+      "How Softgrid's technology became the backbone of Singapore's public housing lift safety infrastructure.",
     stats: [
       { value: '10,000+', label: 'Lifts Monitored' },
       { value: '4,000+', label: 'HDB Blocks' },
+      { value: '50%', label: 'Faster Fault Response' },
       { value: '24/7', label: 'Remote Monitoring' },
     ],
     products: ['LMD 6000', 'LTMS'],

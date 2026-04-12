@@ -44,7 +44,7 @@ export function FeaturedCaseStudy(): React.ReactElement {
             {/* Client + Industry */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <span className="text-sm font-semibold text-slate-300">{study.client}</span>
-              <span className="bg-primary-500/10 text-primary-400 text-xs rounded-full px-3 py-1">
+              <span className="bg-primary-400/15 text-primary-300 text-xs rounded-full px-3 py-1">
                 {study.industry}
               </span>
             </div>
@@ -66,19 +66,6 @@ export function FeaturedCaseStudy(): React.ReactElement {
                   <div className="text-3xl md:text-4xl font-bold text-primary-400">{stat.value}</div>
                   <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider">{stat.label}</div>
                 </div>
-              ))}
-            </div>
-
-            {/* Products */}
-            <div className="flex flex-wrap items-center gap-2 mb-10">
-              <span className="text-xs text-slate-400 mr-1">Products:</span>
-              {study.products.map((product) => (
-                <span
-                  key={product}
-                  className="border border-navy-600 text-slate-300 text-xs rounded-full px-3 py-1"
-                >
-                  {product}
-                </span>
               ))}
             </div>
 
