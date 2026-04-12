@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/Button'
 
 export function HdbClosingCta(): React.ReactElement {
   return (
-    <section className="bg-gradient-to-br from-navy-900 via-navy-800 to-primary-900 py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-navy-900 via-navy-800 to-primary-900 py-14 md:py-20 relative overflow-hidden">
       {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"

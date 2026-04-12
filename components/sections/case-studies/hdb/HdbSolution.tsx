@@ -45,7 +45,7 @@ const intelligenceCapabilities = [
 
 export function HdbSolution(): React.ReactElement {
   return (
-    <section className="bg-slate-50 py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-slate-50 py-14 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 dot-pattern opacity-40" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
@@ -92,7 +92,7 @@ export function HdbSolution(): React.ReactElement {
             className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm"
           >
             <h3 className="text-xl font-bold text-navy-900 mb-2">
-              Remote Monitoring & Predictive Diagnosis (The Intelligence Layer)
+              Remote Monitoring &amp; Predictive Diagnosis (The Intelligence Layer)
             </h3>
             <p className="text-sm italic text-slate-500 mb-8">
               Turning vibration, sound, and motion into foresight.

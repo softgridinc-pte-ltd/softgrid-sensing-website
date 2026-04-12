@@ -1,6 +1,6 @@
 export function HdbStakes(): React.ReactElement {
   return (
-    <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-navy-900 py-14 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-20" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">

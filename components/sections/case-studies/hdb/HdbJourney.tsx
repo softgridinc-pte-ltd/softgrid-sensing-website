@@ -50,7 +50,7 @@ export function HdbJourney(): React.ReactElement {
   }
 
   return (
-    <section className="bg-navy-800 py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-navy-800 py-14 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <div
         className="absolute inset-0"

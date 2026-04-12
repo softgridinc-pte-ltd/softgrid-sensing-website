@@ -1,4 +1,26 @@
 import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
+
+const congressLinks = [
+  {
+    kicker: 'MND Official',
+    label: 'Congress Gallery',
+    description: 'Photo highlights from Day 1 of the USS R&I Congress 2026.',
+    href: 'https://www.mnd.gov.sg/usscongress2026/uss-ri-congress-gallery-day-1',
+  },
+  {
+    kicker: 'MND Report',
+    label: 'Congress Report',
+    description: 'Full programme report and key announcements from the Congress.',
+    href: 'https://www.mnd.gov.sg/api/media/859acce1-5bab-4a35-891f-049444c35e3d',
+  },
+  {
+    kicker: 'Media Release',
+    label: 'Press Statement',
+    description: 'Official media release on the Built Environment AI initiatives.',
+    href: 'https://www.mnd.gov.sg/api/media/d241bcc5-0f01-4e7a-9871-2495a7047d95',
+  },
+]
 
 
 const logos = [
@@ -10,8 +32,10 @@ const logos = [
 
 export function HdbRecognition(): React.ReactElement {
   return (
-    <section className="bg-white py-20 md:py-28 relative overflow-hidden">
-      <div className="absolute inset-0 dot-pattern opacity-40" />
+    <section
+      className="py-14 md:py-20 relative overflow-hidden"
+      style={{ backgroundColor: '#FFF5E6' }}
+    >
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
@@ -61,8 +85,37 @@ export function HdbRecognition(): React.ReactElement {
           </div>
         </div>
 
+        {/* Congress resources */}
+        <div data-animate className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
+          {congressLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-lg"
+            >
+              <div>
+                <div className="mb-2 text-xs font-bold uppercase tracking-[2px] text-primary-600">
+                  {link.kicker}
+                </div>
+                <div className="mb-3 text-base font-bold leading-tight text-navy-900 transition-colors group-hover:text-primary-700">
+                  {link.label}
+                </div>
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  {link.description}
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 mt-5">
+                Visit
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </div>
+            </a>
+          ))}
+        </div>
+
         {/* Logo strip */}
-        <div data-animate className="mt-16 pt-10 border-t border-slate-200">
+        <div data-animate className="mt-12 pt-10 border-t border-navy-900/20">
           <div className="flex flex-wrap items-center justify-center gap-5 md:gap-6">
             {logos.map((logo) => (
               <div
@@ -78,9 +131,8 @@ export function HdbRecognition(): React.ReactElement {
                 />
               </div>
             ))}
-            {/* USS Congress 2026 — text placeholder (no logo asset) */}
             <div className="bg-slate-50 border border-slate-200 rounded-lg px-6 py-4 flex items-center justify-center w-36 h-20 md:w-40 md:h-22">
-              <span className="text-xs font-semibold text-navy-900 text-center leading-tight">
+              <span className="text-sm font-extrabold text-navy-900 text-center leading-tight tracking-tight font-heading">
                 USS R&amp;I<br />Congress 2026
               </span>
             </div>

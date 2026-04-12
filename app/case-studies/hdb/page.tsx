@@ -5,9 +5,15 @@ import { HdbSolution } from '@/components/sections/case-studies/hdb/HdbSolution'
 import { HdbResults } from '@/components/sections/case-studies/hdb/HdbResults'
 import { HdbJourney } from '@/components/sections/case-studies/hdb/HdbJourney'
 import { HdbRecognition } from '@/components/sections/case-studies/hdb/HdbRecognition'
-import { HdbClosingCta } from '@/components/sections/case-studies/hdb/HdbClosingCta'
+import { RelatedLinks } from '@/components/sections/case-studies/RelatedLinks'
 
 import type { Metadata } from 'next'
+
+const related = [
+  { kicker: 'Related Solution', title: 'Smart Vertical Transport', href: '/solutions/vertical-transport' },
+  { kicker: 'Related Products', title: 'LTMS, LMD6000', href: '/products/fusion' },
+  { kicker: 'Related Page', title: 'Why Softgrid', href: '/about' },
+]
 
 export const metadata: Metadata = {
   title: 'HDB Smart Lift Intelligence — 10,000+ Lifts | Softgrid Sensing',
@@ -20,12 +26,12 @@ export default function HdbCaseStudyPage(): React.ReactElement {
     <>
       <Breadcrumb items={[{ label: 'Case Studies', href: '/case-studies' }, { label: 'HDB Smart Lift Intelligence' }]} />
       <HdbHero />
+      <HdbRecognition />
       <HdbStakes />
       <HdbSolution />
       <HdbResults />
       <HdbJourney />
-      <HdbRecognition />
-      <HdbClosingCta />
+      <RelatedLinks items={related} />
     </>
   )
 }
