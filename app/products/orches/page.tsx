@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { BrowserFrameCarousel } from '@/components/ui/BrowserFrameCarousel'
 
 import type { Metadata } from 'next'
 
@@ -190,7 +191,7 @@ export default function OrchesPage(): React.ReactElement {
                 lineHeight: 1.2,
               }}
             >
-              Integrated Resource &amp; Information System
+              Computerized Maintenance Management System
             </h2>
             <p
               style={{
@@ -308,47 +309,14 @@ export default function OrchesPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(13,148,136,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(13,148,136,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [IRIS DASHBOARD SCREENSHOT]
-              <br />
-              <br />
-              Work order lifecycle, asset registry
-            </div>
-          </div>
+          <BrowserFrameCarousel
+            url="iris.softgridsensing.com"
+            images={[
+              { src: '/images/products/IRIS/iris-dashboard-1.png', alt: 'IRIS Request Dashboard', label: 'Request Dashboard' },
+              { src: '/images/products/IRIS/iris-dashboard-2.png', alt: 'IRIS PM & Scheduling Dashboard', label: 'PM & Scheduling' },
+              { src: '/images/products/IRIS/iris-dashboard-3.png', alt: 'IRIS Financial Dashboard', label: 'Financial Dashboard' },
+            ]}
+          />
         </div>
       </section>
 
@@ -519,47 +487,16 @@ export default function OrchesPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              direction: 'ltr',
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(13,148,136,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(13,148,136,0.06) 0%, transparent 60%)',
-              }}
+          <div style={{ direction: 'ltr' }}>
+            <BrowserFrameCarousel
+              variant="mobile"
+              images={[
+                { src: '/images/products/LiftProf/Specialist_Assigned Calls_page.jpg', alt: 'LiftProf Assigned Calls', label: 'Assigned Calls' },
+                { src: '/images/products/LiftProf/Accepted_call details page.jpg', alt: 'LiftProf Call Details', label: 'Call Details' },
+                { src: '/images/products/LiftProf/Follow-up call edit page 3.jpg', alt: 'LiftProf Follow-up Report', label: 'Follow-up Report' },
+                { src: '/images/products/LiftProf/Location of Call.jpg', alt: 'LiftProf Location of Call', label: 'Location Diagram' },
+              ]}
             />
-            <div
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [LIFTPROF MOBILE APP]
-              <br />
-              <br />
-              Task view, dispatch, service report
-            </div>
           </div>
         </div>
       </section>
@@ -724,47 +661,13 @@ export default function OrchesPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(13,148,136,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(13,148,136,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [NOVA VOICE AI CONCEPT]
-              <br />
-              <br />
-              Voice interface visualization
-            </div>
-          </div>
+          <BrowserFrameCarousel
+            url="nova.softgridsensing.com"
+            images={[
+              { src: '/images/products/Nova/Nova1.png', alt: 'Nova AI Voice Agent conversation', label: 'Voice Agent' },
+              { src: '/images/products/Nova/Nova2.png', alt: 'Nova call log and dialogue review', label: 'Call Logs' },
+            ]}
+          />
         </div>
       </section>
 
