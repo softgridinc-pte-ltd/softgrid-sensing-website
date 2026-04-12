@@ -102,6 +102,31 @@ const integrationTags = [
   'Midea iBuilding',
 ]
 
+function DotMatrix(): React.ReactElement {
+  const rows = 8
+  const cols = 6
+  const accentIndices = new Set([5, 14, 27, 35, 42])
+
+  return (
+    <div
+      className="hidden lg:grid gap-4"
+      style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+      data-animate="fade"
+    >
+      {Array.from({ length: rows * cols }, (_, i) => (
+        <div
+          key={i}
+          className={`w-2.5 h-2.5 rounded-full transition-colors duration-700 ${
+            accentIndices.has(i)
+              ? 'bg-primary-500/60'
+              : 'bg-navy-600/50'
+          }`}
+        />
+      ))}
+    </div>
+  )
+}
+
 export default function ProductsPage(): React.ReactElement {
   return (
     <>
@@ -115,6 +140,11 @@ export default function ProductsPage(): React.ReactElement {
           }}
         />
         <div className="absolute inset-0 grid-pattern opacity-20" />
+
+        {/* Dot matrix — decorative, right-center */}
+        <div className="absolute top-1/2 right-[20%] -translate-y-1/2 z-0">
+          <DotMatrix />
+        </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
           <div className="max-w-3xl" data-animate>
