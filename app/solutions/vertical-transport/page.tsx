@@ -64,7 +64,7 @@ const steps = [
 const products = [
   { product: 'LTMS', series: 'AFOS Fusion', role: 'Public sector lift monitoring' },
   { product: 'RM&D', series: 'AFOS Fusion', role: 'Private sector lift monitoring & BCA compliance' },
-  { product: 'Escalator Monitoring [TBD]', series: 'AFOS Fusion', role: 'Escalator vibration + vision monitoring' },
+  { product: 'Escalator Monitoring', series: 'AFOS Fusion', role: 'Escalator vibration + vision monitoring' },
   { product: 'LiftProf', series: 'AFOS Orches', role: 'Technician mobile field service' },
   { product: 'Athena', series: 'AFOS Cortex', role: 'AI knowledge base for diagnostics' },
   { product: 'LMD Series', series: 'AFOS Sense', role: 'Lift monitoring device' },

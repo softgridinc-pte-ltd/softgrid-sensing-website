@@ -55,7 +55,7 @@ const series: Series[] = [
       { name: 'RM&D' },
       { name: 'Cloud BMS' },
       { name: 'Fusion RSA' },
-      { name: 'Escalator Monitoring [TBD]', tbd: true },
+      { name: 'Escalator Monitoring' },
     ],
     href: '/products/fusion',
     image: '/images/products/Fusion.jpg',
@@ -87,7 +87,7 @@ const series: Series[] = [
     ],
     href: '/products/cortex',
     image: '/images/background/bg6.jpg',
-    icon: <CortexIcon size={28} strokeWidth={1.6} />,
+    icon: <CortexIcon size={28} />,
   },
 ]
 

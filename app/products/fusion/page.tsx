@@ -1,3 +1,4 @@
+import { Building2, Satellite } from 'lucide-react'
 import Link from 'next/link'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { BrowserFrame } from '@/components/ui/BrowserFrame'
@@ -461,10 +462,7 @@ export default function FusionPage(): React.ReactElement {
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
+                <Building2 size={22} color="#197EA3" strokeWidth={1.8} />
               </div>
               <div
                 style={{
@@ -600,11 +598,7 @@ export default function FusionPage(): React.ReactElement {
                   justifyContent: 'center',
                 }}
               >
-                <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#6CBBD9', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M2 12h20" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                </svg>
+                <Satellite size={22} color="#6CBBD9" strokeWidth={1.8} />
               </div>
               <div
                 style={{
@@ -728,11 +722,7 @@ export default function FusionPage(): React.ReactElement {
                 marginTop: 20,
               }}
             >
-              <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, stroke: '#197EA3', strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
-                <circle cx="12" cy="12" r="10" />
-                <path d="M2 12h20" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
+              <Satellite size={14} color="#197EA3" strokeWidth={2} />
               Planetary Scale Monitoring
             </div>
           </div>
@@ -769,8 +759,9 @@ export default function FusionPage(): React.ReactElement {
                 }}
               >
                 <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, stroke: '#197EA3', strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }}>
-                  <polyline points="4 17 10 11 4 5" />
-                  <line x1="12" y1="19" x2="20" y2="19" />
+                  <polyline points="22 5 14 5 4 19 2 19" />
+                  <line x1="22" y1="9" x2="16" y2="9" />
+                  <line x1="8" y1="19" x2="2" y2="19" />
                 </svg>
               </div>
               <div
@@ -783,7 +774,7 @@ export default function FusionPage(): React.ReactElement {
                   color: '#197EA3',
                 }}
               >
-                Escalator Monitoring [TBD]
+                Escalator Monitoring
               </div>
             </div>
             <h2

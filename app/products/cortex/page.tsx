@@ -659,12 +659,11 @@ export default function CortexPage(): React.ReactElement {
             url="dt.softgridsensing.com"
             large
             images={[
-              { src: '/images/products/DTL1.png', alt: 'Digital Twin — Port IOC Distribution', label: 'Port Distribution' },
-              { src: '/images/products/DTL2-1.png', alt: 'Digital Twin — Urban Traffic Operations', label: 'Traffic Operations' },
-              { src: '/images/products/DTL2-2.png', alt: 'Digital Twin — Traffic Control', label: 'Traffic Control' },
-              { src: '/images/products/L4.png', alt: 'Digital Twin — Smart Parking IOC', label: 'Smart Parking' },
-              { src: '/images/products/DTL3-1.png', alt: 'Digital Twin — Terminal Operations', label: 'Terminal Operations' },
-              { src: '/images/products/DTL3-2.png', alt: 'Digital Twin — Yard Management', label: 'Yard Management' },
+              { src: '/images/products/DT/DTL1.png', alt: 'Digital Twin — Port IOC Distribution', label: 'Port Distribution' },
+              { src: '/images/products/DT/DTL2-2.png', alt: 'Digital Twin — Traffic Control', label: 'Traffic Control' },
+              { src: '/images/products/DT/DTL3-1.png', alt: 'Digital Twin — Terminal Operations', label: 'Terminal Operations' },
+              { src: '/images/products/DT/DTL3-2.png', alt: 'Digital Twin — Yard Management', label: 'Yard Management' },
+              { src: '/images/products/DT/DTL4.png', alt: 'Digital Twin — Smart Parking', label: 'Smart Parking' },
             ]}
           />
         </div>

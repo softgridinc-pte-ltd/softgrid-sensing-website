@@ -38,7 +38,7 @@ const productSeries: ProductSeries[] = [
     name: 'AFOS Fusion',
     subtitle: 'Monitoring & Diagnostics',
     description: "From lift sensors to satellite imagery \u2014 see what's happening across all your assets, at any scale, before problems escalate.",
-    products: [{ name: 'LTMS' }, { name: 'RM&D' }, { name: 'Cloud BMS' }, { name: 'Fusion RSA' }, { name: 'Escalator Monitoring [TBD]', tbd: true }],
+    products: [{ name: 'LTMS' }, { name: 'RM&D' }, { name: 'Cloud BMS' }, { name: 'Fusion RSA' }, { name: 'Escalator Monitoring' }],
     href: '/products/fusion',
     Icon: MonitorDot,
     iconBg: 'rgba(31,153,197,0.15)',
