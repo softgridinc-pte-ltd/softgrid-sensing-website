@@ -1,4 +1,6 @@
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
+import { ProductImageCarousel } from '@/components/ui/ProductImageCarousel'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -232,41 +234,45 @@ export default function SensePage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [LMD DEVICE PHOTOS]<br /><br />LMD6000 and LMDC<br />standalone + installed
+          <div className="flex flex-col gap-3">
+            {/* Hero image — full interior view */}
+            <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-lg">
+              <Image
+                src="/images/products/LMD/LMD6000 full set without adapter_03.jpg"
+                alt="LMD6000 interior — door open showing PCB and edge computing board"
+                width={1200}
+                height={900}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent" />
+              <span className="absolute bottom-4 left-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-navy-900 shadow backdrop-blur">
+                LMD6000 — Interior View
+              </span>
+            </div>
+            {/* Detail shots — 3-column strip */}
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { src: '/images/products/LMD/LMD6000 full set without adapter_01.jpg', label: 'Full Set' },
+                { src: '/images/products/LMD/LMD6000 full set without adapter_04 (door panel).jpg', label: 'Door Panel' },
+                { src: '/images/products/LMD/LMD6000 full set without adapter_05 (main).jpg', label: 'Main Board' },
+              ].map((img) => (
+                <div
+                  key={img.src}
+                  className="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm"
+                >
+                  <Image
+                    src={img.src}
+                    alt={`LMD6000 — ${img.label}`}
+                    width={400}
+                    height={400}
+                    className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-transparent" />
+                  <span className="absolute bottom-2 left-2 inline-flex items-center rounded-full bg-white/85 px-2 py-0.5 text-[10px] font-semibold text-navy-800 shadow-sm backdrop-blur">
+                    {img.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -405,42 +411,41 @@ export default function SensePage(): React.ReactElement {
               BCA RM&amp;D Certified
             </div>
           </div>
-          <div
-            style={{
-              direction: 'ltr',
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
+          <div style={{ direction: 'ltr' }} className="flex flex-col gap-3">
+            {/* Carousel — first 4 LBB images */}
+            <ProductImageCarousel
+              alt="LBB Lift BlackBox"
+              images={[
+                { src: '/images/products/LBB/Image_20241014140800.jpg', label: 'LBB300 — Front I/O Panel' },
+                { src: '/images/products/LBB/Image_20241014140814.jpg', label: 'LBB300 — Side View' },
+                { src: '/images/products/LBB/Image_20241014140823.jpg', label: 'LBB300 — Terminal Connectors' },
+                { src: '/images/products/LBB/Image_20241014140826.jpg', label: 'LBB300 — Exterior' },
+              ]}
             />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [LBB DEVICE PHOTO]<br /><br />Installed on cartop<br />and standalone
+            {/* Detail shots — 3-column strip */}
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { src: '/images/products/LBB/Image_20250407174437.jpg', label: 'Internal PCB' },
+                { src: '/images/products/LBB/LBB400 SIM HDMI DC FPOE and other ports 2.jpg', label: 'LBB400 Ports' },
+                { src: '/images/products/LBB/LBB400 SIM HDMI DC FPOE and other ports.jpg', label: 'LBB400 Packaging' },
+              ].map((img) => (
+                <div
+                  key={img.src}
+                  className="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm"
+                >
+                  <Image
+                    src={img.src}
+                    alt={`LBB — ${img.label}`}
+                    width={400}
+                    height={400}
+                    className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-transparent" />
+                  <span className="absolute bottom-2 left-2 inline-flex items-center rounded-full bg-white/85 px-2 py-0.5 text-[10px] font-semibold text-navy-800 shadow-sm backdrop-blur">
+                    {img.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -590,50 +595,15 @@ export default function SensePage(): React.ReactElement {
             <p style={{ fontSize: 16, lineHeight: 1.8, color: '#475569', marginBottom: 28 }}>
               Companion Edge VA Device (180 x 110 x 55mm) processes 6 camera channels for computer vision.
             </p>
-            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' as const }}>
-              <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Status</div>
-                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Demonstrated to LTA. Deployment-ready.</div>
-              </div>
-            </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [EMD DEVICE PHOTO/RENDER]<br /><br />Device + sensor<br />placement diagram
-            </div>
-          </div>
+          <ProductImageCarousel
+            alt="EMD Escalator Monitoring Device"
+            images={[
+              { src: '/images/products/EMD/EMD Enclosure inside view 2.jpg', label: 'EMD — Enclosure Interior' },
+              { src: '/images/products/EMD/EMD PCB Board 4.jpg', label: 'EMD — PCB Board Close-up' },
+              { src: '/images/products/EMD/EMD PCB.png', label: 'EMD-V1 — Main Board' },
+            ]}
+          />
         </div>
       </section>
 
