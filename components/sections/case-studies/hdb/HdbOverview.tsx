@@ -18,7 +18,7 @@ export function HdbOverview(): React.ReactElement {
             <div className="flex items-center gap-4 mb-6">
               <div className="flex-shrink-0 w-20 h-20 rounded-xl border border-slate-200 bg-white p-3 shadow-sm flex items-center justify-center">
                 <Image
-                  src="/images/logos/HDB.png"
+                  src="/images/logos/HDB-icon.png"
                   alt="HDB"
                   width={64}
                   height={64}
