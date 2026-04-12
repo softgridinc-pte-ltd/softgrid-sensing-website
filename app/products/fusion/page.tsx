@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
+import { BrowserFrame } from '@/components/ui/BrowserFrame'
 
 import type { Metadata } from 'next'
 
@@ -271,43 +272,11 @@ export default function FusionPage(): React.ReactElement {
               HDB Validated
             </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [LTMS DASHBOARD SCREENSHOT]<br /><br />Multi-organization lift monitoring<br />dashboard with real-time status
-            </div>
-          </div>
+          <BrowserFrame
+            src="/images/products/Fusion/LTMS.png"
+            alt="LTMS — Lift Telemonitoring System dashboard"
+            url="ltms.softgridsensing.com"
+          />
         </div>
       </section>
 
@@ -460,43 +429,12 @@ export default function FusionPage(): React.ReactElement {
               BCA Sandbox Certified
             </div>
           </div>
-          <div
-            style={{
-              direction: 'ltr',
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
+          <div style={{ direction: 'ltr' }}>
+            <BrowserFrame
+              src="/images/products/Fusion/RMD.png"
+              alt="RM&D — Remote Monitoring & Diagnostics dashboard"
+              url="rmd.softgridsensing.com"
             />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [RM&amp;D DASHBOARD SCREENSHOT]<br /><br />Fault detection, vibration analysis,<br />performance indicators
-            </div>
           </div>
         </div>
       </section>
@@ -632,43 +570,11 @@ export default function FusionPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [CLOUD BMS DASHBOARD]<br /><br />Unified building systems view:<br />HVAC, lighting, energy, lifts
-            </div>
-          </div>
+          <BrowserFrame
+            src="/images/products/Fusion/BMS.png"
+            alt="Cloud BMS — Building Management System dashboard"
+            url="bms.softgridsensing.com"
+          />
         </div>
       </section>
 
@@ -829,67 +735,11 @@ export default function FusionPage(): React.ReactElement {
               Planetary Scale Monitoring
             </div>
           </div>
-          <div
-            style={{
-              direction: 'ltr',
-              background: 'linear-gradient(160deg, #020c1b 0%, #0a1e3d 60%, #0d2845 100%)',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.15)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#6CBBD9',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [SATELLITE IMAGERY]<br /><br />Before/after change detection<br />visualization — forest cover analysis
-            </div>
-            {/* Decorative orbital rings */}
-            <div
-              style={{
-                position: 'absolute',
-                width: 200,
-                height: 200,
-                borderRadius: '50%',
-                border: '1px dashed rgba(31,153,197,0.15)',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%,-50%) rotate(25deg)',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                width: 280,
-                height: 140,
-                borderRadius: '50%',
-                border: '1px dashed rgba(31,153,197,0.08)',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%,-50%) rotate(-15deg)',
-              }}
+          <div style={{ direction: 'ltr' }}>
+            <BrowserFrame
+              src="/images/products/Fusion/RSA.png"
+              alt="Fusion RSA — Remote Sensing Analytics for forest cover change detection"
+              url="rsa.softgridsensing.com"
             />
           </div>
         </div>
@@ -1026,43 +876,12 @@ export default function FusionPage(): React.ReactElement {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              direction: 'ltr',
-              background: '#0A1628',
-              borderRadius: 24,
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              border: '1px solid rgba(31,153,197,0.1)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(31,153,197,0.06) 0%, transparent 60%)',
-              }}
+          <div style={{ direction: 'ltr' }}>
+            <BrowserFrame
+              src="/images/products/Fusion/EMS.png"
+              alt="Escalator Monitoring System — floor plan with sensor placement"
+              url="ems.softgridsensing.com"
             />
-            <div
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 14,
-                color: '#64748B',
-                textAlign: 'center',
-                position: 'relative',
-                zIndex: 1,
-                lineHeight: 1.6,
-              }}
-            >
-              [ESCALATOR MONITORING DIAGRAM]<br /><br />Sensor placement schematic +<br />computer vision overlay
-            </div>
           </div>
         </div>
       </section>
