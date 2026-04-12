@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, Linkedin } from 'lucide-react'
+import { Mail, Phone, MapPin, Building2, Clock } from 'lucide-react'
 
 import type { ReactNode } from 'react'
 
@@ -22,10 +22,18 @@ const contactDetails: ContactDetail[] = [
     value: '+65 6123 4567',
     href: 'tel:+6561234567',
   },
+]
+
+const locationDetails: ContactDetail[] = [
+  {
+    icon: <Building2 className="w-5 h-5 text-primary-500" />,
+    label: 'Headquarters',
+    value: '10 Woodlands Ave 8, #02-01\nHDB CBR, Singapore 738973',
+  },
   {
     icon: <MapPin className="w-5 h-5 text-primary-500" />,
-    label: 'Address',
-    value: '10 Woodlands Ave 8, #02-01\nHDB CBR, Singapore 738973',
+    label: 'Office',
+    value: '1 Sims Lane, #04-02\nOne Sims Lane, Singapore 387355',
   },
 ]
 
@@ -42,7 +50,7 @@ export function ContactInfo(): React.ReactElement {
                 {detail.icon}
               </div>
               <div>
-                <p className="text-xs text-slate-500 uppercase tracking-wider mb-0.5">
+                <p className="text-xs text-slate-400 uppercase tracking-wider font-medium mb-0.5">
                   {detail.label}
                 </p>
                 {detail.href ? (
@@ -66,6 +74,30 @@ export function ContactInfo(): React.ReactElement {
       {/* Divider */}
       <div className="border-t border-navy-700" />
 
+      {/* Locations */}
+      <div>
+        <div className="space-y-5">
+          {locationDetails.map((detail) => (
+            <div key={detail.label} className="flex items-start gap-3">
+              <div className="w-10 h-10 bg-primary-500/10 border border-primary-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                {detail.icon}
+              </div>
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wider font-medium mb-0.5">
+                  {detail.label}
+                </p>
+                <p className="text-slate-200 text-sm whitespace-pre-line">
+                  {detail.value}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-navy-700" />
+
       {/* Office Hours */}
       <div>
         <div className="flex items-center gap-2 mb-3">
@@ -80,22 +112,6 @@ export function ContactInfo(): React.ReactElement {
         </p>
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-navy-700" />
-
-      {/* Quick Links */}
-      <div>
-        <h3 className="text-lg font-semibold text-white mb-3">Connect</h3>
-        <a
-          href="https://www.linkedin.com/company/softgrid-sensing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-slate-300 hover:text-primary-400 transition-colors text-sm"
-        >
-          <Linkedin className="w-4 h-4" />
-          LinkedIn
-        </a>
-      </div>
     </div>
   )
 }

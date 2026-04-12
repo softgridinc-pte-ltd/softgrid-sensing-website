@@ -57,8 +57,8 @@ export function Footer(): React.ReactElement {
               Bridging Physical Assets with Digital Intelligence
             </p>
             <div className="space-y-2 text-sm text-slate-400">
-              <p>10 Woodlands Ave 8, #02-01</p>
-              <p>Singapore 738973</p>
+              <p>10 Woodlands Ave 8, #02-01, Singapore 738973</p>
+              <p>1 Sims Lane, #04-02, Singapore 387355</p>
               <p>
                 <a
                   href="mailto:info@softgridsensing.com"
