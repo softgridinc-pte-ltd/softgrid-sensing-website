@@ -34,7 +34,7 @@ export function BrowserFrameCarousel({
   }, [count, interval])
 
   const isMobile = variant === 'mobile'
-  const stageHeight = isMobile ? 520 : 340
+  const stageHeight = isMobile ? 620 : 420
   const itemWidth = isMobile ? '38%' : '75%'
   const imgWidth = isMobile ? 440 : 1920
   const imgHeight = isMobile ? 956 : 1080
