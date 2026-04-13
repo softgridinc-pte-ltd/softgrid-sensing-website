@@ -145,6 +145,99 @@ Overview page redesign — "magazine editorial" layout replacing uniform card gr
 
 **Build status:** Passing (static export to `/out`)
 
+### Session — Nav Dropdowns & Hero Overhaul (2026-03-28)
+
+**Redesigned navigation and home page hero**
+
+- [x] Redesigned nav dropdowns with icons, descriptions, and polished hover states
+- [x] Standardized hero overlines across product, solution, about, and case study pages with gradient glow
+- [x] Replaced static home hero with image carousel slideshow
+- [x] Added platform flow visualization to platform hero
+- [x] Swapped hero slide images (bg1, bg15, etc.)
+
+### Session — Platform Section Redesign (2026-03-29)
+
+**Rebuilt platform architecture diagram and surrounding sections**
+
+- [x] Replaced platform stack with `AfosArchitectureSvg` diagram
+- [x] Redesigned platform diagram with dark glow frame, industry icons, and animated connectors
+- [x] Polished shift section with decorative backdrop, brightened sky tones
+- [x] Brightened stats labels and switched stat numbers to cyan glow
+- [x] Polished platform diagram with animated borders and refined spacing
+
+### Session — Visual Polish & Component Extraction (2026-03-30)
+
+**Site-wide visual refinements and reusable component extraction**
+
+- [x] Redesigned solutions cards with image-led layout
+- [x] Added hero background images to solution detail pages
+- [x] Extracted shared `ImageCard` component, applied to home/solutions/case-studies
+- [x] Extracted case study sections into reusable components
+- [x] Extracted solutions page into reusable section components
+- [x] Unified product suite icons site-wide
+- [x] Polished foundation diagram layout, lines, and icons
+- [x] Brightened and enlarged section overlines
+- [x] Restyled platform pillars with vertical axis and dots
+
+### Session — Platform Content & Product Pages (2026-03-31)
+
+**Enriched platform content and polished product pages**
+
+- [x] Added platform outcomes section with dark engines theme
+- [x] Extracted `FoundationDiagram` and restructured platform sections
+- [x] Expanded `PlatformEnginesSection` with richer content
+- [x] Expanded products page with richer content sections
+- [x] Tightened product pages content and layout
+- [x] Added image carousels to solution cards
+- [x] Refined platform trajectory and outcomes spacing
+- [x] Unified hero overlays and product icons
+
+### Session — Product Photography & Carousels (2026-04-01)
+
+**Added real product imagery and interactive carousels to product detail pages**
+
+- [x] Added real product photos for LMD, LBB, and EMD on Sense page
+- [x] Added web app screenshots to Fusion product page
+- [x] Added product images and 3D carousel to Orches product page with `BrowserFrame` perspective tilt
+- [x] Restructured Cortex product page layout and added large carousel mode
+- [x] Generated predictive analytics dashboard screenshot for Cortex
+- [x] Removed ESG & Compliance Reporting product from Cortex
+- [x] Unified hero overline across all pages
+
+### Session — Image Reorganization & Accuracy Fix (2026-04-02)
+
+**Asset cleanup and data accuracy corrections**
+
+- [x] Reorganized product and case study images into subdirectories
+- [x] Renamed `images/case` directory to `images/cases`
+- [x] Updated product icons, removed Escalator Monitoring TBD, refreshed images
+- [x] Corrected AI prediction accuracy from 85% to 83% across all sources
+- [x] Removed `ImpactStrip` section from case studies page
+- [x] Removed unused report HTML files
+- [x] Cleaned up background images
+
+### Session — HDB Flagship Case Study (2026-04-05)
+
+**Rebuilt HDB case study as a premium flagship page**
+
+- [x] Rebuilt HDB case study as flagship page with 7 custom sections
+- [x] Replaced hero and stakes with project overview section
+- [x] Refined layout, section details, and featured case study summary/stats
+- [x] Replaced dot matrix with background image in featured case study hero
+- [x] Added decorative dot matrix pattern to solutions and products hero sections
+- [x] Added HDB icon logo for case study overview section
+- [x] Removed unused HDB section components
+- [x] Fixed missing background image in NParks case study
+
+### Session — Password Gate & Contact Page (2026-04-13)
+
+**Added site access control and updated contact page**
+
+- [x] Added password gate for site access
+- [x] Updated contact page layout
+
+**Build status:** Passing (static export to `/out`)
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
