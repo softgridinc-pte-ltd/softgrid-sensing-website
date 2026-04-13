@@ -1,7 +1,6 @@
 import { PlatformPhilosophySection } from '@/components/sections/platform/PlatformPhilosophySection'
 import { PlatformEnginesSection } from '@/components/sections/platform/PlatformEnginesSection'
 import { PlatformOutcomesSection } from '@/components/sections/platform/PlatformOutcomesSection'
-import { ProductSeriesSection } from '@/components/sections/products/ProductSeriesSection'
 import { CTASection } from '@/components/sections/CTASection'
 import { PlatformFlow } from '@/components/sections/hero/PlatformFlow'
 import { Button } from '@/components/ui/Button'
@@ -57,9 +56,6 @@ export default function PlatformPage(): React.ReactElement {
 
       {/* Outcomes / Key Advantages */}
       <PlatformOutcomesSection />
-
-      {/* What Runs on AFOS */}
-      <ProductSeriesSection />
 
       {/* CTA */}
       <CTASection />
