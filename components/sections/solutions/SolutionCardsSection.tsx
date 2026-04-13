@@ -91,6 +91,7 @@ export function SolutionCardsSection(): React.ReactElement {
               <Link
                 key={s.title}
                 href={s.href}
+                aria-label={`Learn more about ${s.title}`}
                 data-animate
                 className={`group grid items-center gap-8 lg:gap-16 lg:grid-cols-2 ${
                   imageRight ? '' : 'lg:[&>div:first-child]:order-2'
@@ -108,7 +109,7 @@ export function SolutionCardsSection(): React.ReactElement {
                   <p className="mb-7 text-base md:text-[17px] leading-[1.8] text-slate-600">
                     {s.description}
                   </p>
-                  <div className="inline-flex items-center gap-2 text-base font-semibold text-primary-600">
+                  <div aria-hidden="true" className="inline-flex items-center gap-2 text-base font-semibold text-primary-600">
                     Learn more
                     <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>

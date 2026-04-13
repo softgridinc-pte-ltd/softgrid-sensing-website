@@ -39,7 +39,7 @@ export function ContentBlock({
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
               <Image
                 src={image}
-                alt=""
+                alt={title}
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"

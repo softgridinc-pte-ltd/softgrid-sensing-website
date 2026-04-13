@@ -21,6 +21,7 @@ export function RelatedLinks({ items }: RelatedLinksProps): React.ReactElement {
             <Link
               key={item.title}
               href={item.href}
+              aria-label={`Learn more about ${item.title}`}
               data-animate
               className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-lg"
             >
@@ -32,7 +33,7 @@ export function RelatedLinks({ items }: RelatedLinksProps): React.ReactElement {
                   {item.title}
                 </div>
               </div>
-              <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600">
+              <div aria-hidden="true" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600">
                 Learn more
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
