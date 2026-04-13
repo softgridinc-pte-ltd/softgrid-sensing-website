@@ -83,7 +83,7 @@ export function ShiftSection(): React.ReactElement {
           className="w-1/2 bg-[#DEE3EA]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgba(15,23,42,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.07) 1px, transparent 1px)',
+              'linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px)',
             backgroundSize: '56px 56px',
             backgroundPosition: 'right top',
           }}
@@ -92,7 +92,7 @@ export function ShiftSection(): React.ReactElement {
           className="w-1/2 bg-[#CCE6F0]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgba(15,23,42,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.07) 1px, transparent 1px)',
+              'linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px)',
             backgroundSize: '56px 56px',
             backgroundPosition: 'left top',
           }}
