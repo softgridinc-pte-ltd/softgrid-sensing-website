@@ -2,7 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: ['releases/**']
+  pull_request:
+    branches: ['releases/**']
+    types: [closed]
   workflow_dispatch:
 
 permissions:
@@ -16,6 +19,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

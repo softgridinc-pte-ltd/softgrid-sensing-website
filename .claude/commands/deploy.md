@@ -14,15 +14,25 @@ git status
 
 If there are uncommitted changes, warn the user and stop. Do not proceed with deploy if the working tree is dirty.
 
-### Step 2: Check for unpushed commits
+### Step 2: Determine target branch
+
+Check the current branch name:
 
 ```bash
-git log origin/main..HEAD --oneline
+git branch --show-current
+```
+
+The deployment target must be a `releases/*` branch. If the current branch is `main` or another non-release branch, ask the user which release branch to push to (e.g., `releases/v1.0`).
+
+### Step 3: Check for unpushed commits
+
+```bash
+git log origin/<branch>..HEAD --oneline
 ```
 
 If there are no commits ahead of origin, inform the user there is nothing to deploy and stop.
 
-### Step 3: Build verification
+### Step 4: Build verification
 
 ```bash
 pnpm build
@@ -30,13 +40,13 @@ pnpm build
 
 If the build fails, stop and fix errors before deploying. Do not push broken code.
 
-### Step 4: Push to remote
+### Step 5: Push to remote
 
 ```bash
-git push origin main
+git push origin <branch>
 ```
 
-### Step 5: Monitor deployment
+### Step 6: Monitor deployment
 
 Wait for the GitHub Actions workflow to start, then watch it:
 
@@ -50,7 +60,7 @@ Then watch the run until it completes:
 gh run watch --exit-status
 ```
 
-### Step 6: Report result
+### Step 7: Report result
 
 If the workflow succeeded, report success with the deployment URL (https://softgridsensing.com).
 
