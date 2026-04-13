@@ -69,7 +69,7 @@ function validateForm(data: FormData): FormErrors {
 }
 
 const inputStyles =
-  'w-full bg-navy-800 border border-navy-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-400 outline-none transition-all duration-200 focus:border-primary-500/50 focus:shadow-[0_0_12px_rgba(31,153,197,0.08)]'
+  'w-full bg-navy-800 border border-navy-600 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-400 outline-none transition-all duration-200 focus:border-primary-500/50 focus:shadow-[0_0_12px_rgba(31,153,197,0.08)]'
 
 const labelStyles = 'block text-sm font-medium text-slate-300 mb-1.5'
 

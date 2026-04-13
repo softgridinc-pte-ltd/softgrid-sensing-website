@@ -30,6 +30,18 @@
   button:focus-visible {
     @apply outline-2 outline-offset-2 outline-primary-400 rounded-sm;
   }
+
+  /* Override browser autofill background on dark forms */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #162544 inset;
+    -webkit-text-fill-color: #fff;
+    caret-color: #fff;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
 
 @layer utilities {
