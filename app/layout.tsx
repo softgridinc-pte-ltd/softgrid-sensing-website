@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   title: 'Softgrid Sensing | AI-Driven Facility Operating System',
   description:
     'Softgrid provides AI-driven facility operating systems for predictive maintenance, lift monitoring, and smart building management. Trusted by HDB with 10,000+ assets monitored in Singapore.',
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'Softgrid Sensing | AI-Driven Facility Operating System',
     description:
@@ -33,6 +41,13 @@ export const metadata: Metadata = {
     locale: 'en_SG',
     siteName: 'Softgrid Sensing',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Softgrid Sensing - AI-Driven Facility Operating System' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Softgrid Sensing | AI-Driven Facility Operating System',
+    description:
+      'One intelligent platform for predictive maintenance, real-time control, and operational excellence.',
+    images: ['/og-image.png'],
   },
 }
 
