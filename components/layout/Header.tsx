@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -102,7 +102,49 @@ export function Header(): React.ReactElement {
   const [searchQuery, setSearchQuery] = useState('')
   const searchInputRef = useRef<HTMLInputElement>(null)
   const searchContainerRef = useRef<HTMLDivElement>(null)
+  const dropdownRefs = useRef<Map<string, HTMLDivElement>>(new Map())
+  const triggerRefs = useRef<Map<string, HTMLAnchorElement>>(new Map())
   const pathname = usePathname()
+
+  const focusDropdownItem = useCallback((label: string, index: number): void => {
+    const container = dropdownRefs.current.get(label)
+    if (!container) return
+    const items = container.querySelectorAll<HTMLAnchorElement>('[role="menuitem"]')
+    items[index]?.focus()
+  }, [])
+
+  const handleTriggerKeyDown = useCallback((e: React.KeyboardEvent, item: typeof navigation[0]): void => {
+    if (!item.children) return
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setOpenDropdown(item.label)
+      setTimeout(() => focusDropdownItem(item.label, 0), 0)
+    } else if (e.key === 'Escape') {
+      setOpenDropdown(null)
+    }
+  }, [focusDropdownItem])
+
+  const handleDropdownKeyDown = useCallback((e: React.KeyboardEvent, item: typeof navigation[0]): void => {
+    if (!item.children) return
+    const container = dropdownRefs.current.get(item.label)
+    if (!container) return
+    const items = container.querySelectorAll<HTMLAnchorElement>('[role="menuitem"]')
+    const currentIndex = Array.from(items).indexOf(e.target as HTMLAnchorElement)
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      const next = currentIndex + 1 < items.length ? currentIndex + 1 : 0
+      items[next]?.focus()
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      const prev = currentIndex - 1 >= 0 ? currentIndex - 1 : items.length - 1
+      items[prev]?.focus()
+    } else if (e.key === 'Escape') {
+      e.preventDefault()
+      setOpenDropdown(null)
+      triggerRefs.current.get(item.label)?.focus()
+    }
+  }, [])
 
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
@@ -171,8 +213,14 @@ export function Header(): React.ReactElement {
               className="relative"
               onMouseEnter={() => item.children && setOpenDropdown(item.label)}
               onMouseLeave={() => setOpenDropdown(null)}
+              onBlur={(e) => {
+                if (item.children && !e.currentTarget.contains(e.relatedTarget as Node)) {
+                  setOpenDropdown(null)
+                }
+              }}
             >
               <Link
+                ref={(el) => { if (el) triggerRefs.current.set(item.label, el) }}
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md inline-flex items-center gap-1 ${
                   isActive(item.href)
@@ -183,6 +231,7 @@ export function Header(): React.ReactElement {
                   'aria-haspopup': 'true' as const,
                   'aria-expanded': openDropdown === item.label,
                 } : {})}
+                onKeyDown={(e) => handleTriggerKeyDown(e, item)}
               >
                 {item.label}
                 {item.children && (
@@ -197,13 +246,20 @@ export function Header(): React.ReactElement {
                     ? 'opacity-100 translate-y-0 pointer-events-auto'
                     : 'opacity-0 -translate-y-1 pointer-events-none'
                 }`}>
-                  <div className="bg-navy-800 border border-navy-700 rounded-xl p-2 whitespace-nowrap shadow-xl shadow-navy-950/50">
+                  <div
+                    ref={(el) => { if (el) dropdownRefs.current.set(item.label, el) }}
+                    role="menu"
+                    className="bg-navy-800 border border-navy-700 rounded-xl p-2 whitespace-nowrap shadow-xl shadow-navy-950/50"
+                    onKeyDown={(e) => handleDropdownKeyDown(e, item)}
+                  >
                     {item.children.map((child) => {
                       const Icon = child.icon
                       return (
                         <Link
                           key={child.href}
                           href={child.href}
+                          role="menuitem"
+                          tabIndex={openDropdown === item.label ? 0 : -1}
                           className="group/item flex items-start gap-3.5 px-3 py-3 rounded-lg border-l-2 border-transparent hover:border-primary-500 hover:bg-primary-500/8 hover:translate-x-0.5 transition-all duration-200"
                         >
                           {Icon && (
@@ -276,6 +332,7 @@ export function Header(): React.ReactElement {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search..."
+              aria-label="Search the site"
               tabIndex={searchOpen ? 0 : -1}
               className={`bg-transparent text-sm text-white placeholder-slate-500 outline-none transition-all duration-350 ease-out ${
                 searchOpen ? 'w-full opacity-100 ml-1' : 'w-0 opacity-0 ml-0'
@@ -337,6 +394,7 @@ export function Header(): React.ReactElement {
                 <input
                   type="text"
                   placeholder="Search..."
+                  aria-label="Search the site"
                   className="bg-transparent text-sm text-white placeholder-slate-500 outline-none w-full"
                 />
               </div>

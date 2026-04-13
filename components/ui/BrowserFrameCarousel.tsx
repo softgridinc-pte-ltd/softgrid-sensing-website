@@ -25,7 +25,16 @@ export function BrowserFrameCarousel({
   large = false,
 }: BrowserFrameCarouselProps): React.ReactElement {
   const [active, setActive] = useState(0)
+  const [reducedMotion, setReducedMotion] = useState(false)
   const count = images.length
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReducedMotion(mq.matches)
+    const handler = (e: MediaQueryListEvent): void => setReducedMotion(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   const goTo = useCallback((i: number) => setActive(i), [])
 
@@ -89,16 +98,25 @@ export function BrowserFrameCarousel({
           return (
             <div
               key={img.src}
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${img.label}`}
               className="absolute left-1/2 top-1/2 cursor-pointer"
               style={{
                 width: itemWidth,
                 transform: `translate(-50%, calc(-50% + ${translateY}px)) translateX(${translateX}%) translateZ(${translateZ}px) scale(${scale})`,
                 opacity,
                 zIndex,
-                transition: 'all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)',
+                transition: reducedMotion ? 'none' : 'all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)',
                 filter: isActive ? 'none' : `brightness(${0.7 + 0.15 * ((Math.cos((offset / count) * 2 * Math.PI) + 1) / 2)})`,
               }}
               onClick={() => goTo(i)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  goTo(i)
+                }
+              }}
             >
               {/* Mobile phone bezel */}
               {isMobile ? (
