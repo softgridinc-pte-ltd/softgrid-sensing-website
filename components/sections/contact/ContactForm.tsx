@@ -69,11 +69,11 @@ function validateForm(data: FormData): FormErrors {
 }
 
 const inputStyles =
-  'w-full bg-navy-800 border border-navy-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 outline-none transition-all duration-200 focus:border-primary-500/50 focus:shadow-[0_0_12px_rgba(31,153,197,0.08)]'
+  'w-full bg-navy-800 border border-navy-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-400 outline-none transition-all duration-200 focus:border-primary-500/50 focus:shadow-[0_0_12px_rgba(31,153,197,0.08)]'
 
 const labelStyles = 'block text-sm font-medium text-slate-300 mb-1.5'
 
-const errorStyles = 'text-red-400 text-xs mt-1'
+const errorStyles = 'text-red-300 text-xs mt-1'
 
 export function ContactForm(): React.ReactElement {
   const [formData, setFormData] = useState<FormData>(initialFormData)
@@ -146,7 +146,7 @@ export function ContactForm(): React.ReactElement {
       <div className="bg-navy-800 border border-primary-500/30 rounded-xl p-10 text-center">
         <CheckCircle2 className="w-12 h-12 text-primary-400 mx-auto mb-4" />
         <h3 className="text-xl font-semibold text-white mb-2">Message Sent</h3>
-        <p className="text-slate-400 mb-6">
+        <p className="text-slate-300 mb-6">
           Thank you for reaching out. We&apos;ll get back to you within 1&ndash;2 business days.
         </p>
         <button
@@ -229,7 +229,7 @@ export function ContactForm(): React.ReactElement {
 
         <div>
           <label htmlFor="phone" className={labelStyles}>
-            Phone <span className="text-slate-500 text-xs">(optional)</span>
+            Phone <span className="text-slate-400 text-xs">(optional)</span>
           </label>
           <input
             id="phone"
@@ -294,8 +294,8 @@ export function ContactForm(): React.ReactElement {
       {/* Error banner */}
       {status === 'error' && (
         <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3">
-          <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
-          <p className="text-red-400 text-sm">
+          <AlertCircle className="w-4 h-4 text-red-300 flex-shrink-0" />
+          <p className="text-red-300 text-sm">
             Something went wrong. Please try again.
           </p>
         </div>
@@ -320,7 +320,7 @@ export function ContactForm(): React.ReactElement {
         )}
       </button>
 
-      <p className="text-slate-500 text-xs">
+      <p className="text-slate-600 text-xs">
         We typically respond within 24 hours.
       </p>
     </form>

@@ -81,7 +81,7 @@ export function ImageCard({
         {footerStat && (
           <div className="mt-6 border-t border-slate-100 pt-5">
             <div className="text-3xl font-bold text-primary-600">{footerStat.value}</div>
-            <div className="mt-1 text-xs uppercase tracking-wider text-slate-500">{footerStat.label}</div>
+            <div className="mt-1 text-xs uppercase tracking-wider text-slate-600">{footerStat.label}</div>
           </div>
         )}
 

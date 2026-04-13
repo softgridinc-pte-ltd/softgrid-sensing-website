@@ -51,7 +51,7 @@ export function CTASection({
   secondaryHref = '/contact',
 }: CTASectionProps): React.ReactElement {
   const isBrand = variant === 'brand'
-  const subtitleColor = isBrand ? 'text-white/80' : 'text-slate-400'
+  const subtitleColor = isBrand ? 'text-white/90' : 'text-slate-300'
 
   return (
     <section className={`${getVariantClasses(variant)} py-20 md:py-28 relative overflow-hidden`}>

@@ -47,7 +47,7 @@ export function PasswordGate({ children }: { children: React.ReactNode }): React
           <h1 className="text-2xl font-heading font-bold text-white mb-2">
             Softgrid Sensing
           </h1>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-slate-300">
             This site is under development. Enter password to continue.
           </p>
         </div>
@@ -65,7 +65,7 @@ export function PasswordGate({ children }: { children: React.ReactNode }): React
               className="w-full px-4 py-3 bg-navy-800 border border-navy-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
             />
             {error && (
-              <p className="mt-2 text-sm text-red-400">
+              <p className="mt-2 text-sm text-red-300">
                 Incorrect password. Please try again.
               </p>
             )}

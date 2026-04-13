@@ -50,7 +50,7 @@ export function ContactInfo(): React.ReactElement {
                 {detail.icon}
               </div>
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wider font-medium mb-0.5">
+                <p className="text-xs text-slate-300 uppercase tracking-wider font-medium mb-0.5">
                   {detail.label}
                 </p>
                 {detail.href ? (
@@ -83,7 +83,7 @@ export function ContactInfo(): React.ReactElement {
                 {detail.icon}
               </div>
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wider font-medium mb-0.5">
+                <p className="text-xs text-slate-300 uppercase tracking-wider font-medium mb-0.5">
                   {detail.label}
                 </p>
                 <p className="text-slate-200 text-sm whitespace-pre-line">
@@ -107,7 +107,7 @@ export function ContactInfo(): React.ReactElement {
         <p className="text-slate-300 text-sm">
           Monday &ndash; Friday
         </p>
-        <p className="text-slate-400 text-sm">
+        <p className="text-slate-300 text-sm">
           9:00 AM &ndash; 6:00 PM (SGT)
         </p>
       </div>

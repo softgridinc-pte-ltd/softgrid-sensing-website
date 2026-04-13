@@ -13,7 +13,7 @@ interface BreadcrumbProps {
 export function Breadcrumb({ items }: BreadcrumbProps): React.ReactElement {
   return (
     <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-2">
-      <ol className="flex items-center gap-1.5 text-sm text-slate-400">
+      <ol className="flex items-center gap-1.5 text-sm text-slate-300">
         <li>
           <Link href="/" className="hover:text-primary-400 transition-colors">
             Home

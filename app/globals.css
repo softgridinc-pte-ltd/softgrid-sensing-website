@@ -26,7 +26,8 @@
     @apply bg-primary-500/30 text-white;
   }
 
-  a:focus-visible {
+  a:focus-visible,
+  button:focus-visible {
     @apply outline-2 outline-offset-2 outline-primary-400 rounded-sm;
   }
 }
