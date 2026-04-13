@@ -19,10 +19,10 @@ const footerColumns: FooterColumn[] = [
   {
     title: 'Products',
     links: [
-      { label: 'AFOS Sense', href: '/products/sense' },
-      { label: 'AFOS Fusion', href: '/products/fusion' },
-      { label: 'AFOS Orches', href: '/products/orches' },
-      { label: 'AFOS Cortex', href: '/products/cortex' },
+      { label: 'Edge Devices (AFOS Sense)', href: '/products/sense' },
+      { label: 'Monitoring & Diagnostics (AFOS Fusion)', href: '/products/fusion' },
+      { label: 'Operations & Maintenance (AFOS Orches)', href: '/products/orches' },
+      { label: 'Data & Intelligence (AFOS Cortex)', href: '/products/cortex' },
     ],
   },
   {
@@ -39,9 +39,9 @@ export function Footer(): React.ReactElement {
   return (
     <footer className="bg-navy-900 border-t border-navy-800">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1.5fr_auto] gap-10 lg:gap-8">
           {/* Brand column */}
-          <div className="lg:col-span-2">
+          <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
                 src="/logo.svg"
@@ -81,7 +81,7 @@ export function Footer(): React.ReactElement {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-slate-400 text-sm hover:text-primary-400 transition-colors duration-200"
+                      className="text-slate-400 text-sm hover:text-primary-400 transition-colors duration-200 whitespace-nowrap"
                     >
                       {link.label}
                     </Link>
