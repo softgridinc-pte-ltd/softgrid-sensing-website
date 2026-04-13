@@ -39,15 +39,17 @@ const ladder = [
   {
     label: 'Legacy',
     title: 'Basic',
-    height: 'min-h-44',
+    height: 'min-h-44 md:max-h-64',
+    offset: '',
     bg: 'bg-slate-800/50 border-slate-700/60',
-    text: 'text-slate-400',
+    text: 'text-slate-200',
     bullets: ['Simple tasks', 'Siloed stand-alone tech', 'Manual processes', 'Error-prone'],
   },
   {
     label: 'Tech Initiator',
-    title: 'Proactive Automation',
-    height: 'min-h-60',
+    title: 'Proactive',
+    height: 'min-h-60 md:min-h-72',
+    offset: '',
     bg: 'bg-primary-500/10 border-primary-400/30',
     text: 'text-slate-200',
     bullets: ['Cross-domain workflows', 'Multiple technologies', 'Semi-automation', 'Some integration'],
@@ -67,11 +69,13 @@ const ladder = [
       'Significant efficiency gain',
     ],
     highlight: true,
+    offset: '',
   },
 ]
 
 export function PlatformEnginesSection(): React.ReactElement {
   return (
+    <>
     <section className="relative overflow-hidden bg-navy-900 pt-20 md:pt-28 pb-8 md:pb-12">
       <div className="absolute inset-0 grid-pattern opacity-30" />
       <div
@@ -144,7 +148,13 @@ export function PlatformEnginesSection(): React.ReactElement {
           </div>
         </div>
 
-        {/* === Sub-block 3: Maturity ladder === */}
+      </div>
+    </section>
+
+    {/* === Sub-block 3: Maturity ladder === */}
+    <section className="relative overflow-hidden bg-navy-800 pt-20 md:pt-28 pb-8 md:pb-12">
+      <div className="absolute inset-0 grid-pattern opacity-25" />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
         <div data-animate>
           <div className="mb-12 max-w-3xl">
             <div className="mb-4 text-xs font-bold uppercase tracking-[3px] text-primary-400">The Trajectory</div>
@@ -170,16 +180,16 @@ export function PlatformEnginesSection(): React.ReactElement {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 items-end gap-6 md:grid-cols-3 lg:gap-10">
-              {ladder.map((stage) => (
+            <div className="grid grid-cols-1 items-end gap-6 md:grid-cols-3 lg:gap-10 md:-translate-x-6">
+              {ladder.map((stage, index) => (
                 <div
                   key={stage.title}
-                  className={`group relative rounded-2xl border ${stage.bg} ${stage.height} flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1`}
+                  className={`group relative rounded-2xl border ${stage.bg} ${stage.height} ${stage.offset} md:w-[90%] ${index === 0 ? 'md:justify-self-end' : index === 1 ? 'md:justify-self-center' : 'md:justify-self-start'} flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1`}
                 >
                   {stage.highlight && (
-                    <div className="mt-6 mb-3 -translate-y-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary-300/40 bg-primary-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-[2px] text-primary-200">
+                    <div className="mt-6 mb-3 -translate-y-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary-300/60 bg-primary-400/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[2px] text-white shadow-[0_0_12px_rgba(31,153,197,0.4)]">
                       <Sparkles className="h-3 w-3" />
-                      AI-Driven
+                      Predictive
                     </div>
                   )}
                   <div className={`${stage.highlight ? 'text-2xl md:text-3xl font-extrabold' : 'text-xl md:text-2xl font-semibold'} italic ${stage.text} mb-2`}>{stage.title}</div>
@@ -207,6 +217,7 @@ export function PlatformEnginesSection(): React.ReactElement {
         </div>
       </div>
     </section>
+    </>
   )
 }
 
