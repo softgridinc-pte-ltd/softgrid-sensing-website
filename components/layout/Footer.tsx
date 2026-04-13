@@ -62,7 +62,7 @@ export function Footer(): React.ReactElement {
               <p>
                 <a
                   href="mailto:info@softgridsensing.com"
-                  className="hover:text-primary-400 transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   info@softgridsensing.com
                 </a>
@@ -81,7 +81,7 @@ export function Footer(): React.ReactElement {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-slate-400 text-sm hover:text-primary-400 transition-colors duration-200 whitespace-nowrap"
+                      className="text-slate-400 text-sm hover:text-white transition-colors duration-200 whitespace-nowrap"
                     >
                       {link.label}
                     </Link>
@@ -97,15 +97,15 @@ export function Footer(): React.ReactElement {
           <div className="flex items-center gap-4 text-slate-400 text-xs">
             <p>&copy; {new Date().getFullYear()} Softgrid Sensing Pte. Ltd. All rights reserved.</p>
             <span className="hidden md:inline text-navy-700">|</span>
-            <Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Use</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
           </div>
           <div className="flex items-center gap-4">
             <a
               href="https://www.linkedin.com/company/softgrid-sensing"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-primary-400 transition-colors"
+              className="text-slate-400 hover:text-white transition-colors"
               aria-label="LinkedIn"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export function Footer(): React.ReactElement {
             </a>
             <a
               href="mailto:info@softgridsensing.com"
-              className="text-slate-400 hover:text-primary-400 transition-colors"
+              className="text-slate-400 hover:text-white transition-colors"
               aria-label="Email"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
