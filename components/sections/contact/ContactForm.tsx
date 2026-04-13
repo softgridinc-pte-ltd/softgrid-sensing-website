@@ -175,10 +175,12 @@ export function ContactForm(): React.ReactElement {
             onChange={(e) => handleChange('name', e.target.value)}
             onBlur={() => handleBlur('name')}
             placeholder="Your name"
+            aria-invalid={errors.name && touched.has('name') ? true : undefined}
+            aria-describedby={errors.name && touched.has('name') ? 'name-error' : undefined}
             className={`${inputStyles} ${errors.name && touched.has('name') ? 'border-red-500/50' : ''}`}
           />
           {errors.name && touched.has('name') && (
-            <p className={errorStyles}>{errors.name}</p>
+            <p id="name-error" className={errorStyles}>{errors.name}</p>
           )}
         </div>
 
@@ -193,10 +195,12 @@ export function ContactForm(): React.ReactElement {
             onChange={(e) => handleChange('email', e.target.value)}
             onBlur={() => handleBlur('email')}
             placeholder="Work email"
+            aria-invalid={errors.email && touched.has('email') ? true : undefined}
+            aria-describedby={errors.email && touched.has('email') ? 'email-error' : undefined}
             className={`${inputStyles} ${errors.email && touched.has('email') ? 'border-red-500/50' : ''}`}
           />
           {errors.email && touched.has('email') && (
-            <p className={errorStyles}>{errors.email}</p>
+            <p id="email-error" className={errorStyles}>{errors.email}</p>
           )}
         </div>
       </div>
@@ -214,10 +218,12 @@ export function ContactForm(): React.ReactElement {
             onChange={(e) => handleChange('company', e.target.value)}
             onBlur={() => handleBlur('company')}
             placeholder="Company name"
+            aria-invalid={errors.company && touched.has('company') ? true : undefined}
+            aria-describedby={errors.company && touched.has('company') ? 'company-error' : undefined}
             className={`${inputStyles} ${errors.company && touched.has('company') ? 'border-red-500/50' : ''}`}
           />
           {errors.company && touched.has('company') && (
-            <p className={errorStyles}>{errors.company}</p>
+            <p id="company-error" className={errorStyles}>{errors.company}</p>
           )}
         </div>
 
@@ -246,6 +252,8 @@ export function ContactForm(): React.ReactElement {
           value={formData.interest}
           onChange={(e) => handleChange('interest', e.target.value)}
           onBlur={() => handleBlur('interest')}
+          aria-invalid={errors.interest && touched.has('interest') ? true : undefined}
+          aria-describedby={errors.interest && touched.has('interest') ? 'interest-error' : undefined}
           className={`${inputStyles} ${!formData.interest ? 'text-slate-500' : ''} ${errors.interest && touched.has('interest') ? 'border-red-500/50' : ''}`}
         >
           <option value="" disabled>
@@ -258,7 +266,7 @@ export function ContactForm(): React.ReactElement {
           ))}
         </select>
         {errors.interest && touched.has('interest') && (
-          <p className={errorStyles}>{errors.interest}</p>
+          <p id="interest-error" className={errorStyles}>{errors.interest}</p>
         )}
       </div>
 
@@ -274,10 +282,12 @@ export function ContactForm(): React.ReactElement {
           onChange={(e) => handleChange('message', e.target.value)}
           onBlur={() => handleBlur('message')}
           placeholder="How can we help?"
+          aria-invalid={errors.message && touched.has('message') ? true : undefined}
+          aria-describedby={errors.message && touched.has('message') ? 'message-error' : undefined}
           className={`${inputStyles} resize-none ${errors.message && touched.has('message') ? 'border-red-500/50' : ''}`}
         />
         {errors.message && touched.has('message') && (
-          <p className={errorStyles}>{errors.message}</p>
+          <p id="message-error" className={errorStyles}>{errors.message}</p>
         )}
       </div>
 

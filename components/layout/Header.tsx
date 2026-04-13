@@ -126,15 +126,20 @@ export function Header(): React.ReactElement {
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent): void => {
       if (e.key === 'Escape') {
-        setSearchOpen(false)
-        setSearchQuery('')
+        if (mobileMenuOpen) {
+          setMobileMenuOpen(false)
+        }
+        if (searchOpen) {
+          setSearchOpen(false)
+          setSearchQuery('')
+        }
       }
     }
-    if (searchOpen) {
+    if (searchOpen || mobileMenuOpen) {
       document.addEventListener('keydown', handleEsc)
     }
     return () => document.removeEventListener('keydown', handleEsc)
-  }, [searchOpen])
+  }, [searchOpen, mobileMenuOpen])
 
   const isActive = (href: string): boolean => {
     if (href === '/') return pathname === '/'
@@ -174,6 +179,10 @@ export function Header(): React.ReactElement {
                     ? 'text-primary-400'
                     : 'text-slate-100 hover:text-primary-400'
                 }`}
+                {...(item.children ? {
+                  'aria-haspopup': 'true' as const,
+                  'aria-expanded': openDropdown === item.label,
+                } : {})}
               >
                 {item.label}
                 {item.children && (
@@ -281,6 +290,7 @@ export function Header(): React.ReactElement {
           className="lg:hidden text-slate-100 hover:text-primary-400 transition-colors p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
