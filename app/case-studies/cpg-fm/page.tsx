@@ -67,14 +67,14 @@ export default function CpgFmCaseStudyPage(): React.ReactElement {
         overline="Facility Operations"
         headline="AI-Powered Facility Management for CPG FM"
         subheadline="Digitizing facility operations with IRIS CMMS and Athena AI knowledge base — replacing paper-based workflows with intelligent, automated building management."
-        image="/images/background/bg7.jpg"
+        image="/images/background/bg7.webp"
         logo="/images/logos/CPGFM.png"
         logoAlt="CPG FM"
       />
 
       <KeyNumbers items={keyNumbers} />
 
-      <ContentBlock title="Background" image="/images/background/bg11.jpg">
+      <ContentBlock title="Background" image="/images/background/bg11.webp">
         <p>
           CPG FM, a property management company serving Singapore&apos;s commercial and institutional properties, operated with paper work orders, Excel-based tracking, and knowledge siloed in experienced staff.
         </p>

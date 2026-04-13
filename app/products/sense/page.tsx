@@ -238,7 +238,7 @@ export default function SensePage(): React.ReactElement {
             {/* Hero image — full interior view */}
             <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-lg">
               <Image
-                src="/images/products/LMD/LMD6000 full set without adapter_03.jpg"
+                src="/images/products/LMD/LMD6000 full set without adapter_03.webp"
                 alt="LMD6000 interior — door open showing PCB and edge computing board"
                 width={1200}
                 height={900}
@@ -252,9 +252,9 @@ export default function SensePage(): React.ReactElement {
             {/* Detail shots — 3-column strip */}
             <div className="grid grid-cols-3 gap-3">
               {[
-                { src: '/images/products/LMD/LMD6000 full set without adapter_01.jpg', label: 'Full Set' },
-                { src: '/images/products/LMD/LMD6000 full set without adapter_04 (door panel).jpg', label: 'Door Panel' },
-                { src: '/images/products/LMD/LMD6000 full set without adapter_05 (main).jpg', label: 'Main Board' },
+                { src: '/images/products/LMD/LMD6000 full set without adapter_01.webp', label: 'Full Set' },
+                { src: '/images/products/LMD/LMD6000 full set without adapter_04 (door panel).webp', label: 'Door Panel' },
+                { src: '/images/products/LMD/LMD6000 full set without adapter_05 (main).webp', label: 'Main Board' },
               ].map((img) => (
                 <div
                   key={img.src}
@@ -416,18 +416,18 @@ export default function SensePage(): React.ReactElement {
             <ProductImageCarousel
               alt="LBB Lift BlackBox"
               images={[
-                { src: '/images/products/LBB/Image_20241014140800.jpg', label: 'LBB300 — Front I/O Panel' },
-                { src: '/images/products/LBB/Image_20241014140814.jpg', label: 'LBB300 — Side View' },
-                { src: '/images/products/LBB/Image_20241014140823.jpg', label: 'LBB300 — Terminal Connectors' },
-                { src: '/images/products/LBB/Image_20241014140826.jpg', label: 'LBB300 — Exterior' },
+                { src: '/images/products/LBB/Image_20241014140800.webp', label: 'LBB300 — Front I/O Panel' },
+                { src: '/images/products/LBB/Image_20241014140814.webp', label: 'LBB300 — Side View' },
+                { src: '/images/products/LBB/Image_20241014140823.webp', label: 'LBB300 — Terminal Connectors' },
+                { src: '/images/products/LBB/Image_20241014140826.webp', label: 'LBB300 — Exterior' },
               ]}
             />
             {/* Detail shots — 3-column strip */}
             <div className="grid grid-cols-3 gap-3">
               {[
-                { src: '/images/products/LBB/Image_20250407174437.jpg', label: 'Internal PCB' },
-                { src: '/images/products/LBB/LBB400 SIM HDMI DC FPOE and other ports 2.jpg', label: 'LBB400 Ports' },
-                { src: '/images/products/LBB/LBB400 SIM HDMI DC FPOE and other ports.jpg', label: 'LBB400 Packaging' },
+                { src: '/images/products/LBB/Image_20250407174437.webp', label: 'Internal PCB' },
+                { src: '/images/products/LBB/LBB400 SIM HDMI DC FPOE and other ports 2.webp', label: 'LBB400 Ports' },
+                { src: '/images/products/LBB/LBB400 SIM HDMI DC FPOE and other ports.webp', label: 'LBB400 Packaging' },
               ].map((img) => (
                 <div
                   key={img.src}
@@ -599,9 +599,9 @@ export default function SensePage(): React.ReactElement {
           <ProductImageCarousel
             alt="EMD Escalator Monitoring Device"
             images={[
-              { src: '/images/products/EMD/EMD Enclosure inside view 2.jpg', label: 'EMD — Enclosure Interior' },
-              { src: '/images/products/EMD/EMD PCB Board 4.jpg', label: 'EMD — PCB Board Close-up' },
-              { src: '/images/products/EMD/EMD PCB.png', label: 'EMD-V1 — Main Board' },
+              { src: '/images/products/EMD/EMD Enclosure inside view 2.webp', label: 'EMD — Enclosure Interior' },
+              { src: '/images/products/EMD/EMD PCB Board 4.webp', label: 'EMD — PCB Board Close-up' },
+              { src: '/images/products/EMD/EMD PCB.webp', label: 'EMD-V1 — Main Board' },
             ]}
           />
         </div>

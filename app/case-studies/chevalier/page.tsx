@@ -73,14 +73,14 @@ export default function ChevalierCaseStudyPage(): React.ReactElement {
         overline="Private Sector / Vertical Transport"
         headline="BCA-Certified Predictive Maintenance for Chevalier's Lift Fleet"
         subheadline="The first independent RM&D solution to achieve BCA Sandbox certification — now operating on 200+ lifts."
-        image="/images/background/bg3.jpg"
+        image="/images/background/bg3.webp"
         logo="/images/logos/chevalier.jpeg"
         logoAlt="Chevalier"
       />
 
       <KeyNumbers items={keyNumbers} />
 
-      <ContentBlock title="The Background" image="/images/background/bg14.jpg">
+      <ContentBlock title="The Background" image="/images/background/bg14.webp">
         <p>
           Chevalier, a leading lift servicing company in Singapore, needed a remote monitoring and diagnostics solution compliant with BCA&apos;s Code of Practice — supporting their diverse fleet of lift brands (IFE, Toshiba, others).
         </p>

@@ -68,7 +68,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
         overline="Infrastructure & Environmental"
         headline="Monthly Forest Cover Monitoring Across Singapore"
         subheadline="AI-powered satellite image analysis for national-scale environmental monitoring — automated change detection replacing labor-intensive manual surveys."
-        image="/images/background/bg2.jpg"
+        image="/images/background/bg2.webp"
         logo="/images/logos/NPARKS.png"
         logoAlt="NParks"
       />
@@ -98,7 +98,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
             <div className="space-y-4">
               <div className="relative w-full overflow-hidden shadow-lg">
                 <Image
-                  src="/images/cases/case5.png"
+                  src="/images/cases/case5.webp"
                   alt="NParks forest cover monitoring"
                   width={800}
                   height={600}
@@ -108,7 +108,7 @@ export default function NparksCaseStudyPage(): React.ReactElement {
               </div>
               <div className="relative w-full overflow-hidden shadow-lg">
                 <Image
-                  src="/images/cases/case6.png"
+                  src="/images/cases/case6.webp"
                   alt="NParks forest cover analysis"
                   width={800}
                   height={600}

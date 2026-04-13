@@ -312,9 +312,9 @@ export default function OrchesPage(): React.ReactElement {
           <BrowserFrameCarousel
             url="iris.softgridsensing.com"
             images={[
-              { src: '/images/products/IRIS/iris-dashboard-1.png', alt: 'IRIS Request Dashboard', label: 'Request Dashboard' },
-              { src: '/images/products/IRIS/iris-dashboard-2.png', alt: 'IRIS PM & Scheduling Dashboard', label: 'PM & Scheduling' },
-              { src: '/images/products/IRIS/iris-dashboard-3.png', alt: 'IRIS Financial Dashboard', label: 'Financial Dashboard' },
+              { src: '/images/products/IRIS/iris-dashboard-1.webp', alt: 'IRIS Request Dashboard', label: 'Request Dashboard' },
+              { src: '/images/products/IRIS/iris-dashboard-2.webp', alt: 'IRIS PM & Scheduling Dashboard', label: 'PM & Scheduling' },
+              { src: '/images/products/IRIS/iris-dashboard-3.webp', alt: 'IRIS Financial Dashboard', label: 'Financial Dashboard' },
             ]}
           />
         </div>
@@ -491,10 +491,10 @@ export default function OrchesPage(): React.ReactElement {
             <BrowserFrameCarousel
               variant="mobile"
               images={[
-                { src: '/images/products/LiftProf/Specialist_Assigned Calls_page.jpg', alt: 'LiftProf Assigned Calls', label: 'Assigned Calls' },
-                { src: '/images/products/LiftProf/Accepted_call details page.jpg', alt: 'LiftProf Call Details', label: 'Call Details' },
-                { src: '/images/products/LiftProf/Follow-up call edit page 3.jpg', alt: 'LiftProf Follow-up Report', label: 'Follow-up Report' },
-                { src: '/images/products/LiftProf/Location of Call.jpg', alt: 'LiftProf Location of Call', label: 'Location Diagram' },
+                { src: '/images/products/LiftProf/Specialist_Assigned Calls_page.webp', alt: 'LiftProf Assigned Calls', label: 'Assigned Calls' },
+                { src: '/images/products/LiftProf/Accepted_call details page.webp', alt: 'LiftProf Call Details', label: 'Call Details' },
+                { src: '/images/products/LiftProf/Follow-up call edit page 3.webp', alt: 'LiftProf Follow-up Report', label: 'Follow-up Report' },
+                { src: '/images/products/LiftProf/Location of Call.webp', alt: 'LiftProf Location of Call', label: 'Location Diagram' },
               ]}
             />
           </div>
@@ -664,8 +664,8 @@ export default function OrchesPage(): React.ReactElement {
           <BrowserFrameCarousel
             url="nova.softgridsensing.com"
             images={[
-              { src: '/images/products/Nova/Nova1.png', alt: 'Nova AI Voice Agent conversation', label: 'Voice Agent' },
-              { src: '/images/products/Nova/Nova2.png', alt: 'Nova call log and dialogue review', label: 'Call Logs' },
+              { src: '/images/products/Nova/Nova1.webp', alt: 'Nova AI Voice Agent conversation', label: 'Voice Agent' },
+              { src: '/images/products/Nova/Nova2.webp', alt: 'Nova call log and dialogue review', label: 'Call Logs' },
             ]}
           />
         </div>

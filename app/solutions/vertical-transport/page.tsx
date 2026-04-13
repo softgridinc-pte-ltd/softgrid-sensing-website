@@ -110,7 +110,7 @@ export default function VerticalTransportPage(): React.ReactElement {
         overline="Smart Vertical Transport"
         headline="Lift & Escalator Monitoring. Predictive. Compliant. Proven."
         subheadline="BCA-certified remote monitoring, AI-driven fault prediction, and automated compliance — for every lift and escalator in your portfolio."
-        image="/images/background/bg3.jpg"
+        image="/images/background/bg3.webp"
       />
 
       <ChallengeSection

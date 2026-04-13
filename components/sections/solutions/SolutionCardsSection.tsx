@@ -24,7 +24,7 @@ const solutions: SolutionCard[] = [
     description:
       'BCA-certified monitoring and predictive maintenance for lifts and escalators. From real-time status to AI-driven fault prediction — proven on 10,000+ assets.',
     href: '/solutions/vertical-transport',
-    image: ['/images/background/bg8.png', '/images/background/bg9.png', '/images/background/bg4.jpg'],
+    image: ['/images/background/bg8.webp', '/images/background/bg9.webp', '/images/background/bg4.webp'],
   },
   {
     icon: <Building2 className="h-4 w-4" />,
@@ -33,7 +33,7 @@ const solutions: SolutionCard[] = [
     description:
       'Unified, brand-agnostic monitoring and control for all your building systems. One dashboard for HVAC, energy, fire, and lighting — regardless of BMS vendor.',
     href: '/solutions/building-management',
-    image: ['/images/background/bg17.jpg', '/images/background/bg18.jpg', '/images/background/bg19.jpg'],
+    image: ['/images/background/bg17.webp', '/images/background/bg18.webp', '/images/background/bg19.webp'],
   },
   {
     icon: <LayoutGrid className="h-4 w-4" />,
@@ -42,7 +42,7 @@ const solutions: SolutionCard[] = [
     description:
       'Transform your operations from paper-based and reactive to digital and predictive. AI-powered work orders, asset management, and knowledge at your fingertips.',
     href: '/solutions/facility-operations',
-    image: ['/images/background/bg20.jpg', '/images/background/bg21.jpg', '/images/background/bg22.jpg'],
+    image: ['/images/background/bg20.webp', '/images/background/bg21.webp', '/images/background/bg22.webp'],
   },
   {
     icon: <Satellite className="h-4 w-4" />,
@@ -51,7 +51,7 @@ const solutions: SolutionCard[] = [
     description:
       'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure — the same platform, at planetary scale.',
     href: '/solutions/infrastructure-environmental',
-    image: ['/images/background/bg23.jpg', '/images/background/bg24.jpg', '/images/background/bg25.jpg'],
+    image: ['/images/background/bg23.webp', '/images/background/bg24.webp', '/images/background/bg25.webp'],
   },
 ]
 

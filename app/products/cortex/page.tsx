@@ -311,7 +311,7 @@ export default function CortexPage(): React.ReactElement {
             </div>
           </div>
           <BrowserFrame
-            src="/images/products/Cortex/analytics-dashboard.png"
+            src="/images/products/Cortex/analytics-dashboard.webp"
             alt="AFOS Cortex — AI Predictive Analytics dashboard"
             url="analytics.softgridsensing.com"
           />
@@ -482,7 +482,7 @@ export default function CortexPage(): React.ReactElement {
           </div>
           <div style={{ direction: 'ltr' }}>
             <BrowserFrame
-              src="/images/products/Athenna/Athenna.png"
+              src="/images/products/Athenna/Athenna.webp"
               alt="Athena — Enterprise AI Knowledge Base chat interface"
               url="iris.softgridsensing.com/athena"
               reverse
@@ -659,11 +659,11 @@ export default function CortexPage(): React.ReactElement {
             url="dt.softgridsensing.com"
             large
             images={[
-              { src: '/images/products/DT/DTL1.png', alt: 'Digital Twin — Port IOC Distribution', label: 'Port Distribution' },
-              { src: '/images/products/DT/DTL2-2.png', alt: 'Digital Twin — Traffic Control', label: 'Traffic Control' },
-              { src: '/images/products/DT/DTL3-1.png', alt: 'Digital Twin — Terminal Operations', label: 'Terminal Operations' },
-              { src: '/images/products/DT/DTL3-2.png', alt: 'Digital Twin — Yard Management', label: 'Yard Management' },
-              { src: '/images/products/DT/DTL4.png', alt: 'Digital Twin — Smart Parking', label: 'Smart Parking' },
+              { src: '/images/products/DT/DTL1.webp', alt: 'Digital Twin — Port IOC Distribution', label: 'Port Distribution' },
+              { src: '/images/products/DT/DTL2-2.webp', alt: 'Digital Twin — Traffic Control', label: 'Traffic Control' },
+              { src: '/images/products/DT/DTL3-1.webp', alt: 'Digital Twin — Terminal Operations', label: 'Terminal Operations' },
+              { src: '/images/products/DT/DTL3-2.webp', alt: 'Digital Twin — Yard Management', label: 'Yard Management' },
+              { src: '/images/products/DT/DTL4.webp', alt: 'Digital Twin — Smart Parking', label: 'Smart Parking' },
             ]}
           />
         </div>

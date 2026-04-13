@@ -35,7 +35,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/hdb',
     accentColor: 'primary',
     heroStat: { value: '10,000+', label: 'Lifts Monitored' },
-    image: '/images/background/bg5.jpg',
+    image: '/images/background/bg5.webp',
     logo: '/images/logos/HDB.png',
     featured: true,
   },
@@ -54,7 +54,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/chevalier',
     accentColor: 'primary',
     heroStat: { value: 'BCA', label: 'Sandbox Certified' },
-    image: '/images/cases/case1.jpg',
+    image: '/images/cases/case1.webp',
     logo: '/images/logos/chevalier.jpeg',
   },
   {
@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/cpg-fm',
     accentColor: 'amber',
     heroStat: { value: 'IRIS + Athena', label: 'AI-Powered Operations' },
-    image: '/images/cases/case2.jpg',
+    image: '/images/cases/case2.webp',
     logo: '/images/logos/CPGFM.png',
   },
   {
@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
     href: '/case-studies/nparks',
     accentColor: 'slate',
     heroStat: { value: '26', label: 'Ecological Areas Tracked' },
-    image: '/images/cases/case3.jpg',
+    image: '/images/cases/case3.webp',
     logo: '/images/logos/NPARKS.png',
   },
 ]

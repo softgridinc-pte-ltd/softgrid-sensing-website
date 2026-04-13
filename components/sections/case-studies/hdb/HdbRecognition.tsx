@@ -76,7 +76,7 @@ export function HdbRecognition(): React.ReactElement {
           {/* Right — Photo */}
           <div data-animate="slide-right" className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/cases/case7.jpg"
+              src="/images/cases/case7.webp"
               alt="USS R&I Congress 2026"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"

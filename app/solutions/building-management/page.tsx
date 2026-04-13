@@ -98,7 +98,7 @@ export default function BuildingManagementPage(): React.ReactElement {
         overline="Smart Building Management"
         headline="One Dashboard for Every System in Your Building"
         subheadline="Brand-agnostic building monitoring, energy optimization, and automated operations — regardless of what BMS you have installed."
-        image="/images/background/bg15.jpg"
+        image="/images/background/bg15.webp"
       />
 
       <ChallengeSection

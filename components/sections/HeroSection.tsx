@@ -19,7 +19,7 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    image: '/images/background/bg1.jpg',
+    image: '/images/background/bg1.webp',
     headline: 'AI-Powered Facility Intelligence',
     description:
       'Transform building operations with predictive analytics and real-time monitoring across your entire facility portfolio.',
@@ -29,7 +29,7 @@ const slides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/background/bg14.jpg',
+    image: '/images/background/bg14.webp',
     headline: 'Predictive Maintenance, Zero Downtime',
     description:
       'Detect equipment failures before they happen. Reduce maintenance costs and extend asset lifespans with AI-driven insights.',
@@ -39,7 +39,7 @@ const slides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/background/bg10.jpg',
+    image: '/images/background/bg10.webp',
     headline: 'From Sensor to Insight, One Platform',
     description:
       'Connect thousands of IoT sensors, aggregate data streams, and turn raw signals into actionable facility intelligence.',
@@ -48,7 +48,7 @@ const slides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/background/bg5.jpg',
+    image: '/images/background/bg5.webp',
     headline: 'Smarter Buildings Start Here',
     description:
       'Join leading facility operators across Asia who trust Softgrid to optimize energy, comfort, and operational efficiency.',

@@ -102,7 +102,7 @@ export default function FacilityOperationsPage(): React.ReactElement {
         overline="Smart Facility Operations"
         headline="Transform Facility Management. From Paper to Platform."
         subheadline="AI-powered work orders, asset management, knowledge at your fingertips, and a voice AI that never sleeps — everything a modern managing agent needs."
-        image="/images/background/bg7.jpg"
+        image="/images/background/bg7.webp"
       />
 
       <ChallengeSection

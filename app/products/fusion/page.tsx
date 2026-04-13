@@ -274,7 +274,7 @@ export default function FusionPage(): React.ReactElement {
             </div>
           </div>
           <BrowserFrame
-            src="/images/products/Fusion/LTMS.png"
+            src="/images/products/Fusion/LTMS.webp"
             alt="LTMS — Lift Telemonitoring System dashboard"
             url="ltms.softgridsensing.com"
           />
@@ -432,7 +432,7 @@ export default function FusionPage(): React.ReactElement {
           </div>
           <div style={{ direction: 'ltr' }}>
             <BrowserFrame
-              src="/images/products/Fusion/RMD.png"
+              src="/images/products/Fusion/RMD.webp"
               alt="RM&D — Remote Monitoring & Diagnostics dashboard"
               url="rmd.softgridsensing.com"
               reverse
@@ -570,7 +570,7 @@ export default function FusionPage(): React.ReactElement {
             </div>
           </div>
           <BrowserFrame
-            src="/images/products/Fusion/BMS.png"
+            src="/images/products/Fusion/BMS.webp"
             alt="Cloud BMS — Building Management System dashboard"
             url="bms.softgridsensing.com"
           />
@@ -728,7 +728,7 @@ export default function FusionPage(): React.ReactElement {
           </div>
           <div style={{ direction: 'ltr' }}>
             <BrowserFrame
-              src="/images/products/Fusion/RSA.png"
+              src="/images/products/Fusion/RSA.webp"
               alt="Fusion RSA — Remote Sensing Analytics for forest cover change detection"
               url="rsa.softgridsensing.com"
               reverse
@@ -871,7 +871,7 @@ export default function FusionPage(): React.ReactElement {
           </div>
           <div style={{ direction: 'ltr' }}>
             <BrowserFrame
-              src="/images/products/Fusion/EMS.png"
+              src="/images/products/Fusion/EMS.webp"
               alt="Escalator Monitoring System — floor plan with sensor placement"
               url="ems.softgridsensing.com"
               reverse
