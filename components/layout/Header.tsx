@@ -3,10 +3,12 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X, ChevronDown, Search, Cpu, MonitorDot, Workflow, ArrowUpDown, Building2, Wrench, Leaf } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { CortexIcon } from '@/components/icons/CortexIcon'
+import { useSearch } from '@/components/search/useSearch'
+import { SearchResults } from '@/components/search/SearchResults'
 
 type NavIcon = React.ComponentType<{ className?: string }>
 
@@ -100,11 +102,16 @@ export function Header(): React.ReactElement {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [mobileSearchQuery, setMobileSearchQuery] = useState('')
   const searchInputRef = useRef<HTMLInputElement>(null)
   const searchContainerRef = useRef<HTMLDivElement>(null)
   const dropdownRefs = useRef<Map<string, HTMLDivElement>>(new Map())
   const triggerRefs = useRef<Map<string, HTMLAnchorElement>>(new Map())
   const pathname = usePathname()
+  const router = useRouter()
+  const { search, activeIndex, setActiveIndex, resetActiveIndex } = useSearch()
+  const desktopResults = search(searchQuery)
+  const mobileResults = search(mobileSearchQuery)
 
   const focusDropdownItem = useCallback((label: string, index: number): void => {
     const container = dropdownRefs.current.get(label)
@@ -174,6 +181,7 @@ export function Header(): React.ReactElement {
         if (searchOpen) {
           setSearchOpen(false)
           setSearchQuery('')
+          resetActiveIndex()
         }
       }
     }
@@ -181,7 +189,37 @@ export function Header(): React.ReactElement {
       document.addEventListener('keydown', handleEsc)
     }
     return () => document.removeEventListener('keydown', handleEsc)
-  }, [searchOpen, mobileMenuOpen])
+  }, [searchOpen, mobileMenuOpen, resetActiveIndex])
+
+  useEffect(() => {
+    setSearchOpen(false)
+    setSearchQuery('')
+    setMobileSearchQuery('')
+    setMobileMenuOpen(false)
+    resetActiveIndex()
+  }, [pathname, resetActiveIndex])
+
+  const handleSearchSelect = useCallback((href: string): void => {
+    router.push(href)
+    setSearchOpen(false)
+    setSearchQuery('')
+    setMobileSearchQuery('')
+    setMobileMenuOpen(false)
+    resetActiveIndex()
+  }, [router, resetActiveIndex])
+
+  const handleSearchKeyDown = useCallback((e: React.KeyboardEvent, results: ReturnType<typeof search>): void => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setActiveIndex((prev) => Math.min(prev + 1, results.length - 1))
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setActiveIndex((prev) => Math.max(prev - 1, 0))
+    } else if (e.key === 'Enter' && activeIndex >= 0 && results[activeIndex]) {
+      e.preventDefault()
+      handleSearchSelect(results[activeIndex].href)
+    }
+  }, [activeIndex, setActiveIndex, handleSearchSelect])
 
   const isActive = (href: string): boolean => {
     if (href === '/') return pathname === '/'
@@ -288,7 +326,7 @@ export function Header(): React.ReactElement {
         </div>
 
         {/* Desktop Search */}
-        <div ref={searchContainerRef} className="hidden lg:flex items-center flex-shrink-0">
+        <div ref={searchContainerRef} className="hidden lg:flex items-center flex-shrink-0 relative">
           <div
             className={`flex items-center rounded-lg overflow-hidden transition-all duration-350 ease-out ${
               searchOpen
@@ -330,15 +368,28 @@ export function Header(): React.ReactElement {
               ref={searchInputRef}
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value)
+                resetActiveIndex()
+              }}
+              onKeyDown={(e) => handleSearchKeyDown(e, desktopResults)}
               placeholder="Search..."
               aria-label="Search the site"
+              aria-controls="desktop-search-results"
+              aria-activedescendant={activeIndex >= 0 ? `desktop-search-results-option-${activeIndex}` : undefined}
               tabIndex={searchOpen ? 0 : -1}
               className={`bg-transparent text-sm text-white placeholder-slate-500 outline-none transition-all duration-350 ease-out ${
                 searchOpen ? 'w-full opacity-100 ml-1' : 'w-0 opacity-0 ml-0'
               }`}
             />
           </div>
+          <SearchResults
+            id="desktop-search-results"
+            results={desktopResults}
+            activeIndex={activeIndex}
+            visible={searchOpen && searchQuery.length >= 2}
+            onSelect={handleSearchSelect}
+          />
         </div>
 
         {/* Mobile Hamburger */}
@@ -393,11 +444,31 @@ export function Header(): React.ReactElement {
                 <Search className="w-4 h-4 text-slate-400 flex-shrink-0" />
                 <input
                   type="text"
+                  value={mobileSearchQuery}
+                  onChange={(e) => {
+                    setMobileSearchQuery(e.target.value)
+                    resetActiveIndex()
+                  }}
+                  onKeyDown={(e) => handleSearchKeyDown(e, mobileResults)}
                   placeholder="Search..."
                   aria-label="Search the site"
+                  aria-controls="mobile-search-results"
+                  aria-activedescendant={activeIndex >= 0 ? `mobile-search-results-option-${activeIndex}` : undefined}
                   className="bg-transparent text-sm text-white placeholder-slate-500 outline-none w-full"
                 />
               </div>
+              {mobileSearchQuery.length >= 2 && (
+                <div className="mt-2">
+                  <SearchResults
+                    id="mobile-search-results"
+                    results={mobileResults}
+                    activeIndex={activeIndex}
+                    visible={mobileSearchQuery.length >= 2}
+                    onSelect={handleSearchSelect}
+                    inline
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
