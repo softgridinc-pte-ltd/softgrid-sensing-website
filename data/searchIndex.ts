@@ -19,8 +19,8 @@ export const searchIndex: SearchEntry[] = [
     title: 'AFOS Platform',
     href: '/platform',
     category: 'Platform',
-    description: 'A unified AI and IoT operating system for facility operations. Four engines: Connect, Intelligence, Workflow, and Data.',
-    keywords: ['AFOS', 'platform', 'connect', 'intelligence', 'workflow', 'data engine', 'IoT', 'AI', 'digital twin', 'edge computing'],
+    description: 'A unified AI and IoT operating system that turns facility data into action through a closed Sense, Analyze, Predict, Act loop, powered by four engines: Connect, Intelligence, Workflow, and Data.',
+    keywords: ['AFOS', 'platform', 'connect', 'intelligence', 'workflow', 'data engine', 'IoT', 'AI', 'digital twin', 'edge computing', 'sense', 'analyze', 'predict', 'act', 'closed loop', 'capability'],
   },
   {
     title: 'About Us',

@@ -24,7 +24,7 @@ export default function PlatformPage(): React.ReactElement {
           style={{ background: 'radial-gradient(ellipse at center, rgba(31,153,197,0.1) 0%, transparent 70%)' }}
         />
 
-        {/* Platform flow — Sense -> Predict -> Act -> Learn */}
+        {/* Platform flow — Sense -> Analyze -> Predict -> Act */}
         <div className="hidden md:block">
           <PlatformFlow />
         </div>
