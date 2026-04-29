@@ -176,6 +176,38 @@
 .hero-entrance-4 { animation-delay: 450ms; }
 .hero-entrance-5 { animation-delay: 600ms; }
 
+/* Logo marquee — seamless horizontal scroll for ecosystem rows */
+@keyframes logo-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.logo-marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.logo-marquee-track {
+  animation: logo-marquee var(--marquee-duration, 50s) linear infinite;
+  width: max-content;
+}
+
+.logo-marquee-mask:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
 /* Timeline dot pulse */
 @keyframes timeline-dot-pulse {
   0%, 100% {
@@ -255,10 +287,26 @@
   .hero-node,
   .shift-arrow,
   .timeline-dot,
-  .hero-entrance {
+  .hero-entrance,
+  .logo-marquee-track {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .logo-marquee-track {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .logo-marquee-clone {
+    display: none !important;
+  }
+
+  .logo-marquee-mask {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
   }
 
   [data-animate],
