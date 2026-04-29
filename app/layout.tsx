@@ -2,7 +2,7 @@ import { Outfit, Inter } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollAnimator } from '@/components/ui/ScrollAnimator'
-import { PasswordGate } from '@/components/ui/PasswordGate'
+// import { PasswordGate } from '@/components/ui/PasswordGate'
 import './globals.css'
 
 import type { Metadata } from 'next'
@@ -65,12 +65,11 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <PasswordGate>
-          <ScrollAnimator />
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </PasswordGate>
+        {/* PasswordGate disabled for public launch — re-enable by wrapping the children below. */}
+        <ScrollAnimator />
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   )
