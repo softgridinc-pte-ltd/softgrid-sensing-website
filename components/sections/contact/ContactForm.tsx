@@ -22,6 +22,8 @@ interface FormErrors {
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mvzlplbq'
+
 const interestOptions = [
   'Lift Monitoring & Compliance',
   'Smart Facility Management',
@@ -123,8 +125,19 @@ export function ContactForm(): React.ReactElement {
     setStatus('submitting')
 
     try {
-      // Placeholder: replace with Formspree or custom endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Submission failed with status ${response.status}`)
+      }
+
       setStatus('success')
       setFormData(initialFormData)
       setTouched(new Set())
