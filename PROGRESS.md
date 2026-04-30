@@ -268,6 +268,48 @@ Overview page redesign — "magazine editorial" layout replacing uniform card gr
 
 **Build status:** Passing (static export to `/out`)
 
+### Session — Phase A Keyword Targeting + GEO (2026-04-30, continued)
+
+Same calendar day, second working session. Shipped four release branches: v1.3.0, v1.4.0, v1.5.0, v1.5.1.
+
+**v1.3.0 — Phase A keyword targeting + entity schema enrichment**
+
+- [x] Rewrote `title` and `description` metadata across all 19 pages to target buyer-intent phrases (e.g. "Lift Remote Monitoring & BCA RM&D Compliance — Singapore", "Smart Building Management System (BMS) — Singapore", "AI Facility Management Software — Smart FM Singapore", "HDB Lift Monitoring — 10,000+ Lifts AFOS Deployment")
+- [x] Enriched `Organization` JSON-LD in `app/layout.tsx` with `alternateName: ['Softgrid', 'Softgrid Sensing Pte. Ltd.']`, `legalName`, `foundingDate: '2017'`, `foundingLocation`, `areaServed`, `knowsAbout`, `award`, and stable `@id`
+- [x] Linked `WebSite` schema to `Organization` via `publisher: { @id }`; product schemas now reference parent Organization via `@id` instead of duplicating
+- [x] Added `FAQPage` JSON-LD to About page with 5 Q&As that explicitly bind "Softgrid" → Softgrid Sensing Pte. Ltd. (e.g. "What is Softgrid?", "Where is Softgrid based?", "Is Softgrid the same as Softgrid Sensing?")
+
+**v1.4.0 — GEO foundations (Generative Engine Optimization)**
+
+- [x] Created `public/llms.txt` — AI-friendly markdown site index (Anthropic, Perplexity, Mintlify-aware crawlers respect this convention)
+- [x] Created `public/llms-full.txt` — full-prose company facts dump optimized for LLM consumption (~9KB markdown: company overview, products, solutions, case studies, recognition, FAQs, "how Softgrid differs" framing)
+- [x] Updated `app/robots.ts` to explicitly allow 18 AI user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, Applebot, etc.) — future-proofs against accidental blocking
+- [x] Corrected earlier overclaim: NRF is the awarding body, A*STAR/SIMTech are research collaborators (not backers); fixed in About metadata, FAQPage schema, and llms-full.txt
+- [x] Created `/why-softgrid` page (later removed in v1.5.1 — see below)
+
+**v1.5.0 — Simplified /why-softgrid + capability differentiators in LLM files**
+
+- [x] Stripped `/why-softgrid` page from a fully designed marketing page (~250 lines) down to plain prose (~115 lines) — no hero glow, no comparison matrix, no CTAs. Removed all named competitors (no Otis, Schindler, Planon mentioned on public HTML)
+- [x] Added "Capability Differentiators" section to `public/llms-full.txt` covering five capabilities: intrusive + non-intrusive deployment, multi-brand controller integration (Otis/Schindler/KONE/Mitsubishi/Hitachi/Sigma), lift + escalator on one platform, public + private sector, end-to-end hardware-to-software stack
+- [x] Added a TÜV SÜD differentiation note to `llms-full.txt` (TIC body, complementary not competitive)
+- [x] Extended `llms.txt` summary line with the same capability points so AI engines retrieve them even from the index alone
+- [x] Decided to keep capability claims as positive Softgrid framing (no "Elevate Tech only does X" negative claims) — Reason: smaller named startups carry higher legal/reputational risk than category-level OEM framing
+
+**v1.5.1 — Removed redundant /why-softgrid page**
+
+- [x] Deleted `app/why-softgrid/page.tsx` — the page duplicated content already on About (`WhySoftgridSection` covers the same four pillars, `JourneySection` has the NRF/BCA timeline, `RDSection`/`EcosystemSection` covers research partners). Removed sitemap entry and llms.txt index link.
+- [x] Capability differentiators content in `llms-full.txt` + `llms.txt` summary line preserved — that adds unique value not duplicated elsewhere
+
+**GEO out of scope for future work:**
+
+- Wikidata entry for Softgrid Sensing (high impact for AI Knowledge Graph retrieval — user must submit)
+- Crunchbase profile (high signal for AI engines)
+- Press coverage in Tech in Asia / e27 / Straits Times Tech
+- Listings in third-party "Top IoT/PropTech Singapore" articles
+- Internal sales battle card with named-competitor specifics (kept off public site)
+
+**Build status:** Passing (static export to `/out`). Live deploys via `releases/v1.3.0` → `releases/v1.5.1`.
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
