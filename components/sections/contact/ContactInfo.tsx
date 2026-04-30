@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Building2, Clock } from 'lucide-react'
+import { Mail, Linkedin, MapPin, Building2, Clock } from 'lucide-react'
 
 import type { ReactNode } from 'react'
 
@@ -17,10 +17,10 @@ const contactDetails: ContactDetail[] = [
     href: 'mailto:info@softgridsensing.com',
   },
   {
-    icon: <Phone className="w-5 h-5 text-primary-500" />,
-    label: 'Phone',
-    value: '+65 6123 4567',
-    href: 'tel:+6561234567',
+    icon: <Linkedin className="w-5 h-5 text-primary-500" />,
+    label: 'LinkedIn',
+    value: 'linkedin.com/company/softgridinc',
+    href: 'https://www.linkedin.com/company/softgridinc',
   },
 ]
 
@@ -56,7 +56,9 @@ export function ContactInfo(): React.ReactElement {
                 {detail.href ? (
                   <a
                     href={detail.href}
-                    className="text-slate-200 text-sm hover:text-primary-400 transition-colors whitespace-pre-line"
+                    target={detail.href.startsWith('http') ? '_blank' : undefined}
+                    rel={detail.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="text-slate-200 text-sm hover:text-primary-400 transition-colors whitespace-pre-line break-all"
                   >
                     {detail.value}
                   </a>

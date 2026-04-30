@@ -520,7 +520,7 @@ export default function FusionPage(): React.ReactElement {
             </div>
             <ul style={{ listStyle: 'none', marginBottom: 28, padding: 0 }}>
               {[
-                'Integration with Tridium Niagara, Midea iBuilding/iEasyCare, and other BMS platforms',
+                'Integration with Tridium Niagara, Midea iBuilding/iStation, and other BMS platforms',
                 'BACnet / Modbus cross-brand communication',
                 'Bi-directional MQTT control with QoS Level 2 (guaranteed delivery)',
                 'Unified dashboard: HVAC, lighting, energy, fire alarm, lifts, escalators, gensets, FCU, AHU, chillers',
@@ -562,10 +562,6 @@ export default function FusionPage(): React.ReactElement {
               <div>
                 <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Pricing</div>
                 <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>Per building / per asset/month</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: 1, color: '#B0BEC9', marginBottom: 4, fontFamily: 'var(--font-display)' }}>Traction</div>
-                <div style={{ fontSize: 14, color: '#334155', fontWeight: 500 }}>HDB commercial buildings</div>
               </div>
             </div>
           </div>
