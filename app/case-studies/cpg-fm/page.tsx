@@ -12,9 +12,9 @@ import { RelatedLinks } from '@/components/sections/case-studies/RelatedLinks'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'CPG FM — AI-Powered Facility Management | Softgrid Sensing',
+  title: 'CPG FM Case Study — AI Facility Management & CMMS Singapore',
   description:
-    'Digitizing facility operations with IRIS CMMS and Athena AI knowledge base for CPG FM.',
+    'CPG FM case study — digitizing facility management with IRIS CMMS work orders and Athena AI knowledge base. AI-powered Smart FM by Softgrid Sensing, Singapore.',
   alternates: { canonical: '/case-studies/cpg-fm' },
 }
 

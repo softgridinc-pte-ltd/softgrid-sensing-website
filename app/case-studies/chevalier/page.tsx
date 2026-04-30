@@ -12,9 +12,9 @@ import { RelatedLinks } from '@/components/sections/case-studies/RelatedLinks'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Chevalier RM&D — BCA-Certified Lift Diagnostics | Softgrid Sensing',
+  title: 'Chevalier Lift RM&D — BCA Sandbox Certified Case Study | Softgrid',
   description:
-    'The first independent RM&D solution to achieve BCA Sandbox certification — now operating on 200+ lifts for Chevalier.',
+    'Chevalier lift RM&D case study — the first independent BCA Sandbox certified lift remote monitoring & diagnostics solution. 200+ lifts monitored with AFOS in Singapore.',
   alternates: { canonical: '/case-studies/chevalier' },
 }
 

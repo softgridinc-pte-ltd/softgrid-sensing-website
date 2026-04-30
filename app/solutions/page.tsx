@@ -10,9 +10,9 @@ import { CapabilitiesGrid } from '@/components/sections/solutions/CapabilitiesGr
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solutions | Softgrid Sensing',
+  title: 'Smart Facility Solutions — Lift, BMS & FM | Softgrid Singapore',
   description:
-    'Facility solutions for lift operators, building owners, and managing agents. BCA certified, AI-powered, proven at scale across Singapore.',
+    'Facility solutions for lift operators, building owners, and managing agents — lift remote monitoring, smart BMS, AI facility management, and infrastructure monitoring. BCA certified.',
   alternates: { canonical: '/solutions' },
 }
 

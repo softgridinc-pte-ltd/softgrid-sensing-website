@@ -10,9 +10,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Smart Vertical Transport | Softgrid Sensing',
+  title: 'Lift Remote Monitoring & BCA RM&D Compliance — Singapore',
   description:
-    'BCA-certified lift and escalator remote monitoring, AI-driven fault prediction, and automated compliance for your entire vertical transport fleet.',
+    'BCA-certified lift and escalator remote monitoring (RM&D) with AI fault prediction, automated compliance, and real-time diagnostics. Trusted by HDB and Chevalier in Singapore.',
   alternates: { canonical: '/solutions/vertical-transport' },
 }
 

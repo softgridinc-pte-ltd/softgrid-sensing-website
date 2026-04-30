@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/Button'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Case Studies | Softgrid Sensing',
+  title: 'Case Studies — HDB, Chevalier, NParks, CPG FM | Softgrid Sensing',
   description:
-    'See how HDB, Chevalier, and others trust Softgrid for lift monitoring, facility management, and predictive maintenance at scale.',
+    'Softgrid case studies — HDB lift monitoring (10,000+ lifts), Chevalier RM&D, NParks satellite forest monitoring, and CPG FM AI facility management. Proven at national scale in Singapore.',
   alternates: { canonical: '/case-studies' },
 }
 

@@ -5,9 +5,9 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AFOS Orches — Operations & Maintenance | Softgrid Sensing',
+  title: 'AFOS Orches — Facility CMMS, Work Orders & Mobile Field Service',
   description:
-    'Work order management, mobile field service, asset tracking, and AI-powered service desk — closing the loop between detection and resolution.',
+    'AFOS Orches — CMMS, work order management, mobile field service, asset tracking, and AI service desk for facility management teams. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/products/orches' },
 }
 
@@ -21,11 +21,7 @@ const productSchema = {
   description:
     'Work order management, mobile field service, asset tracking, and AI-powered service desk — closing the loop between detection and resolution.',
   url: 'https://softgridsensing.com/products/orches',
-  provider: {
-    '@type': 'Organization',
-    name: 'Softgrid Sensing',
-    url: 'https://softgridsensing.com',
-  },
+  provider: { '@id': 'https://softgridsensing.com/#organization' },
 }
 
 export default function OrchesPage(): React.ReactElement {

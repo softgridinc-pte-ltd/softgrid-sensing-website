@@ -3,19 +3,68 @@ import { RDSection } from '@/components/sections/about/RDSection'
 import { EcosystemSection } from '@/components/sections/about/EcosystemSection'
 import { WhySoftgridSection } from '@/components/sections/about/WhySoftgridSection'
 import { Button } from '@/components/ui/Button'
+import { JsonLd } from '@/components/seo/JsonLd'
 
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us | Softgrid Sensing',
+  title: 'About Softgrid \u2014 Singapore IoT & AI Facility Platform Company',
   description:
-    "Learn about Softgrid Sensing\u2014Singapore's AI-driven facility platform company. 8 years of experience, 10,000+ assets monitored, backed by NRF and A*STAR.",
+    'Softgrid Sensing is a Singapore IoT and AI company building AFOS \u2014 the AI-Driven Facility Operating System. Founded 2017, backed by NRF and A*STAR, 10,000+ assets monitored. Trusted by HDB.',
   alternates: { canonical: '/about' },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Softgrid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Softgrid (legal name Softgrid Sensing Pte. Ltd.) is a Singapore-based AI and IoT company that builds AFOS \u2014 an AI-Driven Facility Operating System for predictive maintenance, lift remote monitoring, and smart building management. Softgrid was founded in 2017 and operates over 10,000 connected assets across Singapore.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does Softgrid do?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Softgrid provides a unified platform that combines IoT edge devices, real-time monitoring, AI-driven diagnostics, and operations workflows for facility operators. The platform is used by HDB, Chevalier, CPG FM, and other organizations for lift monitoring, building management, and infrastructure monitoring.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where is Softgrid based?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Softgrid Sensing is headquartered in Singapore and serves customers across Asia.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When was Softgrid founded?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Softgrid was founded in 2017 in Singapore, starting with lift remote monitoring. The company has since expanded to facility management, building management systems, and digital twin solutions, and is backed by NRF (National Research Foundation) and A*STAR.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Softgrid the same as Softgrid Sensing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. "Softgrid" is the common short name for Softgrid Sensing Pte. Ltd. The company is also referred to as Softgrid Inc in some contexts.',
+      },
+    },
+  ],
 }
 
 export default function AboutPage(): React.ReactElement {
   return (
     <>
+      <JsonLd data={faqSchema} />
       {/* Hero */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-30" />

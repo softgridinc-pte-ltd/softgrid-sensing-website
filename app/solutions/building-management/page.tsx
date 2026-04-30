@@ -9,9 +9,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Smart Building Management | Softgrid Sensing',
+  title: 'Smart Building Management System (BMS) — Singapore | Softgrid',
   description:
-    'Brand-agnostic building monitoring, energy optimization, and automated operations — one dashboard for every system in your building.',
+    'AI-driven smart building management system (BMS) for HVAC, lighting, energy optimization, and unified building operations. Brand-agnostic, IoT-ready. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/solutions/building-management' },
 }
 

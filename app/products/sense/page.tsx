@@ -7,9 +7,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AFOS Sense — Edge Devices | Softgrid Sensing',
+  title: 'AFOS Sense — Industrial IoT Edge Devices for Lifts & Buildings',
   description:
-    'Industrial-grade IoT devices designed for non-intrusive installation, edge intelligence, and resilient operation. Leased, not sold — part of your per-asset subscription.',
+    'AFOS Sense — industrial IoT edge devices for non-intrusive lift monitoring, escalator monitoring, and building sensing. Leased, not sold. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/products/sense' },
 }
 
@@ -23,11 +23,7 @@ const productSchema = {
   description:
     'Industrial-grade IoT devices designed for non-intrusive installation, edge intelligence, and resilient operation.',
   url: 'https://softgridsensing.com/products/sense',
-  provider: {
-    '@type': 'Organization',
-    name: 'Softgrid Sensing',
-    url: 'https://softgridsensing.com',
-  },
+  provider: { '@id': 'https://softgridsensing.com/#organization' },
 }
 
 export default function SensePage(): React.ReactElement {

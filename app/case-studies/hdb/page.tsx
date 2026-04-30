@@ -15,9 +15,9 @@ const related = [
 ]
 
 export const metadata: Metadata = {
-  title: 'HDB Smart Lift Intelligence — 10,000+ Lifts | Softgrid Sensing',
+  title: 'HDB Lift Monitoring — 10,000+ Lifts AFOS Deployment | Softgrid',
   description:
-    "From a Cities of Tomorrow research grant to Singapore's largest AI-driven lift intelligence deployment — 10,000+ lifts monitored with AFOS at national scale.",
+    "Singapore's largest AI lift remote monitoring deployment — 10,000+ HDB lifts monitored with AFOS. From Cities of Tomorrow (NRF) research grant to national-scale rollout.",
   alternates: { canonical: '/case-studies/hdb' },
 }
 

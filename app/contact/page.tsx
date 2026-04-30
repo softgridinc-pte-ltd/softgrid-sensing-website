@@ -4,9 +4,9 @@ import { ContactInfo } from '@/components/sections/contact/ContactInfo'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Softgrid Sensing',
+  title: 'Contact Softgrid — Lift Monitoring & Smart FM Singapore',
   description:
-    'Contact Softgrid Sensing for lift monitoring, facility management, or digital twin solutions. Based in Singapore, serving clients across Asia.',
+    'Contact Softgrid Sensing for lift remote monitoring, BCA RM&D compliance, smart building management, or AI facility management. Based in Singapore, serving clients across Asia.',
   alternates: { canonical: '/contact' },
 }
 

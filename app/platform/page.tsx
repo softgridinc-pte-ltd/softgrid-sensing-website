@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/Button'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Platform | Softgrid Sensing',
+  title: 'AFOS Platform — AI Facility Operating System | Softgrid',
   description:
-    'The AFOS platform — a unified AI and IoT operating system for facility operations. Four engines: Connect, Intelligence, Workflow, and Data.',
+    'AFOS — the AI-Driven Facility Operating System. A unified AI and IoT platform for lift monitoring, building management, and predictive maintenance. Four engines: Connect, Intelligence, Workflow, Data.',
   alternates: { canonical: '/platform' },
 }
 

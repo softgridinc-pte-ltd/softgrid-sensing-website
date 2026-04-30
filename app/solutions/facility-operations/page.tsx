@@ -10,9 +10,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Smart Facility Operations | Softgrid Sensing',
+  title: 'AI Facility Management Software — Smart FM Singapore | Softgrid',
   description:
-    'AI-driven work orders, asset management, knowledge base, and voice AI service desk — everything a modern managing agent needs.',
+    'AI facility management software for managing agents — CMMS work orders, asset tracking, AI knowledge base, and voice AI service desk. BCA Smart FM ready. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/solutions/facility-operations' },
 }
 

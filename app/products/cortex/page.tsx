@@ -7,9 +7,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AFOS Cortex — Data & Intelligence | Softgrid Sensing',
+  title: 'AFOS Cortex — AI Knowledge Base & Digital Twin for Facilities',
   description:
-    'AI knowledge base, digital twin visualization, and predictive analytics — turning your operational data into your most valuable asset.',
+    'AFOS Cortex — AI knowledge base, digital twin visualization, and predictive analytics for facility operations. Powered by Athena AI. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/products/cortex' },
 }
 
@@ -23,11 +23,7 @@ const productSchema = {
   description:
     'AI knowledge base, digital twin visualization, and predictive analytics — turning your operational data into your most valuable asset.',
   url: 'https://softgridsensing.com/products/cortex',
-  provider: {
-    '@type': 'Organization',
-    name: 'Softgrid Sensing',
-    url: 'https://softgridsensing.com',
-  },
+  provider: { '@id': 'https://softgridsensing.com/#organization' },
 }
 
 export default function CortexPage(): React.ReactElement {

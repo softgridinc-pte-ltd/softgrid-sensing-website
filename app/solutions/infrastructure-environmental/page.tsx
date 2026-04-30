@@ -10,9 +10,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Infrastructure & Environmental Monitoring | Softgrid Sensing',
+  title: 'Satellite AI Monitoring — Forest, Coast & Infrastructure | Softgrid',
   description:
-    'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure — the same platform, at planetary scale.',
+    'Satellite-based AI monitoring for forests, coastlines, reservoirs, and large-scale infrastructure. Used by NParks for national-scale forest cover analysis. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/solutions/infrastructure-environmental' },
 }
 

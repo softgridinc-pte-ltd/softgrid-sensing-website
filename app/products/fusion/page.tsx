@@ -7,9 +7,9 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AFOS Fusion — Monitoring & Diagnostics | Softgrid Sensing',
+  title: 'AFOS Fusion — Lift Monitoring System (LTMS) & Diagnostics',
   description:
-    'Real-time monitoring, intelligent alerting, and predictive diagnostics across lifts, escalators, and building systems — powered by the AFOS platform.',
+    'AFOS Fusion (LTMS) — real-time lift, escalator, and building monitoring with AI diagnostics and predictive maintenance. BCA RM&D ready. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/products/fusion' },
 }
 
@@ -23,11 +23,7 @@ const productSchema = {
   description:
     'Real-time monitoring, intelligent alerting, and predictive diagnostics across lifts, escalators, and building systems.',
   url: 'https://softgridsensing.com/products/fusion',
-  provider: {
-    '@type': 'Organization',
-    name: 'Softgrid Sensing',
-    url: 'https://softgridsensing.com',
-  },
+  provider: { '@id': 'https://softgridsensing.com/#organization' },
 }
 
 export default function FusionPage(): React.ReactElement {

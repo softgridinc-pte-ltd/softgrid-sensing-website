@@ -13,9 +13,9 @@ import { RelatedLinks } from '@/components/sections/case-studies/RelatedLinks'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'NParks Forest Monitoring — AI Satellite Analysis | Softgrid Sensing',
+  title: 'NParks Forest Monitoring — AI Satellite Image Analysis Singapore',
   description:
-    'AI-powered satellite image analysis for national-scale environmental monitoring — monthly forest cover monitoring across Singapore.',
+    'NParks case study — AI satellite image analysis for national-scale forest cover monitoring across Singapore. Monthly cycles, 4.76m resolution, zero manual processing.',
   alternates: { canonical: '/case-studies/nparks' },
 }
 

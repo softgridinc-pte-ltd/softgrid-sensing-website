@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/Button'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Products | Softgrid Sensing',
+  title: 'AFOS Products — IoT Edge, Lift Monitoring, CMMS & AI | Softgrid',
   description:
-    "Explore Softgrid's AFOS product portfolio: Sense, Fusion, Orches, and Cortex — four product series powered by the AFOS platform.",
+    "Softgrid's AFOS product portfolio: Sense (IoT edge), Fusion (lift & building monitoring), Orches (CMMS & work orders), Cortex (AI knowledge base & digital twin).",
   alternates: { canonical: '/products' },
 }
 
