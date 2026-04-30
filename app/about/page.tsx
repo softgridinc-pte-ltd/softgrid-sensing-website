@@ -10,7 +10,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About Softgrid \u2014 Singapore IoT & AI Facility Platform Company',
   description:
-    'Softgrid Sensing is a Singapore IoT and AI company building AFOS \u2014 the AI-Driven Facility Operating System. Founded 2017, backed by NRF and A*STAR, 10,000+ assets monitored. Trusted by HDB.',
+    'Softgrid Sensing is a Singapore IoT and AI company building AFOS \u2014 the AI-Driven Facility Operating System. Founded 2017, NRF Cities of Tomorrow awardee, 10,000+ assets monitored. Trusted by HDB.',
   alternates: { canonical: '/about' },
 }
 
@@ -47,7 +47,7 @@ const faqSchema = {
       name: 'When was Softgrid founded?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Softgrid was founded in 2017 in Singapore, starting with lift remote monitoring. The company has since expanded to facility management, building management systems, and digital twin solutions, and is backed by NRF (National Research Foundation) and A*STAR.',
+        text: 'Softgrid was founded in 2017 in Singapore, starting with lift remote monitoring. The company has since expanded to facility management, building management systems, and digital twin solutions. Softgrid is an NRF Cities of Tomorrow national awardee.',
       },
     },
     {

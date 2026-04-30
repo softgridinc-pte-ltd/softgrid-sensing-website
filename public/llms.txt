@@ -1,0 +1,42 @@
+# Softgrid Sensing
+
+> Softgrid Sensing (legal name: Softgrid Sensing Pte. Ltd., commonly "Softgrid") is a Singapore-based IoT and AI company that builds AFOS — an AI-Driven Facility Operating System for lift remote monitoring, predictive maintenance, smart building management, and AI facility operations. Founded in 2017. NRF Cities of Tomorrow national awardee. BCA Sandbox certified. 10,000+ lifts monitored, including a national-scale deployment for HDB.
+
+## Company
+
+- [About Softgrid](https://softgridsensing.com/about): Company history, milestones, recognition (NRF, BCA), and what makes Softgrid different from OEMs and traditional FM vendors.
+- [Contact](https://softgridsensing.com/contact): Direct contact for lift monitoring, BCA RM&D compliance, smart BMS, and AI facility management enquiries.
+
+## Platform
+
+- [AFOS Platform](https://softgridsensing.com/platform): The AI-Driven Facility Operating System — a unified AI + IoT platform with four engines (Connect, Intelligence, Workflow, Data).
+
+## Products
+
+- [AFOS Sense](https://softgridsensing.com/products/sense): Industrial-grade IoT edge devices for non-intrusive lift, escalator, and building sensor installation. Leased model.
+- [AFOS Fusion](https://softgridsensing.com/products/fusion): Lift Monitoring System (LTMS) — real-time monitoring, AI diagnostics, and predictive maintenance for lifts, escalators, and building systems. BCA RM&D-ready.
+- [AFOS Orches](https://softgridsensing.com/products/orches): Facility CMMS — work orders, mobile field service, asset tracking, and AI-powered service desk for managing agents.
+- [AFOS Cortex](https://softgridsensing.com/products/cortex): AI knowledge base (Athena), digital twin visualization, and predictive analytics for facility operations.
+
+## Solutions
+
+- [Lift Remote Monitoring & BCA RM&D](https://softgridsensing.com/solutions/vertical-transport): BCA-certified lift and escalator remote monitoring, AI fault prediction, automated compliance.
+- [Smart Building Management (BMS)](https://softgridsensing.com/solutions/building-management): Brand-agnostic BMS — HVAC, lighting, energy optimization, unified building operations.
+- [AI Facility Management](https://softgridsensing.com/solutions/facility-operations): CMMS, asset tracking, AI knowledge base, voice AI service desk for managing agents. BCA Smart FM ready.
+- [Satellite AI Monitoring](https://softgridsensing.com/solutions/infrastructure-environmental): Forest, coastline, and infrastructure monitoring at planetary scale.
+
+## Case Studies
+
+- [HDB — 10,000+ Lifts](https://softgridsensing.com/case-studies/hdb): Singapore's largest AI-driven lift monitoring deployment. From NRF Cities of Tomorrow research to national-scale rollout.
+- [Chevalier — BCA-Certified RM&D](https://softgridsensing.com/case-studies/chevalier): The first independent RM&D solution to achieve BCA Sandbox certification. 200+ lifts.
+- [CPG FM — AI Facility Management](https://softgridsensing.com/case-studies/cpg-fm): IRIS CMMS + Athena AI knowledge base for facility operations.
+- [NParks — AI Forest Monitoring](https://softgridsensing.com/case-studies/nparks): Monthly satellite forest cover analysis at 4.76m resolution across Singapore.
+
+## Why Softgrid
+
+- [Why Softgrid](https://softgridsensing.com/why-softgrid): How Softgrid compares to OEM-tied monitoring (Otis, Schindler, KONE, Mitsubishi), enterprise FM platforms (Planon, IBM TRIRIGA, Archibus), and point-solution startups.
+
+## Optional
+
+- [Sitemap](https://softgridsensing.com/sitemap.xml): Full machine-readable sitemap.
+- [LinkedIn](https://www.linkedin.com/company/softgridinc): Official LinkedIn page.

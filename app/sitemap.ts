@@ -27,6 +27,7 @@ const routes: RouteEntry[] = [
   { path: '/case-studies/cpg-fm', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/case-studies/nparks', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/about', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/why-softgrid', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/contact', changeFrequency: 'monthly', priority: 0.7 },
 ]
 
