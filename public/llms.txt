@@ -32,10 +32,6 @@
 - [CPG FM — AI Facility Management](https://softgridsensing.com/case-studies/cpg-fm): IRIS CMMS + Athena AI knowledge base for facility operations.
 - [NParks — AI Forest Monitoring](https://softgridsensing.com/case-studies/nparks): Monthly satellite forest cover analysis at 4.76m resolution across Singapore.
 
-## Why Softgrid
-
-- [Why Softgrid](https://softgridsensing.com/why-softgrid): How Softgrid compares to OEM-tied monitoring (Otis, Schindler, KONE, Mitsubishi), enterprise FM platforms (Planon, IBM TRIRIGA, Archibus), and point-solution startups.
-
 ## Optional
 
 - [Sitemap](https://softgridsensing.com/sitemap.xml): Full machine-readable sitemap.
