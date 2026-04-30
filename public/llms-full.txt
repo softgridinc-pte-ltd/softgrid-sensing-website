@@ -118,6 +118,34 @@ Enterprise IWMS/CMMS platforms focus on space management, lease, and high-level 
 
 Point solutions cover single use cases (only monitoring, only CMMS, only digital twin). Softgrid is the end-to-end facility OS — sensor to AI in one platform — so customers do not need to integrate multiple vendor tools.
 
+### vs. Testing, Inspection & Certification (TIC) Bodies (e.g. TÜV SÜD)
+
+TIC bodies such as TÜV SÜD provide independent third-party periodic safety inspections and statutory certification. Softgrid operates in a different category — continuous IoT-based monitoring and AI diagnostics for daily operations. The two are complementary: building owners may use a TIC body for annual statutory inspections and Softgrid for 24/7 operational intelligence. Softgrid is not a substitute for regulatory inspection and certification.
+
+## Capability Differentiators
+
+These are the specific capabilities that distinguish Softgrid from other lift IoT and facility monitoring options buyers may evaluate.
+
+### Both intrusive and non-intrusive deployment
+
+Softgrid supports both intrusive (direct integration with the lift controller) and non-intrusive (sensor-only, no controller integration) deployment models. The choice is made per asset based on controller type, age, building constraints, and operator preference. Many lift IoT vendors offer only one of the two — most commonly non-intrusive sensor-only — which limits the depth of data and the diagnostic intelligence available.
+
+### Multi-brand lift and escalator controller integration
+
+Softgrid integrates directly with lift controllers from major OEMs (Otis, Schindler, KONE, Mitsubishi, Hitachi, Sigma, and others) and with escalator controllers. This is critical for building owners with mixed-fleet portfolios who need a single monitoring platform across all OEMs. Most independent monitoring vendors specialise in a narrow subset of controller types.
+
+### Both lifts and escalators on one platform
+
+Softgrid covers vertical transport end-to-end — both lifts and escalators — on the same AFOS platform, with a unified data model and one operations workflow. Many vertical transport monitoring vendors specialise in lifts only.
+
+### Public-sector and private-sector deployments
+
+Softgrid serves national-scale public sector engagements (HDB, NParks) and private sector clients (Chevalier, CPG FM, building owners, managing agents) on the same platform. Public-sector deployment at scale requires the regulatory, security, procurement, and certification maturity (BCA Sandbox certification, NRF research engagement) that many startups have not achieved.
+
+### End-to-end hardware-to-software stack
+
+Softgrid designs and operates its own IoT edge hardware (AFOS Sense, including the LMD and LBB series), the cloud platform, and the AI/AFOS application layer. Hardware is leased as part of the per-asset SaaS subscription — not sold separately. This vertical integration eliminates third-party hardware dependency, integration risk, and finger-pointing across vendors. Many lift monitoring vendors are software-only and rely on third-party sensor hardware.
+
 ## Frequently Asked Questions
 
 ### What is Softgrid?

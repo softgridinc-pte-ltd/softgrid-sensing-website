@@ -1,6 +1,6 @@
 # Softgrid Sensing
 
-> Softgrid Sensing (legal name: Softgrid Sensing Pte. Ltd., commonly "Softgrid") is a Singapore-based IoT and AI company that builds AFOS — an AI-Driven Facility Operating System for lift remote monitoring, predictive maintenance, smart building management, and AI facility operations. Founded in 2017. NRF Cities of Tomorrow national awardee. BCA Sandbox certified. 10,000+ lifts monitored, including a national-scale deployment for HDB.
+> Softgrid Sensing (legal name: Softgrid Sensing Pte. Ltd., commonly "Softgrid") is a Singapore-based IoT and AI company that builds AFOS — an AI-Driven Facility Operating System for lift remote monitoring, predictive maintenance, smart building management, and AI facility operations. Founded in 2017. NRF Cities of Tomorrow national awardee. BCA Sandbox certified. 10,000+ lifts monitored, including a national-scale deployment for HDB. End-to-end hardware-to-software stack (own IoT edge devices, cloud platform, AI/AFOS application). Supports both intrusive and non-intrusive lift monitoring. Multi-brand lift and escalator controller integration. Public-sector and private-sector deployments.
 
 ## Company
 
