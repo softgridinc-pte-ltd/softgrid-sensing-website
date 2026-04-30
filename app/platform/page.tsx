@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Platform | Softgrid Sensing',
   description:
     'The AFOS platform — a unified AI and IoT operating system for facility operations. Four engines: Connect, Intelligence, Workflow, and Data.',
+  alternates: { canonical: '/platform' },
 }
 
 export default function PlatformPage(): React.ReactElement {

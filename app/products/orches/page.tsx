@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { BrowserFrameCarousel } from '@/components/ui/BrowserFrameCarousel'
+import { JsonLd } from '@/components/seo/JsonLd'
 
 import type { Metadata } from 'next'
 
@@ -7,11 +8,30 @@ export const metadata: Metadata = {
   title: 'AFOS Orches — Operations & Maintenance | Softgrid Sensing',
   description:
     'Work order management, mobile field service, asset tracking, and AI-powered service desk — closing the loop between detection and resolution.',
+  alternates: { canonical: '/products/orches' },
+}
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'AFOS Orches',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Operations & Maintenance',
+  operatingSystem: 'Web',
+  description:
+    'Work order management, mobile field service, asset tracking, and AI-powered service desk — closing the loop between detection and resolution.',
+  url: 'https://softgridsensing.com/products/orches',
+  provider: {
+    '@type': 'Organization',
+    name: 'Softgrid Sensing',
+    url: 'https://softgridsensing.com',
+  },
 }
 
 export default function OrchesPage(): React.ReactElement {
   return (
     <>
+      <JsonLd data={productSchema} />
       {/* SERIES HERO */}
       <section
         style={{

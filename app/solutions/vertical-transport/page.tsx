@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: 'Smart Vertical Transport | Softgrid Sensing',
   description:
     'BCA-certified lift and escalator remote monitoring, AI-driven fault prediction, and automated compliance for your entire vertical transport fleet.',
+  alternates: { canonical: '/solutions/vertical-transport' },
 }
 
 const challenges = [

@@ -2,10 +2,37 @@ import { Outfit, Inter } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollAnimator } from '@/components/ui/ScrollAnimator'
+import { JsonLd } from '@/components/seo/JsonLd'
 // import { PasswordGate } from '@/components/ui/PasswordGate'
 import './globals.css'
 
 import type { Metadata } from 'next'
+
+const SITE_URL = 'https://softgridsensing.com'
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Softgrid Sensing',
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.svg`,
+  description:
+    'AI-driven facility operating systems for predictive maintenance, lift monitoring, and smart building management.',
+  sameAs: ['https://www.linkedin.com/company/softgridinc'],
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'SG',
+    addressLocality: 'Singapore',
+  },
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Softgrid Sensing',
+  url: SITE_URL,
+  inLanguage: 'en-SG',
+}
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -21,10 +48,11 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://softgridsensing.com'),
+  metadataBase: new URL(SITE_URL),
   title: 'Softgrid Sensing | AI-Driven Facility Operating System',
   description:
     'Softgrid provides AI-driven facility operating systems for predictive maintenance, lift monitoring, and smart building management. Trusted by HDB with 10,000+ assets monitored in Singapore.',
+  alternates: { canonical: '/' },
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -59,6 +87,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <body>
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold"

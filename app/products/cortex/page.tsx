@@ -1,6 +1,7 @@
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { BrowserFrame } from '@/components/ui/BrowserFrame'
 import { BrowserFrameCarousel } from '@/components/ui/BrowserFrameCarousel'
+import { JsonLd } from '@/components/seo/JsonLd'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -9,11 +10,30 @@ export const metadata: Metadata = {
   title: 'AFOS Cortex — Data & Intelligence | Softgrid Sensing',
   description:
     'AI knowledge base, digital twin visualization, and predictive analytics — turning your operational data into your most valuable asset.',
+  alternates: { canonical: '/products/cortex' },
+}
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'AFOS Cortex',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Data & Intelligence',
+  operatingSystem: 'Web',
+  description:
+    'AI knowledge base, digital twin visualization, and predictive analytics — turning your operational data into your most valuable asset.',
+  url: 'https://softgridsensing.com/products/cortex',
+  provider: {
+    '@type': 'Organization',
+    name: 'Softgrid Sensing',
+    url: 'https://softgridsensing.com',
+  },
 }
 
 export default function CortexPage(): React.ReactElement {
   return (
     <>
+      <JsonLd data={productSchema} />
       <Breadcrumb items={[{ label: 'Products', href: '/products' }, { label: 'AFOS Cortex' }]} />
       {/* SERIES HERO */}
       <section

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Smart Building Management | Softgrid Sensing',
   description:
     'Brand-agnostic building monitoring, energy optimization, and automated operations — one dashboard for every system in your building.',
+  alternates: { canonical: '/solutions/building-management' },
 }
 
 const challenges = [

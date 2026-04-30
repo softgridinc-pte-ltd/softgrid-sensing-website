@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: 'CPG FM — AI-Powered Facility Management | Softgrid Sensing',
   description:
     'Digitizing facility operations with IRIS CMMS and Athena AI knowledge base for CPG FM.',
+  alternates: { canonical: '/case-studies/cpg-fm' },
 }
 
 const keyNumbers = [

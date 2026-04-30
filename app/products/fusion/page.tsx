@@ -2,6 +2,7 @@ import { Building2, Satellite } from 'lucide-react'
 import Link from 'next/link'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { BrowserFrame } from '@/components/ui/BrowserFrame'
+import { JsonLd } from '@/components/seo/JsonLd'
 
 import type { Metadata } from 'next'
 
@@ -9,11 +10,30 @@ export const metadata: Metadata = {
   title: 'AFOS Fusion — Monitoring & Diagnostics | Softgrid Sensing',
   description:
     'Real-time monitoring, intelligent alerting, and predictive diagnostics across lifts, escalators, and building systems — powered by the AFOS platform.',
+  alternates: { canonical: '/products/fusion' },
+}
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'AFOS Fusion',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Monitoring & Diagnostics',
+  operatingSystem: 'Web',
+  description:
+    'Real-time monitoring, intelligent alerting, and predictive diagnostics across lifts, escalators, and building systems.',
+  url: 'https://softgridsensing.com/products/fusion',
+  provider: {
+    '@type': 'Organization',
+    name: 'Softgrid Sensing',
+    url: 'https://softgridsensing.com',
+  },
 }
 
 export default function FusionPage(): React.ReactElement {
   return (
     <>
+      <JsonLd data={productSchema} />
       <Breadcrumb items={[{ label: 'Products', href: '/products' }, { label: 'AFOS Fusion' }]} />
       {/* SERIES HERO */}
       <section

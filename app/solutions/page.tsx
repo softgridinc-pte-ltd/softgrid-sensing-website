@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: 'Solutions | Softgrid Sensing',
   description:
     'Facility solutions for lift operators, building owners, and managing agents. BCA certified, AI-powered, proven at scale across Singapore.',
+  alternates: { canonical: '/solutions' },
 }
 
 export default function SolutionsPage(): React.ReactElement {

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Products | Softgrid Sensing',
   description:
     "Explore Softgrid's AFOS product portfolio: Sense, Fusion, Orches, and Cortex — four product series powered by the AFOS platform.",
+  alternates: { canonical: '/products' },
 }
 
 interface SeriesProduct {

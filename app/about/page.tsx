@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'About Us | Softgrid Sensing',
   description:
     "Learn about Softgrid Sensing\u2014Singapore's AI-driven facility platform company. 8 years of experience, 10,000+ assets monitored, backed by NRF and A*STAR.",
+  alternates: { canonical: '/about' },
 }
 
 export default function AboutPage(): React.ReactElement {

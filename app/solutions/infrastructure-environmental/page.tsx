@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: 'Infrastructure & Environmental Monitoring | Softgrid Sensing',
   description:
     'Satellite-based AI monitoring for coastlines, forests, reservoirs, and large-scale infrastructure — the same platform, at planetary scale.',
+  alternates: { canonical: '/solutions/infrastructure-environmental' },
 }
 
 const challenges = [

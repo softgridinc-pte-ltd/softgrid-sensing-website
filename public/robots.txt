@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://softgridsensing.com/sitemap.xml

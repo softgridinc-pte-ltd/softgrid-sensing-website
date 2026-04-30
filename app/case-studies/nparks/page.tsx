@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: 'NParks Forest Monitoring — AI Satellite Analysis | Softgrid Sensing',
   description:
     'AI-powered satellite image analysis for national-scale environmental monitoring — monthly forest cover monitoring across Singapore.',
+  alternates: { canonical: '/case-studies/nparks' },
 }
 
 const keyNumbers = [

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Case Studies | Softgrid Sensing',
   description:
     'See how HDB, Chevalier, and others trust Softgrid for lift monitoring, facility management, and predictive maintenance at scale.',
+  alternates: { canonical: '/case-studies' },
 }
 
 export default function CaseStudiesPage(): React.ReactElement {

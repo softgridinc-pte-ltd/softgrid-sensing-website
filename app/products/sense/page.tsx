@@ -1,5 +1,6 @@
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { ProductImageCarousel } from '@/components/ui/ProductImageCarousel'
+import { JsonLd } from '@/components/seo/JsonLd'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -9,11 +10,30 @@ export const metadata: Metadata = {
   title: 'AFOS Sense — Edge Devices | Softgrid Sensing',
   description:
     'Industrial-grade IoT devices designed for non-intrusive installation, edge intelligence, and resilient operation. Leased, not sold — part of your per-asset subscription.',
+  alternates: { canonical: '/products/sense' },
+}
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'AFOS Sense',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Edge Devices',
+  operatingSystem: 'Web',
+  description:
+    'Industrial-grade IoT devices designed for non-intrusive installation, edge intelligence, and resilient operation.',
+  url: 'https://softgridsensing.com/products/sense',
+  provider: {
+    '@type': 'Organization',
+    name: 'Softgrid Sensing',
+    url: 'https://softgridsensing.com',
+  },
 }
 
 export default function SensePage(): React.ReactElement {
   return (
     <>
+      <JsonLd data={productSchema} />
       <Breadcrumb items={[{ label: 'Products', href: '/products' }, { label: 'AFOS Sense' }]} />
       {/* SERIES HERO */}
       <section

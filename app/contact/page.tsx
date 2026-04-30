@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Contact Us | Softgrid Sensing',
   description:
     'Contact Softgrid Sensing for lift monitoring, facility management, or digital twin solutions. Based in Singapore, serving clients across Asia.',
+  alternates: { canonical: '/contact' },
 }
 
 export default function ContactPage(): React.ReactElement {

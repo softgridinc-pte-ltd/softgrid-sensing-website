@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: 'HDB Smart Lift Intelligence — 10,000+ Lifts | Softgrid Sensing',
   description:
     "From a Cities of Tomorrow research grant to Singapore's largest AI-driven lift intelligence deployment — 10,000+ lifts monitored with AFOS at national scale.",
+  alternates: { canonical: '/case-studies/hdb' },
 }
 
 export default function HdbCaseStudyPage(): React.ReactElement {

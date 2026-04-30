@@ -238,6 +238,36 @@ Overview page redesign — "magazine editorial" layout replacing uniform card gr
 
 **Build status:** Passing (static export to `/out`)
 
+### Session — Contact Form & SEO Foundations (2026-04-30)
+
+**Wired contact form to Formspree**
+
+- [x] Replaced placeholder timeout in `components/sections/contact/ContactForm.tsx` with real `fetch` POST to Formspree endpoint (`mvzlplbq`)
+
+**SEO foundations — JSON-LD, canonicals, sitemap auto-generation**
+
+- [x] Created `components/seo/JsonLd.tsx` — server component that emits `<script type="application/ld+json">`
+- [x] Added `Organization` + `WebSite` JSON-LD to root layout (renders on every page)
+- [x] Added `SoftwareApplication` JSON-LD to all 4 product pages (Sense, Fusion, Orches, Cortex)
+- [x] Added `alternates.canonical` to root layout and all 18 page-level metadata blocks
+- [x] Replaced hand-written `public/sitemap.xml` and `public/robots.txt` with Next.js Metadata Files (`app/sitemap.ts`, `app/robots.ts`) — sitemap now regenerates on every build with fresh `<lastmod>` timestamps
+- [x] Verified build output: 19 routes in sitemap with `<lastmod>`, canonical tags on every page, JSON-LD schemas validated via grep on built HTML
+
+**Google Search Console setup (manual, no code)**
+
+- [x] User added DNS TXT record at Siteground for domain-level verification
+- [x] User submitted `https://softgridsensing.com/sitemap.xml` (full URL required for Domain properties, not just `sitemap.xml`)
+
+**Out of scope for future work:**
+
+- Per-page OG images
+- BreadcrumbList, FAQPage, Article schemas (case studies could use Article)
+- GA4 / Plausible analytics
+- Per-route git-based `lastModified` (currently uses build timestamp)
+- Bing Webmaster Tools verification
+
+**Build status:** Passing (static export to `/out`)
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)

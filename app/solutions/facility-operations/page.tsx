@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: 'Smart Facility Operations | Softgrid Sensing',
   description:
     'AI-driven work orders, asset management, knowledge base, and voice AI service desk — everything a modern managing agent needs.',
+  alternates: { canonical: '/solutions/facility-operations' },
 }
 
 const challenges = [

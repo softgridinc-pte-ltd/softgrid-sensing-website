@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: 'Chevalier RM&D — BCA-Certified Lift Diagnostics | Softgrid Sensing',
   description:
     'The first independent RM&D solution to achieve BCA Sandbox certification — now operating on 200+ lifts for Chevalier.',
+  alternates: { canonical: '/case-studies/chevalier' },
 }
 
 const keyNumbers = [
