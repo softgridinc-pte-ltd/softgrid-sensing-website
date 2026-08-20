@@ -24,7 +24,7 @@ const slides: HeroSlide[] = [
     description:
       'Transform building operations with predictive analytics and real-time monitoring across your entire facility portfolio.',
     ctas: [
-      { label: 'Explore Platform', href: '/platform/afos', variant: 'primary' },
+      { label: 'Explore Platform', href: '/platform', variant: 'primary' },
       { label: 'Book a Demo', href: '/contact', variant: 'secondary' },
     ],
   },
