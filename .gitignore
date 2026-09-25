@@ -37,3 +37,6 @@ __pycache__/
 playwright-report/
 test-results/
 .playwright-mcp/
+
+# Source materials (press releases, photos) kept local only
+docs/references/
