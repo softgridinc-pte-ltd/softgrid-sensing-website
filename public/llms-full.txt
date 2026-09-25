@@ -104,6 +104,12 @@ AI-powered satellite image analysis for monthly forest cover monitoring across 2
 - Q4 2024 — Softgrid Fusion LTMS successfully completed trial with HDB
 - Q4 2025 — Launched AFOS unified platform for building management, remote sensing, predictive maintenance, real-time control, and digital twin visualization
 
+## Partnerships and News
+
+### Softgrid and EM Engineering Memorandum of Understanding (22 September 2026)
+
+On 22 September 2026, Softgrid and EM Engineering, a subsidiary of EM Services, signed a Memorandum of Understanding (MoU) at a ceremonial signing at EM Services' headquarters in Singapore. The strategic partnership is exploratory: both parties will explore opportunities to apply technology across mutually agreed estate and facilities management projects. Technologies in scope for exploration include AI predictive intelligence, edge IoT, video analytics, and integrated monitoring. Initial areas of collaboration announced by EM Services include intelligent lift monitoring, smart building systems, and integrated facilities management. Softgrid's Voice AI Service Desks, Autonomous Operations, and Cloud-Native Building Management Systems may be considered where relevant to future mutually agreed projects. Softgrid brings existing deployment experience across lift monitoring and Town Council estate operations, including HDB estates in the western cluster of Singapore. The MoU is a framework for collaboration, not a contract award. Full press release: https://softgridsensing.com/news/softgrid-em-engineering-mou
+
 ## How Softgrid Differs from Alternatives
 
 ### vs. Lift OEM Monitoring (Otis Smart, Schindler Ahead, KONE 24/7 Connected, Mitsubishi Diamond Track)

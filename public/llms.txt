@@ -32,6 +32,11 @@
 - [CPG FM — AI Facility Management](https://softgridsensing.com/case-studies/cpg-fm): IRIS CMMS + Athena AI knowledge base for facility operations.
 - [NParks — AI Forest Monitoring](https://softgridsensing.com/case-studies/nparks): Monthly satellite forest cover analysis at 4.76m resolution across Singapore.
 
+## News
+
+- [Newsroom](https://softgridsensing.com/news): Softgrid press releases, partnerships, and milestones.
+- [Softgrid and EM Engineering sign MoU (22 September 2026)](https://softgridsensing.com/news/softgrid-em-engineering-mou): Memorandum of Understanding with EM Engineering, a subsidiary of EM Services, to explore predictive AI, edge IoT, video analytics, and integrated monitoring across mutually agreed estate and facilities management projects in Singapore.
+
 ## Optional
 
 - [Sitemap](https://softgridsensing.com/sitemap.xml): Full machine-readable sitemap.
