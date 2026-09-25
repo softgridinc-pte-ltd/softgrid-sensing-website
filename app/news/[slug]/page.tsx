@@ -113,11 +113,13 @@ export default function NewsArticlePage({ params }: ArticlePageProps): React.Rea
 
       <NewsHero article={article} />
       <KeyFacts facts={article.facts} />
-      <ArticleBody article={article} url={url} />
-      <FocusAreas article={article} />
       <PhotoGallery photos={article.gallery} />
+      <ArticleBody article={article} url={url} />
       <Boilerplates items={article.boilerplates} />
-      <RelatedLinks items={article.related} />
+      <FocusAreas article={article} />
+      <div className="border-t border-slate-200">
+        <RelatedLinks items={article.related} />
+      </div>
       <CTASection
         variant="gradient"
         headline="Explore What AFOS Can Do for Your Estate"
