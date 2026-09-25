@@ -310,6 +310,26 @@ Same calendar day, second working session. Shipped four release branches: v1.3.0
 
 **Build status:** Passing (static export to `/out`). Live deploys via `releases/v1.3.0` → `releases/v1.5.1`.
 
+### Session — Newsroom + EM Engineering MoU (2026-09-25)
+
+**Launched a Newsroom section with the Softgrid x EM Engineering MoU press release (signed 22 Sep 2026). Branch `releases/v1.6.0`.**
+
+- [x] `data/news.ts` — typed `NewsArticle` content model (paragraph/quote body blocks, facts, focus areas, gallery, boilerplates, media contacts). Add future news by appending to `newsArticles`
+- [x] `/news` (Newsroom index: featured card, grid appears once there are 2+ articles, media enquiries) and `/news/[slug]` (static params)
+- [x] Article sections in `components/sections/news/`: hero with co-brand lockup + viewfinder-framed photo, key facts strip, article body with pull quotes + sticky sidebar (share, media contacts, EM LinkedIn link), Areas of Exploration, photo gallery with lightbox, dual boilerplates
+- [x] Photos cropped from the supplied collage PDF (`public/images/news/2026-09-em-engineering-mou/`, ~675px per tile — the source resolution). OG image 1200x630 rendered via headless Chromium
+- [x] `NewsArticle` + `BreadcrumbList` JSON-LD, OG/Twitter metadata, sitemap entries, llms.txt + llms-full.txt Partnerships section
+- [x] Entry points: About nav dropdown (About Softgrid / Newsroom), footer Newsroom link, homepage hero announcement pill (`announcement` constant in `HeroSection.tsx` — set to `null` to retire), Q3 2026 Journey milestone, HDB related link, search index `News` category
+
+**Copy decisions (confirmed with user):**
+- Site copy uses "Softgrid"; the press release headline and quotes keep "SoftGrid" verbatim
+- Media contact is info@softgridsensing.com (press release listed a different domain)
+- Boilerplate says "AI-Driven Facility Operating System"; keeps 100,000+ monitored assets
+- Partner logo uses the EM Services wordmark (`EMSERVICES-wordmark.png`, tightly cropped)
+- MoU is exploratory — all copy preserves "explore / may / mutually agreed" hedging; no claims of deployment or contract award
+
+**Build status:** Passing (static export to `/out`)
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
