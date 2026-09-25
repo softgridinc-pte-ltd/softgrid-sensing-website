@@ -1,7 +1,7 @@
 export interface SearchEntry {
   title: string
   href: string
-  category: 'Platform' | 'Product' | 'Solution' | 'Case Study' | 'Company' | 'Contact'
+  category: 'Platform' | 'Product' | 'Solution' | 'Case Study' | 'News' | 'Company' | 'Contact'
   description: string
   keywords: string[]
 }
@@ -28,6 +28,20 @@ export const searchIndex: SearchEntry[] = [
     category: 'Company',
     description: 'Singapore-based AI-driven facility platform company. 8 years of experience, 10,000+ assets monitored.',
     keywords: ['about', 'company', 'team', 'history', 'NRF', 'A*STAR', 'Singapore', 'research', 'story'],
+  },
+  {
+    title: 'Newsroom',
+    href: '/news',
+    category: 'News',
+    description: 'Softgrid press releases, partnerships, and company milestones.',
+    keywords: ['news', 'newsroom', 'press', 'press release', 'announcement', 'media', 'partnership'],
+  },
+  {
+    title: 'Softgrid and EM Engineering Sign MoU',
+    href: '/news/softgrid-em-engineering-mou',
+    category: 'News',
+    description: 'Strategic MoU with EM Engineering (EM Services) to explore predictive AI for Singapore estate and facilities management.',
+    keywords: ['EM Engineering', 'EM Services', 'MoU', 'memorandum of understanding', 'partnership', 'estate management', 'Town Council', 'predictive AI', 'press release'],
   },
   {
     title: 'Contact Us',

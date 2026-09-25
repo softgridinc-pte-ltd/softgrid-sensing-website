@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
-import { Menu, X, ChevronDown, Search, Cpu, MonitorDot, Workflow, ArrowUpDown, Building2, Wrench, Leaf } from 'lucide-react'
+import { Menu, X, ChevronDown, Search, Cpu, MonitorDot, Workflow, ArrowUpDown, Building2, Wrench, Leaf, Building, Newspaper } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { CortexIcon } from '@/components/icons/CortexIcon'
 import { useSearch } from '@/components/search/useSearch'
@@ -93,7 +93,24 @@ const navigation: NavItem[] = [
     ],
   },
   { label: 'Case Studies', href: '/case-studies' },
-  { label: 'About', href: '/about' },
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      {
+        label: 'About Softgrid',
+        description: 'Our story, milestones, and ecosystem',
+        icon: Building,
+        href: '/about',
+      },
+      {
+        label: 'Newsroom',
+        description: 'Announcements and partnerships',
+        icon: Newspaper,
+        href: '/news',
+      },
+    ],
+  },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -226,6 +243,9 @@ export function Header(): React.ReactElement {
     return pathname.startsWith(href)
   }
 
+  const isItemActive = (item: NavItem): boolean =>
+    isActive(item.href) || (item.children?.some((child) => isActive(child.href)) ?? false)
+
   return (
     <header className="bg-navy-900/80 backdrop-blur-md border-b border-navy-800/50 fixed w-full z-50">
       <nav className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between relative">
@@ -236,6 +256,7 @@ export function Header(): React.ReactElement {
             alt="Softgrid Sensing"
             width={36}
             height={36}
+            priority
             className="transition-transform duration-200 group-hover:scale-105"
           />
           <span className="text-white font-heading font-semibold text-lg hidden sm:block">
@@ -261,7 +282,7 @@ export function Header(): React.ReactElement {
                 ref={(el) => { if (el) triggerRefs.current.set(item.label, el) }}
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md inline-flex items-center gap-1 ${
-                  isActive(item.href)
+                  isItemActive(item)
                     ? 'text-primary-400'
                     : 'text-slate-100 hover:text-primary-400'
                 }`}
@@ -413,7 +434,7 @@ export function Header(): React.ReactElement {
                 <Link
                   href={item.href}
                   className={`block px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                    isActive(item.href)
+                    isItemActive(item)
                       ? 'text-primary-400 bg-navy-800'
                       : 'text-slate-100 hover:text-primary-400 hover:bg-navy-800'
                   }`}

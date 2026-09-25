@@ -18,6 +18,7 @@ const categoryColors: Record<SearchEntry['category'], string> = {
   Product: 'text-primary-300',
   Solution: 'text-amber-400',
   'Case Study': 'text-emerald-400',
+  News: 'text-sky-300',
   Company: 'text-slate-400',
   Contact: 'text-slate-400',
 }

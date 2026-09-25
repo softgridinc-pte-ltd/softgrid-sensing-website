@@ -11,7 +11,7 @@ import type { Metadata } from 'next'
 const related = [
   { kicker: 'Related Solution', title: 'Smart Vertical Transport', href: '/solutions/vertical-transport' },
   { kicker: 'Related Products', title: 'LTMS, LMD6000', href: '/products/fusion' },
-  { kicker: 'Related Page', title: 'Why Softgrid', href: '/about' },
+  { kicker: 'Latest News', title: 'Softgrid and EM Engineering Sign MoU', href: '/news/softgrid-em-engineering-mou' },
 ]
 
 export const metadata: Metadata = {

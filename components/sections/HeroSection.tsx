@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 interface HeroCta {
@@ -58,6 +60,21 @@ const slides: HeroSlide[] = [
     ],
   },
 ]
+
+interface HeroAnnouncement {
+  label: string
+  text: string
+  shortText: string
+  href: string
+}
+
+// Time-bound homepage announcement. Set to null to hide once it is no longer current.
+const announcement: HeroAnnouncement | null = {
+  label: 'News',
+  text: 'Softgrid and EM Engineering sign MoU on predictive AI for estates',
+  shortText: 'Softgrid and EM Engineering sign MoU',
+  href: '/news/softgrid-em-engineering-mou',
+}
 
 const AUTOPLAY_INTERVAL = 6000
 const PROGRESS_TICK = 50
@@ -140,6 +157,22 @@ export function HeroSection(): React.ReactElement {
       <div className="relative z-[3] h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="max-w-2xl">
+            {announcement && (
+              <Link
+                href={announcement.href}
+                className="hero-entrance hero-entrance-1 group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-primary-400/30 bg-navy-950/60 py-1.5 pl-1.5 pr-4 backdrop-blur-md transition-colors duration-200 hover:border-primary-400/60 hover:bg-navy-900/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+              >
+                <span className="flex-shrink-0 rounded-full bg-primary-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[1.5px] text-white">
+                  {announcement.label}
+                </span>
+                <span className="truncate text-sm font-medium text-slate-200 group-hover:text-white">
+                  <span className="sm:hidden">{announcement.shortText}</span>
+                  <span className="hidden sm:inline">{announcement.text}</span>
+                </span>
+                <ArrowRight className="h-4 w-4 flex-shrink-0 text-primary-300 transition-transform duration-200 group-hover:translate-x-0.5" />
+              </Link>
+            )}
+
             {/* Overline */}
             <div className="flex items-center gap-3.5 mb-6">
               <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary-300" />

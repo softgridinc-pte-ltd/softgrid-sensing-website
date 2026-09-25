@@ -17,6 +17,7 @@ const milestones: Milestone[] = [
   { year: 'Q4 2024', title: 'Softgrid Fusion LTMS successfully conducted trial with HDB' },
   { year: '2025', title: 'Reached 10,000+ lifts milestone' },
   { year: 'Q4 2025', title: 'Launched AI-driven Facility Operating System (AFOS): Unified platform for building management, remote sensing, predictive maintenance, real-time control, and digital twin visualization' },
+  { year: 'Q3 2026', title: 'Signed MoU with EM Engineering, a subsidiary of EM Services, to explore predictive AI for estate and facilities management' },
 ]
 
 export function JourneySection(): React.ReactElement {
