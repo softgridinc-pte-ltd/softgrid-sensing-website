@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { X } from 'lucide-react'
 
 import type { NewsPartner } from '@/data/news'
 
@@ -9,7 +8,6 @@ interface CoBrandLockupProps {
 
 const chip =
   'flex h-11 flex-shrink-0 items-center rounded-lg bg-white px-3.5 shadow-lg shadow-navy-950/30 sm:h-14 sm:rounded-xl sm:px-5'
-const connector = 'h-px w-2 sm:w-4 from-transparent to-primary-400/70'
 
 export function CoBrandLockup({ partner }: CoBrandLockupProps): React.ReactElement {
   return (
@@ -21,13 +19,9 @@ export function CoBrandLockup({ partner }: CoBrandLockupProps): React.ReactEleme
         </span>
       </div>
 
-      <div className="flex items-center gap-1.5" aria-hidden="true">
-        <span className={`${connector} bg-gradient-to-r`} />
-        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-primary-400/40 text-primary-300">
-          <X className="h-3 w-3" strokeWidth={2.5} />
-        </span>
-        <span className={`${connector} bg-gradient-to-l`} />
-      </div>
+      <span aria-hidden="true" className="px-1 font-heading text-2xl font-light leading-none text-primary-300 sm:px-2 sm:text-3xl">
+        &times;
+      </span>
 
       <div className={chip}>
         <Image
