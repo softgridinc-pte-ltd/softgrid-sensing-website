@@ -117,11 +117,11 @@ export default function NewsArticlePage({ params }: ArticlePageProps): React.Rea
       <CTASection
         variant="gradient"
         headline="Explore What AFOS Can Do for Your Estate"
-        description="See how predictive AI, edge IoT and integrated monitoring come together on one vendor-agnostic platform."
+        description="See how intelligent lift monitoring, surveillance integration and predictive maintenance come together on one vendor-agnostic platform."
         primaryLabel="Talk to Our Team"
         primaryHref="/contact"
-        secondaryLabel="Explore the Platform"
-        secondaryHref="/platform"
+        secondaryLabel="Lift Monitoring Solutions"
+        secondaryHref="/solutions/vertical-transport"
       />
     </>
   )

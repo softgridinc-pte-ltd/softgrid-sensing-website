@@ -86,15 +86,15 @@ const emEngineeringMou: NewsArticle = {
   title:
     'SoftGrid and EM Engineering Partner to Transform Singapore’s Estate Management with Deep-Tech Predictive AI',
   standfirst:
-    'Strategic alliance bridges deep-tech AI expertise with trusted estate operations to explore technologies and solutions that may support more proactive, responsive and resilient estate management.',
+    'Strategic alliance bridges deep-tech AI expertise with trusted estate operations to explore intelligent lift monitoring, predictive maintenance and voice AI that may support safer, smarter and more resilient vertical mobility across Singapore’s estates.',
   excerpt:
-    'Softgrid and EM Engineering sign a Memorandum of Understanding to explore how vendor-agnostic predictive AI can support more proactive, responsive and resilient estate operations in Singapore.',
+    'Softgrid and EM Engineering sign a Memorandum of Understanding to explore intelligent lift monitoring, lift surveillance integration and predictive maintenance for safer, more resilient estate operations in Singapore.',
   datePublished: '2026-09-22T09:00:00+08:00',
   dateLabel: '22 September 2026',
   dateline: 'SINGAPORE, 22 September 2026',
-  seoTitle: 'Softgrid & EM Engineering Sign MoU — Predictive AI for Estate Management',
+  seoTitle: 'Softgrid & EM Engineering MoU — AI Lift Monitoring for Estates',
   seoDescription:
-    'Softgrid and EM Engineering, a subsidiary of EM Services, sign an MoU to explore AI predictive intelligence, edge IoT and video analytics for Singapore estate and facilities management.',
+    'Softgrid and EM Engineering, a subsidiary of EM Services, sign an MoU to explore intelligent lift monitoring, lift surveillance (LSS) integration, voice AI and predictive maintenance for Singapore estates.',
   keywords: [
     'EM Engineering',
     'EM Services',
@@ -104,6 +104,10 @@ const emEngineeringMou: NewsArticle = {
     'Town Council',
     'predictive AI',
     'lift monitoring',
+    'intelligent lift monitoring',
+    'Lift Surveillance System',
+    'predictive maintenance',
+    'voice AI',
     'press release',
   ],
   heroImage: {
@@ -113,7 +117,7 @@ const emEngineeringMou: NewsArticle = {
     width: 675,
     height: 504,
   },
-  ogImage: `${EM_MOU_IMAGES}/og.png`,
+  ogImage: `${EM_MOU_IMAGES}/og-v2.png`,
   partner: {
     name: 'EM Engineering',
     logo: '/images/logos/EMSERVICES-wordmark.png',
@@ -125,12 +129,12 @@ const emEngineeringMou: NewsArticle = {
     { label: 'Agreement', value: 'Memorandum of Understanding' },
     { label: 'Signed', value: '22 September 2026' },
     { label: 'Venue', value: 'EM Services HQ, Singapore' },
-    { label: 'Partner', value: 'EM Engineering (EM Services)' },
+    { label: 'Focus', value: 'Intelligent Lift Monitoring' },
   ],
   body: [
     {
       type: 'paragraph',
-      text: 'Softgrid, a deep-tech artificial intelligence (AI) company specializing in mission-critical infrastructure, and EM Engineering today announced a strategic partnership to explore opportunities to apply technology across mutually agreed estate and facilities management projects.',
+      text: 'Softgrid, a deep-tech artificial intelligence (AI) company specializing in mission-critical infrastructure, and EM Engineering today announced a strategic partnership to explore opportunities to apply AI to vertical transportation and wider estate operations across mutually agreed projects.',
     },
     {
       type: 'paragraph',
@@ -138,7 +142,7 @@ const emEngineeringMou: NewsArticle = {
     },
     {
       type: 'paragraph',
-      text: 'The collaboration provides a platform for both parties to explore opportunities where technologies such as AI predictive intelligence, edge IoT, video analytics and integrated monitoring may support greater operational visibility and more responsive estate and facilities operations.',
+      text: 'The collaboration provides a platform for both parties to explore opportunities where solutions such as intelligent lift monitoring, Lift Surveillance System (LSS) integration, conversational voice AI with automated voice-to-text logging, and predictive maintenance may support greater asset reliability and safer, more responsive estate operations.',
     },
     {
       type: 'quote',
@@ -165,7 +169,7 @@ const emEngineeringMou: NewsArticle = {
     },
     {
       type: 'paragraph',
-      text: 'Softgrid’s broader technology capabilities also include Voice AI Service Desks, Autonomous Operations and Cloud-Native Building Management Systems. These capabilities may be considered where relevant to future mutually agreed projects.',
+      text: 'Softgrid’s broader technology capabilities also include Autonomous Operations, Digital Twins and Cloud-Native Building Management Systems. These capabilities may be considered where relevant to future mutually agreed projects.',
     },
     {
       type: 'quote',

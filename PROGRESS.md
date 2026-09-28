@@ -350,6 +350,17 @@ Same calendar day, second working session. Shipped four release branches: v1.3.0
 
 **Build status:** Passing
 
+### Session — Lift-Focused News Copy (2026-09-28)
+
+**Re-weighted the EM Engineering MoU copy toward lifts, following the CEO's social post. Structure and paragraph lengths unchanged. Branch `releases/v1.6.4`.**
+
+- [x] Softgrid-owned copy: homepage pill, newsroom excerpt, SEO title/description, key fact (Partner -> Focus: Intelligent Lift Monitoring), CTA description + secondary button (-> /solutions/vertical-transport), OG image (renamed `og-v2.png` to bust social caches), search index, llms.txt, llms-full.txt
+- [x] Press-release copy (approved deviation from the joint EM release): standfirst, body paragraphs 1, 3 and 6 now name intelligent lift monitoring, LSS integration, voice AI with voice-to-text logging, predictive maintenance
+- [x] Kept unchanged: headline, all three quotes, both boilerplates
+- [x] Kept MoU hedging ("explore", "may") everywhere; did not adopt "delivers" from the social post
+
+**Build status:** Passing
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)

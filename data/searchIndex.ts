@@ -40,8 +40,8 @@ export const searchIndex: SearchEntry[] = [
     title: 'Softgrid and EM Engineering Sign MoU',
     href: '/news/softgrid-em-engineering-mou',
     category: 'News',
-    description: 'Strategic MoU with EM Engineering (EM Services) to explore predictive AI for Singapore estate and facilities management.',
-    keywords: ['EM Engineering', 'EM Services', 'MoU', 'memorandum of understanding', 'partnership', 'estate management', 'Town Council', 'predictive AI', 'press release'],
+    description: 'Strategic MoU with EM Engineering (EM Services) to explore intelligent lift monitoring, LSS integration, voice AI and predictive maintenance for Singapore estates.',
+    keywords: ['EM Engineering', 'EM Services', 'MoU', 'memorandum of understanding', 'partnership', 'estate management', 'Town Council', 'predictive AI', 'lift monitoring', 'Lift Surveillance System', 'LSS', 'predictive maintenance', 'voice AI', 'press release'],
   },
   {
     title: 'Contact Us',

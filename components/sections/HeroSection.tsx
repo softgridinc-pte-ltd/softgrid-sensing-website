@@ -71,7 +71,7 @@ interface HeroAnnouncement {
 // Time-bound homepage announcement. Set to null to hide once it is no longer current.
 const announcement: HeroAnnouncement | null = {
   label: 'News',
-  text: 'Softgrid and EM Engineering sign MoU on predictive AI for estates',
+  text: 'Softgrid and EM Engineering sign MoU on AI lift intelligence for estates',
   shortText: 'Softgrid and EM Engineering sign MoU',
   href: '/news/softgrid-em-engineering-mou',
 }

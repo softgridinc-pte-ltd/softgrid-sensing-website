@@ -35,7 +35,7 @@
 ## News
 
 - [Newsroom](https://softgridsensing.com/news): Softgrid press releases, partnerships, and milestones.
-- [Softgrid and EM Engineering sign MoU (22 September 2026)](https://softgridsensing.com/news/softgrid-em-engineering-mou): Memorandum of Understanding with EM Engineering, a subsidiary of EM Services, to explore predictive AI, edge IoT, video analytics, and integrated monitoring across mutually agreed estate and facilities management projects in Singapore.
+- [Softgrid and EM Engineering sign MoU (22 September 2026)](https://softgridsensing.com/news/softgrid-em-engineering-mou): Memorandum of Understanding with EM Engineering, a subsidiary of EM Services, to explore intelligent lift monitoring, Lift Surveillance System (LSS) integration, conversational voice AI, and predictive maintenance across mutually agreed estate projects in Singapore.
 
 ## Optional
 
