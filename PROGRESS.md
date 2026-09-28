@@ -341,6 +341,15 @@ Same calendar day, second working session. Shipped four release branches: v1.3.0
 
 **Build status:** Passing (static export to `/out`)
 
+### Session — Trim News Article Sections (2026-09-28)
+
+**Removed the "The Collaboration" (Areas of Exploration) and "Related" sections from the news article page (management decision). Branch `releases/v1.6.3`.**
+
+- [x] Article page order is now: hero, key facts, gallery, press release body, boilerplates, CTA
+- [x] Deleted `components/sections/news/FocusAreas.tsx` and the unused `focusAreas`, `technologies`, `extendedCapabilities`, `related` fields from `data/news.ts` (shared `RelatedLinks` kept for case studies)
+
+**Build status:** Passing
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
