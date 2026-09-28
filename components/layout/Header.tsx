@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
-import { Menu, X, ChevronDown, Search, Cpu, MonitorDot, Workflow, ArrowUpDown, Building2, Wrench, Leaf, Building, Newspaper } from 'lucide-react'
+import { Menu, X, ChevronDown, Search, Cpu, MonitorDot, Workflow, ArrowUpDown, Building2, Wrench, Leaf } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { CortexIcon } from '@/components/icons/CortexIcon'
 import { useSearch } from '@/components/search/useSearch'
@@ -93,24 +93,8 @@ const navigation: NavItem[] = [
     ],
   },
   { label: 'Case Studies', href: '/case-studies' },
-  {
-    label: 'About',
-    href: '/about',
-    children: [
-      {
-        label: 'About Softgrid',
-        description: 'Our story, milestones, and ecosystem',
-        icon: Building,
-        href: '/about',
-      },
-      {
-        label: 'Newsroom',
-        description: 'Announcements and partnerships',
-        icon: Newspaper,
-        href: '/news',
-      },
-    ],
-  },
+  { label: 'News', href: '/news' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -264,8 +248,9 @@ export function Header(): React.ReactElement {
           </span>
         </Link>
 
-        {/* Desktop Navigation — absolutely centered */}
-        <div className="hidden lg:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* Desktop Navigation — flows between logo and search on lg, absolutely centered from xl.
+            Below xl the open search bar takes the menu's place so the two never collide. */}
+        <div className={`hidden items-center gap-1 ${searchOpen ? 'lg:hidden xl:flex' : 'lg:flex'} xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2`}>
           {navigation.map((item) => (
             <div
               key={item.label}
@@ -351,7 +336,7 @@ export function Header(): React.ReactElement {
           <div
             className={`flex items-center rounded-lg overflow-hidden transition-all duration-350 ease-out ${
               searchOpen
-                ? 'w-72 bg-navy-800 border border-primary-500/30 shadow-[0_0_12px_rgba(31,153,197,0.1)] px-2 py-0.5'
+                ? 'w-64 bg-navy-800 border border-primary-500/30 shadow-[0_0_12px_rgba(31,153,197,0.1)] px-2 py-0.5'
                 : 'w-9 bg-transparent border border-transparent px-0 py-0'
             }`}
           >
