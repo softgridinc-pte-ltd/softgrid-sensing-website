@@ -5,10 +5,8 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { NewsHero } from '@/components/sections/news/NewsHero'
 import { KeyFacts } from '@/components/sections/news/KeyFacts'
 import { ArticleBody } from '@/components/sections/news/ArticleBody'
-import { FocusAreas } from '@/components/sections/news/FocusAreas'
 import { PhotoGallery } from '@/components/sections/news/PhotoGallery'
 import { Boilerplates } from '@/components/sections/news/Boilerplates'
-import { RelatedLinks } from '@/components/sections/case-studies/RelatedLinks'
 import { CTASection } from '@/components/sections/CTASection'
 import { getAllArticles, getArticle, getArticlePath } from '@/data/news'
 
@@ -116,10 +114,6 @@ export default function NewsArticlePage({ params }: ArticlePageProps): React.Rea
       <PhotoGallery photos={article.gallery} />
       <ArticleBody article={article} url={url} />
       <Boilerplates items={article.boilerplates} />
-      <FocusAreas article={article} />
-      <div className="border-t border-slate-200">
-        <RelatedLinks items={article.related} />
-      </div>
       <CTASection
         variant="gradient"
         headline="Explore What AFOS Can Do for Your Estate"

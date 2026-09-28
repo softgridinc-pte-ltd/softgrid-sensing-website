@@ -1,5 +1,3 @@
-import type { RelatedLink } from '@/components/sections/case-studies/RelatedLinks'
-
 export interface NewsPhoto {
   src: string
   alt: string
@@ -31,15 +29,6 @@ export type NewsBlock = ParagraphBlock | QuoteBlock
 export interface NewsFact {
   label: string
   value: string
-}
-
-export type FocusIcon = 'lift' | 'building' | 'operations'
-
-export interface FocusArea {
-  icon: FocusIcon
-  title: string
-  description: string
-  href: string
 }
 
 export interface NewsPartner {
@@ -83,14 +72,10 @@ export interface NewsArticle {
   partner: NewsPartner
   facts: NewsFact[]
   body: NewsBlock[]
-  focusAreas: FocusArea[]
-  technologies: string[]
-  extendedCapabilities: string[]
   gallery: NewsPhoto[]
   boilerplates: Boilerplate[]
   mediaContacts: MediaContact[]
   externalLinks: ExternalLink[]
-  related: RelatedLink[]
 }
 
 const EM_MOU_IMAGES = '/images/news/2026-09-em-engineering-mou'
@@ -196,40 +181,6 @@ const emEngineeringMou: NewsArticle = {
       text: 'Through the partnership, Softgrid and EM Engineering aim to accelerate the development of innovative technologies and collaborative opportunities that may contribute to smarter and more efficient estate management solutions in Singapore.',
     },
   ],
-  focusAreas: [
-    {
-      icon: 'lift',
-      title: 'Intelligent Lift Monitoring',
-      description:
-        'Predictive diagnostics on real-time lift telemetry, building on Softgrid’s deployment experience across HDB estates.',
-      href: '/solutions/vertical-transport',
-    },
-    {
-      icon: 'building',
-      title: 'Smart Building Systems',
-      description:
-        'Vendor-agnostic visibility across building systems, from equipment monitoring to integrated control.',
-      href: '/solutions/building-management',
-    },
-    {
-      icon: 'operations',
-      title: 'Integrated Facilities Management',
-      description:
-        'Connecting monitoring, work orders and field teams into one responsive operational workflow.',
-      href: '/solutions/facility-operations',
-    },
-  ],
-  technologies: [
-    'AI Predictive Intelligence',
-    'Edge IoT',
-    'Video Analytics',
-    'Integrated Monitoring',
-  ],
-  extendedCapabilities: [
-    'Voice AI Service Desks',
-    'Autonomous Operations',
-    'Cloud-Native Building Management Systems',
-  ],
   gallery: [
     {
       src: `${EM_MOU_IMAGES}/group.webp`,
@@ -307,11 +258,6 @@ const emEngineeringMou: NewsArticle = {
       label: 'EM Services announcement on LinkedIn',
       href: 'https://www.linkedin.com/posts/em-services-pte-ltd_emservices-emengineering-insideemservices-activity-7508027769662976000-tkWp',
     },
-  ],
-  related: [
-    { kicker: 'Case Study', title: 'HDB — AI Lift Monitoring at National Scale', href: '/case-studies/hdb' },
-    { kicker: 'Solution', title: 'Smart Vertical Transport', href: '/solutions/vertical-transport' },
-    { kicker: 'Platform', title: 'AFOS — AI-Driven Facility Operating System', href: '/platform' },
   ],
 }
 
