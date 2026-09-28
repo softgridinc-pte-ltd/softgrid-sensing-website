@@ -330,6 +330,17 @@ Same calendar day, second working session. Shipped four release branches: v1.3.0
 
 **Build status:** Passing (static export to `/out`)
 
+### Session — Standalone News Nav Entry (2026-09-28)
+
+**Promoted News to a top-level nav item (management decision). Branch `releases/v1.6.2`. Content pages unchanged.**
+
+- [x] Top nav is now: Platform, Solutions, Products, Case Studies, News, About, Contact. About reverted to a plain link (its dropdown only existed to hold Newsroom)
+- [x] Fixed nav/logo overlap at 1024-1279px: the menu now flows between logo and search below `xl` and is absolutely centered from `xl` up; below `xl` the open search bar replaces the menu
+- [x] Open search bar narrowed from `w-72` to `w-64` so it clears the centered menu at `xl`+ (39px gap)
+- [x] Verified header fit at 1024/1100/1280/1440/1920 (closed and search-open), active state on /news and article, mobile menu order and tap-through
+
+**Build status:** Passing (static export to `/out`)
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
