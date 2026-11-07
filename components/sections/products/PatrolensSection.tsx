@@ -61,7 +61,7 @@ export function PatrolensSection(): React.ReactElement {
           </a>
         </div>
 
-        <div className="pt-10 lg:order-1">
+        <div className="pt-14 lg:order-1">
           <PatrolensFinder />
         </div>
       </div>
