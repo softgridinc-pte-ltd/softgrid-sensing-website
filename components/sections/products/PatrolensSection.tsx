@@ -1,5 +1,7 @@
 import { ArrowUpRight, ChevronRight } from 'lucide-react'
 
+import { PatrolensFinder } from './PatrolensFinder'
+
 export const PATROLENS_URL = 'https://patrolens.softgridsensing.com/'
 
 const steps: string[] = ['Capture', 'Detect', 'Verify', 'Review & report']
@@ -15,46 +17,6 @@ function ScanIcon(): React.ReactElement {
       />
       <circle cx="16" cy="16" r="4.5" fill="#FF5A1F" />
     </svg>
-  )
-}
-
-function CameraFrame(): React.ReactElement {
-  return (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(160deg,#1A2B45_0%,#0D1A2E_100%)]">
-      {/* Corridor perspective lines */}
-      <svg viewBox="0 0 320 200" className="absolute inset-0 h-full w-full" preserveAspectRatio="none" aria-hidden>
-        <g stroke="rgba(148,163,184,0.18)" strokeWidth="1" fill="none">
-          <path d="M0 0 L120 80 L200 80 L320 0" />
-          <path d="M0 200 L120 130 L200 130 L320 200" />
-          <path d="M120 80 L120 130 M200 80 L200 130" />
-          <path d="M60 40 L60 165 M260 40 L260 165" />
-        </g>
-        <rect x="128" y="88" width="20" height="34" fill="rgba(148,163,184,0.12)" />
-      </svg>
-
-      {/* Viewfinder corners */}
-      {['left-3 top-3 border-l-2 border-t-2', 'right-3 top-3 border-r-2 border-t-2', 'left-3 bottom-3 border-l-2 border-b-2', 'right-3 bottom-3 border-r-2 border-b-2'].map((pos) => (
-        <span key={pos} className={`absolute h-4 w-4 border-white/50 ${pos}`} />
-      ))}
-
-      {/* Detection box */}
-      <div className="absolute left-[38%] top-[42%] h-[30%] w-[22%] rounded-sm border-2 border-[#D4F53C] shadow-[0_0_18px_rgba(212,245,60,0.35)]">
-        <span className="absolute -top-6 left-[-2px] whitespace-nowrap rounded-sm bg-[#D4F53C] px-1.5 py-0.5 text-[10px] font-bold text-navy-900">
-          Obstruction 0.91
-        </span>
-      </div>
-
-      {/* HUD */}
-      <div className="absolute left-6 top-5 flex items-center gap-1.5 font-mono text-[10px] text-white/80">
-        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FF5A1F]" />
-        REC 00:14:32
-      </div>
-      <div className="absolute right-6 top-5 font-mono text-[10px] text-white/60">BLK 214, LEVEL 7</div>
-      <div className="absolute bottom-5 left-6 font-mono text-[10px] text-white/60">1.3521 N, 103.8198 E</div>
-      <div className="absolute bottom-5 right-6 rounded-full border border-white/15 bg-navy-900/70 px-2 py-0.5 text-[10px] font-semibold text-white/80 backdrop-blur">
-        Pending review
-      </div>
-    </div>
   )
 }
 
@@ -99,16 +61,9 @@ export function PatrolensSection(): React.ReactElement {
           </a>
         </div>
 
-        <a
-          href={PATROLENS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          tabIndex={-1}
-          aria-hidden
-          className="block rounded-2xl bg-[linear-gradient(160deg,#0A1628_0%,#162544_100%)] p-3 shadow-xl ring-1 ring-navy-900/10 transition hover:-translate-y-1 hover:shadow-2xl lg:order-1"
-        >
-          <CameraFrame />
-        </a>
+        <div className="pt-10 lg:order-1">
+          <PatrolensFinder />
+        </div>
       </div>
     </section>
   )
