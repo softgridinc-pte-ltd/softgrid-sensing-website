@@ -64,7 +64,14 @@ export const searchIndex: SearchEntry[] = [
     href: '/products/sense',
     category: 'Product',
     description: 'Industrial-grade IoT devices for non-intrusive installation, edge intelligence, and resilient operation.',
-    keywords: ['Sense', 'edge', 'IoT', 'sensor', 'hardware', 'LMD', 'LBB', 'EMD', 'device', 'vibration', 'accelerometer', 'non-intrusive'],
+    keywords: ['Sense', 'edge', 'IoT', 'sensor', 'hardware', 'LMD', 'LBB', 'EMD', 'Patrolens', 'device', 'vibration', 'accelerometer', 'non-intrusive'],
+  },
+  {
+    title: 'Patrolens - AI Patrol Inspection',
+    href: '/products/sense#patrolens',
+    category: 'Product',
+    description: 'Turns patrol photos and video into AI-detected, human-reviewed findings that are mapped and ready to report.',
+    keywords: ['Patrolens', 'patrol', 'inspection', 'AI', 'computer vision', 'handheld', 'Android', 'findings', 'lapse', 'estate', 'security patrol', 'report'],
   },
   {
     title: 'AFOS Fusion - Monitoring & Diagnostics',

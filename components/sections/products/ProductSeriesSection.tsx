@@ -24,7 +24,7 @@ const productSeries: ProductSeries[] = [
     name: 'AFOS Sense',
     subtitle: 'Edge Devices',
     description: 'Industrial-grade IoT devices designed for non-intrusive installation, edge intelligence, and resilient operation. Hardware-as-a-Service, not hardware-for-sale.',
-    products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }],
+    products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }, { name: 'Patrolens' }],
     href: '/products/sense',
     Icon: Cpu,
     iconBg: 'rgba(31,153,197,0.12)',

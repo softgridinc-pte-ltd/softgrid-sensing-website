@@ -65,7 +65,7 @@ const navigation: NavItem[] = [
       {
         label: 'Edge Devices',
         subtitle: 'AFOS Sense',
-        description: 'IoT sensors and edge acquisition hardware',
+        description: 'IoT sensors, edge hardware and AI patrol inspection',
         icon: Cpu,
         href: '/products/sense',
       },

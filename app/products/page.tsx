@@ -39,7 +39,7 @@ const series: Series[] = [
     short: 'Industrial IoT hardware engineered in-house.',
     description:
       'Non-intrusive sensors that install without modifying controllers or voiding warranties. Edge processing keeps assets monitored even during connectivity outages, and 4G/LTE secure tunnels stream data back the moment the link is restored. Hardware-as-a-Service — not hardware-for-sale.',
-    products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }],
+    products: [{ name: 'LMD' }, { name: 'LBB' }, { name: 'EMD' }, { name: 'Patrolens' }],
     href: '/products/sense',
     image: '/images/background/bg7.webp',
     icon: <Cpu className="h-7 w-7" strokeWidth={1.6} aria-hidden />,

@@ -1,6 +1,7 @@
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { ProductImageCarousel } from '@/components/ui/ProductImageCarousel'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { PatrolensSection } from '@/components/sections/products/PatrolensSection'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -9,7 +10,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'AFOS Sense — Industrial IoT Edge Devices for Lifts & Buildings',
   description:
-    'AFOS Sense — industrial IoT edge devices for non-intrusive lift monitoring, escalator monitoring, and building sensing. Leased, not sold. By Softgrid Sensing, Singapore.',
+    'AFOS Sense — industrial IoT edge devices for non-intrusive lift monitoring, escalator monitoring, building sensing, and Patrolens AI patrol inspection. Leased, not sold. By Softgrid Sensing, Singapore.',
   alternates: { canonical: '/products/sense' },
 }
 
@@ -622,6 +623,9 @@ export default function SensePage(): React.ReactElement {
           />
         </div>
       </section>
+
+      {/* PRODUCT 4: Patrolens */}
+      <PatrolensSection />
 
       {/* HARDWARE-AS-A-SERVICE */}
       <section style={{ padding: '80px 64px', background: '#0A1628', textAlign: 'center' }}>
