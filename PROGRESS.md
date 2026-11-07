@@ -361,6 +361,17 @@ Same calendar day, second working session. Shipped four release branches: v1.3.0
 
 **Build status:** Passing
 
+### Session — Patrolens Entry Under AFOS Sense (2026-11-07)
+
+**Added Patrolens (AI patrol inspection) as the fourth AFOS Sense product. The section is a short entry point only; details live on the subsite https://patrolens.softgridsensing.com/. Branch `releases/v1.6.4`.**
+
+- [x] New `components/sections/products/PatrolensSection.tsx`, placed after EMD on `/products/sense` with anchor `#patrolens`: light `#F8FAFC` background, mock camera frame on the left, one-sentence intro, four-step flow (Capture, Detect, Verify, Review & report), "Explore Patrolens" button opening the subsite in a new tab
+- [x] Listed Patrolens in the Sense series on `/products` and the home page product cards, updated the nav dropdown description, Sense page meta description and search index
+- [x] Added `.claude/launch.json` (dev server on port 3000) for the desktop app preview
+- [x] Subdomain DNS: CNAME `patrolens` -> `patrolens.lab.softgrid.cc` added at SiteGround by the user
+
+**Build status:** Passing
+
 ## Technical Notes
 
 - Using Next.js 14.2.x (not 15) for stability — `.mjs` config format required (not `.ts`)
